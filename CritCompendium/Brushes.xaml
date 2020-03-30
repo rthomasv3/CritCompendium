@@ -1,0 +1,39 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:CritCompendium">
+
+    <SolidColorBrush x:Key="_primaryTextBrush" Color="#FFDFE0E8" />
+
+    <SolidColorBrush x:Key="_secondaryTextBrush" Color="#FF7A7D85" />
+
+    <SolidColorBrush x:Key="_mainBackgroundBrush" Color="#FF15151C" />
+
+    <SolidColorBrush x:Key="_secondaryBackgroundBrush" Color="#FF292931" />
+
+    <SolidColorBrush x:Key="_navHoverBackgroundBrush" Color="#FF383843" />
+
+    <!--<SolidColorBrush x:Key="_buttonBackgroundBrush" Color="#FF409ABF" />-->
+    <!--<SolidColorBrush x:Key="_buttonBackgroundBrush" Color="#FF007CCF" />-->
+    <SolidColorBrush x:Key="_buttonBackgroundBrush" Color="#FF007acc" />
+
+    <SolidColorBrush x:Key="_buttonDisabledBackgroundBrush" Color="#FFBFBFBF" />
+
+    <!--<SolidColorBrush x:Key="_buttonHoverBackgroundBrush" Color="#FF49A5CB" />-->
+    <!--<SolidColorBrush x:Key="_buttonHoverBackgroundBrush" Color="#FF2386da" />-->
+    <SolidColorBrush x:Key="_buttonHoverBackgroundBrush" Color="#FF0069b8" />
+
+    <!--<SolidColorBrush x:Key="_buttonForegroundBrush" Color="#FF15151C" />-->
+    <!--<SolidColorBrush x:Key="_buttonForegroundBrush" Color="#FF0D0D11" />-->
+    <SolidColorBrush x:Key="_buttonForegroundBrush" Color="#FFf8f8f8" />
+
+    <SolidColorBrush x:Key="_buttonBorderBrush" Color="#FF46A2C4" />
+
+    <SolidColorBrush x:Key="_contentBorderBrush" Color="#FF2E2E3F" />
+
+    <SolidColorBrush x:Key="_contentHoverBorderBrush" Color="#FF414157" />
+
+    <SolidColorBrush x:Key="_tableAlternateBackground" Color="#FF292931" />
+
+    <SolidColorBrush x:Key="_tableAlternateForeground" Color="#FFDFE0E8" />
+
+</ResourceDictionary>

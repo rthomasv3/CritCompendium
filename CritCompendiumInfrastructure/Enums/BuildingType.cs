@@ -1,0 +1,32 @@
+﻿namespace CriticalCompendiumInfrastructure.Enums
+{
+    public enum BuildingType
+    {
+        Armory,
+        Baker,
+        Brothel,
+        Carpenter,
+        Food_Stall,
+        Guard_House,
+        Guildhall,
+        Jeweler,
+        Library,
+        Mansion,
+        Mapmaker,
+        Mason,
+        Moneylender,
+        Orphanage,
+        Residence,
+        Scribe,
+        Shrine,
+        Smithy,
+        Tailor,
+        Tavern,
+        Temple,
+        Tenement,
+        Tower,
+        Warehouse,
+        Weaver,
+        Other
+    }
+}

@@ -1,0 +1,55 @@
+﻿<Application x:Class="CritCompendium.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Startup="Application_Startup">
+    <Application.Resources>
+        <ResourceDictionary>
+            <FontFamily x:Key="_primaryFont">Bookman Old Style</FontFamily>
+            
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Themes/Accents/Blue.xaml" />
+                <ResourceDictionary Source="Resources/Themes/DarkTheme.xaml" />
+
+                <ResourceDictionary Source="ConvertersResource.xaml" />
+
+                <ResourceDictionary Source="Resources/ControlTemplates/ContextMenuResource.xaml" />
+                <ResourceDictionary Source="Resources/ControlTemplates/ScrollResource.xaml" />
+                <ResourceDictionary Source="Resources/ControlTemplates/TextboxResource.xaml" />
+                <ResourceDictionary Source="Resources/ControlTemplates/ButtonResource.xaml" />
+                <ResourceDictionary Source="Resources/ControlTemplates/ComboBoxResource.xaml" />
+                <ResourceDictionary Source="Resources/ControlTemplates/ExpanderResource.xaml" />
+                <ResourceDictionary Source="Resources/ControlTemplates/ItemsControlResource.xaml" />
+                <ResourceDictionary Source="Resources/ControlTemplates/BorderResource.xaml" />
+                <ResourceDictionary Source="Resources/ControlTemplates/ContentControlResource.xaml" />
+                <ResourceDictionary Source="Resources/ControlTemplates/TextBlockResource.xaml" />
+                <ResourceDictionary Source="Resources/ControlTemplates/CheckBoxResource.xaml" />
+                <ResourceDictionary Source="Resources/ControlTemplates/RadioButtonResource.xaml" />
+                <ResourceDictionary Source="Resources/ControlTemplates/ToolTipResource.xaml" />
+                <ResourceDictionary Source="Resources/ControlTemplates/TreeViewResource.xaml" />
+
+                <ResourceDictionary Source="Resources/ItemTemplates/CharacterViewTemplate.xaml" />
+                <ResourceDictionary Source="Resources/ItemTemplates/LevelEditTemplate.xaml" />
+                <ResourceDictionary Source="Resources/ItemTemplates/CharacterEditTemplate.xaml" />
+                <ResourceDictionary Source="Resources/ItemTemplates/AdventureViewTemplate.xaml" />
+                <ResourceDictionary Source="Resources/ItemTemplates/AdventureEditTemplate.xaml" />
+                <ResourceDictionary Source="Resources/ItemTemplates/EncounterViewTemplate.xaml" />
+                <ResourceDictionary Source="Resources/ItemTemplates/EncounterEditTemplate.xaml" />
+                <ResourceDictionary Source="Resources/ItemTemplates/LocationViewTemplate.xaml" />
+                <ResourceDictionary Source="Resources/ItemTemplates/LocationEditTemplate.xaml" />
+                <ResourceDictionary Source="Resources/ItemTemplates/NPCViewTemplate.xaml" />
+                <ResourceDictionary Source="Resources/ItemTemplates/NPCEditTemplate.xaml" />
+                <ResourceDictionary Source="Resources/ItemTemplates/RandomTableViewTemplate.xaml" />
+                <ResourceDictionary Source="Resources/ItemTemplates/RandomTableEditTemplate.xaml" />
+                <ResourceDictionary Source="Resources/ItemTemplates/BackgroundTemplate.xaml" />
+                <ResourceDictionary Source="Resources/ItemTemplates/ClassTemplate.xaml" />
+                <ResourceDictionary Source="Resources/ItemTemplates/ConditionTemplate.xaml" />
+                <ResourceDictionary Source="Resources/ItemTemplates/FeatTemplate.xaml" />
+                <ResourceDictionary Source="Resources/ItemTemplates/FeatureTemplate.xaml" />
+                <ResourceDictionary Source="Resources/ItemTemplates/ItemTemplate.xaml" />
+                <ResourceDictionary Source="Resources/ItemTemplates/MonsterTemplate.xaml" />
+                <ResourceDictionary Source="Resources/ItemTemplates/RaceTemplate.xaml" />
+                <ResourceDictionary Source="Resources/ItemTemplates/SpellTemplate.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,117 @@
+﻿<UserControl x:Class="CritCompendium.Views.ArmorClassView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:CritCompendium.Views"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             Width="325"
+             Height="Auto"
+             mc:Ignorable="d">
+    <Border Padding="10">
+        <StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Margin="0,0,5,0">
+                    <TextBlock Margin="0,5,5,2"
+                               FontSize="10"
+                               Foreground="{DynamicResource _secondaryTextBrush}"
+                               Text="Armor" />
+                    <TextBox Text="{Binding ArmorBonus, UpdateSourceTrigger=PropertyChanged}" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Margin="5,0,0,0">
+                    <TextBlock Margin="0,5,0,2"
+                               FontSize="10"
+                               Foreground="{DynamicResource _secondaryTextBrush}"
+                               Text="Armor Type" />
+                    <ComboBox Margin="0,0,3,2"
+                              DisplayMemberPath="Value"
+                              ItemsSource="{Binding ArmorTypeOptions}"
+                              SelectedValue="{Binding SelectedArmorTypeOption}" />
+                </StackPanel>
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Margin="0,0,5,0">
+                    <TextBlock Margin="0,10,0,2"
+                               FontSize="10"
+                               Foreground="{DynamicResource _secondaryTextBrush}"
+                               Text="First Ability" />
+                    <ComboBox Margin="0,0,3,2"
+                              DisplayMemberPath="Value"
+                              ItemsSource="{Binding AbilityOptions}"
+                              SelectedValue="{Binding SelectedFirstAbilityOption}" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Margin="5,0,0,0">
+                    <TextBlock Margin="0,10,0,2"
+                               FontSize="10"
+                               Foreground="{DynamicResource _secondaryTextBrush}"
+                               Text="Second Ability" />
+                    <ComboBox Margin="0,0,3,2"
+                              DisplayMemberPath="Value"
+                              ItemsSource="{Binding AbilityOptions}"
+                              SelectedValue="{Binding SelectedSecondAbilityOption}" />
+                </StackPanel>
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Margin="0,0,5,0">
+                    <TextBlock Margin="0,10,0,2"
+                               FontSize="10"
+                               Foreground="{DynamicResource _secondaryTextBrush}"
+                               Text="Item Bonus" />
+                    <TextBox Text="{Binding ItemBonus, UpdateSourceTrigger=PropertyChanged}" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Margin="5,0,0,0">
+                    <TextBlock Margin="0,10,0,2"
+                               FontSize="10"
+                               Foreground="{DynamicResource _secondaryTextBrush}"
+                               Text="Additional Bonus" />
+                    <TextBox Text="{Binding AdditionalBonus, UpdateSourceTrigger=PropertyChanged}" />
+                </StackPanel>
+            </Grid>
+
+            <Grid Margin="0,15,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="1"
+                        Width="Auto"
+                        MinWidth="50"
+                        Margin="5,0"
+                        Padding="5,0"
+                        Command="{Binding RejectCommand}"
+                        Content="Cancel"
+                        Style="{DynamicResource _rejectButtonStyle}" />
+
+                <Button Grid.Column="2"
+                        Width="Auto"
+                        MinWidth="50"
+                        Margin="5,0,0,0"
+                        Padding="5,0"
+                        Command="{Binding AcceptCommand}"
+                        Content="Save"
+                        Style="{DynamicResource _mainButtonStyle}" />
+            </Grid>
+        </StackPanel>
+    </Border>
+</UserControl>

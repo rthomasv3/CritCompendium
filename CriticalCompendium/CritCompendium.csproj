@@ -1,0 +1,1004 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CCBC795F-4959-47E9-AD92-FF6C0703734A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CriticalCompendium</RootNamespace>
+    <AssemblyName>CriticalCompendium</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>desktop_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CodeCompendium.BinarySerialization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CodeCompendium.BinarySerialization.1.0.0\lib\netstandard2.0\CodeCompendium.BinarySerialization.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch.Steamworks, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Facepunch.Steamworks.2.1.0\lib\net46\Facepunch.Steamworks.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.License, Version=1.3.7.46, Culture=neutral, PublicKeyToken=b1144360237c8b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.PDF.5.4.0\lib\net46\Spire.License.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Pdf, Version=5.4.15.20046, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.PDF.5.4.0\lib\net46\Spire.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Words.NET, Version=1.3.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocX.1.3.0\lib\net40\Xceed.Words.NET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AttachedProperties.cs" />
+    <Compile Include="AccentColor.cs" />
+    <Compile Include="BoolToVisibilityConverter.cs" />
+    <Compile Include="CustomTextBox.xaml.cs">
+      <DependentUpon>CustomTextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataManager.cs" />
+    <Compile Include="GridLengthConverter.cs" />
+    <Compile Include="NotifyPropertyChanged.cs" />
+    <Compile Include="ProficiencyControl.xaml.cs">
+      <DependentUpon>ProficiencyControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RelayCommand.cs" />
+    <Compile Include="Services\DialogService.cs" />
+    <Compile Include="Services\DocumentService.cs" />
+    <Compile Include="Theme.cs" />
+    <Compile Include="ThemeManager.cs" />
+    <Compile Include="ViewModels\AboutViewModel.cs" />
+    <Compile Include="ViewModels\AdventuresViewModel.cs" />
+    <Compile Include="ViewModels\BackgroundsViewModel.cs" />
+    <Compile Include="ViewModels\CharactersViewModel.cs" />
+    <Compile Include="ViewModels\ClassesViewModel.cs" />
+    <Compile Include="ViewModels\ConditionsViewModel.cs" />
+    <Compile Include="ViewModels\ConvertMoneyViewModel.cs" />
+    <Compile Include="ViewModels\DeathSavesViewModel.cs" />
+    <Compile Include="ViewModels\DialogViewModels\AddSubtractViewModel.cs" />
+    <Compile Include="ViewModels\DialogViewModels\CalculatorViewModel.cs" />
+    <Compile Include="ViewModels\DialogViewModels\ConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\DialogViewModels\DiceRollViewModel.cs" />
+    <Compile Include="ViewModels\DialogViewModels\EncounterMonsterDialogViewModel.cs" />
+    <Compile Include="ViewModels\DialogViewModels\EncounterCharacterDialogViewModel.cs" />
+    <Compile Include="ViewModels\DialogViewModels\IConfirmation.cs" />
+    <Compile Include="ViewModels\DialogViewModels\ICopyInformation.cs" />
+    <Compile Include="ViewModels\DialogViewModels\InitiativeViewModel.cs" />
+    <Compile Include="ViewModels\DialogViewModels\RandomEncounterDialogViewModel.cs" />
+    <Compile Include="ViewModels\EncountersViewModel.cs" />
+    <Compile Include="ViewModels\FeatsViewModel.cs" />
+    <Compile Include="ViewModels\ImportViewModel.cs" />
+    <Compile Include="ViewModels\ItemsViewModel.cs" />
+    <Compile Include="ViewModels\LevelUpViewModel.cs" />
+    <Compile Include="ViewModels\ListItemViewModels\BackgroundListItemViewModel.cs" />
+    <Compile Include="ViewModels\ListItemViewModels\CharacterListItemViewModel.cs" />
+    <Compile Include="ViewModels\ListItemViewModels\ClassListItemViewModel.cs" />
+    <Compile Include="ViewModels\ListItemViewModels\ConditionListItemViewModel.cs" />
+    <Compile Include="ViewModels\ListItemViewModels\EncounterListItemViewModel.cs" />
+    <Compile Include="ViewModels\ListItemViewModels\FeatListItemViewModel.cs" />
+    <Compile Include="ViewModels\ListItemViewModels\ItemListItemViewModel.cs" />
+    <Compile Include="ViewModels\ListItemViewModels\ListItemViewModel.cs" />
+    <Compile Include="ViewModels\ListItemViewModels\MonsterListItemViewModel.cs" />
+    <Compile Include="ViewModels\ListItemViewModels\RaceListItemViewModel.cs" />
+    <Compile Include="ViewModels\ListItemViewModels\SpellListItemViewModel.cs" />
+    <Compile Include="ViewModels\LocationsViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\MonstersViewModel.cs" />
+    <Compile Include="ViewModels\NPCsViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\AbilityScoreEditViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\AbilityViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\AdventureEditViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\AdventureViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\AppliedConditionViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\ArmorClassViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\ArmorProficiencyViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\AttackViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\AutoLevelViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\BackgroundViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\BagViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\BuildingViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\CharacterEditViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\CharacterViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\ClassViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\CompanionViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\ConditionViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\CounterViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\EncounterCharacterViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\EncounterCreatureViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\EncounterMonsterViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\EncounterViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\EquipmentViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\FeatEditViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\FeatureViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\FeatViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\ItemViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\LanguageViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\LevelEditViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\LevelViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\LocationEditViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\LocationViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\MonsterActionViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\MonsterAttackViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\MonsterViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\MovementViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\NPCEditViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\NPCViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\ObjectViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\PackViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\RaceViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\RandomTableEditViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\RandomTableRowViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\RandomTableViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\RoomViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\SkillViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\SpellbookEntryViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\SpellbookViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\SpellsByLevelViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\SpellViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\StatModificationViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\TableElementViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\ToolProficiencyViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\ToolsViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\TraitViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\WeaponProficiencyViewModel.cs" />
+    <Compile Include="ViewModels\ObjectViewModels\WeaponsViewModel.cs" />
+    <Compile Include="ViewModels\PatreonDialogViewModel.cs" />
+    <Compile Include="ViewModels\RacesViewModel.cs" />
+    <Compile Include="ViewModels\SearchViewModels\ItemSearchViewModel.cs" />
+    <Compile Include="ViewModels\SearchViewModels\MonsterSearchViewModel.cs" />
+    <Compile Include="ViewModels\SearchViewModels\SpellSearchViewModel.cs" />
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
+    <Compile Include="ViewModels\ShortRestViewModel.cs" />
+    <Compile Include="ViewModels\SpellsViewModel.cs" />
+    <Compile Include="ViewModels\TablesViewModel.cs" />
+    <Compile Include="Views\AboutView.xaml.cs">
+      <DependentUpon>AboutView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddPackView.xaml.cs">
+      <DependentUpon>AddPackView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddSubtractView.xaml.cs">
+      <DependentUpon>AddSubtractView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdventuresView.xaml.cs">
+      <DependentUpon>AdventuresView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ApplyConditionView.xaml.cs">
+      <DependentUpon>ApplyConditionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ArmorClassView.xaml.cs">
+      <DependentUpon>ArmorClassView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CalculatorView.xaml.cs">
+      <DependentUpon>CalculatorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConfirmationView.xaml.cs">
+      <DependentUpon>ConfirmationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConvertMoneyView.xaml.cs">
+      <DependentUpon>ConvertMoneyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateAttackView.xaml.cs">
+      <DependentUpon>CreateAttackView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateBagView.xaml.cs">
+      <DependentUpon>CreateBagView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateCompanionView.xaml.cs">
+      <DependentUpon>CreateCompanionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateCounterView.xaml.cs">
+      <DependentUpon>CreateCounterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateEncounterMonsterView.xaml.cs">
+      <DependentUpon>CreateEncounterMonsterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateEncounterCharacterView.xaml.cs">
+      <DependentUpon>CreateEncounterCharacterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateEquipmentView.xaml.cs">
+      <DependentUpon>CreateEquipmentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateRandomEncounterView.xaml.cs">
+      <DependentUpon>CreateRandomEncounterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateSpellbookView.xaml.cs">
+      <DependentUpon>CreateSpellbookView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateStatModificationView.xaml.cs">
+      <DependentUpon>CreateStatModificationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DeathSavesView.xaml.cs">
+      <DependentUpon>DeathSavesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DetailsView.xaml.cs">
+      <DependentUpon>DetailsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DiceRollView.xaml.cs">
+      <DependentUpon>DiceRollView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EncountersView.xaml.cs">
+      <DependentUpon>EncountersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ImportView.xaml.cs">
+      <DependentUpon>ImportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InitiativeView.xaml.cs">
+      <DependentUpon>InitiativeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LevelUpView.xaml.cs">
+      <DependentUpon>LevelUpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LocationsView.xaml.cs">
+      <DependentUpon>LocationsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ModalDialog.xaml.cs">
+      <DependentUpon>ModalDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MonstersView.xaml.cs">
+      <DependentUpon>MonstersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MovementView.xaml.cs">
+      <DependentUpon>MovementView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NPCsView.xaml.cs">
+      <DependentUpon>NPCsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PatreonView.xaml.cs">
+      <DependentUpon>PatreonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RacesView.xaml.cs">
+      <DependentUpon>RacesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReferenceView.xaml.cs">
+      <DependentUpon>ReferenceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\ItemSearchView.xaml.cs">
+      <DependentUpon>ItemSearchView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\MonsterSearchView.xaml.cs">
+      <DependentUpon>MonsterSearchView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchViews\SpellSearchView.xaml.cs">
+      <DependentUpon>SpellSearchView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsView.xaml.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShortRestView.xaml.cs">
+      <DependentUpon>ShortRestView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SpellsView.xaml.cs">
+      <DependentUpon>SpellsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TablesView.xaml.cs">
+      <DependentUpon>TablesView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ConvertersResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProficiencyControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ControlTemplates\BorderResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Brushes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ControlTemplates\ButtonResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ControlTemplates\CheckBoxResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ControlTemplates\ComboBoxResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ControlTemplates\ContentControlResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ControlTemplates\ContextMenuResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ControlTemplates\ExpanderResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ControlTemplates\ItemsControlResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ControlTemplates\RadioButtonResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ControlTemplates\TextBlockResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ControlTemplates\TextboxResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ControlTemplates\ToolTipResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ControlTemplates\TreeViewResource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\ItemTemplates\AdventureEditTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\ItemTemplates\AdventureViewTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\ItemTemplates\BackgroundTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ItemTemplates\CharacterEditTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\ItemTemplates\CharacterViewTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\ItemTemplates\ClassTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ItemTemplates\ConditionTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ItemTemplates\EncounterEditTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\ItemTemplates\EncounterViewTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\ItemTemplates\FeatTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ItemTemplates\FeatureTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ItemTemplates\ItemTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ItemTemplates\LevelEditTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ItemTemplates\LocationEditTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\ItemTemplates\LocationViewTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\ItemTemplates\MonsterTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ItemTemplates\NPCEditTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\ItemTemplates\NPCViewTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\ItemTemplates\RaceTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ItemTemplates\RandomTableEditTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\ItemTemplates\RandomTableViewTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\ItemTemplates\SpellTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Themes\Accents\Blue.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\Accents\Green.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\Accents\Orange.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\Accents\Purple.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\Accents\Red.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\Accents\Steel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\DarkTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\LightTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\ParchmentTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AboutView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddPackView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddSubtractView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AdventuresView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ApplyConditionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ArmorClassView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BackgroundsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CalculatorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CharactersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ClassesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ConditionsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ConfirmationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ConvertMoneyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateAttackView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateBagView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateCompanionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateCounterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateEncounterMonsterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CreateEncounterCharacterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateEquipmentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateRandomEncounterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CreateSpellbookView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateStatModificationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DeathSavesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DetailsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DiceRollView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EncountersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FeatsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ImportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InitiativeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ItemsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LevelUpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LocationsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\BackgroundsView.xaml.cs">
+      <DependentUpon>BackgroundsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CharactersView.xaml.cs">
+      <DependentUpon>CharactersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ClassesView.xaml.cs">
+      <DependentUpon>ClassesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConditionsView.xaml.cs">
+      <DependentUpon>ConditionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FeatsView.xaml.cs">
+      <DependentUpon>FeatsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ItemsView.xaml.cs">
+      <DependentUpon>ItemsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Resources\ControlTemplates\ScrollResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ModalDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MonstersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MovementView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NPCsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PatreonView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RacesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ReferenceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SearchViews\ItemSearchView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SearchViews\MonsterSearchView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SearchViews\SpellSearchView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SettingsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ShortRestView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SpellsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TablesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <EmbeddedResource Include="Resources\Documents\CC_Character_Sheet_5e.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\d20_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\d4_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\d4_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\d6_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\d10_64.png" />
+    <Resource Include="Resources\Images\d12_64.png" />
+    <Resource Include="Resources\Images\d8_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\edit_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\calc_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\add_32.png" />
+    <Resource Include="Resources\Images\copy_32.png" />
+    <Resource Include="Resources\Images\delete_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\clear_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\info_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\logo_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\logo_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\export_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\notes_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\convert_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\subtract_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\arrow_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\level_up_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\desktop_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Window\close_24.png" />
+    <Resource Include="Resources\Images\Window\maximize_24.png" />
+    <Resource Include="Resources\Images\Window\minimize_24.png" />
+    <Resource Include="Resources\Images\Window\restore_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Window\close_32.png" />
+    <Resource Include="Resources\Images\Window\maximize_32.png" />
+    <Resource Include="Resources\Images\Window\minimize_32.png" />
+    <Resource Include="Resources\Images\Window\restore_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="desktop_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\ghost_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Licenses\facepunch.steamworks.txt" />
+    <EmbeddedResource Include="Resources\Licenses\freespire.pdf.txt" />
+    <None Include="steam_api64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\onboarding_down_512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\onboarding_left_512.png" />
+    <Resource Include="Resources\Images\onboarding_right_512.png" />
+    <Resource Include="Resources\Images\onboarding_top_512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\onboarding_top_left_512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\patreon_white_64.png" />
+    <Resource Include="Resources\Images\reddit_white_64.png" />
+    <Resource Include="Resources\Images\twitter_white_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\critical_compendium_title_512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Licenses\docx.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\patreon_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Licenses\v5.1_SRD.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\add_pack_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\cc_title_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\LightTheme\add_32.png" />
+    <Resource Include="Resources\Images\LightTheme\calculator_64.png" />
+    <Resource Include="Resources\Images\LightTheme\close_32.png" />
+    <Resource Include="Resources\Images\LightTheme\convert_32.png" />
+    <Resource Include="Resources\Images\LightTheme\copy_32.png" />
+    <Resource Include="Resources\Images\LightTheme\critical_compendium_title_512.png" />
+    <Resource Include="Resources\Images\LightTheme\d100_64.png" />
+    <Resource Include="Resources\Images\LightTheme\d10_64.png" />
+    <Resource Include="Resources\Images\LightTheme\d12_64.png" />
+    <Resource Include="Resources\Images\LightTheme\d20_64.png" />
+    <Resource Include="Resources\Images\LightTheme\d4_64.png" />
+    <Resource Include="Resources\Images\LightTheme\d6_64.png" />
+    <Resource Include="Resources\Images\LightTheme\d8_64.png" />
+    <Resource Include="Resources\Images\LightTheme\delete_32.png" />
+    <Resource Include="Resources\Images\LightTheme\edit_32.png" />
+    <Resource Include="Resources\Images\LightTheme\export_32.png" />
+    <Resource Include="Resources\Images\LightTheme\ghost_32.png" />
+    <Resource Include="Resources\Images\LightTheme\import_32.png" />
+    <Resource Include="Resources\Images\LightTheme\info_32.png" />
+    <Resource Include="Resources\Images\LightTheme\initiative_64.png" />
+    <Resource Include="Resources\Images\LightTheme\level_up_32.png" />
+    <Resource Include="Resources\Images\LightTheme\logo_128.png" />
+    <Resource Include="Resources\Images\LightTheme\logo_24.png" />
+    <Resource Include="Resources\Images\LightTheme\logo_32.png" />
+    <Resource Include="Resources\Images\LightTheme\logo_48.png" />
+    <Resource Include="Resources\Images\LightTheme\logo_96.png" />
+    <Resource Include="Resources\Images\LightTheme\maximize_32.png" />
+    <Resource Include="Resources\Images\LightTheme\minimize_32.png" />
+    <Resource Include="Resources\Images\LightTheme\next_32.png" />
+    <Resource Include="Resources\Images\LightTheme\notes_32.png" />
+    <Resource Include="Resources\Images\LightTheme\pack_32.png" />
+    <Resource Include="Resources\Images\LightTheme\pause_32.png" />
+    <Resource Include="Resources\Images\LightTheme\play_32.png" />
+    <Resource Include="Resources\Images\LightTheme\remove_32.png" />
+    <Resource Include="Resources\Images\LightTheme\restore_32.png" />
+    <Resource Include="Resources\Images\LightTheme\roll_32.png" />
+    <Resource Include="Resources\Images\LightTheme\roll_64.png" />
+    <Resource Include="Resources\Images\LightTheme\roll_96.png" />
+    <Resource Include="Resources\Images\LightTheme\settings_32.png" />
+    <Resource Include="Resources\Images\LightTheme\stop_32.png" />
+    <Resource Include="Resources\Images\LightTheme\theme_32.png" />
+    <Resource Include="Resources\Images\LightTheme\up_arrow_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\checkbox.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\checkbox_checked.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\d100_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\import_32.png" />
+    <Resource Include="Resources\Images\initiative_64.png" />
+    <Resource Include="Resources\Images\next_32.png" />
+    <Resource Include="Resources\Images\pack_32.png" />
+    <Resource Include="Resources\Images\pause_32.png" />
+    <Resource Include="Resources\Images\play_32.png" />
+    <Resource Include="Resources\Images\roll_32.png" />
+    <Resource Include="Resources\Images\roll_64.png" />
+    <Resource Include="Resources\Images\settings_32.png" />
+    <Resource Include="Resources\Images\stop_32.png" />
+    <Resource Include="Resources\Images\theme_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CritCompendiumInfrastructure\CritCompendiumInfrastructure.csproj">
+      <Project>{27a794d4-c1bf-4aef-831e-461b2bf30c4a}</Project>
+      <Name>CritCompendiumInfrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

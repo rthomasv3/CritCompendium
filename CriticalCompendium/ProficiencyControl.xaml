@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="CritCompendium.ProficiencyControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:CritCompendium"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="16"
+             d:DesignWidth="16"
+             mc:Ignorable="d">
+    <Border Width="16"
+            Height="16"
+            HorizontalAlignment="Left"
+            Background="{DynamicResource _navHoverBackgroundBrush}"
+            MouseDown="Border_MouseDown"
+            Style="{DynamicResource _interactiveborderStyle}">
+        <TextBlock x:Name="_displayText"
+                   Margin="0,-1,0,0"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Foreground="{DynamicResource _primaryTextBrush}" />
+    </Border>
+</UserControl>

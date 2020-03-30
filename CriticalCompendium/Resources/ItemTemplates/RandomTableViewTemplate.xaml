@@ -1,0 +1,114 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:CritCompendium.Resources.ItemTemplates"
+                    xmlns:ovm="clr-namespace:CritCompendium.ViewModels.ObjectViewModels">
+    <DataTemplate DataType="{x:Type ovm:RandomTableViewModel}">
+        <StackPanel>
+            <Grid Margin="5,10,0,2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0"
+                           Margin="0,0,0,2"
+                           FontSize="10"
+                           Foreground="{DynamicResource _secondaryTextBrush}"
+                           Text="{Binding Die}" />
+
+                <TextBlock Grid.Column="1"
+                           Margin="0,0,0,2"
+                           FontSize="10"
+                           Foreground="{DynamicResource _secondaryTextBrush}"
+                           Text="{Binding Header}" />
+            </Grid>
+
+            <ItemsControl AlternationCount="2" ItemsSource="{Binding Rows}">
+                <ItemsControl.Style>
+                    <Style TargetType="ItemsControl">
+                        <Style.Triggers>
+                            <Trigger Property="HasItems" Value="False">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate>
+                                            <TextBlock Margin="0,8,0,5"
+                                                       Foreground="{DynamicResource _secondaryTextBrush}"
+                                                       Text="No Rows Found" />
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ItemsControl.Style>
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border x:Name="_rowBorder" BorderThickness="1">
+                            <Border.Style>
+                                <Style TargetType="Border">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Selected}" Value="True">
+                                            <Setter Property="BorderBrush" Value="{DynamicResource _accentBrush}" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+
+                            <Grid Margin="5,2,5,2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock x:Name="_minMax"
+                                           Grid.Column="0"
+                                           VerticalAlignment="Center"
+                                           Foreground="{DynamicResource _primaryTextBrush}"
+                                           Text="{Binding MinMaxDisplay}" />
+
+                                <TextBlock x:Name="_value"
+                                           Grid.Column="1"
+                                           VerticalAlignment="Center"
+                                           Foreground="{DynamicResource _primaryTextBrush}"
+                                           Text="{Binding Value}"
+                                           TextWrapping="Wrap" />
+
+                                <Button Name="CopyButton"
+                                        Grid.Column="2"
+                                        Margin="2,0,5,0"
+                                        Padding="2"
+                                        Command="{Binding DataContext.CopyValueCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                                        CommandParameter="{Binding}"
+                                        IsTabStop="False"
+                                        Style="{DynamicResource _secondaryButtonStyle}"
+                                        ToolTip="Copy Row Value"
+                                        Visibility="Hidden">
+                                    <Image Width="16"
+                                           Height="16"
+                                           VerticalAlignment="Center"
+                                           Source="{DynamicResource _copyImage}" />
+                                </Button>
+                            </Grid>
+                        </Border>
+
+                        <DataTemplate.Triggers>
+                            <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                                <Setter TargetName="_rowBorder" Property="Background" Value="{DynamicResource _tableAlternateBackground}" />
+                                <Setter TargetName="_minMax" Property="Foreground" Value="{DynamicResource _tableAlternateForground}" />
+                                <Setter TargetName="_value" Property="Foreground" Value="{DynamicResource _tableAlternateForground}" />
+                            </Trigger>
+                            <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                                <Setter TargetName="_rowBorder" Property="Background" Value="Transparent" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="CopyButton" Property="Visibility" Value="Visible" />
+                            </Trigger>
+                        </DataTemplate.Triggers>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+    </DataTemplate>
+</ResourceDictionary>

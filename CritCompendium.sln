@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29905.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CritCompendiumInfrastructure", "CritCompendiumInfrastructure\CritCompendiumInfrastructure.csproj", "{27A794D4-C1BF-4AEF-831E-461B2BF30C4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CritCompendium", "CriticalCompendium\CritCompendium.csproj", "{CCBC795F-4959-47E9-AD92-FF6C0703734A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27A794D4-C1BF-4AEF-831E-461B2BF30C4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27A794D4-C1BF-4AEF-831E-461B2BF30C4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27A794D4-C1BF-4AEF-831E-461B2BF30C4A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{27A794D4-C1BF-4AEF-831E-461B2BF30C4A}.Debug|x64.Build.0 = Debug|Any CPU
+		{27A794D4-C1BF-4AEF-831E-461B2BF30C4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27A794D4-C1BF-4AEF-831E-461B2BF30C4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27A794D4-C1BF-4AEF-831E-461B2BF30C4A}.Release|x64.ActiveCfg = Release|Any CPU
+		{27A794D4-C1BF-4AEF-831E-461B2BF30C4A}.Release|x64.Build.0 = Release|Any CPU
+		{CCBC795F-4959-47E9-AD92-FF6C0703734A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCBC795F-4959-47E9-AD92-FF6C0703734A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCBC795F-4959-47E9-AD92-FF6C0703734A}.Debug|x64.ActiveCfg = Debug|x64
+		{CCBC795F-4959-47E9-AD92-FF6C0703734A}.Debug|x64.Build.0 = Debug|x64
+		{CCBC795F-4959-47E9-AD92-FF6C0703734A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCBC795F-4959-47E9-AD92-FF6C0703734A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCBC795F-4959-47E9-AD92-FF6C0703734A}.Release|x64.ActiveCfg = Release|x64
+		{CCBC795F-4959-47E9-AD92-FF6C0703734A}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {90C83705-AE57-4275-A492-098F2ED3A45E}
+	EndGlobalSection
+EndGlobal
