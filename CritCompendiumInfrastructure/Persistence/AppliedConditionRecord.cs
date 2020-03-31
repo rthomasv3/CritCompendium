@@ -15,7 +15,7 @@ namespace CriticalCompendiumInfrastructure.Persistence
       /// <summary>
       /// Gets or sets condition model id.
       /// </summary>
-      public Guid ConditionModel { get; set; }
+      public Guid ConditionId { get; set; }
 
       /// <summary>
       /// Gets or sets name.

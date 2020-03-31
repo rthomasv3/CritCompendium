@@ -66,6 +66,7 @@ namespace CriticalCompendiumInfrastructure.Persistence
       /// Gets or sets languages.
       /// </summary>
       public List<LanguageRecord> Languages { get; set; }
+
       /// <summary>
       /// Gets or sets monsters.
       /// </summary>

@@ -60,7 +60,7 @@ namespace CriticalCompendiumInfrastructure.Models
 		}
 
 		/// <summary>
-		/// Gets or sets modifierCategory
+		/// Gets or sets modifier category
 		/// </summary>
 		public ModifierCategory ModifierCategory
 		{

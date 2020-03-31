@@ -4,9 +4,9 @@ using System.Collections.Generic;
 namespace CriticalCompendiumInfrastructure.Persistence
 {
 	/// <summary>
-	/// Class used to store feat information.
+	/// Class used to store monster action information.
 	/// </summary>
-	public sealed class FeatRecord
+	public sealed class MonsterActionRecord
    {
 		/// <summary>
 		/// Gets or sets id.
@@ -19,18 +19,18 @@ namespace CriticalCompendiumInfrastructure.Persistence
 		public string Name { get; set; }
 
 		/// <summary>
-		/// Gets or sets prerequisite.
-		/// </summary>
-		public string Prerequisite { get; set; }
-
-		/// <summary>
 		/// Gets or sets text.
 		/// </summary>
 		public List<string> TextCollection { get; set; }
 
 		/// <summary>
-		/// Gets or sets modifiers.
+		/// Gets or sets attacks.
 		/// </summary>
-		public List<ModifierRecord> Modifiers { get; set; }
+		public List<MonsterAttackRecord> Attacks { get; set; }
+
+		/// <summary>
+		/// Gets or sets is legendary.
+		/// </summary>
+		public bool IsLegendary { get; set; }
 	}
 }

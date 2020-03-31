@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using CriticalCompendiumInfrastructure.Enums;
 
 namespace CriticalCompendiumInfrastructure.Persistence
 {
 	/// <summary>
-	/// Class used to store feat information.
+	/// Class used to store trait information.
 	/// </summary>
-	public sealed class FeatRecord
+	public sealed class TraitRecord
    {
 		/// <summary>
 		/// Gets or sets id.
@@ -14,23 +15,18 @@ namespace CriticalCompendiumInfrastructure.Persistence
 		public Guid Id { get; set; }
 
 		/// <summary>
-		/// Gets or sets name.
+		/// Gets or sets name
 		/// </summary>
 		public string Name { get; set; }
 
 		/// <summary>
-		/// Gets or sets prerequisite.
-		/// </summary>
-		public string Prerequisite { get; set; }
-
-		/// <summary>
-		/// Gets or sets text.
+		/// Gets or sets text collection.
 		/// </summary>
 		public List<string> TextCollection { get; set; }
 
 		/// <summary>
-		/// Gets or sets modifiers.
+		/// Gets or sets trait type.
 		/// </summary>
-		public List<ModifierRecord> Modifiers { get; set; }
+		public TraitType TraitType { get; set; }
 	}
 }

@@ -176,7 +176,6 @@ namespace CriticalCompendiumInfrastructure.Models
 			set { _xml = value; }
 		}
 
-
 		#endregion
 	}
 }
