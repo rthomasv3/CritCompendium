@@ -1002,5 +1002,8 @@
   <ItemGroup>
     <Resource Include="Resources\Images\LightTheme\crit_compendium_title_512.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\banner_768.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
