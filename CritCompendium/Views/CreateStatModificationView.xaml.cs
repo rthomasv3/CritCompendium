@@ -16,24 +16,24 @@ using CritCompendium.ViewModels.ObjectViewModels;
 
 namespace CritCompendium.Views
 {
-    /// <summary>
-    /// Interaction logic for CreateStatModificationView.xaml
-    /// </summary>
-    public partial class CreateStatModificationView : UserControl
-    {
-        public CreateStatModificationView(StatModificationViewModel viewModel)
-        {
-            InitializeComponent();
+   /// <summary>
+   /// Interaction logic for CreateStatModificationView.xaml
+   /// </summary>
+   public partial class CreateStatModificationView : UserControl
+   {
+      public CreateStatModificationView(StatModificationViewModel viewModel)
+      {
+         InitializeComponent();
 
-            DataContext = viewModel;
-        }
+         DataContext = viewModel;
+      }
 
-        /// <summary>
-        /// Gets view model
-        /// </summary>
-        public StatModificationViewModel ViewModel
-        {
-            get { return DataContext as StatModificationViewModel; }
-        }
-    }
+      /// <summary>
+      /// Gets view model
+      /// </summary>
+      public StatModificationViewModel ViewModel
+      {
+         get { return DataContext as StatModificationViewModel; }
+      }
+   }
 }

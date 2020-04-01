@@ -6,176 +6,176 @@ using CritCompendiumInfrastructure.Services;
 
 namespace CritCompendium.ViewModels.ObjectViewModels
 {
-    public sealed class NPCViewModel : NotifyPropertyChanged
-    {
-        #region Fields
+   public sealed class NPCViewModel : NotifyPropertyChanged
+   {
+      #region Fields
 
-        private readonly StringService _stringService = DependencyResolver.Resolve<StringService>();
+      private readonly StringService _stringService = DependencyResolver.Resolve<StringService>();
 
-        private readonly NPCModel _npcModel;
-        
-        private string _name;
-        private string _tags;
-        private string _occupation;
-        private string _backstory;
-        private string _ideal;
-        private string _bond;
-        private string _flaw;
-        private string _appearance;
-        private string _abilities;
-        private string _mannerism;
-        private string _interactions;
-        private string _usefulKnowledge;
+      private readonly NPCModel _npcModel;
 
-        #endregion
+      private string _name;
+      private string _tags;
+      private string _occupation;
+      private string _backstory;
+      private string _ideal;
+      private string _bond;
+      private string _flaw;
+      private string _appearance;
+      private string _abilities;
+      private string _mannerism;
+      private string _interactions;
+      private string _usefulKnowledge;
 
-        #region Constructor
+      #endregion
 
-        /// <summary>
-        /// Creates a new instance of <see cref="NPCViewModel"/>
-        /// </summary>
-        public NPCViewModel(NPCModel npcModel)
-        {
-            _npcModel = npcModel;
+      #region Constructor
 
-            if (!String.IsNullOrWhiteSpace(npcModel.Name))
-            {
-                _name = npcModel.Name;
-            }
-            else
-            {
-                _name = "Unknown Name";
-            }
+      /// <summary>
+      /// Creates a new instance of <see cref="NPCViewModel"/>
+      /// </summary>
+      public NPCViewModel(NPCModel npcModel)
+      {
+         _npcModel = npcModel;
 
-            if (_npcModel.Tags.Any())
-            {
-                _tags = String.Join(", ", _npcModel.Tags);
-            }
-            else
-            {
-                _tags = "None";
-            }
+         if (!String.IsNullOrWhiteSpace(npcModel.Name))
+         {
+            _name = npcModel.Name;
+         }
+         else
+         {
+            _name = "Unknown Name";
+         }
 
-            _occupation = _stringService.UnknownIfNullOrEmpty(_npcModel.Occupation);
-            _backstory = _stringService.UnknownIfNullOrEmpty(_npcModel.Backstory);
-            _ideal = _stringService.UnknownIfNullOrEmpty(_npcModel.Ideal);
-            _bond = _stringService.UnknownIfNullOrEmpty(_npcModel.Bond);
-            _flaw = _stringService.UnknownIfNullOrEmpty(_npcModel.Flaw);
-            _appearance = _stringService.UnknownIfNullOrEmpty(_npcModel.Appearance);
-            _abilities = _stringService.UnknownIfNullOrEmpty(_npcModel.Abilities);
-            _mannerism = _stringService.UnknownIfNullOrEmpty(_npcModel.Mannerism);
-            _interactions = _stringService.UnknownIfNullOrEmpty(_npcModel.Interactions);
-            _usefulKnowledge = _stringService.UnknownIfNullOrEmpty(_npcModel.UsefulKnowledge);
-        }
+         if (_npcModel.Tags.Any())
+         {
+            _tags = String.Join(", ", _npcModel.Tags);
+         }
+         else
+         {
+            _tags = "None";
+         }
 
-        #endregion
+         _occupation = _stringService.UnknownIfNullOrEmpty(_npcModel.Occupation);
+         _backstory = _stringService.UnknownIfNullOrEmpty(_npcModel.Backstory);
+         _ideal = _stringService.UnknownIfNullOrEmpty(_npcModel.Ideal);
+         _bond = _stringService.UnknownIfNullOrEmpty(_npcModel.Bond);
+         _flaw = _stringService.UnknownIfNullOrEmpty(_npcModel.Flaw);
+         _appearance = _stringService.UnknownIfNullOrEmpty(_npcModel.Appearance);
+         _abilities = _stringService.UnknownIfNullOrEmpty(_npcModel.Abilities);
+         _mannerism = _stringService.UnknownIfNullOrEmpty(_npcModel.Mannerism);
+         _interactions = _stringService.UnknownIfNullOrEmpty(_npcModel.Interactions);
+         _usefulKnowledge = _stringService.UnknownIfNullOrEmpty(_npcModel.UsefulKnowledge);
+      }
 
-        #region Properties
+      #endregion
 
-        /// <summary>
-        /// Gets npc model
-        /// </summary>
-        public NPCModel NPCModel
-        {
-            get { return _npcModel; }
-        }
-        
-        /// <summary>
-        /// Gets name
-        /// </summary>
-        public string Name
-        {
-            get { return _name; }
-        }
+      #region Properties
 
-        /// <summary>
-        /// Gets tags
-        /// </summary>
-        public string Tags
-        {
-            get { return _tags; }
-        }
+      /// <summary>
+      /// Gets npc model
+      /// </summary>
+      public NPCModel NPCModel
+      {
+         get { return _npcModel; }
+      }
 
-        /// <summary>
-        /// Gets occupation
-        /// </summary>
-        public string Occupation
-        {
-            get { return _occupation; }
-        }
+      /// <summary>
+      /// Gets name
+      /// </summary>
+      public string Name
+      {
+         get { return _name; }
+      }
 
-        /// <summary>
-        /// Gets backstory
-        /// </summary>
-        public string Backstory
-        {
-            get { return _backstory; }
-        }
+      /// <summary>
+      /// Gets tags
+      /// </summary>
+      public string Tags
+      {
+         get { return _tags; }
+      }
 
-        /// <summary>
-        /// Gets ideal
-        /// </summary>
-        public string Ideal
-        {
-            get { return _ideal; }
-        }
+      /// <summary>
+      /// Gets occupation
+      /// </summary>
+      public string Occupation
+      {
+         get { return _occupation; }
+      }
 
-        /// <summary>
-        /// Gets bond
-        /// </summary>
-        public string Bond
-        {
-            get { return _bond; }
-        }
+      /// <summary>
+      /// Gets backstory
+      /// </summary>
+      public string Backstory
+      {
+         get { return _backstory; }
+      }
 
-        /// <summary>
-        /// Gets flaw
-        /// </summary>
-        public string Flaw
-        {
-            get { return _flaw; }
-        }
+      /// <summary>
+      /// Gets ideal
+      /// </summary>
+      public string Ideal
+      {
+         get { return _ideal; }
+      }
 
-        /// <summary>
-        /// Gets appearance
-        /// </summary>
-        public string Appearance
-        {
-            get { return _appearance; }
-        }
+      /// <summary>
+      /// Gets bond
+      /// </summary>
+      public string Bond
+      {
+         get { return _bond; }
+      }
 
-        /// <summary>
-        /// Gets abilities
-        /// </summary>
-        public string Abilities
-        {
-            get { return _abilities; }
-        }
+      /// <summary>
+      /// Gets flaw
+      /// </summary>
+      public string Flaw
+      {
+         get { return _flaw; }
+      }
 
-        /// <summary>
-        /// Gets mannerism
-        /// </summary>
-        public string Mannerism
-        {
-            get { return _mannerism; }
-        }
+      /// <summary>
+      /// Gets appearance
+      /// </summary>
+      public string Appearance
+      {
+         get { return _appearance; }
+      }
 
-        /// <summary>
-        /// Gets interactions
-        /// </summary>
-        public string Interactions
-        {
-            get { return _interactions; }
-        }
+      /// <summary>
+      /// Gets abilities
+      /// </summary>
+      public string Abilities
+      {
+         get { return _abilities; }
+      }
 
-        /// <summary>
-        /// Gets useful knowledge
-        /// </summary>
-        public string UsefulKnowledge
-        {
-            get { return _usefulKnowledge; }
-        }
+      /// <summary>
+      /// Gets mannerism
+      /// </summary>
+      public string Mannerism
+      {
+         get { return _mannerism; }
+      }
 
-        #endregion
-    }
+      /// <summary>
+      /// Gets interactions
+      /// </summary>
+      public string Interactions
+      {
+         get { return _interactions; }
+      }
+
+      /// <summary>
+      /// Gets useful knowledge
+      /// </summary>
+      public string UsefulKnowledge
+      {
+         get { return _usefulKnowledge; }
+      }
+
+      #endregion
+   }
 }

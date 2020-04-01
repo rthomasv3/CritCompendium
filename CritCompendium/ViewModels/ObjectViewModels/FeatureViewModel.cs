@@ -3,81 +3,81 @@ using CritCompendiumInfrastructure.Models;
 
 namespace CritCompendium.ViewModels.ObjectViewModels
 {
-	public sealed class FeatureViewModel
-	{
-		#region Events
+   public sealed class FeatureViewModel
+   {
+      #region Events
 
-		public event EventHandler IsSelectedChanged;
+      public event EventHandler IsSelectedChanged;
 
-		#endregion
+      #endregion
 
-		#region Fields
+      #region Fields
 
-		private readonly FeatureModel _featureModel;
-		private bool _selected;
+      private readonly FeatureModel _featureModel;
+      private bool _selected;
 
-		#endregion
+      #endregion
 
-		#region Constructor
+      #region Constructor
 
-		/// <summary>
-		/// Creates an instance of <see cref="FeatureViewModel"/>
-		/// </summary>
-		public FeatureViewModel(FeatureModel featureModel)
-		{
-			_featureModel = featureModel;
-			_selected = !_featureModel.Optional;
-		}
+      /// <summary>
+      /// Creates an instance of <see cref="FeatureViewModel"/>
+      /// </summary>
+      public FeatureViewModel(FeatureModel featureModel)
+      {
+         _featureModel = featureModel;
+         _selected = !_featureModel.Optional;
+      }
 
-		#endregion
+      #endregion
 
-		#region Properties
+      #region Properties
 
-		/// <summary>
-		/// Gets feature model
-		/// </summary>
-		public FeatureModel FeatureModel
-		{
-			get { return _featureModel; }
-		}
+      /// <summary>
+      /// Gets feature model
+      /// </summary>
+      public FeatureModel FeatureModel
+      {
+         get { return _featureModel; }
+      }
 
-		/// <summary>
-		/// Gets name
-		/// </summary>
-		public string Name
-		{
-			get { return _featureModel.Name; }
-		}
+      /// <summary>
+      /// Gets name
+      /// </summary>
+      public string Name
+      {
+         get { return _featureModel.Name; }
+      }
 
-		/// <summary>
-		/// Gets text
-		/// </summary>
-		public string Text
-		{
-			get { return _featureModel.Text; }
-		}
+      /// <summary>
+      /// Gets text
+      /// </summary>
+      public string Text
+      {
+         get { return _featureModel.Text; }
+      }
 
-		/// <summary>
-		/// Gets or sets is selected
-		/// </summary>
-		public bool IsSelected
-		{
-			get { return _selected; }
-			set
-			{
-				_selected = value;
-				IsSelectedChanged?.Invoke(this, EventArgs.Empty);
-			}
-		}
+      /// <summary>
+      /// Gets or sets is selected
+      /// </summary>
+      public bool IsSelected
+      {
+         get { return _selected; }
+         set
+         {
+            _selected = value;
+            IsSelectedChanged?.Invoke(this, EventArgs.Empty);
+         }
+      }
 
-		/// <summary>
-		/// Gets or is optional
-		/// </summary>
-		public bool IsOptional
-		{
-			get { return _featureModel.Optional; }
-		}
+      /// <summary>
+      /// Gets or is optional
+      /// </summary>
+      public bool IsOptional
+      {
+         get { return _featureModel.Optional; }
+      }
 
-		#endregion
-	}
+      #endregion
+   }
 }

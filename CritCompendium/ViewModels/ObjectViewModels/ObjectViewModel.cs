@@ -4,82 +4,82 @@ using CritCompendium.ViewModels.DialogViewModels;
 
 namespace CritCompendium.ViewModels.ObjectViewModels
 {
-    public class ObjectViewModel : NotifyPropertyChanged, IConfirmation, ICopyInformation
-    {
-        #region Events
+   public class ObjectViewModel : NotifyPropertyChanged, IConfirmation, ICopyInformation
+   {
+      #region Events
 
-        public event EventHandler AcceptSelected;
-        public event EventHandler RejectSelected;
-        public event EventHandler CancelSelected;
+      public event EventHandler AcceptSelected;
+      public event EventHandler RejectSelected;
+      public event EventHandler CancelSelected;
 
-        #endregion
+      #endregion
 
-        #region Fields
+      #region Fields
 
-        protected readonly ICommand _acceptCommand;
-        protected readonly ICommand _rejectCommand;
-        protected readonly ICommand _copyInformationCommand;
+      protected readonly ICommand _acceptCommand;
+      protected readonly ICommand _rejectCommand;
+      protected readonly ICommand _copyInformationCommand;
 
-        #endregion
+      #endregion
 
-        #region Constructor
+      #region Constructor
 
-        /// <summary>
-        /// Creates an instance of <see cref="ObjectViewModel"/>
-        /// </summary>
-        public ObjectViewModel()
-        {
-            _acceptCommand = new RelayCommand(obj => true, obj => OnAccept());
-            _rejectCommand = new RelayCommand(obj => true, obj => OnReject());
-        }
+      /// <summary>
+      /// Creates an instance of <see cref="ObjectViewModel"/>
+      /// </summary>
+      public ObjectViewModel()
+      {
+         _acceptCommand = new RelayCommand(obj => true, obj => OnAccept());
+         _rejectCommand = new RelayCommand(obj => true, obj => OnReject());
+      }
 
-        #endregion
+      #endregion
 
-        #region Properties
+      #region Properties
 
-        /// <summary>
-        /// Gets accept command
-        /// </summary>
-        public ICommand AcceptCommand
-        {
-            get { return _acceptCommand; }
-        }
+      /// <summary>
+      /// Gets accept command
+      /// </summary>
+      public ICommand AcceptCommand
+      {
+         get { return _acceptCommand; }
+      }
 
-        /// <summary>
-        /// Gets reject command
-        /// </summary>
-        public ICommand RejectCommand
-        {
-            get { return _rejectCommand; }
-        }
+      /// <summary>
+      /// Gets reject command
+      /// </summary>
+      public ICommand RejectCommand
+      {
+         get { return _rejectCommand; }
+      }
 
-        /// <summary>
-        /// Gets copy information command
-        /// </summary>
-        public ICommand CopyInformationCommand
-        {
-            get { return _copyInformationCommand; }
-        }
+      /// <summary>
+      /// Gets copy information command
+      /// </summary>
+      public ICommand CopyInformationCommand
+      {
+         get { return _copyInformationCommand; }
+      }
 
-        #endregion
+      #endregion
 
-        #region Protected Methods
+      #region Protected Methods
 
-        protected void Accept()
-        {
-            AcceptSelected?.Invoke(this, EventArgs.Empty);
-        }
+      protected void Accept()
+      {
+         AcceptSelected?.Invoke(this, EventArgs.Empty);
+      }
 
-        protected virtual void OnAccept()
-        {
-            AcceptSelected?.Invoke(this, EventArgs.Empty);
-        }
+      protected virtual void OnAccept()
+      {
+         AcceptSelected?.Invoke(this, EventArgs.Empty);
+      }
 
-        protected virtual void OnReject()
-        {
-            RejectSelected?.Invoke(this, EventArgs.Empty);
-        }
+      protected virtual void OnReject()
+      {
+         RejectSelected?.Invoke(this, EventArgs.Empty);
+      }
 
-        #endregion
-    }
+      #endregion
+   }
 }

@@ -1,8 +1,8 @@
 ﻿namespace CritCompendiumInfrastructure.Enums
 {
-    public enum EncounterSortOption
-    {
-        Name_Ascending,
-        Name_Descending
-    }
+   public enum EncounterSortOption
+   {
+      Name_Ascending,
+      Name_Descending
+   }
 }

@@ -1,155 +1,151 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace CritCompendium.ViewModels.DialogViewModels
 {
-	public sealed class ConfirmationViewModel : NotifyPropertyChanged, IConfirmation
-	{
-		#region Events
-		
-		public event EventHandler AcceptSelected;
-		public event EventHandler RejectSelected;
-		public event EventHandler CancelSelected;
+   public sealed class ConfirmationViewModel : NotifyPropertyChanged, IConfirmation
+   {
+      #region Events
 
-		#endregion
+      public event EventHandler AcceptSelected;
+      public event EventHandler RejectSelected;
+      public event EventHandler CancelSelected;
 
-		#region Fields
-		
-		private readonly string _body;
-		private readonly string _accept;
-		private readonly string _reject;
-		private readonly string _cancel;
+      #endregion
 
-		private readonly ICommand _acceptCommand;
-		private readonly ICommand _rejectCommand;
-		private readonly ICommand _cancelCommand;
+      #region Fields
 
-		#endregion
+      private readonly string _body;
+      private readonly string _accept;
+      private readonly string _reject;
+      private readonly string _cancel;
 
-		#region Constructor
+      private readonly ICommand _acceptCommand;
+      private readonly ICommand _rejectCommand;
+      private readonly ICommand _cancelCommand;
 
-		/// <summary>
-		/// Creates an instance of <see cref="ConfirmationViewModel"/>
-		/// </summary>
-		public ConfirmationViewModel(string body, string accept, string reject, string cancel)
-		{
-			_body = body;
-			_accept = accept;
-			_reject = reject;
-			_cancel = cancel;
+      #endregion
 
-			_acceptCommand = new RelayCommand(obj => true, obj => OnAccept());
-			_rejectCommand = new RelayCommand(obj => true, obj => OnReject());
-			_cancelCommand = new RelayCommand(obj => true, obj => OnCancel());
-		}
+      #region Constructor
 
-		#endregion
+      /// <summary>
+      /// Creates an instance of <see cref="ConfirmationViewModel"/>
+      /// </summary>
+      public ConfirmationViewModel(string body, string accept, string reject, string cancel)
+      {
+         _body = body;
+         _accept = accept;
+         _reject = reject;
+         _cancel = cancel;
 
-		#region Properties
+         _acceptCommand = new RelayCommand(obj => true, obj => OnAccept());
+         _rejectCommand = new RelayCommand(obj => true, obj => OnReject());
+         _cancelCommand = new RelayCommand(obj => true, obj => OnCancel());
+      }
 
-		/// <summary>
-		/// Gets body
-		/// </summary>
-		public string Body
-		{
-			get { return _body; }
-		}
+      #endregion
 
-		/// <summary>
-		/// Gets accept
-		/// </summary>
-		public string Accept
-		{
-			get { return _accept; }
-		}
+      #region Properties
 
-		/// <summary>
-		/// Gets reject
-		/// </summary>
-		public string Reject
-		{
-			get { return _reject; }
-		}
+      /// <summary>
+      /// Gets body
+      /// </summary>
+      public string Body
+      {
+         get { return _body; }
+      }
 
-		/// <summary>
-		/// Gets cancel
-		/// </summary>
-		public string Cancel
-		{
-			get { return _cancel; }
-		}
+      /// <summary>
+      /// Gets accept
+      /// </summary>
+      public string Accept
+      {
+         get { return _accept; }
+      }
 
-		/// <summary>
-		/// True if accept should be visible
-		/// </summary>
-		public bool AcceptVisible
-		{
-			get { return _accept != null; }
-		}
+      /// <summary>
+      /// Gets reject
+      /// </summary>
+      public string Reject
+      {
+         get { return _reject; }
+      }
 
-		/// <summary>
-		/// True if reject should be visible
-		/// </summary>
-		public bool RejectVisible
-		{
-			get { return _reject != null; }
-		}
+      /// <summary>
+      /// Gets cancel
+      /// </summary>
+      public string Cancel
+      {
+         get { return _cancel; }
+      }
 
-		/// <summary>
-		/// True if cancel should be visible
-		/// </summary>
-		public bool CancelVisible
-		{
-			get { return _cancel != null; }
-		}
+      /// <summary>
+      /// True if accept should be visible
+      /// </summary>
+      public bool AcceptVisible
+      {
+         get { return _accept != null; }
+      }
 
-		/// <summary>
-		/// Gets acceptCommand
-		/// </summary>
-		public ICommand AcceptCommand
-		{
-			get { return _acceptCommand; }
-		}
+      /// <summary>
+      /// True if reject should be visible
+      /// </summary>
+      public bool RejectVisible
+      {
+         get { return _reject != null; }
+      }
 
-		/// <summary>
-		/// Gets rejectCommand
-		/// </summary>
-		public ICommand RejectCommand
-		{
-			get { return _rejectCommand; }
-		}
+      /// <summary>
+      /// True if cancel should be visible
+      /// </summary>
+      public bool CancelVisible
+      {
+         get { return _cancel != null; }
+      }
 
-		/// <summary>
-		/// Gets cancelCommand
-		/// </summary>
-		public ICommand CancelCommand
-		{
-			get { return _cancelCommand; }
-		}
+      /// <summary>
+      /// Gets acceptCommand
+      /// </summary>
+      public ICommand AcceptCommand
+      {
+         get { return _acceptCommand; }
+      }
 
-		#endregion
+      /// <summary>
+      /// Gets rejectCommand
+      /// </summary>
+      public ICommand RejectCommand
+      {
+         get { return _rejectCommand; }
+      }
 
-		#region Non-Public Methods
+      /// <summary>
+      /// Gets cancelCommand
+      /// </summary>
+      public ICommand CancelCommand
+      {
+         get { return _cancelCommand; }
+      }
 
-		private void OnAccept()
-		{
-			AcceptSelected?.Invoke(this, EventArgs.Empty);
-		}
+      #endregion
 
-		private void OnReject()
-		{
-			RejectSelected?.Invoke(this, EventArgs.Empty);
-		}
+      #region Non-Public Methods
 
-		private void OnCancel()
-		{
-			CancelSelected?.Invoke(this, EventArgs.Empty);
-		}
+      private void OnAccept()
+      {
+         AcceptSelected?.Invoke(this, EventArgs.Empty);
+      }
 
-		#endregion
-	}
+      private void OnReject()
+      {
+         RejectSelected?.Invoke(this, EventArgs.Empty);
+      }
+
+      private void OnCancel()
+      {
+         CancelSelected?.Invoke(this, EventArgs.Empty);
+      }
+
+      #endregion
+   }
 }

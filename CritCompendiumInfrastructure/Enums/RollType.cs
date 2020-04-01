@@ -1,9 +1,9 @@
 ﻿namespace CritCompendiumInfrastructure.Enums
 {
-    public enum RollType
-    {
-        Random,
-        Minimum,
-        Maximum,
-    }
+   public enum RollType
+   {
+      Random,
+      Minimum,
+      Maximum,
+   }
 }

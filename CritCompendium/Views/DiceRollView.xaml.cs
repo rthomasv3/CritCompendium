@@ -5,33 +5,33 @@ using CritCompendiumInfrastructure;
 
 namespace CritCompendium.Views
 {
-    /// <summary>
-    /// Interaction logic for DiceRollView.xaml
-    /// </summary>
-    public partial class DiceRollView : UserControl
-	{
-		private readonly DiceRollViewModel _viewModel = DependencyResolver.Resolve<DiceRollViewModel>();
+   /// <summary>
+   /// Interaction logic for DiceRollView.xaml
+   /// </summary>
+   public partial class DiceRollView : UserControl
+   {
+      private readonly DiceRollViewModel _viewModel = DependencyResolver.Resolve<DiceRollViewModel>();
 
-		public DiceRollView()
-        {
-            InitializeComponent();
+      public DiceRollView()
+      {
+         InitializeComponent();
 
-            DataContext = _viewModel;
+         DataContext = _viewModel;
 
-			Loaded += DiceRollView_Loaded;
-		}
+         Loaded += DiceRollView_Loaded;
+      }
 
-		public DiceRollViewModel ViewModel
-		{
-			get { return _viewModel; }
-		}
+      public DiceRollViewModel ViewModel
+      {
+         get { return _viewModel; }
+      }
 
-		private void DiceRollView_Loaded(object sender, RoutedEventArgs e)
-		{
-			_viewModel.RollCommand.Execute(null);
+      private void DiceRollView_Loaded(object sender, RoutedEventArgs e)
+      {
+         _viewModel.RollCommand.Execute(null);
 
-			RoutedEventArgs routedEventArgs = new RoutedEventArgs(Button.ClickEvent);
-			_rollButton.RaiseEvent(routedEventArgs);
-		}
-	}
+         RoutedEventArgs routedEventArgs = new RoutedEventArgs(Button.ClickEvent);
+         _rollButton.RaiseEvent(routedEventArgs);
+      }
+   }
 }

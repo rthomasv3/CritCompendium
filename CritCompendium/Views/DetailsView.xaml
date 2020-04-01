@@ -6,9 +6,9 @@
              Width="700"
              Height="600"
              mc:Ignorable="d">
-    <Grid>
-        <ScrollViewer>
-            <ContentControl Margin="15,0,15,15" Content="{Binding DetailsViewModel}" />
-        </ScrollViewer>
-    </Grid>
+   <Grid>
+      <ScrollViewer>
+         <ContentControl Margin="15,0,15,15" Content="{Binding DetailsViewModel}" />
+      </ScrollViewer>
+   </Grid>
 </UserControl>

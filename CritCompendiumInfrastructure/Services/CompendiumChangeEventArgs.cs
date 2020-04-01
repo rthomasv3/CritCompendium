@@ -4,36 +4,36 @@ using System.Linq;
 
 namespace CritCompendiumInfrastructure.Services
 {
-    public class CompendiumChangeEventArgs : EventArgs 
-    {
-        #region Fields
+   public class CompendiumChangeEventArgs : EventArgs
+   {
+      #region Fields
 
-        private readonly List<Guid> _ids;
+      private readonly List<Guid> _ids;
 
-        #endregion
+      #endregion
 
-        #region Constructor
+      #region Constructor
 
-        /// <summary>
-        /// Creates an instance of <see cref="CompendiumChangeEventArgs"/>
-        /// </summary>
-        public CompendiumChangeEventArgs(IEnumerable<Guid> ids)
-        {
-            _ids = ids.ToList();
-        }
+      /// <summary>
+      /// Creates an instance of <see cref="CompendiumChangeEventArgs"/>
+      /// </summary>
+      public CompendiumChangeEventArgs(IEnumerable<Guid> ids)
+      {
+         _ids = ids.ToList();
+      }
 
-        #endregion
+      #endregion
 
-        #region Properties
+      #region Properties
 
-        /// <summary>
-        /// Gets the ids of the changed objects
-        /// </summary>
-        public List<Guid> IDs
-        {
-            get { return _ids; }
-        }
+      /// <summary>
+      /// Gets the ids of the changed objects
+      /// </summary>
+      public List<Guid> IDs
+      {
+         get { return _ids; }
+      }
 
-        #endregion
-    }
+      #endregion
+   }
 }

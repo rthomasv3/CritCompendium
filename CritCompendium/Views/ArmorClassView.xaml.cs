@@ -16,27 +16,27 @@ using CritCompendium.ViewModels.ObjectViewModels;
 
 namespace CritCompendium.Views
 {
-    /// <summary>
-    /// Interaction logic for ArmorClassView.xaml
-    /// </summary>
-    public partial class ArmorClassView : UserControl
-    {
-        /// <summary>
-        /// Creates an instance of <see cref="ArmorClassView"/>
-        /// </summary>
-        public ArmorClassView(ArmorClassViewModel viewModel)
-        {
-            InitializeComponent();
+   /// <summary>
+   /// Interaction logic for ArmorClassView.xaml
+   /// </summary>
+   public partial class ArmorClassView : UserControl
+   {
+      /// <summary>
+      /// Creates an instance of <see cref="ArmorClassView"/>
+      /// </summary>
+      public ArmorClassView(ArmorClassViewModel viewModel)
+      {
+         InitializeComponent();
 
-            DataContext = viewModel;
-        }
+         DataContext = viewModel;
+      }
 
-        /// <summary>
-        /// Gets view model
-        /// </summary>
-        public ArmorClassViewModel ViewModel
-        {
-            get { return DataContext as ArmorClassViewModel; }
-        }
-    }
+      /// <summary>
+      /// Gets view model
+      /// </summary>
+      public ArmorClassViewModel ViewModel
+      {
+         get { return DataContext as ArmorClassViewModel; }
+      }
+   }
 }

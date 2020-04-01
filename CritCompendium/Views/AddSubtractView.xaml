@@ -6,27 +6,27 @@
              Width="300"
              Height="Auto"
              mc:Ignorable="d">
-    <Border Padding="10">
-        <StackPanel>
-            <TextBlock Margin="0,0,0,2"
+   <Border Padding="10">
+      <StackPanel>
+         <TextBlock Margin="0,0,0,2"
                        FontSize="10"
                        Foreground="{DynamicResource _secondaryTextBrush}"
                        Text="Amount" />
-            <TextBox x:Name="_amountTextBox" Text="{Binding Amount, UpdateSourceTrigger=PropertyChanged}">
-                <TextBox.InputBindings>
-                    <KeyBinding Key="Return" Command="{Binding AddCommand}" />
-                </TextBox.InputBindings>
-            </TextBox>
+         <TextBox x:Name="_amountTextBox" Text="{Binding Amount, UpdateSourceTrigger=PropertyChanged}">
+            <TextBox.InputBindings>
+               <KeyBinding Key="Return" Command="{Binding AddCommand}" />
+            </TextBox.InputBindings>
+         </TextBox>
 
-            <Grid Margin="0,15,0,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
+         <Grid Margin="0,15,0,0">
+            <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="Auto" />
+               <ColumnDefinition Width="*" />
+               <ColumnDefinition Width="Auto" />
+               <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
 
-                <Button Grid.Column="0"
+            <Button Grid.Column="0"
                         Width="Auto"
                         MinWidth="50"
                         Padding="5,0"
@@ -34,7 +34,7 @@
                         Content="Cancel"
                         Style="{DynamicResource _rejectButtonStyle}" />
 
-                <Button Grid.Column="2"
+            <Button Grid.Column="2"
                         Width="Auto"
                         MinWidth="50"
                         Margin="5,0"
@@ -43,7 +43,7 @@
                         Content="Subtract"
                         Style="{DynamicResource _mainButtonStyle}" />
 
-                <Button Grid.Column="3"
+            <Button Grid.Column="3"
                         Width="Auto"
                         MinWidth="50"
                         Margin="5,0,0,0"
@@ -51,7 +51,7 @@
                         Command="{Binding AddCommand}"
                         Content="Add"
                         Style="{DynamicResource _mainButtonStyle}" />
-            </Grid>
-        </StackPanel>
-    </Border>
+         </Grid>
+      </StackPanel>
+   </Border>
 </UserControl>

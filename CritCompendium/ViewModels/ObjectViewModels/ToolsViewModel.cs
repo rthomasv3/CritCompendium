@@ -1,31 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CritCompendium.ViewModels.ObjectViewModels
+﻿namespace CritCompendium.ViewModels.ObjectViewModels
 {
-    public sealed class ToolsViewModel
-    {
-        #region Fields
+   public sealed class ToolsViewModel
+   {
+      #region Fields
 
-        #endregion
+      #endregion
 
-        #region Constructor
+      #region Constructor
 
-        #endregion
+      #endregion
 
-        #region Properties
+      #region Properties
 
-        #endregion
+      #endregion
 
-        #region Public Methods
+      #region Public Methods
 
-        #endregion
+      #endregion
 
-        #region Private Methods
+      #region Private Methods
 
-        #endregion
-    }
+      #endregion
+   }
 }

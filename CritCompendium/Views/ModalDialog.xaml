@@ -15,89 +15,89 @@
         WindowStartupLocation="CenterOwner"
         WindowStyle="None"
         mc:Ignorable="d">
-    <Window.Resources>
-        <Style x:Key="_windowButtonStyle" TargetType="Button">
-            <Setter Property="Background" Value="Transparent" />
-            <Setter Property="Width" Value="32" />
-            <Setter Property="Height" Value="32" />
-            <Setter Property="FontSize" Value="14" />
-            <Setter Property="Foreground" Value="{DynamicResource _primaryTextBrush}" />
-            <Setter Property="Margin" Value="0" />
-            <Setter Property="KeyboardNavigation.IsTabStop" Value="False" />
-            <Setter Property="OverridesDefaultStyle" Value="True" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" BorderThickness="0">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#FF7E7E7E" />
-                </Trigger>
-            </Style.Triggers>
-        </Style>
+   <Window.Resources>
+      <Style x:Key="_windowButtonStyle" TargetType="Button">
+         <Setter Property="Background" Value="Transparent" />
+         <Setter Property="Width" Value="32" />
+         <Setter Property="Height" Value="32" />
+         <Setter Property="FontSize" Value="14" />
+         <Setter Property="Foreground" Value="{DynamicResource _primaryTextBrush}" />
+         <Setter Property="Margin" Value="0" />
+         <Setter Property="KeyboardNavigation.IsTabStop" Value="False" />
+         <Setter Property="OverridesDefaultStyle" Value="True" />
+         <Setter Property="Template">
+            <Setter.Value>
+               <ControlTemplate TargetType="Button">
+                  <Border Background="{TemplateBinding Background}" BorderThickness="0">
+                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                  </Border>
+               </ControlTemplate>
+            </Setter.Value>
+         </Setter>
+         <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+               <Setter Property="Background" Value="#FF7E7E7E" />
+            </Trigger>
+         </Style.Triggers>
+      </Style>
 
-        <Style x:Key="_closeWindowButtonStyle"
+      <Style x:Key="_closeWindowButtonStyle"
                BasedOn="{StaticResource _windowButtonStyle}"
                TargetType="Button">
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#c11111" />
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-    </Window.Resources>
+         <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+               <Setter Property="Background" Value="#c11111" />
+            </Trigger>
+         </Style.Triggers>
+      </Style>
+   </Window.Resources>
 
-    <Border BorderBrush="{DynamicResource _contentBorderBrush}" BorderThickness="2">
-        <Grid Background="{DynamicResource _mainBackgroundBrush}">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
+   <Border BorderBrush="{DynamicResource _contentBorderBrush}" BorderThickness="2">
+      <Grid Background="{DynamicResource _mainBackgroundBrush}">
+         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+         </Grid.RowDefinitions>
 
-            <Grid Grid.Row="0"
+         <Grid Grid.Row="0"
                   Background="Transparent"
                   MouseDown="Grid_MouseDown">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
+            <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="Auto" />
+               <ColumnDefinition Width="*" />
+               <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
 
-                <Image Grid.Column="0"
+            <Image Grid.Column="0"
                        Width="25"
                        Height="25"
                        Margin="5,0,0,0"
                        Source="{DynamicResource _logoSmallImage}" />
 
-                <TextBlock Grid.Column="1"
+            <TextBlock Grid.Column="1"
                            MaxWidth="400"
                            HorizontalAlignment="Left"
                            Style="{DynamicResource _titleTextBlockStyle}"
                            Text="{Binding WindowTitle}"
                            TextTrimming="CharacterEllipsis" />
 
-                <!--<Button x:Name="_closeButton"
+            <!--<Button x:Name="_closeButton"
                         Grid.Column="2"
                         Click="_closeButton_Click"
                         Content="&#x1f5d9;"
                         Style="{DynamicResource _closeWindowButtonStyle}" />-->
 
-                <Button x:Name="_closeButton"
+            <Button x:Name="_closeButton"
                         Grid.Column="2"
                         Click="_closeButton_Click"
                         Style="{DynamicResource _closeWindowButtonStyle}">
-                    <Image Width="16"
+               <Image Width="16"
                            Height="16"
                            Source="{DynamicResource _closeImage}" />
-                </Button>
-            </Grid>
+            </Button>
+         </Grid>
 
-            <ContentControl Grid.Row="1" Content="{Binding Body}" />
-        </Grid>
-    </Border>
+         <ContentControl Grid.Row="1" Content="{Binding Body}" />
+      </Grid>
+   </Border>
 </Window>

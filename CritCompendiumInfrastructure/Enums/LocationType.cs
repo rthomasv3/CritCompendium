@@ -1,9 +1,9 @@
 ﻿namespace CritCompendiumInfrastructure.Enums
 {
-    public enum LocationType
-    {
-        Dungeon,
-        Settlement,
-        Wilderness
-    }
+   public enum LocationType
+   {
+      Dungeon,
+      Settlement,
+      Wilderness
+   }
 }

@@ -1,13 +1,13 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:CritCompendium">
-    <local:BooleanToVisibilityConverter x:Key="_boolVisibilityConverter"
+   <local:BooleanToVisibilityConverter x:Key="_boolVisibilityConverter"
                                         False="Collapsed"
                                         True="Visible" />
 
-    <local:BooleanToVisibilityConverter x:Key="_invertBoolVisibilityConverter"
+   <local:BooleanToVisibilityConverter x:Key="_invertBoolVisibilityConverter"
                                         False="Visible"
                                         True="Collapsed" />
 
-    <local:GridLengthConverter x:Key="_gridLengthConverter" />
+   <local:GridLengthConverter x:Key="_gridLengthConverter" />
 </ResourceDictionary>

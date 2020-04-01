@@ -16,21 +16,21 @@ using CritCompendium.ViewModels;
 
 namespace CritCompendium.Views
 {
-    /// <summary>
-    /// Interaction logic for SettingsView.xaml
-    /// </summary>
-    public partial class SettingsView : UserControl
-    {
-        public SettingsView(SettingsViewModel settingsViewModel)
-        {
-            InitializeComponent();
+   /// <summary>
+   /// Interaction logic for SettingsView.xaml
+   /// </summary>
+   public partial class SettingsView : UserControl
+   {
+      public SettingsView(SettingsViewModel settingsViewModel)
+      {
+         InitializeComponent();
 
-            DataContext = settingsViewModel;
-        }
+         DataContext = settingsViewModel;
+      }
 
-        public SettingsViewModel ViewModel
-        {
-            get { return DataContext as SettingsViewModel; }
-        }
-    }
+      public SettingsViewModel ViewModel
+      {
+         get { return DataContext as SettingsViewModel; }
+      }
+   }
 }

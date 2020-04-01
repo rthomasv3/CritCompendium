@@ -16,14 +16,14 @@ using CritCompendium.ViewModels.DialogViewModels;
 
 namespace CritCompendium.Views
 {
-	/// <summary>
-	/// Interaction logic for ConfirmationView.xaml
-	/// </summary>
-	public partial class ConfirmationView : UserControl
-	{
-		public ConfirmationView()
-		{
-			InitializeComponent();
-		}
-	}
+   /// <summary>
+   /// Interaction logic for ConfirmationView.xaml
+   /// </summary>
+   public partial class ConfirmationView : UserControl
+   {
+      public ConfirmationView()
+      {
+         InitializeComponent();
+      }
+   }
 }

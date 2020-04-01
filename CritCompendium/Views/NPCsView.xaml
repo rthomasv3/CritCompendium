@@ -8,79 +8,79 @@
              d:DesignHeight="450"
              d:DesignWidth="800"
              mc:Ignorable="d">
-    <UserControl.Resources>
-        <DataTemplate x:Key="_npcDisplayTemplate" DataType="{x:Type ovm:NPCViewModel}">
-            <StackPanel Grid.Row="0" Margin="0,-4,10,0">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0"
+   <UserControl.Resources>
+      <DataTemplate x:Key="_npcDisplayTemplate" DataType="{x:Type ovm:NPCViewModel}">
+         <StackPanel Grid.Row="0" Margin="0,-4,10,0">
+            <Grid>
+               <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="*" />
+                  <ColumnDefinition Width="Auto" />
+                  <ColumnDefinition Width="Auto" />
+               </Grid.ColumnDefinitions>
+               <TextBlock Grid.Column="0"
                                FontSize="20"
                                FontWeight="DemiBold"
                                Foreground="{DynamicResource _primaryTextBrush}"
                                Text="{Binding Name}"
                                TextTrimming="CharacterEllipsis" />
 
-                    <Button Grid.Column="1"
+               <Button Grid.Column="1"
                             Margin="5,0"
                             Padding="2"
                             Command="{Binding Path=DataContext.EditNPCCommand, RelativeSource={RelativeSource AncestorType={x:Type local:NPCsView}}}"
                             CommandParameter="{Binding}"
                             Style="{DynamicResource _secondaryButtonStyle}"
                             ToolTip="Edit NPC">
-                        <Image Width="16"
+                  <Image Width="16"
                                Height="16"
                                VerticalAlignment="Center"
                                Source="{DynamicResource _editImage}" />
-                    </Button>
+               </Button>
 
-                    <Button Grid.Column="2"
+               <Button Grid.Column="2"
                             Margin="5,0"
                             Padding="2"
                             Command="{Binding Path=DataContext.ExportNPCCommand, RelativeSource={RelativeSource AncestorType={x:Type local:NPCsView}}}"
                             CommandParameter="{Binding}"
                             Style="{DynamicResource _secondaryButtonStyle}"
                             ToolTip="Export NPC">
-                        <Image Width="16"
+                  <Image Width="16"
                                Height="16"
                                VerticalAlignment="Center"
                                Source="{DynamicResource _exportImage}" />
-                    </Button>
-                </Grid>
+               </Button>
+            </Grid>
 
-                <ContentControl Content="{Binding}" />
-            </StackPanel>
-        </DataTemplate>
-    </UserControl.Resources>
+            <ContentControl Content="{Binding}" />
+         </StackPanel>
+      </DataTemplate>
+   </UserControl.Resources>
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
+   <Grid>
+      <Grid.ColumnDefinitions>
+         <ColumnDefinition Width="300" />
+         <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
+      <Grid Grid.Column="0">
+         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+         </Grid.RowDefinitions>
 
-            <Grid Grid.Row="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
+         <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="*" />
+               <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
 
-                <TextBox Grid.Column="0"
+            <TextBox Grid.Column="0"
                          Style="{DynamicResource _mainTextboxStyle}"
                          Tag="Search npcs..."
                          Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged, Delay=350}" />
 
-                <Button Grid.Column="1"
+            <Button Grid.Column="1"
                         Width="45"
                         Height="22"
                         Margin="6,0,0,0"
@@ -88,129 +88,129 @@
                         Content="Clear"
                         Style="{DynamicResource _rejectButtonStyle}"
                         ToolTip="Clear Search, Sort, and Filters" />
-            </Grid>
+         </Grid>
 
-            <TreeView x:Name="_tree"
+         <TreeView x:Name="_tree"
                       Grid.Row="1"
                       Margin="0,5,0,5"
                       ItemsSource="{Binding NPCs, UpdateSourceTrigger=PropertyChanged}"
                       Style="{DynamicResource _virtualizedTreeViewControlStyle}"
                       Tag="No NPCs Found">
-                <TreeView.InputBindings>
-                    <KeyBinding Key="Down" Command="{Binding SelectNextCommand}" />
-                    <KeyBinding Key="Up" Command="{Binding SelectPreviousCommand}" />
-                </TreeView.InputBindings>
+            <TreeView.InputBindings>
+               <KeyBinding Key="Down" Command="{Binding SelectNextCommand}" />
+               <KeyBinding Key="Up" Command="{Binding SelectPreviousCommand}" />
+            </TreeView.InputBindings>
 
-                <TreeView.ItemTemplate>
-                    <DataTemplate>
-                        <Border Margin="0,0,0,5">
-                            <Border.InputBindings>
-                                <MouseBinding Command="{Binding Path=DataContext.SelectNPCCommand, RelativeSource={RelativeSource AncestorType={x:Type TreeView}}}"
+            <TreeView.ItemTemplate>
+               <DataTemplate>
+                  <Border Margin="0,0,0,5">
+                     <Border.InputBindings>
+                        <MouseBinding Command="{Binding Path=DataContext.SelectNPCCommand, RelativeSource={RelativeSource AncestorType={x:Type TreeView}}}"
                                               CommandParameter="{Binding}"
                                               MouseAction="LeftClick" />
-                            </Border.InputBindings>
+                     </Border.InputBindings>
 
-                            <Border.Style>
-                                <Style BasedOn="{StaticResource _listItemBorderStyle}" TargetType="Border">
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding Path=DataContext.IsSelected, RelativeSource={RelativeSource TemplatedParent}}" Value="True">
-                                            <Setter Property="BorderBrush" Value="{DynamicResource _accentBrush}" />
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Border.Style>
+                     <Border.Style>
+                        <Style BasedOn="{StaticResource _listItemBorderStyle}" TargetType="Border">
+                           <Style.Triggers>
+                              <DataTrigger Binding="{Binding Path=DataContext.IsSelected, RelativeSource={RelativeSource TemplatedParent}}" Value="True">
+                                 <Setter Property="BorderBrush" Value="{DynamicResource _accentBrush}" />
+                              </DataTrigger>
+                           </Style.Triggers>
+                        </Style>
+                     </Border.Style>
 
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*" />
-                                    <RowDefinition Height="*" />
-                                </Grid.RowDefinitions>
+                     <Grid>
+                        <Grid.RowDefinitions>
+                           <RowDefinition Height="*" />
+                           <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
 
-                                <TextBlock Grid.Row="0"
+                        <TextBlock Grid.Row="0"
                                            MaxWidth="255"
                                            FontSize="12"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="{Binding Name}"
                                            TextTrimming="CharacterEllipsis" />
 
-                                <TextBlock Grid.Row="1"
+                        <TextBlock Grid.Row="1"
                                            MaxWidth="255"
                                            FontSize="11"
                                            Foreground="{DynamicResource _secondaryTextBrush}"
                                            Text="{Binding Description}"
                                            TextTrimming="CharacterEllipsis"
                                            TextWrapping="NoWrap" />
-                            </Grid>
-                        </Border>
-                    </DataTemplate>
-                </TreeView.ItemTemplate>
-            </TreeView>
+                     </Grid>
+                  </Border>
+               </DataTemplate>
+            </TreeView.ItemTemplate>
+         </TreeView>
 
-            <Border Grid.Row="2"
+         <Border Grid.Row="2"
                     BorderBrush="{DynamicResource _contentBorderBrush}"
                     BorderThickness="0,1,0,0">
-                <Grid Margin="0,5,0,0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="Auto" />
-                    </Grid.ColumnDefinitions>
+            <Grid Margin="0,5,0,0">
+               <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto" />
+                  <ColumnDefinition Width="Auto" />
+                  <ColumnDefinition Width="Auto" />
+                  <ColumnDefinition Width="*" />
+                  <ColumnDefinition Width="Auto" />
+               </Grid.ColumnDefinitions>
 
-                    <Button Grid.Column="0"
+               <Button Grid.Column="0"
                             Width="22"
                             Height="22"
                             Margin="0,0,8,0"
                             Command="{Binding AddNPCCommand}"
                             Style="{DynamicResource _secondaryButtonStyle}"
                             ToolTip="Add New">
-                        <Image Width="16"
+                  <Image Width="16"
                                Height="16"
                                VerticalAlignment="Center"
                                Source="{DynamicResource _addImage}" />
-                    </Button>
+               </Button>
 
-                    <Button Grid.Column="1"
+               <Button Grid.Column="1"
                             Width="22"
                             Height="22"
                             Margin="0,0,8,0"
                             Command="{Binding DeleteNPCCommand}"
                             Style="{DynamicResource _secondaryButtonStyle}"
                             ToolTip="Delete Selected">
-                        <Image Width="16"
+                  <Image Width="16"
                                Height="16"
                                VerticalAlignment="Center"
                                Source="{DynamicResource _deleteImage}" />
-                    </Button>
+               </Button>
 
-                    <Button Grid.Column="2"
+               <Button Grid.Column="2"
                             Width="22"
                             Height="22"
                             Command="{Binding CopyNPCCommand}"
                             Style="{DynamicResource _secondaryButtonStyle}"
                             ToolTip="Copy Selected">
-                        <Image Width="16"
+                  <Image Width="16"
                                Height="16"
                                VerticalAlignment="Center"
                                Source="{DynamicResource _copyImage}" />
-                    </Button>
+               </Button>
 
-                    <Button Grid.Column="4"
+               <Button Grid.Column="4"
                             Command="{Binding ImportCommand}"
                             Style="{DynamicResource _secondaryButtonStyle}"
                             ToolTip="Import">
-                        <Image Width="16"
+                  <Image Width="16"
                                Height="16"
                                VerticalAlignment="Center"
                                RenderTransformOrigin="0.5,0.5"
                                Source="{DynamicResource _importImage}" />
-                    </Button>
-                </Grid>
-            </Border>
-        </Grid>
+               </Button>
+            </Grid>
+         </Border>
+      </Grid>
 
-        <ContentControl Grid.Column="1"
+      <ContentControl Grid.Column="1"
                         Margin="15,0,17,10"
                         Content="{Binding SelectedNPC}"
                         ContentTemplate="{DynamicResource _npcDisplayTemplate}"
@@ -218,21 +218,21 @@
                         Tag="No NPC Selected"
                         Visibility="{Binding IsEditingNPC, Converter={StaticResource _invertBoolVisibilityConverter}}" />
 
-        <Grid Grid.Column="1"
+      <Grid Grid.Column="1"
               Margin="15,0,0,0"
               Visibility="{Binding IsEditingNPC, Converter={StaticResource _boolVisibilityConverter}}">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
+         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+         </Grid.ColumnDefinitions>
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
+         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+         </Grid.RowDefinitions>
 
-            <Button Grid.Row="0"
+         <Button Grid.Row="0"
                     Grid.Column="1"
                     Width="60"
                     Margin="5,0"
@@ -241,7 +241,7 @@
                     Content="Cancel"
                     Style="{DynamicResource _rejectButtonStyle}" />
 
-            <Button Grid.Row="0"
+         <Button Grid.Row="0"
                     Grid.Column="2"
                     Width="50"
                     VerticalAlignment="Top"
@@ -249,13 +249,13 @@
                     Content="Save"
                     Style="{DynamicResource _mainButtonStyle}" />
 
-            <ScrollViewer Grid.Row="1"
+         <ScrollViewer Grid.Row="1"
                           Grid.Column="0"
                           Grid.ColumnSpan="3">
-                <ContentControl Margin="0,0,0,10"
+            <ContentControl Margin="0,0,0,10"
                                 Content="{Binding EditingNPC}"
                                 ContentTemplate="{DynamicResource _npcEditTemplate}" />
-            </ScrollViewer>
-        </Grid>
-    </Grid>
+         </ScrollViewer>
+      </Grid>
+   </Grid>
 </UserControl>

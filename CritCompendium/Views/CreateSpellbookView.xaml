@@ -7,150 +7,150 @@
              Width="325"
              Height="Auto"
              mc:Ignorable="d">
-    <Border Padding="10">
-        <StackPanel>
-            <TextBlock Margin="0,5,0,2"
+   <Border Padding="10">
+      <StackPanel>
+         <TextBlock Margin="0,5,0,2"
                        FontSize="10"
                        Foreground="{DynamicResource _secondaryTextBrush}"
                        Text="Spellbook Name" />
-            <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}">
-                <TextBox.InputBindings>
-                    <KeyBinding Key="Return" Command="{Binding AcceptCommand}" />
-                </TextBox.InputBindings>
-            </TextBox>
+         <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}">
+            <TextBox.InputBindings>
+               <KeyBinding Key="Return" Command="{Binding AcceptCommand}" />
+            </TextBox.InputBindings>
+         </TextBox>
 
-            <Grid Margin="0,15,0,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
+         <Grid Margin="0,15,0,0">
+            <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="*" />
+               <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-                <Grid Grid.Column="0" Margin="0,0,5,0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Margin="0,0,5,0">
+               <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto" />
+                  <ColumnDefinition Width="*" />
+               </Grid.ColumnDefinitions>
 
-                    <RadioButton Grid.Column="0"
+               <RadioButton Grid.Column="0"
                                  Margin="0,1,0,0"
                                  GroupName="ClassOrRace"
                                  IsChecked="{Binding BasedOnClass}" />
-                    <TextBlock Grid.Column="1"
+               <TextBlock Grid.Column="1"
                                Margin="0,0,0,0"
                                Foreground="{DynamicResource _primaryTextBrush}"
                                Text="Based On Class" />
-                </Grid>
+            </Grid>
 
-                <Grid Grid.Column="1" Margin="0,0,5,0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1" Margin="0,0,5,0">
+               <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto" />
+                  <ColumnDefinition Width="*" />
+               </Grid.ColumnDefinitions>
 
-                    <RadioButton Grid.Column="0"
+               <RadioButton Grid.Column="0"
                                  Margin="0,1,0,0"
                                  GroupName="ClassOrRace"
                                  IsChecked="{Binding BasedOnRace}" />
-                    <TextBlock Grid.Column="1"
+               <TextBlock Grid.Column="1"
                                Margin="0,0,0,0"
                                Foreground="{DynamicResource _primaryTextBrush}"
                                Text="Based On Race" />
-                </Grid>
             </Grid>
+         </Grid>
 
-            <StackPanel Visibility="{Binding BasedOnClass, Converter={StaticResource _boolVisibilityConverter}}">
-                <TextBlock Margin="0,15,0,2"
+         <StackPanel Visibility="{Binding BasedOnClass, Converter={StaticResource _boolVisibilityConverter}}">
+            <TextBlock Margin="0,15,0,2"
                            FontSize="10"
                            Foreground="{DynamicResource _secondaryTextBrush}"
                            Text="Class" />
-                <ComboBox Margin="0,0,3,2"
+            <ComboBox Margin="0,0,3,2"
                           DisplayMemberPath="Value"
                           ItemsSource="{Binding ClassOptions}"
                           SelectedValue="{Binding SelectedClassOption}" />
-            </StackPanel>
+         </StackPanel>
 
-            <StackPanel Visibility="{Binding BasedOnRace, Converter={StaticResource _boolVisibilityConverter}}">
-                <TextBlock Margin="0,15,0,2"
+         <StackPanel Visibility="{Binding BasedOnRace, Converter={StaticResource _boolVisibilityConverter}}">
+            <TextBlock Margin="0,15,0,2"
                            FontSize="10"
                            Foreground="{DynamicResource _secondaryTextBrush}"
                            Text="Race" />
-                <ComboBox Margin="0,0,3,2"
+            <ComboBox Margin="0,0,3,2"
                           DisplayMemberPath="Value"
                           ItemsSource="{Binding RaceOptions}"
                           SelectedValue="{Binding SelectedRaceOption}" />
-            </StackPanel>
+         </StackPanel>
 
-            <TextBlock Margin="0,10,0,2"
+         <TextBlock Margin="0,10,0,2"
                        FontSize="10"
                        Foreground="{DynamicResource _secondaryTextBrush}"
                        Text="Ability" />
-            <ComboBox Margin="0,0,3,2"
+         <ComboBox Margin="0,0,3,2"
                       DisplayMemberPath="Value"
                       ItemsSource="{Binding AbilityOptions}"
                       SelectedValue="{Binding SelectedAbilityOption}" />
 
 
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
+         <Grid>
+            <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="*" />
+               <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-                <StackPanel Grid.Column="0" Margin="0,0,5,0">
-                    <TextBlock Margin="0,10,5,2"
+            <StackPanel Grid.Column="0" Margin="0,0,5,0">
+               <TextBlock Margin="0,10,5,2"
                                FontSize="10"
                                Foreground="{DynamicResource _secondaryTextBrush}"
                                Text="Additional DC Bonus" />
-                    <TextBox Text="{Binding AdditionalDCBonus, UpdateSourceTrigger=PropertyChanged}" />
-                </StackPanel>
+               <TextBox Text="{Binding AdditionalDCBonus, UpdateSourceTrigger=PropertyChanged}" />
+            </StackPanel>
 
-                <StackPanel Grid.Column="1" Margin="5,0,0,0">
-                    <TextBlock Margin="0,10,0,2"
+            <StackPanel Grid.Column="1" Margin="5,0,0,0">
+               <TextBlock Margin="0,10,0,2"
                                FontSize="10"
                                Foreground="{DynamicResource _secondaryTextBrush}"
                                Text="Additional To Hit Bonus" />
-                    <TextBox Text="{Binding AdditionalToHitBonus, UpdateSourceTrigger=PropertyChanged}" />
-                </StackPanel>
-            </Grid>
+               <TextBox Text="{Binding AdditionalToHitBonus, UpdateSourceTrigger=PropertyChanged}" />
+            </StackPanel>
+         </Grid>
 
-            <Grid Margin="0,10,0,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
+         <Grid Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="Auto" />
+               <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-                <CheckBox Grid.Column="0"
+            <CheckBox Grid.Column="0"
                           Margin="0,1,0,0"
                           IsChecked="{Binding ResetOnShortRest}" />
-                <TextBlock Grid.Column="1"
+            <TextBlock Grid.Column="1"
                            Margin="0,0,0,0"
                            Foreground="{DynamicResource _primaryTextBrush}"
                            Text="Reset On Short Rest" />
-            </Grid>
+         </Grid>
 
-            <Grid Margin="0,10,0,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
+         <Grid Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="Auto" />
+               <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-                <CheckBox Grid.Column="0"
+            <CheckBox Grid.Column="0"
                           Margin="0,1,0,0"
                           IsChecked="{Binding ResetOnLongRest}" />
-                <TextBlock Grid.Column="1"
+            <TextBlock Grid.Column="1"
                            Margin="0,0,0,0"
                            Foreground="{DynamicResource _primaryTextBrush}"
                            Text="Reset On Long Rest" />
-            </Grid>
+         </Grid>
 
-            <Grid Margin="0,15,0,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
+         <Grid Margin="0,15,0,0">
+            <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="*" />
+               <ColumnDefinition Width="Auto" />
+               <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
 
-                <Button Grid.Column="1"
+            <Button Grid.Column="1"
                         Width="Auto"
                         MinWidth="50"
                         Margin="5,0"
@@ -159,7 +159,7 @@
                         Content="Cancel"
                         Style="{DynamicResource _rejectButtonStyle}" />
 
-                <Button Grid.Column="2"
+            <Button Grid.Column="2"
                         Width="Auto"
                         MinWidth="50"
                         Margin="5,0,0,0"
@@ -167,7 +167,7 @@
                         Command="{Binding AcceptCommand}"
                         Content="Save"
                         Style="{DynamicResource _mainButtonStyle}" />
-            </Grid>
-        </StackPanel>
-    </Border>
+         </Grid>
+      </StackPanel>
+   </Border>
 </UserControl>

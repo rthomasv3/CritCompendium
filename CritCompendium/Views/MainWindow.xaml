@@ -358,7 +358,7 @@
                                 Grid.Column="1"
                                 Style="{DynamicResource _separatorRectangleStyle}" />
 
-                     <Rectangle Grid.Row="2"
+                     <!--<Rectangle Grid.Row="2"
                                 Grid.Column="0"
                                 Style="{DynamicResource _selectedRectangleStyle}"
                                 Visibility="{Binding AdventuresSelected, Converter={StaticResource _boolVisibilityConverter}}" />
@@ -369,7 +369,7 @@
                         <TextBlock.InputBindings>
                            <MouseBinding Command="{Binding AdventuresCommand}" MouseAction="LeftClick" />
                         </TextBlock.InputBindings>
-                     </TextBlock>
+                     </TextBlock>-->
 
                      <Rectangle Grid.Row="3"
                                 Grid.Column="0"
@@ -384,7 +384,7 @@
                         </TextBlock.InputBindings>
                      </TextBlock>
 
-                     <Rectangle Grid.Row="4"
+                     <!--<Rectangle Grid.Row="4"
                                 Grid.Column="0"
                                 Style="{DynamicResource _selectedRectangleStyle}"
                                 Visibility="{Binding LocationsSelected, Converter={StaticResource _boolVisibilityConverter}}" />
@@ -395,7 +395,7 @@
                         <TextBlock.InputBindings>
                            <MouseBinding Command="{Binding LocationsCommand}" MouseAction="LeftClick" />
                         </TextBlock.InputBindings>
-                     </TextBlock>
+                     </TextBlock>-->
 
                      <Rectangle Grid.Row="5"
                                 Grid.Column="0"

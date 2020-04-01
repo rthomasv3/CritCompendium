@@ -15,14 +15,14 @@ using System.Windows.Shapes;
 
 namespace CritCompendium.Views
 {
-    /// <summary>
-    /// Interaction logic for CreateEncounterCharacterView.xaml
-    /// </summary>
-    public partial class CreateEncounterCharacterView : UserControl
-    {
-        public CreateEncounterCharacterView()
-        {
-            InitializeComponent();
-        }
-    }
+   /// <summary>
+   /// Interaction logic for CreateEncounterCharacterView.xaml
+   /// </summary>
+   public partial class CreateEncounterCharacterView : UserControl
+   {
+      public CreateEncounterCharacterView()
+      {
+         InitializeComponent();
+      }
+   }
 }

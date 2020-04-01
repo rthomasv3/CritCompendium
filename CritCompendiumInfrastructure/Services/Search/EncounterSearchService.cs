@@ -7,71 +7,71 @@ using System.Linq;
 
 namespace CritCompendiumInfrastructure.Services.Search
 {
-    public sealed class EncounterSearchService
-    {
-        #region Fields
+   public sealed class EncounterSearchService
+   {
+      #region Fields
 
-        private readonly Compendium _compendium;
+      private readonly Compendium _compendium;
 
-        #endregion
+      #endregion
 
-        #region Constructors
+      #region Constructors
 
-        /// <summary>
-        /// Creates a new instance of <see cref="EncounterSearchService"/>
-        /// </summary>
-        public EncounterSearchService(Compendium compendium)
-        {
-            _compendium = compendium;
-        }
+      /// <summary>
+      /// Creates a new instance of <see cref="EncounterSearchService"/>
+      /// </summary>
+      public EncounterSearchService(Compendium compendium)
+      {
+         _compendium = compendium;
+      }
 
-        #endregion
+      #endregion
 
-        #region Public Methods
+      #region Public Methods
 
-        /// <summary>
-        /// Searches for encounters matching the search input
-        /// </summary>
-        public List<EncounterModel> Search(EncounterSearchInput searchInput)
-        {
-            return Sort(_compendium.Encounters.Where(x => SearchInputApplies(searchInput, x)), searchInput.SortOption);
-        }
+      /// <summary>
+      /// Searches for encounters matching the search input
+      /// </summary>
+      public List<EncounterModel> Search(EncounterSearchInput searchInput)
+      {
+         return Sort(_compendium.Encounters.Where(x => SearchInputApplies(searchInput, x)), searchInput.SortOption);
+      }
 
-        /// <summary>
-        /// True if the search input applies to the model
-        /// </summary>
-        public bool SearchInputApplies(EncounterSearchInput searchInput, EncounterModel encounterModel)
-        {
-            return HasSearchText(encounterModel, searchInput.SearchText);
-        }
+      /// <summary>
+      /// True if the search input applies to the model
+      /// </summary>
+      public bool SearchInputApplies(EncounterSearchInput searchInput, EncounterModel encounterModel)
+      {
+         return HasSearchText(encounterModel, searchInput.SearchText);
+      }
 
-        /// <summary>
-        /// Sorts using the selected option
-        /// </summary>
-        public List<EncounterModel> Sort(IEnumerable<EncounterModel> encounters, EncounterSortOption sortOption)
-        {
-            if (sortOption == EncounterSortOption.Name_Ascending)
-            {
-                encounters = encounters.OrderBy(x => x.Name);
-            }
-            else if (sortOption == EncounterSortOption.Name_Descending)
-            {
-                encounters = encounters.OrderByDescending(x => x.Name);
-            }
+      /// <summary>
+      /// Sorts using the selected option
+      /// </summary>
+      public List<EncounterModel> Sort(IEnumerable<EncounterModel> encounters, EncounterSortOption sortOption)
+      {
+         if (sortOption == EncounterSortOption.Name_Ascending)
+         {
+            encounters = encounters.OrderBy(x => x.Name);
+         }
+         else if (sortOption == EncounterSortOption.Name_Descending)
+         {
+            encounters = encounters.OrderByDescending(x => x.Name);
+         }
 
-            return encounters.ToList();
-        }
+         return encounters.ToList();
+      }
 
-        #endregion
+      #endregion
 
-        #region Non-Public Methods
+      #region Non-Public Methods
 
-        private bool HasSearchText(EncounterModel encounterModel, string searchText)
-        {
-            return String.IsNullOrWhiteSpace(searchText) ||
-                   encounterModel.Name.ToLower().Contains(searchText.ToLower());
-        }
+      private bool HasSearchText(EncounterModel encounterModel, string searchText)
+      {
+         return String.IsNullOrWhiteSpace(searchText) ||
+                encounterModel.Name.ToLower().Contains(searchText.ToLower());
+      }
 
-        #endregion
-    }
+      #endregion
+   }
 }

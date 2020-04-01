@@ -1,10 +1,10 @@
 ﻿namespace CritCompendiumInfrastructure.Enums
 {
-    public enum SpellSortOption
-    {
-        Name_Ascending,
-        Name_Descending,
-        Level_Ascending,
-        Level_Descending
-    }
+   public enum SpellSortOption
+   {
+      Name_Ascending,
+      Name_Descending,
+      Level_Ascending,
+      Level_Descending
+   }
 }

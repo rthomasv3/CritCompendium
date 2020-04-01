@@ -8,37 +8,37 @@ using CritCompendiumInfrastructure;
 
 namespace CritCompendium.Views
 {
-    /// <summary>
-    /// Interaction logic for BackgroundsView.xaml
-    /// </summary>
-    public partial class BackgroundsView : UserControl
-	{
-		BackgroundsViewModel _viewModel = DependencyResolver.Resolve<BackgroundsViewModel>();
+   /// <summary>
+   /// Interaction logic for BackgroundsView.xaml
+   /// </summary>
+   public partial class BackgroundsView : UserControl
+   {
+      BackgroundsViewModel _viewModel = DependencyResolver.Resolve<BackgroundsViewModel>();
 
-		public BackgroundsView()
-		{
-			InitializeComponent();
+      public BackgroundsView()
+      {
+         InitializeComponent();
 
-            _viewModel.Search();
+         _viewModel.Search();
 
-            DataContext = _viewModel;
+         DataContext = _viewModel;
 
-            _viewModel.PropertyChanged += ViewModel_PropertyChanged;
-        }
+         _viewModel.PropertyChanged += ViewModel_PropertyChanged;
+      }
 
-        private void ViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
-            if (e.PropertyName == nameof(BackgroundsViewModel.SelectedBackground))
+      private void ViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+      {
+         if (e.PropertyName == nameof(BackgroundsViewModel.SelectedBackground))
+         {
+            BackgroundListItemViewModel selected = _viewModel.Backgrounds.FirstOrDefault(x => x.IsSelected);
+            if (selected != null)
             {
-                BackgroundListItemViewModel selected = _viewModel.Backgrounds.FirstOrDefault(x => x.IsSelected);
-                if (selected != null)
-                {
-                    if (_tree.ItemContainerGenerator.ContainerFromItem(selected) is TreeViewItem item)
-                    {
-                        item.BringIntoView();
-                    }
-                }
+               if (_tree.ItemContainerGenerator.ContainerFromItem(selected) is TreeViewItem item)
+               {
+                  item.BringIntoView();
+               }
             }
-        }
-    }
+         }
+      }
+   }
 }

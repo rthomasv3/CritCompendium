@@ -9,59 +9,59 @@
              d:DesignHeight="175"
              d:DesignWidth="400"
              mc:Ignorable="d">
-    <Grid Background="{DynamicResource _mainBackgroundBrush}">
-        <StackPanel>
-            <Border Margin="5,10,5,10"
+   <Grid Background="{DynamicResource _mainBackgroundBrush}">
+      <StackPanel>
+         <Border Margin="5,10,5,10"
                     Padding="5,0,5,10"
                     BorderBrush="{DynamicResource _primaryTextBrush}"
                     BorderThickness="0,0,0,1">
-                <StackPanel>
-                    <TextBlock HorizontalAlignment="Center"
+            <StackPanel>
+               <TextBlock HorizontalAlignment="Center"
                                FontSize="10"
                                Foreground="{DynamicResource _secondaryTextBrush}"
                                Text="{Binding RollString}" />
 
-                    <TextBlock HorizontalAlignment="Center"
+               <TextBlock HorizontalAlignment="Center"
                                FontSize="36"
                                Foreground="{DynamicResource _primaryTextBrush}"
                                Text="{Binding RollResult}" />
 
-                    <TextBlock HorizontalAlignment="Center"
+               <TextBlock HorizontalAlignment="Center"
                                FontSize="10"
                                Foreground="{DynamicResource _secondaryTextBrush}"
                                Text="{Binding RollResultExpression}" />
-                </StackPanel>
-            </Border>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
+            </StackPanel>
+         </Border>
+         <Grid>
+            <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="*" />
+               <ColumnDefinition Width="*" />
+               <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-                <Border Grid.Column="0"
+            <Border Grid.Column="0"
                         BorderBrush="{DynamicResource _primaryTextBrush}"
                         BorderThickness="0,0,1,0"
                         Visibility="{Binding AdvantageDisadvantageVisible, Converter={StaticResource _boolVisibilityConverter}}">
-                    <StackPanel>
-                        <TextBlock HorizontalAlignment="Center"
+               <StackPanel>
+                  <TextBlock HorizontalAlignment="Center"
                                    FontSize="10"
                                    Foreground="{DynamicResource _secondaryTextBrush}"
                                    Text="Disadvantage" />
 
-                        <TextBlock HorizontalAlignment="Center"
+                  <TextBlock HorizontalAlignment="Center"
                                    FontSize="26"
                                    Foreground="{DynamicResource _primaryTextBrush}"
                                    Text="{Binding RollDisadvantageResult}" />
 
-                        <TextBlock HorizontalAlignment="Center"
+                  <TextBlock HorizontalAlignment="Center"
                                    FontSize="10"
                                    Foreground="{DynamicResource _secondaryTextBrush}"
                                    Text="{Binding RollDisadvantageResultExpression}" />
-                    </StackPanel>
-                </Border>
+               </StackPanel>
+            </Border>
 
-                <Button x:Name="_rollButton"
+            <Button x:Name="_rollButton"
                         Grid.Column="1"
                         Margin="20,0"
                         Command="{Binding RollCommand}"
@@ -69,51 +69,51 @@
                         RenderTransformOrigin="0.5,0.5"
                         Style="{DynamicResource _emptyButtonStyle}"
                         ToolTip="Roll">
-                    <Image Width="48"
+               <Image Width="48"
                            Height="48"
                            Source="{DynamicResource _rollLargeImage}" />
 
-                    <Button.RenderTransform>
-                        <RotateTransform x:Name="MyAnimatedTransform" Angle="0" />
-                    </Button.RenderTransform>
+               <Button.RenderTransform>
+                  <RotateTransform x:Name="MyAnimatedTransform" Angle="0" />
+               </Button.RenderTransform>
 
-                    <Button.Triggers>
-                        <EventTrigger RoutedEvent="Button.Click">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetName="MyAnimatedTransform"
+               <Button.Triggers>
+                  <EventTrigger RoutedEvent="Button.Click">
+                     <BeginStoryboard>
+                        <Storyboard>
+                           <DoubleAnimation Storyboard.TargetName="MyAnimatedTransform"
                                                      Storyboard.TargetProperty="(RotateTransform.Angle)"
                                                      From="0"
                                                      To="360"
                                                      Duration="0:0:1" />
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                    </Button.Triggers>
-                </Button>
+                        </Storyboard>
+                     </BeginStoryboard>
+                  </EventTrigger>
+               </Button.Triggers>
+            </Button>
 
-                <Border Grid.Column="2"
+            <Border Grid.Column="2"
                         BorderBrush="{DynamicResource _primaryTextBrush}"
                         BorderThickness="1,0,0,0"
                         Visibility="{Binding AdvantageDisadvantageVisible, Converter={StaticResource _boolVisibilityConverter}}">
-                    <StackPanel>
-                        <TextBlock HorizontalAlignment="Center"
+               <StackPanel>
+                  <TextBlock HorizontalAlignment="Center"
                                    FontSize="10"
                                    Foreground="{DynamicResource _secondaryTextBrush}"
                                    Text="Advantage" />
 
-                        <TextBlock HorizontalAlignment="Center"
+                  <TextBlock HorizontalAlignment="Center"
                                    FontSize="26"
                                    Foreground="{DynamicResource _primaryTextBrush}"
                                    Text="{Binding RollAdvantageResult}" />
 
-                        <TextBlock HorizontalAlignment="Center"
+                  <TextBlock HorizontalAlignment="Center"
                                    FontSize="10"
                                    Foreground="{DynamicResource _secondaryTextBrush}"
                                    Text="{Binding RollAdvantageResultExpression}" />
-                    </StackPanel>
-                </Border>
-            </Grid>
-        </StackPanel>
-    </Grid>
+               </StackPanel>
+            </Border>
+         </Grid>
+      </StackPanel>
+   </Grid>
 </UserControl>

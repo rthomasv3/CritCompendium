@@ -4,57 +4,57 @@ using CritCompendiumInfrastructure.Enums;
 
 namespace CritCompendiumInfrastructure.Services.Search.Input
 {
-	public sealed class ConditionSearchInput
-	{
-        #region Fields
-        
-        private string _searchText;
-        private ConditionSortOption _sortOption;
+   public sealed class ConditionSearchInput
+   {
+      #region Fields
 
-        #endregion
+      private string _searchText;
+      private ConditionSortOption _sortOption;
 
-        #region Constructor
+      #endregion
 
-        public ConditionSearchInput()
-        {
-            Reset();
-        }
+      #region Constructor
 
-        #endregion
+      public ConditionSearchInput()
+      {
+         Reset();
+      }
 
-        #region Properties
+      #endregion
 
-        /// <summary>
-        /// Gets or sets search text
-        /// </summary>
-        public string SearchText
-		{
-			get { return _searchText; }
-			set { _searchText = value; }
-		}
+      #region Properties
 
-        /// <summary>
-        /// Gets or sets sort option
-        /// </summary>
-        public ConditionSortOption SortOption
-        {
-            get { return _sortOption; }
-            set { _sortOption = value; }
-        }
+      /// <summary>
+      /// Gets or sets search text
+      /// </summary>
+      public string SearchText
+      {
+         get { return _searchText; }
+         set { _searchText = value; }
+      }
 
-        #endregion
+      /// <summary>
+      /// Gets or sets sort option
+      /// </summary>
+      public ConditionSortOption SortOption
+      {
+         get { return _sortOption; }
+         set { _sortOption = value; }
+      }
 
-        #region Public Methods
+      #endregion
 
-        /// <summary>
-        /// Resets search, sort, and filter options
-        /// </summary>
-        public void Reset()
-        {
-            _searchText = String.Empty;
-            _sortOption = ConditionSortOption.Name_Ascending;
-        }
+      #region Public Methods
 
-        #endregion
-    }
+      /// <summary>
+      /// Resets search, sort, and filter options
+      /// </summary>
+      public void Reset()
+      {
+         _searchText = String.Empty;
+         _sortOption = ConditionSortOption.Name_Ascending;
+      }
+
+      #endregion
+   }
 }

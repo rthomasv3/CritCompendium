@@ -7,18 +7,18 @@
              Width="475"
              Height="Auto"
              mc:Ignorable="d">
-    <Border Padding="10">
-        <StackPanel>
-            <ContentControl Content="{Binding Level}" />
+   <Border Padding="10">
+      <StackPanel>
+         <ContentControl Content="{Binding Level}" />
 
-            <Grid Margin="0,15,0,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
+         <Grid Margin="0,15,0,0">
+            <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="*" />
+               <ColumnDefinition Width="Auto" />
+               <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
 
-                <Button Grid.Column="1"
+            <Button Grid.Column="1"
                         Width="Auto"
                         MinWidth="50"
                         Margin="5,0"
@@ -27,7 +27,7 @@
                         Content="Cancel"
                         Style="{DynamicResource _rejectButtonStyle}" />
 
-                <Button Grid.Column="2"
+            <Button Grid.Column="2"
                         Width="Auto"
                         MinWidth="50"
                         Margin="5,0,0,0"
@@ -35,7 +35,7 @@
                         Command="{Binding AcceptCommand}"
                         Content="Save"
                         Style="{DynamicResource _mainButtonStyle}" />
-            </Grid>
-        </StackPanel>
-    </Border>
+         </Grid>
+      </StackPanel>
+   </Border>
 </UserControl>

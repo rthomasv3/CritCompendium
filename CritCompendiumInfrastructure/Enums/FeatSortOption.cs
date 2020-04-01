@@ -1,8 +1,8 @@
 ﻿namespace CritCompendiumInfrastructure.Enums
 {
-    public enum FeatSortOption
-    {
-        Name_Ascending,
-        Name_Descending
-    }
+   public enum FeatSortOption
+   {
+      Name_Ascending,
+      Name_Descending
+   }
 }

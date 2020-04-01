@@ -2,8 +2,8 @@
 
 namespace CritCompendium.ViewModels.DialogViewModels
 {
-    public interface ICopyInformation
-    {
-        ICommand CopyInformationCommand { get; }
-    }
+   public interface ICopyInformation
+   {
+      ICommand CopyInformationCommand { get; }
+   }
 }

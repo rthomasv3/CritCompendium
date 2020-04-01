@@ -3,88 +3,88 @@ using CritCompendiumInfrastructure.Models;
 
 namespace CritCompendium.ViewModels.ListItemViewModels
 {
-	public sealed class FeatListItemViewModel : NotifyPropertyChanged
-	{
-		#region Fields
+   public sealed class FeatListItemViewModel : NotifyPropertyChanged
+   {
+      #region Fields
 
-		private FeatModel _featModel;
-		private string _prerequisite;
-		private bool _isSelected = false;
+      private FeatModel _featModel;
+      private string _prerequisite;
+      private bool _isSelected = false;
 
-		#endregion
+      #endregion
 
-		#region Constructors
+      #region Constructors
 
-		public FeatListItemViewModel(FeatModel featModel)
-		{
-			_featModel = featModel;
+      public FeatListItemViewModel(FeatModel featModel)
+      {
+         _featModel = featModel;
 
-			Initialize();
-		}
+         Initialize();
+      }
 
-		#endregion
+      #endregion
 
-		#region Properties
+      #region Properties
 
-		/// <summary>
-		/// Feat model
-		/// </summary>
-		public FeatModel FeatModel
-		{
-			get { return _featModel; }
-		}
+      /// <summary>
+      /// Feat model
+      /// </summary>
+      public FeatModel FeatModel
+      {
+         get { return _featModel; }
+      }
 
-		/// <summary>
-		/// Name
-		/// </summary>
-		public string Name
-		{
-			get { return _featModel.Name; }
-		}
+      /// <summary>
+      /// Name
+      /// </summary>
+      public string Name
+      {
+         get { return _featModel.Name; }
+      }
 
-		/// <summary>
-		/// Gets prerequisite
-		/// </summary>
-		public string Prerequisite
-		{
-			get { return _prerequisite; }
-		}
+      /// <summary>
+      /// Gets prerequisite
+      /// </summary>
+      public string Prerequisite
+      {
+         get { return _prerequisite; }
+      }
 
 
-		/// <summary>
-		/// True if selected
-		/// </summary>
-		public bool IsSelected
-		{
-			get { return _isSelected; }
-			set { Set(ref _isSelected, value); }
-		}
+      /// <summary>
+      /// True if selected
+      /// </summary>
+      public bool IsSelected
+      {
+         get { return _isSelected; }
+         set { Set(ref _isSelected, value); }
+      }
 
-		#endregion
+      #endregion
 
-		#region Public Methods
+      #region Public Methods
 
-		/// <summary>
-		/// Updates the model
-		/// </summary>
-		public void UpdateModel(FeatModel featModel)
-		{
-			_featModel = featModel;
+      /// <summary>
+      /// Updates the model
+      /// </summary>
+      public void UpdateModel(FeatModel featModel)
+      {
+         _featModel = featModel;
 
-			Initialize();
+         Initialize();
 
-			OnPropertyChanged("");
-		}
+         OnPropertyChanged("");
+      }
 
-		#endregion
+      #endregion
 
-		#region Non-Pubic Methods
+      #region Non-Pubic Methods
 
-		private void Initialize()
-		{
-			_prerequisite = "Prerequisite: " + (String.IsNullOrWhiteSpace(_featModel.Prerequisite) ? "None" : _featModel.Prerequisite);
-		}
+      private void Initialize()
+      {
+         _prerequisite = "Prerequisite: " + (String.IsNullOrWhiteSpace(_featModel.Prerequisite) ? "None" : _featModel.Prerequisite);
+      }
 
-		#endregion
-	}
+      #endregion
+   }
 }

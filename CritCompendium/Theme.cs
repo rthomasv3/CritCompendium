@@ -1,9 +1,9 @@
 ﻿namespace CritCompendium
 {
-    public enum Theme
-    {
-        Dark,
-        Light,
-        Parchment
-    }
+   public enum Theme
+   {
+      Dark,
+      Light,
+      Parchment
+   }
 }

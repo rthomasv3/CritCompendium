@@ -3,60 +3,60 @@ using System.Collections.Generic;
 
 namespace CritCompendiumInfrastructure.Models
 {
-    public sealed class DungeonModel : LocationModel
-    {
-        #region Fields
-        
-        private string _creator;
-        private List<RoomModel> _rooms = new List<RoomModel>();
+   public sealed class DungeonModel : LocationModel
+   {
+      #region Fields
 
-        #endregion
+      private string _creator;
+      private List<RoomModel> _rooms = new List<RoomModel>();
 
-        #region Constructor
+      #endregion
 
-        /// <summary>
-        /// Creates a new instance of <see cref="DungeonModel"/>
-        /// </summary>
-        public DungeonModel() : base()
-        {
-        }
+      #region Constructor
 
-        /// <summary>
-        /// Creates a copy of <see cref="DungeonModel"/>
-        /// </summary>
-        public DungeonModel(DungeonModel dungeonModel) : base(dungeonModel)
-        {
-            _creator = dungeonModel.Creator;
+      /// <summary>
+      /// Creates a new instance of <see cref="DungeonModel"/>
+      /// </summary>
+      public DungeonModel() : base()
+      {
+      }
 
-            _rooms = new List<RoomModel>();
-            foreach (RoomModel roomModel in dungeonModel.Rooms)
-            {
-                _rooms.Add(new RoomModel(roomModel));
-            }
-        }
+      /// <summary>
+      /// Creates a copy of <see cref="DungeonModel"/>
+      /// </summary>
+      public DungeonModel(DungeonModel dungeonModel) : base(dungeonModel)
+      {
+         _creator = dungeonModel.Creator;
 
-        #endregion
+         _rooms = new List<RoomModel>();
+         foreach (RoomModel roomModel in dungeonModel.Rooms)
+         {
+            _rooms.Add(new RoomModel(roomModel));
+         }
+      }
 
-        #region Properties
+      #endregion
 
-        /// <summary>
-        /// Gets or sets creator
-        /// </summary>
-        public string Creator
-        {
-            get { return _creator; }
-            set { _creator = value; }
-        }
+      #region Properties
 
-        /// <summary>
-        /// Gets or set rooms
-        /// </summary>
-        public List<RoomModel> Rooms
-        {
-            get { return _rooms; }
-            set { _rooms = value; }
-        }
+      /// <summary>
+      /// Gets or sets creator
+      /// </summary>
+      public string Creator
+      {
+         get { return _creator; }
+         set { _creator = value; }
+      }
 
-        #endregion
-    }
+      /// <summary>
+      /// Gets or set rooms
+      /// </summary>
+      public List<RoomModel> Rooms
+      {
+         get { return _rooms; }
+         set { _rooms = value; }
+      }
+
+      #endregion
+   }
 }

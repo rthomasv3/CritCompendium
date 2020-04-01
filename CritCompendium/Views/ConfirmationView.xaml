@@ -14,30 +14,30 @@
              d:DesignWidth="280"
              mc:Ignorable="d">
 
-    <Grid Margin="7" Background="Transparent">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
-        </Grid.ColumnDefinitions>
+   <Grid Margin="7" Background="Transparent">
+      <Grid.ColumnDefinitions>
+         <ColumnDefinition Width="*" />
+         <ColumnDefinition Width="Auto" />
+         <ColumnDefinition Width="Auto" />
+         <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
+      <Grid.RowDefinitions>
+         <RowDefinition Height="*" />
+         <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
 
-        <ScrollViewer Grid.Row="0"
+      <ScrollViewer Grid.Row="0"
                       Grid.Column="0"
                       Grid.ColumnSpan="4"
                       Margin="0,0,0,20"
                       VerticalScrollBarVisibility="Auto">
-            <TextBlock Foreground="{DynamicResource _primaryTextBrush}"
+         <TextBlock Foreground="{DynamicResource _primaryTextBrush}"
                        Text="{Binding Body}"
                        TextWrapping="Wrap" />
-        </ScrollViewer>
+      </ScrollViewer>
 
-        <Button Grid.Row="1"
+      <Button Grid.Row="1"
                 Grid.Column="1"
                 Width="Auto"
                 MinWidth="50"
@@ -48,7 +48,7 @@
                 Style="{DynamicResource _rejectButtonStyle}"
                 Visibility="{Binding CancelVisible, Converter={StaticResource _boolVisibilityConverter}}" />
 
-        <Button Grid.Row="1"
+      <Button Grid.Row="1"
                 Grid.Column="2"
                 Width="Auto"
                 MinWidth="50"
@@ -59,7 +59,7 @@
                 Style="{DynamicResource _rejectButtonStyle}"
                 Visibility="{Binding RejectVisible, Converter={StaticResource _boolVisibilityConverter}}" />
 
-        <Button Grid.Row="1"
+      <Button Grid.Row="1"
                 Grid.Column="3"
                 Width="Auto"
                 MinWidth="50"
@@ -69,5 +69,5 @@
                 Content="{Binding Accept}"
                 Style="{DynamicResource _mainButtonStyle}"
                 Visibility="{Binding AcceptVisible, Converter={StaticResource _boolVisibilityConverter}}" />
-    </Grid>
+   </Grid>
 </UserControl>

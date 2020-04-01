@@ -4,23 +4,23 @@ using CritCompendiumInfrastructure;
 
 namespace CritCompendium.Views
 {
-    /// <summary>
-    /// Interaction logic for InitiativeView.xaml
-    /// </summary>
-    public partial class InitiativeView : UserControl
-    {
-        private readonly InitiativeViewModel _viewModel = DependencyResolver.Resolve<InitiativeViewModel>();
+   /// <summary>
+   /// Interaction logic for InitiativeView.xaml
+   /// </summary>
+   public partial class InitiativeView : UserControl
+   {
+      private readonly InitiativeViewModel _viewModel = DependencyResolver.Resolve<InitiativeViewModel>();
 
-        public InitiativeView()
-        {
-            InitializeComponent();
+      public InitiativeView()
+      {
+         InitializeComponent();
 
-            DataContext = _viewModel;
-        }
+         DataContext = _viewModel;
+      }
 
-        public InitiativeViewModel ViewModel
-        {
-            get { return _viewModel; }
-        }
-    }
+      public InitiativeViewModel ViewModel
+      {
+         get { return _viewModel; }
+      }
+   }
 }

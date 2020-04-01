@@ -6,37 +6,37 @@ using CritCompendiumInfrastructure;
 
 namespace CritCompendium.Views
 {
-    /// <summary>
-    /// Interaction logic for EncountersView.xaml
-    /// </summary>
-    public partial class EncountersView : UserControl
-	{
-        EncountersViewModel _viewModel = DependencyResolver.Resolve<EncountersViewModel>();
+   /// <summary>
+   /// Interaction logic for EncountersView.xaml
+   /// </summary>
+   public partial class EncountersView : UserControl
+   {
+      EncountersViewModel _viewModel = DependencyResolver.Resolve<EncountersViewModel>();
 
-        public EncountersView()
-        {
-            InitializeComponent();
+      public EncountersView()
+      {
+         InitializeComponent();
 
-            _viewModel.Search();
+         _viewModel.Search();
 
-            DataContext = _viewModel;
+         DataContext = _viewModel;
 
-            _viewModel.PropertyChanged += ViewModel_PropertyChanged;
-        }
+         _viewModel.PropertyChanged += ViewModel_PropertyChanged;
+      }
 
-        private void ViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
-            if (e.PropertyName == nameof(EncountersViewModel.SelectedEncounter))
+      private void ViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+      {
+         if (e.PropertyName == nameof(EncountersViewModel.SelectedEncounter))
+         {
+            EncounterListItemViewModel selected = _viewModel.Encounters.FirstOrDefault(x => x.IsSelected);
+            if (selected != null)
             {
-                EncounterListItemViewModel selected = _viewModel.Encounters.FirstOrDefault(x => x.IsSelected);
-                if (selected != null)
-                {
-                    if (_tree.ItemContainerGenerator.ContainerFromItem(selected) is TreeViewItem item)
-                    {
-                        item.BringIntoView();
-                    }
-                }
+               if (_tree.ItemContainerGenerator.ContainerFromItem(selected) is TreeViewItem item)
+               {
+                  item.BringIntoView();
+               }
             }
-        }
-    }
+         }
+      }
+   }
 }

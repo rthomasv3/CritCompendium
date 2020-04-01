@@ -1,117 +1,117 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:ovm="clr-namespace:CritCompendium.ViewModels.ObjectViewModels">
-    <DataTemplate DataType="{x:Type ovm:NPCViewModel}">
-        <StackPanel>
-            <WrapPanel>
-                <StackPanel Width="325" Margin="0,0,15,0">
-                    <TextBlock Margin="0,10,0,0"
-                               FontSize="10"
-                               Foreground="{DynamicResource _secondaryTextBrush}"
-                               Text="Occupation" />
-                    <TextBlock Margin="0,0,0,10"
-                               Foreground="{DynamicResource _primaryTextBrush}"
-                               Text="{Binding Occupation}"
-                               TextWrapping="Wrap" />
-                </StackPanel>
+   <DataTemplate DataType="{x:Type ovm:NPCViewModel}">
+      <StackPanel>
+         <WrapPanel>
+            <StackPanel Width="325" Margin="0,0,15,0">
+               <TextBlock Margin="0,10,0,0"
+                          FontSize="10"
+                          Foreground="{DynamicResource _secondaryTextBrush}"
+                          Text="Occupation" />
+               <TextBlock Margin="0,0,0,10"
+                          Foreground="{DynamicResource _primaryTextBrush}"
+                          Text="{Binding Occupation}"
+                          TextWrapping="Wrap" />
+            </StackPanel>
 
-                <StackPanel Width="325" Margin="0,0,15,0">
-                    <TextBlock Margin="0,10,0,0"
-                               FontSize="10"
-                               Foreground="{DynamicResource _secondaryTextBrush}"
-                               Text="Appearance" />
-                    <TextBlock Margin="0,0,0,10"
-                               Foreground="{DynamicResource _primaryTextBrush}"
-                               Text="{Binding Appearance}"
-                               TextWrapping="Wrap" />
-                </StackPanel>
+            <StackPanel Width="325" Margin="0,0,15,0">
+               <TextBlock Margin="0,10,0,0"
+                          FontSize="10"
+                          Foreground="{DynamicResource _secondaryTextBrush}"
+                          Text="Appearance" />
+               <TextBlock Margin="0,0,0,10"
+                          Foreground="{DynamicResource _primaryTextBrush}"
+                          Text="{Binding Appearance}"
+                          TextWrapping="Wrap" />
+            </StackPanel>
 
-                <StackPanel Width="325" Margin="0,0,15,0">
-                    <TextBlock Margin="0,10,0,0"
-                               FontSize="10"
-                               Foreground="{DynamicResource _secondaryTextBrush}"
-                               Text="Ideal" />
-                    <TextBlock Margin="0,0,0,10"
-                               Foreground="{DynamicResource _primaryTextBrush}"
-                               Text="{Binding Ideal}"
-                               TextWrapping="Wrap" />
-                </StackPanel>
+            <StackPanel Width="325" Margin="0,0,15,0">
+               <TextBlock Margin="0,10,0,0"
+                          FontSize="10"
+                          Foreground="{DynamicResource _secondaryTextBrush}"
+                          Text="Ideal" />
+               <TextBlock Margin="0,0,0,10"
+                          Foreground="{DynamicResource _primaryTextBrush}"
+                          Text="{Binding Ideal}"
+                          TextWrapping="Wrap" />
+            </StackPanel>
 
-                <StackPanel Width="325" Margin="0,0,15,0">
-                    <TextBlock Margin="0,10,0,0"
-                               FontSize="10"
-                               Foreground="{DynamicResource _secondaryTextBrush}"
-                               Text="Bond" />
-                    <TextBlock Margin="0,0,0,10"
-                               Foreground="{DynamicResource _primaryTextBrush}"
-                               Text="{Binding Bond}"
-                               TextWrapping="Wrap" />
-                </StackPanel>
+            <StackPanel Width="325" Margin="0,0,15,0">
+               <TextBlock Margin="0,10,0,0"
+                          FontSize="10"
+                          Foreground="{DynamicResource _secondaryTextBrush}"
+                          Text="Bond" />
+               <TextBlock Margin="0,0,0,10"
+                          Foreground="{DynamicResource _primaryTextBrush}"
+                          Text="{Binding Bond}"
+                          TextWrapping="Wrap" />
+            </StackPanel>
 
-                <StackPanel Width="325" Margin="0,0,15,0">
-                    <TextBlock Margin="0,10,0,0"
-                               FontSize="10"
-                               Foreground="{DynamicResource _secondaryTextBrush}"
-                               Text="Flaw" />
-                    <TextBlock Margin="0,0,0,10"
-                               Foreground="{DynamicResource _primaryTextBrush}"
-                               Text="{Binding Flaw}"
-                               TextWrapping="Wrap" />
-                </StackPanel>
+            <StackPanel Width="325" Margin="0,0,15,0">
+               <TextBlock Margin="0,10,0,0"
+                          FontSize="10"
+                          Foreground="{DynamicResource _secondaryTextBrush}"
+                          Text="Flaw" />
+               <TextBlock Margin="0,0,0,10"
+                          Foreground="{DynamicResource _primaryTextBrush}"
+                          Text="{Binding Flaw}"
+                          TextWrapping="Wrap" />
+            </StackPanel>
 
-                <StackPanel Width="325" Margin="0,0,15,0">
-                    <TextBlock Margin="0,10,0,0"
-                               FontSize="10"
-                               Foreground="{DynamicResource _secondaryTextBrush}"
-                               Text="Abilities" />
-                    <TextBlock Margin="0,0,0,10"
-                               Foreground="{DynamicResource _primaryTextBrush}"
-                               Text="{Binding Abilities}"
-                               TextWrapping="Wrap" />
-                </StackPanel>
+            <StackPanel Width="325" Margin="0,0,15,0">
+               <TextBlock Margin="0,10,0,0"
+                          FontSize="10"
+                          Foreground="{DynamicResource _secondaryTextBrush}"
+                          Text="Abilities" />
+               <TextBlock Margin="0,0,0,10"
+                          Foreground="{DynamicResource _primaryTextBrush}"
+                          Text="{Binding Abilities}"
+                          TextWrapping="Wrap" />
+            </StackPanel>
 
-                <StackPanel Width="325" Margin="0,0,15,0">
-                    <TextBlock Margin="0,10,0,0"
-                               FontSize="10"
-                               Foreground="{DynamicResource _secondaryTextBrush}"
-                               Text="Mannerism" />
-                    <TextBlock Margin="0,0,0,10"
-                               Foreground="{DynamicResource _primaryTextBrush}"
-                               Text="{Binding Mannerism}"
-                               TextWrapping="Wrap" />
-                </StackPanel>
+            <StackPanel Width="325" Margin="0,0,15,0">
+               <TextBlock Margin="0,10,0,0"
+                          FontSize="10"
+                          Foreground="{DynamicResource _secondaryTextBrush}"
+                          Text="Mannerism" />
+               <TextBlock Margin="0,0,0,10"
+                          Foreground="{DynamicResource _primaryTextBrush}"
+                          Text="{Binding Mannerism}"
+                          TextWrapping="Wrap" />
+            </StackPanel>
 
-                <StackPanel Width="325" Margin="0,0,15,0">
-                    <TextBlock Margin="0,10,0,0"
-                               FontSize="10"
-                               Foreground="{DynamicResource _secondaryTextBrush}"
-                               Text="Interactions" />
-                    <TextBlock Margin="0,0,0,10"
-                               Foreground="{DynamicResource _primaryTextBrush}"
-                               Text="{Binding Interactions}"
-                               TextWrapping="Wrap" />
-                </StackPanel>
+            <StackPanel Width="325" Margin="0,0,15,0">
+               <TextBlock Margin="0,10,0,0"
+                          FontSize="10"
+                          Foreground="{DynamicResource _secondaryTextBrush}"
+                          Text="Interactions" />
+               <TextBlock Margin="0,0,0,10"
+                          Foreground="{DynamicResource _primaryTextBrush}"
+                          Text="{Binding Interactions}"
+                          TextWrapping="Wrap" />
+            </StackPanel>
 
-                <StackPanel Width="325" Margin="0,0,15,0">
-                    <TextBlock Margin="0,10,0,0"
-                               FontSize="10"
-                               Foreground="{DynamicResource _secondaryTextBrush}"
-                               Text="Useful Knowledge" />
-                    <TextBlock Margin="0,0,0,10"
-                               Foreground="{DynamicResource _primaryTextBrush}"
-                               Text="{Binding UsefulKnowledge}"
-                               TextWrapping="Wrap" />
-                </StackPanel>
-            </WrapPanel>
+            <StackPanel Width="325" Margin="0,0,15,0">
+               <TextBlock Margin="0,10,0,0"
+                          FontSize="10"
+                          Foreground="{DynamicResource _secondaryTextBrush}"
+                          Text="Useful Knowledge" />
+               <TextBlock Margin="0,0,0,10"
+                          Foreground="{DynamicResource _primaryTextBrush}"
+                          Text="{Binding UsefulKnowledge}"
+                          TextWrapping="Wrap" />
+            </StackPanel>
+         </WrapPanel>
 
-            <TextBlock Margin="0,10,0,0"
-                       FontSize="10"
-                       Foreground="{DynamicResource _secondaryTextBrush}"
-                       Text="Backstory" />
-            <TextBlock Margin="0,0,0,10"
-                       Foreground="{DynamicResource _primaryTextBrush}"
-                       Text="{Binding Backstory}"
-                       TextWrapping="Wrap" />
-        </StackPanel>
-    </DataTemplate>
+         <TextBlock Margin="0,10,0,0"
+                    FontSize="10"
+                    Foreground="{DynamicResource _secondaryTextBrush}"
+                    Text="Backstory" />
+         <TextBlock Margin="0,0,0,10"
+                    Foreground="{DynamicResource _primaryTextBrush}"
+                    Text="{Binding Backstory}"
+                    TextWrapping="Wrap" />
+      </StackPanel>
+   </DataTemplate>
 </ResourceDictionary>

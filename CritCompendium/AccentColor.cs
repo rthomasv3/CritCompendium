@@ -1,12 +1,12 @@
 ﻿namespace CritCompendium
 {
-    public enum AccentColor
-    {
-        Blue,
-        Green,
-        Orange,
-        Purple,
-        Red,
-        Steel
-    }
+   public enum AccentColor
+   {
+      Blue,
+      Green,
+      Orange,
+      Purple,
+      Red,
+      Steel
+   }
 }

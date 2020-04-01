@@ -7,77 +7,77 @@ using CritCompendiumInfrastructure.Services.Search.Input;
 
 namespace CritCompendiumInfrastructure.Services.Search
 {
-    public sealed class FeatSearchService
-	{
-		#region Fields
+   public sealed class FeatSearchService
+   {
+      #region Fields
 
-		private readonly Compendium _compendium;
+      private readonly Compendium _compendium;
 
-		#endregion
+      #endregion
 
-		#region Constructors
+      #region Constructors
 
-		/// <summary>
-		/// Creates a new instance of <see cref="FeatSearchService"/>
-		/// </summary>
-		public FeatSearchService(Compendium compendium)
-		{
-			_compendium = compendium;
-		}
+      /// <summary>
+      /// Creates a new instance of <see cref="FeatSearchService"/>
+      /// </summary>
+      public FeatSearchService(Compendium compendium)
+      {
+         _compendium = compendium;
+      }
 
-        #endregion
+      #endregion
 
-        #region Public Methods
+      #region Public Methods
 
-        /// <summary>
-        /// Searches the compendium for feats matching the search input
-        /// </summary>
-        public List<FeatModel> Search(FeatSearchInput searchInput)
-		{
-			return Sort(_compendium.Feats.Where(x => SearchInputApplies(searchInput, x)), searchInput.SortOption.Key);
-		}
-        
-        /// <summary>
-        /// True if the search input applies to the model
-        /// </summary>
-        public bool SearchInputApplies(FeatSearchInput searchInput, FeatModel featModel)
-        {
-            return HasSearchText(featModel, searchInput.SearchText) &&
-                   PrerequisiteMatches(featModel, searchInput.Prerequisite.Key);
-        }
+      /// <summary>
+      /// Searches the compendium for feats matching the search input
+      /// </summary>
+      public List<FeatModel> Search(FeatSearchInput searchInput)
+      {
+         return Sort(_compendium.Feats.Where(x => SearchInputApplies(searchInput, x)), searchInput.SortOption.Key);
+      }
 
-        /// <summary>
-        /// Sorts using selected option
-        /// </summary>
-        public List<FeatModel> Sort(IEnumerable<FeatModel> feats, FeatSortOption sortOption)
-        {
-            if (sortOption == FeatSortOption.Name_Ascending)
-            {
-                feats = feats.OrderBy(x => x.Name);
-            }
-            else if (sortOption == FeatSortOption.Name_Descending)
-            {
-                feats = feats.OrderByDescending(x => x.Name);
-            }
+      /// <summary>
+      /// True if the search input applies to the model
+      /// </summary>
+      public bool SearchInputApplies(FeatSearchInput searchInput, FeatModel featModel)
+      {
+         return HasSearchText(featModel, searchInput.SearchText) &&
+                PrerequisiteMatches(featModel, searchInput.Prerequisite.Key);
+      }
 
-            return feats.ToList();
-        }
+      /// <summary>
+      /// Sorts using selected option
+      /// </summary>
+      public List<FeatModel> Sort(IEnumerable<FeatModel> feats, FeatSortOption sortOption)
+      {
+         if (sortOption == FeatSortOption.Name_Ascending)
+         {
+            feats = feats.OrderBy(x => x.Name);
+         }
+         else if (sortOption == FeatSortOption.Name_Descending)
+         {
+            feats = feats.OrderByDescending(x => x.Name);
+         }
 
-        #endregion
+         return feats.ToList();
+      }
 
-        #region Non-Public Methods
+      #endregion
 
-        private bool HasSearchText(FeatModel featModel, string searchText)
-		{
-			return String.IsNullOrWhiteSpace(searchText) ||
-				   featModel.Name.ToLower().Contains(searchText.ToLower());
-		}
+      #region Non-Public Methods
 
-		private bool PrerequisiteMatches(FeatModel featModel, bool prerequisite)
-		{
-			return prerequisite == false || String.IsNullOrWhiteSpace(featModel.Prerequisite);
-		}
+      private bool HasSearchText(FeatModel featModel, string searchText)
+      {
+         return String.IsNullOrWhiteSpace(searchText) ||
+               featModel.Name.ToLower().Contains(searchText.ToLower());
+      }
 
-		#endregion
-	}
+      private bool PrerequisiteMatches(FeatModel featModel, bool prerequisite)
+      {
+         return prerequisite == false || String.IsNullOrWhiteSpace(featModel.Prerequisite);
+      }
+
+      #endregion
+   }
 }

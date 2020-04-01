@@ -7,26 +7,26 @@
              Width="325"
              Height="545"
              mc:Ignorable="d">
-    <Grid Margin="10">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
+   <Grid Margin="10">
+      <Grid.RowDefinitions>
+         <RowDefinition Height="Auto" />
+         <RowDefinition Height="Auto" />
+         <RowDefinition Height="*" />
+         <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
+      <Grid Grid.Row="0">
+         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+         </Grid.ColumnDefinitions>
 
-            <TextBox Grid.Column="0"
+         <TextBox Grid.Column="0"
                      Style="{DynamicResource _mainTextboxStyle}"
                      Tag="Search items..."
                      Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged, Delay=350}" />
 
-            <Button Grid.Column="1"
+         <Button Grid.Column="1"
                     Width="45"
                     Height="22"
                     Margin="6,0,0,0"
@@ -34,96 +34,96 @@
                     Content="Clear"
                     Style="{DynamicResource _mainButtonStyle}"
                     ToolTip="Clear Search, Sort, and Filters" />
-        </Grid>
+      </Grid>
 
-        <Expander Grid.Row="1"
+      <Expander Grid.Row="1"
                   Header="{Binding SortAndFilterHeader}"
                   IsExpanded="{Binding SortAndFiltersExpanded}">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
+         <Grid>
+            <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="*" />
+               <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
+            <Grid.RowDefinitions>
+               <RowDefinition Height="Auto" />
+               <RowDefinition Height="Auto" />
+               <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 
-                <ComboBox Grid.Row="0"
+            <ComboBox Grid.Row="0"
                           Grid.Column="0"
                           Margin="0,5,3,0"
                           DisplayMemberPath="Value"
                           ItemsSource="{Binding SortOptions}"
                           SelectedValue="{Binding SelectedSortOption}" />
 
-                <ComboBox Grid.Row="0"
+            <ComboBox Grid.Row="0"
                           Grid.Column="1"
                           Margin="3,5,0,0"
                           DisplayMemberPath="Value"
                           ItemsSource="{Binding ItemTypes}"
                           SelectedValue="{Binding SelectedItemType}" />
 
-                <ComboBox Grid.Row="1"
+            <ComboBox Grid.Row="1"
                           Grid.Column="0"
                           Margin="0,5,3,0"
                           DisplayMemberPath="Value"
                           ItemsSource="{Binding MagicOptions}"
                           SelectedValue="{Binding SelectedMagicOption}" />
 
-                <ComboBox Grid.Row="1"
+            <ComboBox Grid.Row="1"
                           Grid.Column="1"
                           Margin="3,5,0,0"
                           DisplayMemberPath="Value"
                           ItemsSource="{Binding Rarities}"
                           SelectedValue="{Binding SelectedRarity}" />
 
-                <ComboBox Grid.Row="2"
+            <ComboBox Grid.Row="2"
                           Grid.Column="0"
                           Margin="0,5,3,0"
                           DisplayMemberPath="Value"
                           ItemsSource="{Binding AttunementOptions}"
                           SelectedValue="{Binding SelectedAttunementOption}" />
-            </Grid>
-        </Expander>
+         </Grid>
+      </Expander>
 
-        <ItemsControl Grid.Row="2"
+      <ItemsControl Grid.Row="2"
                       Margin="0,5,0,5"
                       ItemsSource="{Binding Items, UpdateSourceTrigger=PropertyChanged}"
                       Style="{DynamicResource _virtualizedItemsControlStyle}"
                       Tag="No Items Found">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <Border>
-                        <Border.InputBindings>
-                            <MouseBinding Command="{Binding Path=DataContext.SelectItemCommand, RelativeSource={RelativeSource AncestorType={x:Type local:ItemSearchView}}}"
+         <ItemsControl.ItemTemplate>
+            <DataTemplate>
+               <Border>
+                  <Border.InputBindings>
+                     <MouseBinding Command="{Binding Path=DataContext.SelectItemCommand, RelativeSource={RelativeSource AncestorType={x:Type local:ItemSearchView}}}"
                                           CommandParameter="{Binding}"
                                           MouseAction="LeftClick" />
-                        </Border.InputBindings>
+                  </Border.InputBindings>
 
-                        <Border.Style>
-                            <Style BasedOn="{StaticResource _listItemBorderStyle}" TargetType="Border">
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding Path=DataContext.IsSelected, RelativeSource={RelativeSource TemplatedParent}}" Value="True">
-                                        <Setter Property="BorderBrush" Value="{DynamicResource _buttonBackgroundBrush}" />
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Border.Style>
+                  <Border.Style>
+                     <Style BasedOn="{StaticResource _listItemBorderStyle}" TargetType="Border">
+                        <Style.Triggers>
+                           <DataTrigger Binding="{Binding Path=DataContext.IsSelected, RelativeSource={RelativeSource TemplatedParent}}" Value="True">
+                              <Setter Property="BorderBrush" Value="{DynamicResource _buttonBackgroundBrush}" />
+                           </DataTrigger>
+                        </Style.Triggers>
+                     </Style>
+                  </Border.Style>
 
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
+                  <Grid>
+                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                     </Grid.ColumnDefinitions>
 
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
+                     <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                     </Grid.RowDefinitions>
 
-                            <RadioButton Grid.Row="0"
+                     <RadioButton Grid.Row="0"
                                          Grid.RowSpan="2"
                                          Grid.Column="0"
                                          Margin="0,0,10,0"
@@ -132,34 +132,34 @@
                                          GroupName="Items"
                                          IsChecked="{Binding IsSelected, Mode=TwoWay}" />
 
-                            <TextBlock Grid.Row="0"
+                     <TextBlock Grid.Row="0"
                                        Grid.Column="1"
                                        FontSize="12"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="{Binding Name}"
                                        TextTrimming="CharacterEllipsis" />
 
-                            <TextBlock Grid.Row="1"
+                     <TextBlock Grid.Row="1"
                                        Grid.Column="1"
                                        FontSize="11"
                                        Foreground="{DynamicResource _secondaryTextBrush}"
                                        Text="{Binding Details}"
                                        TextTrimming="CharacterEllipsis"
                                        TextWrapping="NoWrap" />
-                        </Grid>
-                    </Border>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
+                  </Grid>
+               </Border>
+            </DataTemplate>
+         </ItemsControl.ItemTemplate>
+      </ItemsControl>
 
-        <Grid Grid.Row="3" Margin="0,5,0,0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
+      <Grid Grid.Row="3" Margin="0,5,0,0">
+         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+         </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="1"
+         <Button Grid.Column="1"
                     Width="Auto"
                     MinWidth="50"
                     Margin="5,0"
@@ -168,7 +168,7 @@
                     Content="Cancel"
                     Style="{DynamicResource _rejectButtonStyle}" />
 
-            <Button Grid.Column="2"
+         <Button Grid.Column="2"
                     Width="Auto"
                     MinWidth="50"
                     Margin="5,0"
@@ -176,6 +176,6 @@
                     Command="{Binding AcceptCommand}"
                     Content="Select Item(s)"
                     Style="{DynamicResource _mainButtonStyle}" />
-        </Grid>
-    </Grid>
+      </Grid>
+   </Grid>
 </UserControl>

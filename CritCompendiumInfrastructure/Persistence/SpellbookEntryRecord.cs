@@ -10,7 +10,7 @@ namespace CritCompendiumInfrastructure.Persistence
       /// <summary>
       /// Gets or sets id.
       /// </summary>
-      public Guid Id { get; set;  }
+      public Guid Id { get; set; }
 
       /// <summary>
       /// Gets or sets prepared.

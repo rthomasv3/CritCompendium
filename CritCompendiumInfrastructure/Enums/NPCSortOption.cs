@@ -1,8 +1,8 @@
 ﻿namespace CritCompendiumInfrastructure.Enums
 {
-    public enum NPCSortOption
-    {
-        Name_Ascending,
-        Name_Descending
-    }
+   public enum NPCSortOption
+   {
+      Name_Ascending,
+      Name_Descending
+   }
 }

@@ -7,134 +7,134 @@
              Width="500"
              Height="Auto"
              mc:Ignorable="d">
-    <Border Padding="10">
-        <StackPanel>
-            <TextBlock Grid.Row="1"
+   <Border Padding="10">
+      <StackPanel>
+         <TextBlock Grid.Row="1"
                        Grid.Column="0"
                        Margin="0,5,0,0"
                        FontWeight="Bold"
                        Foreground="{DynamicResource _primaryTextBrush}"
                        Text="Select File To Import" />
 
-            <TextBlock Margin="0,10,0,2"
+         <TextBlock Margin="0,10,0,2"
                        FontSize="10"
                        Foreground="{DynamicResource _secondaryTextBrush}"
                        Text="File Location" />
 
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
+         <Grid>
+            <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="*" />
+               <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
 
-                <TextBox IsReadOnly="True" Text="{Binding FilePath, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox IsReadOnly="True" Text="{Binding FilePath, UpdateSourceTrigger=PropertyChanged}" />
 
-                <Button Grid.Column="1"
+            <Button Grid.Column="1"
                         Width="60"
                         Margin="10,0,0,0"
                         Command="{Binding BrowseCommand}"
                         Content="Browse"
                         Style="{DynamicResource _mainButtonStyle}" />
-            </Grid>
+         </Grid>
 
-            <TextBlock Grid.Row="1"
+         <TextBlock Grid.Row="1"
                        Grid.Column="0"
                        Margin="0,15,0,0"
                        FontWeight="Bold"
                        Foreground="{DynamicResource _primaryTextBrush}"
                        Text="Import Options" />
 
-            <Grid Margin="0,15,0,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
+         <Grid Margin="0,15,0,0">
+            <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="*" />
+               <ColumnDefinition Width="*" />
+               <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-                <Grid Grid.Column="0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+               <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto" />
+                  <ColumnDefinition Width="*" />
+               </Grid.ColumnDefinitions>
 
-                    <RadioButton Grid.Column="0"
+               <RadioButton Grid.Column="0"
                                  Margin="0,1,0,0"
                                  GroupName="ImportOptions"
                                  IsChecked="{Binding ReplaceExistingEntries}" />
-                    <TextBlock Grid.Column="1"
+               <TextBlock Grid.Column="1"
                                Foreground="{DynamicResource _primaryTextBrush}"
                                Text="Replace existing"
                                ToolTip="Replace existing entries of the same name with those found in the file." />
-                </Grid>
+            </Grid>
 
-                <Grid Grid.Column="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+               <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto" />
+                  <ColumnDefinition Width="*" />
+               </Grid.ColumnDefinitions>
 
-                    <RadioButton Grid.Column="0"
+               <RadioButton Grid.Column="0"
                                  Margin="0,1,0,0"
                                  GroupName="ImportOptions"
                                  IsChecked="{Binding SkipDuplicateEntries}" />
-                    <TextBlock Grid.Column="1"
+               <TextBlock Grid.Column="1"
                                Foreground="{DynamicResource _primaryTextBrush}"
                                Text="Skip duplicates"
                                ToolTip="Import everything in the file except duplicates (by name)." />
-                </Grid>
+            </Grid>
 
-                <Grid Grid.Column="2">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
+            <Grid Grid.Column="2">
+               <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto" />
+                  <ColumnDefinition Width="*" />
+               </Grid.ColumnDefinitions>
 
-                    <RadioButton Grid.Column="0"
+               <RadioButton Grid.Column="0"
                                  Margin="0,1,0,0"
                                  GroupName="ImportOptions"
                                  IsChecked="{Binding AddAllEntries}" />
-                    <TextBlock Grid.Column="1"
+               <TextBlock Grid.Column="1"
                                Foreground="{DynamicResource _primaryTextBrush}"
                                Text="Add everything"
                                ToolTip="Add everything found in the file, including duplicates (by name)." />
-                </Grid>
             </Grid>
+         </Grid>
 
-            <TextBlock Grid.Row="1"
+         <TextBlock Grid.Row="1"
                        Grid.Column="0"
                        Margin="0,25,0,0"
                        FontWeight="Bold"
                        Foreground="{DynamicResource _primaryTextBrush}"
                        Text="Entries Found In File" />
 
-            <Grid Margin="0,10,0,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="80" />
-                </Grid.ColumnDefinitions>
+         <Grid Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="*" />
+               <ColumnDefinition Width="80" />
+            </Grid.ColumnDefinitions>
 
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
+            <Grid.RowDefinitions>
+               <RowDefinition Height="Auto" />
+               <RowDefinition Height="Auto" />
+               <RowDefinition Height="Auto" />
+               <RowDefinition Height="Auto" />
+               <RowDefinition Height="Auto" />
+               <RowDefinition Height="Auto" />
+               <RowDefinition Height="Auto" />
+               <RowDefinition Height="Auto" />
+               <RowDefinition Height="Auto" />
+               <RowDefinition Height="Auto" />
+               <RowDefinition Height="Auto" />
+               <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0"
+            <TextBlock Grid.Row="0"
                            Grid.Column="0"
                            Margin="5,0,0,5"
                            FontSize="10"
                            Foreground="{DynamicResource _secondaryTextBrush}"
                            Text="Type" />
-                <TextBlock Grid.Row="0"
+            <TextBlock Grid.Row="0"
                            Grid.Column="1"
                            Margin="0,0,0,5"
                            FontSize="10"
@@ -142,25 +142,25 @@
                            Text="Quantity"
                            TextAlignment="Center" />
 
-                <TextBlock Grid.Row="1"
+            <TextBlock Grid.Row="1"
                            Grid.Column="0"
                            Padding="5,5,0,5"
                            Foreground="{DynamicResource _primaryTextBrush}"
                            Text="Characters" />
-                <TextBlock Grid.Row="1"
+            <TextBlock Grid.Row="1"
                            Grid.Column="1"
                            Padding="0,5,0,5"
                            HorizontalAlignment="Center"
                            Foreground="{DynamicResource _primaryTextBrush}"
                            Text="{Binding CharacterCount, StringFormat='{}{0:N0}'}" />
 
-                <TextBlock Grid.Row="2"
+            <TextBlock Grid.Row="2"
                            Grid.Column="0"
                            Padding="5,5,0,5"
                            Background="{DynamicResource _tableAlternateBackground}"
                            Foreground="{DynamicResource _primaryTextBrush}"
                            Text="Encounters" />
-                <TextBlock Grid.Row="2"
+            <TextBlock Grid.Row="2"
                            Grid.Column="1"
                            Padding="0,5,0,5"
                            Background="{DynamicResource _tableAlternateBackground}"
@@ -168,25 +168,25 @@
                            Text="{Binding EncounterCount, StringFormat='{}{0:N0}'}"
                            TextAlignment="Center" />
 
-                <TextBlock Grid.Row="3"
+            <TextBlock Grid.Row="3"
                            Grid.Column="0"
                            Padding="5,5,0,5"
                            Foreground="{DynamicResource _primaryTextBrush}"
                            Text="Backgrounds" />
-                <TextBlock Grid.Row="3"
+            <TextBlock Grid.Row="3"
                            Grid.Column="1"
                            Padding="0,5,0,5"
                            Foreground="{DynamicResource _primaryTextBrush}"
                            Text="{Binding BackgroundCount, StringFormat='{}{0:N0}'}"
                            TextAlignment="Center" />
 
-                <TextBlock Grid.Row="4"
+            <TextBlock Grid.Row="4"
                            Grid.Column="0"
                            Padding="5,5,0,5"
                            Background="{DynamicResource _tableAlternateBackground}"
                            Foreground="{DynamicResource _primaryTextBrush}"
                            Text="Classes" />
-                <TextBlock Grid.Row="4"
+            <TextBlock Grid.Row="4"
                            Grid.Column="1"
                            Padding="0,5,0,5"
                            Background="{DynamicResource _tableAlternateBackground}"
@@ -194,25 +194,25 @@
                            Text="{Binding ClassCount, StringFormat='{}{0:N0}'}"
                            TextAlignment="Center" />
 
-                <TextBlock Grid.Row="5"
+            <TextBlock Grid.Row="5"
                            Grid.Column="0"
                            Padding="5,5,0,5"
                            Foreground="{DynamicResource _primaryTextBrush}"
                            Text="Conditions" />
-                <TextBlock Grid.Row="5"
+            <TextBlock Grid.Row="5"
                            Grid.Column="1"
                            Padding="0,5,0,5"
                            Foreground="{DynamicResource _primaryTextBrush}"
                            Text="{Binding ConditionCount, StringFormat='{}{0:N0}'}"
                            TextAlignment="Center" />
 
-                <TextBlock Grid.Row="6"
+            <TextBlock Grid.Row="6"
                            Grid.Column="0"
                            Padding="5,5,0,5"
                            Background="{DynamicResource _tableAlternateBackground}"
                            Foreground="{DynamicResource _primaryTextBrush}"
                            Text="Feats" />
-                <TextBlock Grid.Row="6"
+            <TextBlock Grid.Row="6"
                            Grid.Column="1"
                            Padding="0,5,0,5"
                            Background="{DynamicResource _tableAlternateBackground}"
@@ -220,25 +220,25 @@
                            Text="{Binding FeatCount, StringFormat='{}{0:N0}'}"
                            TextAlignment="Center" />
 
-                <TextBlock Grid.Row="7"
+            <TextBlock Grid.Row="7"
                            Grid.Column="0"
                            Padding="5,5,0,5"
                            Foreground="{DynamicResource _primaryTextBrush}"
                            Text="Items" />
-                <TextBlock Grid.Row="7"
+            <TextBlock Grid.Row="7"
                            Grid.Column="1"
                            Padding="0,5,0,5"
                            Foreground="{DynamicResource _primaryTextBrush}"
                            Text="{Binding ItemCount, StringFormat='{}{0:N0}'}"
                            TextAlignment="Center" />
 
-                <TextBlock Grid.Row="8"
+            <TextBlock Grid.Row="8"
                            Grid.Column="0"
                            Padding="5,5,0,5"
                            Background="{DynamicResource _tableAlternateBackground}"
                            Foreground="{DynamicResource _primaryTextBrush}"
                            Text="Languages*" />
-                <TextBlock Grid.Row="8"
+            <TextBlock Grid.Row="8"
                            Grid.Column="1"
                            Padding="0,5,0,5"
                            Background="{DynamicResource _tableAlternateBackground}"
@@ -246,25 +246,25 @@
                            Text="{Binding LanguageCount, StringFormat='{}{0:N0}'}"
                            TextAlignment="Center" />
 
-                <TextBlock Grid.Row="9"
+            <TextBlock Grid.Row="9"
                            Grid.Column="0"
                            Padding="5,5,0,5"
                            Foreground="{DynamicResource _primaryTextBrush}"
                            Text="Monsters" />
-                <TextBlock Grid.Row="9"
+            <TextBlock Grid.Row="9"
                            Grid.Column="1"
                            Padding="0,5,0,5"
                            Foreground="{DynamicResource _primaryTextBrush}"
                            Text="{Binding MonsterCount, StringFormat='{}{0:N0}'}"
                            TextAlignment="Center" />
 
-                <TextBlock Grid.Row="10"
+            <TextBlock Grid.Row="10"
                            Grid.Column="0"
                            Padding="5,5,0,5"
                            Background="{DynamicResource _tableAlternateBackground}"
                            Foreground="{DynamicResource _primaryTextBrush}"
                            Text="Races" />
-                <TextBlock Grid.Row="10"
+            <TextBlock Grid.Row="10"
                            Grid.Column="1"
                            Padding="0,5,0,5"
                            Background="{DynamicResource _tableAlternateBackground}"
@@ -272,33 +272,33 @@
                            Text="{Binding RaceCount, StringFormat='{}{0:N0}'}"
                            TextAlignment="Center" />
 
-                <TextBlock Grid.Row="11"
+            <TextBlock Grid.Row="11"
                            Grid.Column="0"
                            Padding="5,5,0,5"
                            Foreground="{DynamicResource _primaryTextBrush}"
                            Text="Spells" />
-                <TextBlock Grid.Row="11"
+            <TextBlock Grid.Row="11"
                            Grid.Column="1"
                            Padding="0,5,0,5"
                            Foreground="{DynamicResource _primaryTextBrush}"
                            Text="{Binding SpellCount, StringFormat='{}{0:N0}'}"
                            TextAlignment="Center" />
-            </Grid>
+         </Grid>
 
-            <TextBlock Margin="5,5,0,5"
+         <TextBlock Margin="5,5,0,5"
                        FontSize="10"
                        Foreground="{DynamicResource _secondaryTextBrush}"
                        Text="*Duplicate languages are always skipped." />
 
-            <Grid Margin="0,10,0,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
+         <Grid Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="Auto" />
+               <ColumnDefinition Width="*" />
+               <ColumnDefinition Width="Auto" />
+               <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
 
-                <Button Grid.Column="0"
+            <Button Grid.Column="0"
                         Width="Auto"
                         MinWidth="50"
                         Margin="5,0"
@@ -308,7 +308,7 @@
                         Style="{DynamicResource _rejectButtonStyle}"
                         ToolTip="Restore Default Compendium" />
 
-                <Button Grid.Column="2"
+            <Button Grid.Column="2"
                         Width="Auto"
                         MinWidth="50"
                         Margin="5,0"
@@ -317,7 +317,7 @@
                         Content="Cancel"
                         Style="{DynamicResource _rejectButtonStyle}" />
 
-                <Button Grid.Column="3"
+            <Button Grid.Column="3"
                         Width="Auto"
                         MinWidth="50"
                         Margin="5,0,0,0"
@@ -325,7 +325,7 @@
                         Command="{Binding AcceptCommand}"
                         Content="Import"
                         Style="{DynamicResource _mainButtonStyle}" />
-            </Grid>
-        </StackPanel>
-    </Border>
+         </Grid>
+      </StackPanel>
+   </Border>
 </UserControl>

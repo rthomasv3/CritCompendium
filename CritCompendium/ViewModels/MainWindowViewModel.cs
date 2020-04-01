@@ -812,8 +812,6 @@ namespace CritCompendium.ViewModels
 
       private void NavigateToPatreon()
       {
-         //System.Diagnostics.Process.Start(_patreonURL);
-
          _dialogService.ShowPatreonDialog();
       }
 

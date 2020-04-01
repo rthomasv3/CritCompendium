@@ -15,74 +15,74 @@ using System.Windows.Shapes;
 
 namespace CritCompendium
 {
-	/// <summary>
-	/// Interaction logic for CustomTextBox.xaml
-	/// </summary>
-	public partial class CustomTextBox : UserControl
-	{
-		public CustomTextBox()
-		{
-			InitializeComponent();
+   /// <summary>
+   /// Interaction logic for CustomTextBox.xaml
+   /// </summary>
+   public partial class CustomTextBox : UserControl
+   {
+      public CustomTextBox()
+      {
+         InitializeComponent();
 
-			DataContext = this;
+         DataContext = this;
 
-			_editTextBox.PreviewKeyDown += _editTextBox_PreviewKeyDown;
-		}
+         _editTextBox.PreviewKeyDown += _editTextBox_PreviewKeyDown;
+      }
 
-		private void _editTextBox_PreviewKeyDown(object sender, KeyEventArgs e)
-		{
-			if (e.Key == Key.Tab)
-			{
-				_editTextBox.SelectedText = string.Empty;
+      private void _editTextBox_PreviewKeyDown(object sender, KeyEventArgs e)
+      {
+         if (e.Key == Key.Tab)
+         {
+            _editTextBox.SelectedText = string.Empty;
 
-				IDataObject data = Clipboard.GetDataObject();
+            IDataObject data = Clipboard.GetDataObject();
 
-				string tab = new String(' ', 4);
-				Clipboard.SetData(DataFormats.Text, tab);
-				_editTextBox.Paste();
+            string tab = new String(' ', 4);
+            Clipboard.SetData(DataFormats.Text, tab);
+            _editTextBox.Paste();
 
-				if (data != null)
-				{
-					Clipboard.SetDataObject(data);
-				}
-				
-				e.Handled = true;
-			}
-		}
+            if (data != null)
+            {
+               Clipboard.SetDataObject(data);
+            }
 
-		public static readonly DependencyProperty TextProperty =
-			 DependencyProperty.RegisterAttached(
-			 "Text",
-			 typeof(string),
-			 typeof(CustomTextBox),
-			 new UIPropertyMetadata("", new PropertyChangedCallback(OnTextChanged)));
+            e.Handled = true;
+         }
+      }
 
-		/// <summary>
-		/// Gets or sets text
-		/// </summary>
-		public string Text
-		{
-			get { return (string)GetValue(TextProperty); }
-			set { SetValue(TextProperty, value); }
-		}
+      public static readonly DependencyProperty TextProperty =
+          DependencyProperty.RegisterAttached(
+          "Text",
+          typeof(string),
+          typeof(CustomTextBox),
+          new UIPropertyMetadata("", new PropertyChangedCallback(OnTextChanged)));
 
-		private static void OnTextChanged(DependencyObject o, DependencyPropertyChangedEventArgs e)
-		{
-			((CustomTextBox)o).Text = (string)e.NewValue;
-		}
+      /// <summary>
+      /// Gets or sets text
+      /// </summary>
+      public string Text
+      {
+         get { return (string)GetValue(TextProperty); }
+         set { SetValue(TextProperty, value); }
+      }
 
-		private void _textScrollViewer_ScrollChanged(object sender, ScrollChangedEventArgs e)
-		{
-			_lineNumberScrollViewer.ScrollToVerticalOffset(_textScrollViewer.VerticalOffset);
+      private static void OnTextChanged(DependencyObject o, DependencyPropertyChangedEventArgs e)
+      {
+         ((CustomTextBox)o).Text = (string)e.NewValue;
+      }
 
-			if (_textScrollViewer.ComputedHorizontalScrollBarVisibility == Visibility.Visible)
-			{
-				_lineNumberScrollViewer.Margin = new Thickness(0, 0, 0, 18);
-			}
-			else
-			{
-				_lineNumberScrollViewer.Margin = new Thickness(0);
-			}
-		}
-	}
+      private void _textScrollViewer_ScrollChanged(object sender, ScrollChangedEventArgs e)
+      {
+         _lineNumberScrollViewer.ScrollToVerticalOffset(_textScrollViewer.VerticalOffset);
+
+         if (_textScrollViewer.ComputedHorizontalScrollBarVisibility == Visibility.Visible)
+         {
+            _lineNumberScrollViewer.Margin = new Thickness(0, 0, 0, 18);
+         }
+         else
+         {
+            _lineNumberScrollViewer.Margin = new Thickness(0);
+         }
+      }
+   }
 }

@@ -1,10 +1,10 @@
 ﻿namespace CritCompendiumInfrastructure.Enums
 {
-    public enum LightArmor
-    {
-        All,
-        Padded,
-        Leather,
-        StuddedLeather
-    }
+   public enum LightArmor
+   {
+      All,
+      Padded,
+      Leather,
+      StuddedLeather
+   }
 }

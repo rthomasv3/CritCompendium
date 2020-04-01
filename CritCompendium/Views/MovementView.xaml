@@ -7,92 +7,92 @@
              Width="325"
              Height="Auto"
              mc:Ignorable="d">
-    <Border Padding="10">
-        <StackPanel>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
+   <Border Padding="10">
+      <StackPanel>
+         <Grid>
+            <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="*" />
+               <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-                <StackPanel Grid.Column="0" Margin="0,0,5,0">
-                    <TextBlock Margin="0,5,5,2"
+            <StackPanel Grid.Column="0" Margin="0,0,5,0">
+               <TextBlock Margin="0,5,5,2"
                                FontSize="10"
                                Foreground="{DynamicResource _secondaryTextBrush}"
                                Text="Walk Speed" />
-                    <TextBox Text="{Binding WalkSpeed, UpdateSourceTrigger=PropertyChanged}" />
-                </StackPanel>
+               <TextBox Text="{Binding WalkSpeed, UpdateSourceTrigger=PropertyChanged}" />
+            </StackPanel>
 
-                <StackPanel Grid.Column="1" Margin="5,0,0,0">
-                    <TextBlock Margin="0,5,0,2"
+            <StackPanel Grid.Column="1" Margin="5,0,0,0">
+               <TextBlock Margin="0,5,0,2"
                                FontSize="10"
                                Foreground="{DynamicResource _secondaryTextBrush}"
                                Text="Swim Speed" />
-                    <TextBox Text="{Binding SwimSpeed, UpdateSourceTrigger=PropertyChanged}" />
-                </StackPanel>
-            </Grid>
+               <TextBox Text="{Binding SwimSpeed, UpdateSourceTrigger=PropertyChanged}" />
+            </StackPanel>
+         </Grid>
 
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
+         <Grid>
+            <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="*" />
+               <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-                <StackPanel Grid.Column="0" Margin="0,0,5,0">
-                    <TextBlock Margin="0,10,0,2"
+            <StackPanel Grid.Column="0" Margin="0,0,5,0">
+               <TextBlock Margin="0,10,0,2"
                                FontSize="10"
                                Foreground="{DynamicResource _secondaryTextBrush}"
                                Text="Climb Speed" />
-                    <TextBox Text="{Binding ClimbSpeed, UpdateSourceTrigger=PropertyChanged}" />
-                </StackPanel>
+               <TextBox Text="{Binding ClimbSpeed, UpdateSourceTrigger=PropertyChanged}" />
+            </StackPanel>
 
-                <StackPanel Grid.Column="1" Margin="5,0,0,0">
-                    <TextBlock Margin="0,10,0,2"
+            <StackPanel Grid.Column="1" Margin="5,0,0,0">
+               <TextBlock Margin="0,10,0,2"
                                FontSize="10"
                                Foreground="{DynamicResource _secondaryTextBrush}"
                                Text="Crawl Speed" />
-                    <TextBox Text="{Binding CrawlSpeed, UpdateSourceTrigger=PropertyChanged}" />
-                </StackPanel>
-            </Grid>
+               <TextBox Text="{Binding CrawlSpeed, UpdateSourceTrigger=PropertyChanged}" />
+            </StackPanel>
+         </Grid>
 
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
+         <Grid>
+            <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="*" />
+               <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-                <StackPanel Grid.Column="0" Margin="0,0,5,0">
-                    <TextBlock Margin="0,10,0,2"
+            <StackPanel Grid.Column="0" Margin="0,0,5,0">
+               <TextBlock Margin="0,10,0,2"
                                FontSize="10"
                                Foreground="{DynamicResource _secondaryTextBrush}"
                                Text="Fly Speed" />
-                    <TextBox Text="{Binding FlySpeed, UpdateSourceTrigger=PropertyChanged}" />
-                </StackPanel>
-            </Grid>
+               <TextBox Text="{Binding FlySpeed, UpdateSourceTrigger=PropertyChanged}" />
+            </StackPanel>
+         </Grid>
 
-            <Grid Margin="0,15,0,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
+         <Grid Margin="0,15,0,0">
+            <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="Auto" />
+               <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-                <CheckBox Grid.Column="0"
+            <CheckBox Grid.Column="0"
                           Margin="0,1,0,0"
                           IsChecked="{Binding ApplyEncumbrance}" />
-                <TextBlock Grid.Column="1"
+            <TextBlock Grid.Column="1"
                            Margin="0,0,0,0"
                            Foreground="{DynamicResource _primaryTextBrush}"
                            Text="Apply Encumbrance" />
-            </Grid>
+         </Grid>
 
-            <Grid Margin="0,15,0,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
+         <Grid Margin="0,15,0,0">
+            <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="*" />
+               <ColumnDefinition Width="Auto" />
+               <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
 
-                <Button Grid.Column="1"
+            <Button Grid.Column="1"
                         Width="Auto"
                         MinWidth="50"
                         Margin="5,0"
@@ -101,7 +101,7 @@
                         Content="Cancel"
                         Style="{DynamicResource _rejectButtonStyle}" />
 
-                <Button Grid.Column="2"
+            <Button Grid.Column="2"
                         Width="Auto"
                         MinWidth="50"
                         Margin="5,0,0,0"
@@ -109,7 +109,7 @@
                         Command="{Binding AcceptCommand}"
                         Content="Save"
                         Style="{DynamicResource _mainButtonStyle}" />
-            </Grid>
-        </StackPanel>
-    </Border>
+         </Grid>
+      </StackPanel>
+   </Border>
 </UserControl>

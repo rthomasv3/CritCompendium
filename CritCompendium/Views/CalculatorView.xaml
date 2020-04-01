@@ -7,243 +7,243 @@
              Width="320"
              Height="Auto"
              mc:Ignorable="d">
-    <UserControl.Resources>
-        <Style x:Key="_calcButtonStyle1" TargetType="Button">
-            <Setter Property="Height" Value="34" />
-            <Setter Property="Margin" Value="5" />
-            <Setter Property="Cursor" Value="Hand" />
-            <Setter Property="FontSize" Value="12" />
-            <Setter Property="FontWeight" Value="DemiBold" />
-            <Setter Property="Background" Value="{DynamicResource _accentBrush}" />
-            <Setter Property="Foreground" Value="{DynamicResource _buttonForegroundBrush}" />
-            <Setter Property="BorderBrush" Value="{DynamicResource _buttonBorderBrush}" />
-            <Setter Property="BorderThickness" Value="0" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border Padding="{TemplateBinding Padding}"
+   <UserControl.Resources>
+      <Style x:Key="_calcButtonStyle1" TargetType="Button">
+         <Setter Property="Height" Value="34" />
+         <Setter Property="Margin" Value="5" />
+         <Setter Property="Cursor" Value="Hand" />
+         <Setter Property="FontSize" Value="12" />
+         <Setter Property="FontWeight" Value="DemiBold" />
+         <Setter Property="Background" Value="{DynamicResource _accentBrush}" />
+         <Setter Property="Foreground" Value="{DynamicResource _buttonForegroundBrush}" />
+         <Setter Property="BorderBrush" Value="{DynamicResource _buttonBorderBrush}" />
+         <Setter Property="BorderThickness" Value="0" />
+         <Setter Property="Template">
+            <Setter.Value>
+               <ControlTemplate TargetType="Button">
+                  <Border Padding="{TemplateBinding Padding}"
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="{DynamicResource _accentHoverBrush}" />
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="False">
-                                <Setter Property="Opacity" Value="0.5" />
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
+                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                  </Border>
+                  <ControlTemplate.Triggers>
+                     <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="{DynamicResource _accentHoverBrush}" />
+                     </Trigger>
+                     <Trigger Property="IsEnabled" Value="False">
+                        <Setter Property="Opacity" Value="0.5" />
+                     </Trigger>
+                  </ControlTemplate.Triggers>
+               </ControlTemplate>
+            </Setter.Value>
+         </Setter>
+      </Style>
 
-        <Style x:Key="_calcButtonStyle2"
+      <Style x:Key="_calcButtonStyle2"
                BasedOn="{StaticResource _calcButtonStyle1}"
                TargetType="Button">
-            <Setter Property="Background" Value="Transparent" />
-            <Setter Property="Foreground" Value="{DynamicResource _primaryTextBrush}" />
-            <Setter Property="BorderBrush" Value="{DynamicResource _contentBorderBrush}" />
-            <Setter Property="BorderThickness" Value="1" />
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="Transparent" />
-                    <Setter Property="BorderBrush" Value="{DynamicResource _contentHoverBorderBrush}" />
-                </Trigger>
-            </Style.Triggers>
-        </Style>
+         <Setter Property="Background" Value="Transparent" />
+         <Setter Property="Foreground" Value="{DynamicResource _primaryTextBrush}" />
+         <Setter Property="BorderBrush" Value="{DynamicResource _contentBorderBrush}" />
+         <Setter Property="BorderThickness" Value="1" />
+         <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+               <Setter Property="Background" Value="Transparent" />
+               <Setter Property="BorderBrush" Value="{DynamicResource _contentHoverBorderBrush}" />
+            </Trigger>
+         </Style.Triggers>
+      </Style>
 
-        <Style x:Key="_calcButtonStyle3"
+      <Style x:Key="_calcButtonStyle3"
                BasedOn="{StaticResource _calcButtonStyle1}"
                TargetType="Button">
-            <Setter Property="Background" Value="{DynamicResource _secondaryBackgroundBrush}" />
-            <!--  FF202027  -->
-            <Setter Property="Foreground" Value="{DynamicResource _primaryTextBrush}" />
-            <Setter Property="BorderBrush" Value="{DynamicResource _contentBorderBrush}" />
-            <Setter Property="BorderThickness" Value="1" />
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#948e7f" />
-                    <!--  FF202027  -->
-                    <Setter Property="BorderBrush" Value="{DynamicResource _contentHoverBorderBrush}" />
-                </Trigger>
-            </Style.Triggers>
-        </Style>
+         <Setter Property="Background" Value="{DynamicResource _secondaryBackgroundBrush}" />
+         <!--  FF202027  -->
+         <Setter Property="Foreground" Value="{DynamicResource _primaryTextBrush}" />
+         <Setter Property="BorderBrush" Value="{DynamicResource _contentBorderBrush}" />
+         <Setter Property="BorderThickness" Value="1" />
+         <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+               <Setter Property="Background" Value="#948e7f" />
+               <!--  FF202027  -->
+               <Setter Property="BorderBrush" Value="{DynamicResource _contentHoverBorderBrush}" />
+            </Trigger>
+         </Style.Triggers>
+      </Style>
 
-        <Style x:Key="_calcRepeatButtonStyle2" TargetType="RepeatButton">
-            <Setter Property="Height" Value="34" />
-            <Setter Property="Margin" Value="5" />
-            <Setter Property="Cursor" Value="Hand" />
-            <Setter Property="FontSize" Value="12" />
-            <Setter Property="FontWeight" Value="DemiBold" />
-            <Setter Property="Background" Value="Transparent" />
-            <Setter Property="Foreground" Value="{DynamicResource _primaryTextBrush}" />
-            <Setter Property="BorderBrush" Value="{DynamicResource _contentBorderBrush}" />
-            <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="RepeatButton">
-                        <Border Padding="{TemplateBinding Padding}"
+      <Style x:Key="_calcRepeatButtonStyle2" TargetType="RepeatButton">
+         <Setter Property="Height" Value="34" />
+         <Setter Property="Margin" Value="5" />
+         <Setter Property="Cursor" Value="Hand" />
+         <Setter Property="FontSize" Value="12" />
+         <Setter Property="FontWeight" Value="DemiBold" />
+         <Setter Property="Background" Value="Transparent" />
+         <Setter Property="Foreground" Value="{DynamicResource _primaryTextBrush}" />
+         <Setter Property="BorderBrush" Value="{DynamicResource _contentBorderBrush}" />
+         <Setter Property="BorderThickness" Value="1" />
+         <Setter Property="Template">
+            <Setter.Value>
+               <ControlTemplate TargetType="RepeatButton">
+                  <Border Padding="{TemplateBinding Padding}"
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="BorderBrush" Value="{DynamicResource _contentHoverBorderBrush}" />
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="False">
-                                <Setter Property="Opacity" Value="0.5" />
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </UserControl.Resources>
+                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                  </Border>
+                  <ControlTemplate.Triggers>
+                     <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="BorderBrush" Value="{DynamicResource _contentHoverBorderBrush}" />
+                     </Trigger>
+                     <Trigger Property="IsEnabled" Value="False">
+                        <Setter Property="Opacity" Value="0.5" />
+                     </Trigger>
+                  </ControlTemplate.Triggers>
+               </ControlTemplate>
+            </Setter.Value>
+         </Setter>
+      </Style>
+   </UserControl.Resources>
 
-    <Border Margin="0,2,0,0" Padding="5">
-        <StackPanel>
-            <StackPanel Margin="5,0,10,10">
-                <TextBlock Margin="0,0,0,2"
+   <Border Margin="0,2,0,0" Padding="5">
+      <StackPanel>
+         <StackPanel Margin="5,0,10,10">
+            <TextBlock Margin="0,0,0,2"
                            FontSize="10"
                            Foreground="{DynamicResource _secondaryTextBrush}"
                            Text="Expression" />
-                <TextBox x:Name="_expressionTextBox"
+            <TextBox x:Name="_expressionTextBox"
                          KeyDown="TextBox_KeyDown"
                          Text="{Binding ExpressionString, UpdateSourceTrigger=PropertyChanged}" />
-            </StackPanel>
+         </StackPanel>
 
-            <StackPanel Margin="5,0,10,10">
-                <TextBlock Margin="0,0,0,2"
+         <StackPanel Margin="5,0,10,10">
+            <TextBlock Margin="0,0,0,2"
                            FontSize="10"
                            Foreground="{DynamicResource _secondaryTextBrush}"
                            Text="Result" />
-                <TextBlock Foreground="{DynamicResource _primaryTextBrush}"
+            <TextBlock Foreground="{DynamicResource _primaryTextBrush}"
                            Text="{Binding ResultExpression}"
                            TextWrapping="Wrap" />
-            </StackPanel>
+         </StackPanel>
 
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
+         <Grid>
+            <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="*" />
+               <ColumnDefinition Width="*" />
+               <ColumnDefinition Width="*" />
+               <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
+            <Grid.RowDefinitions>
+               <RowDefinition Height="*" />
+               <RowDefinition Height="*" />
+               <RowDefinition Height="*" />
+               <RowDefinition Height="*" />
+               <RowDefinition Height="*" />
+               <RowDefinition Height="*" />
+               <RowDefinition Height="*" />
+               <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
 
-                <StackPanel Grid.Row="0"
+            <StackPanel Grid.Row="0"
                             Grid.Column="0"
                             Margin="5,0,10,10">
-                    <TextBlock Margin="0,0,0,2"
+               <TextBlock Margin="0,0,0,2"
                                FontSize="10"
                                Foreground="{DynamicResource _secondaryTextBrush}"
                                Text="Half" />
-                    <TextBlock Foreground="{DynamicResource _primaryTextBrush}"
+               <TextBlock Foreground="{DynamicResource _primaryTextBrush}"
                                Text="{Binding Half}"
                                TextWrapping="Wrap" />
-                </StackPanel>
+            </StackPanel>
 
-                <StackPanel Grid.Row="0"
+            <StackPanel Grid.Row="0"
                             Grid.Column="1"
                             Margin="5,0,10,10">
-                    <TextBlock Margin="0,0,0,2"
+               <TextBlock Margin="0,0,0,2"
                                FontSize="10"
                                Foreground="{DynamicResource _secondaryTextBrush}"
                                Text="Average" />
-                    <TextBlock Foreground="{DynamicResource _primaryTextBrush}"
+               <TextBlock Foreground="{DynamicResource _primaryTextBrush}"
                                Text="{Binding Average}"
                                TextWrapping="Wrap" />
-                </StackPanel>
+            </StackPanel>
 
-                <StackPanel Grid.Row="0"
+            <StackPanel Grid.Row="0"
                             Grid.Column="2"
                             Margin="5,0,10,10">
-                    <TextBlock Margin="0,0,0,2"
+               <TextBlock Margin="0,0,0,2"
                                FontSize="10"
                                Foreground="{DynamicResource _secondaryTextBrush}"
                                Text="Min" />
-                    <TextBlock Foreground="{DynamicResource _primaryTextBrush}"
+               <TextBlock Foreground="{DynamicResource _primaryTextBrush}"
                                Text="{Binding Min}"
                                TextWrapping="Wrap" />
-                </StackPanel>
+            </StackPanel>
 
-                <StackPanel Grid.Row="0"
+            <StackPanel Grid.Row="0"
                             Grid.Column="3"
                             Margin="5,0,10,10">
-                    <TextBlock Margin="0,0,0,2"
+               <TextBlock Margin="0,0,0,2"
                                FontSize="10"
                                Foreground="{DynamicResource _secondaryTextBrush}"
                                Text="Max" />
-                    <TextBlock Foreground="{DynamicResource _primaryTextBrush}"
+               <TextBlock Foreground="{DynamicResource _primaryTextBrush}"
                                Text="{Binding Max}"
                                TextWrapping="Wrap" />
-                </StackPanel>
+            </StackPanel>
 
-                <Button Grid.Row="1"
+            <Button Grid.Row="1"
                         Grid.Column="0"
                         Command="{Binding AddTextCommand}"
                         CommandParameter="d"
                         Content="d#"
                         Style="{DynamicResource _calcButtonStyle1}" />
 
-                <Button Grid.Row="1"
+            <Button Grid.Row="1"
                         Grid.Column="1"
                         Command="{Binding AddTextCommand}"
                         CommandParameter="{Binding Path=Content, RelativeSource={RelativeSource Self}}"
                         Content="d2"
                         Style="{DynamicResource _calcButtonStyle1}" />
 
-                <Button Grid.Row="1"
+            <Button Grid.Row="1"
                         Grid.Column="2"
                         Command="{Binding AddTextCommand}"
                         CommandParameter="{Binding Path=Content, RelativeSource={RelativeSource Self}}"
                         Content="d4"
                         Style="{DynamicResource _calcButtonStyle1}" />
 
-                <RepeatButton Grid.Row="1"
+            <RepeatButton Grid.Row="1"
                               Grid.Column="3"
                               Command="{Binding ClearCommand}"
                               Content="C"
                               Interval="100"
                               Style="{DynamicResource _calcRepeatButtonStyle2}" />
 
-                <Button Grid.Row="2"
+            <Button Grid.Row="2"
                         Grid.Column="0"
                         Command="{Binding AddTextCommand}"
                         CommandParameter="{Binding Path=Content, RelativeSource={RelativeSource Self}}"
                         Content="d6"
                         Style="{DynamicResource _calcButtonStyle1}" />
 
-                <Button Grid.Row="2"
+            <Button Grid.Row="2"
                         Grid.Column="1"
                         Command="{Binding AddTextCommand}"
                         CommandParameter="{Binding Path=Content, RelativeSource={RelativeSource Self}}"
                         Content="d8"
                         Style="{DynamicResource _calcButtonStyle1}" />
 
-                <Button Grid.Row="2"
+            <Button Grid.Row="2"
                         Grid.Column="2"
                         Command="{Binding AddTextCommand}"
                         CommandParameter="{Binding Path=Content, RelativeSource={RelativeSource Self}}"
                         Content="d10"
                         Style="{DynamicResource _calcButtonStyle1}" />
 
-                <RepeatButton Grid.Row="2"
+            <RepeatButton Grid.Row="2"
                               Grid.Column="3"
                               Command="{Binding DeleteCommand}"
                               CommandParameter="{Binding Path=Content, RelativeSource={RelativeSource Self}}"
@@ -251,176 +251,176 @@
                               Interval="250"
                               Style="{DynamicResource _calcRepeatButtonStyle2}" />
 
-                <Button Grid.Row="3"
+            <Button Grid.Row="3"
                         Grid.Column="0"
                         Command="{Binding AddTextCommand}"
                         CommandParameter="{Binding Path=Content, RelativeSource={RelativeSource Self}}"
                         Content="d12"
                         Style="{DynamicResource _calcButtonStyle1}" />
 
-                <Button Grid.Row="3"
+            <Button Grid.Row="3"
                         Grid.Column="1"
                         Command="{Binding AddTextCommand}"
                         CommandParameter="{Binding Path=Content, RelativeSource={RelativeSource Self}}"
                         Content="d20"
                         Style="{DynamicResource _calcButtonStyle1}" />
 
-                <Button Grid.Row="3"
+            <Button Grid.Row="3"
                         Grid.Column="2"
                         Command="{Binding AddTextCommand}"
                         CommandParameter="{Binding Path=Content, RelativeSource={RelativeSource Self}}"
                         Content="d100"
                         Style="{DynamicResource _calcButtonStyle1}" />
 
-                <Button Grid.Row="3"
+            <Button Grid.Row="3"
                         Grid.Column="3"
                         Command="{Binding AddTextCommand}"
                         CommandParameter="{Binding Path=Content, RelativeSource={RelativeSource Self}}"
                         Content="+"
                         Style="{DynamicResource _calcButtonStyle2}" />
 
-                <Button Grid.Row="4"
+            <Button Grid.Row="4"
                         Grid.Column="0"
                         Command="{Binding AddTextCommand}"
                         CommandParameter="{Binding Path=Content, RelativeSource={RelativeSource Self}}"
                         Content="7"
                         Style="{DynamicResource _calcButtonStyle3}" />
 
-                <Button Grid.Row="4"
+            <Button Grid.Row="4"
                         Grid.Column="1"
                         Command="{Binding AddTextCommand}"
                         CommandParameter="{Binding Path=Content, RelativeSource={RelativeSource Self}}"
                         Content="8"
                         Style="{DynamicResource _calcButtonStyle3}" />
 
-                <Button Grid.Row="4"
+            <Button Grid.Row="4"
                         Grid.Column="2"
                         Command="{Binding AddTextCommand}"
                         CommandParameter="{Binding Path=Content, RelativeSource={RelativeSource Self}}"
                         Content="9"
                         Style="{DynamicResource _calcButtonStyle3}" />
 
-                <Button Grid.Row="4"
+            <Button Grid.Row="4"
                         Grid.Column="3"
                         Command="{Binding AddTextCommand}"
                         CommandParameter="{Binding Path=Content, RelativeSource={RelativeSource Self}}"
                         Content="-"
                         Style="{DynamicResource _calcButtonStyle2}" />
 
-                <Button Grid.Row="5"
+            <Button Grid.Row="5"
                         Grid.Column="0"
                         Command="{Binding AddTextCommand}"
                         CommandParameter="{Binding Path=Content, RelativeSource={RelativeSource Self}}"
                         Content="4"
                         Style="{DynamicResource _calcButtonStyle3}" />
 
-                <Button Grid.Row="5"
+            <Button Grid.Row="5"
                         Grid.Column="1"
                         Command="{Binding AddTextCommand}"
                         CommandParameter="{Binding Path=Content, RelativeSource={RelativeSource Self}}"
                         Content="5"
                         Style="{DynamicResource _calcButtonStyle3}" />
 
-                <Button Grid.Row="5"
+            <Button Grid.Row="5"
                         Grid.Column="2"
                         Command="{Binding AddTextCommand}"
                         CommandParameter="{Binding Path=Content, RelativeSource={RelativeSource Self}}"
                         Content="6"
                         Style="{DynamicResource _calcButtonStyle3}" />
 
-                <Button Grid.Row="5"
+            <Button Grid.Row="5"
                         Grid.Column="3"
                         Command="{Binding AddTextCommand}"
                         CommandParameter="{Binding Path=Content, RelativeSource={RelativeSource Self}}"
                         Content="x"
                         Style="{DynamicResource _calcButtonStyle2}" />
 
-                <Button Grid.Row="6"
+            <Button Grid.Row="6"
                         Grid.Column="0"
                         Command="{Binding AddTextCommand}"
                         CommandParameter="{Binding Path=Content, RelativeSource={RelativeSource Self}}"
                         Content="1"
                         Style="{DynamicResource _calcButtonStyle3}" />
 
-                <Button Grid.Row="6"
+            <Button Grid.Row="6"
                         Grid.Column="1"
                         Command="{Binding AddTextCommand}"
                         CommandParameter="{Binding Path=Content, RelativeSource={RelativeSource Self}}"
                         Content="2"
                         Style="{DynamicResource _calcButtonStyle3}" />
 
-                <Button Grid.Row="6"
+            <Button Grid.Row="6"
                         Grid.Column="2"
                         Command="{Binding AddTextCommand}"
                         CommandParameter="{Binding Path=Content, RelativeSource={RelativeSource Self}}"
                         Content="3"
                         Style="{DynamicResource _calcButtonStyle3}" />
 
-                <Button Grid.Row="6"
+            <Button Grid.Row="6"
                         Grid.Column="3"
                         Command="{Binding AddTextCommand}"
                         CommandParameter="{Binding Path=Content, RelativeSource={RelativeSource Self}}"
                         Content="/"
                         Style="{DynamicResource _calcButtonStyle2}" />
 
-                <Button Grid.Row="7"
+            <Button Grid.Row="7"
                         Grid.Column="0"
                         Command="{Binding AddTextCommand}"
                         CommandParameter="{Binding Path=Content, RelativeSource={RelativeSource Self}}"
                         Content="("
                         Style="{DynamicResource _calcButtonStyle2}" />
 
-                <Button Grid.Row="7"
+            <Button Grid.Row="7"
                         Grid.Column="1"
                         Command="{Binding AddTextCommand}"
                         CommandParameter="{Binding Path=Content, RelativeSource={RelativeSource Self}}"
                         Content="0"
                         Style="{DynamicResource _calcButtonStyle3}" />
 
-                <Button Grid.Row="7"
+            <Button Grid.Row="7"
                         Grid.Column="2"
                         Command="{Binding AddTextCommand}"
                         CommandParameter="{Binding Path=Content, RelativeSource={RelativeSource Self}}"
                         Content=")"
                         Style="{DynamicResource _calcButtonStyle2}" />
 
-                <Button Grid.Row="7"
+            <Button Grid.Row="7"
                         Grid.Column="3"
                         Command="{Binding CalculateCommand}"
                         Content="="
                         Style="{DynamicResource _calcButtonStyle2}"
                         Visibility="{Binding CloseOnCalculate, Converter={StaticResource _boolVisibilityConverter}}" />
 
-                <Button x:Name="_rollButton"
+            <Button x:Name="_rollButton"
                         Grid.Row="7"
                         Grid.Column="3"
                         Command="{Binding RollCommand}"
                         Style="{DynamicResource _calcButtonStyle2}"
                         Visibility="{Binding CloseOnCalculate, Converter={StaticResource _invertBoolVisibilityConverter}}">
-                    <Image Width="22"
+               <Image Width="22"
                            Height="22"
                            RenderTransformOrigin="0.5,0.5"
                            Source="{DynamicResource _rollSmallImage}">
-                        <Image.RenderTransform>
-                            <RotateTransform x:Name="MyAnimatedTransform" Angle="0" />
-                        </Image.RenderTransform>
-                    </Image>
+                  <Image.RenderTransform>
+                     <RotateTransform x:Name="MyAnimatedTransform" Angle="0" />
+                  </Image.RenderTransform>
+               </Image>
 
-                    <Button.Triggers>
-                        <EventTrigger RoutedEvent="Button.Click">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetName="MyAnimatedTransform"
+               <Button.Triggers>
+                  <EventTrigger RoutedEvent="Button.Click">
+                     <BeginStoryboard>
+                        <Storyboard>
+                           <DoubleAnimation Storyboard.TargetName="MyAnimatedTransform"
                                                      Storyboard.TargetProperty="(RotateTransform.Angle)"
                                                      From="0"
                                                      To="360"
                                                      Duration="0:0:1" />
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                    </Button.Triggers>
-                </Button>
-            </Grid>
-        </StackPanel>
-    </Border>
+                        </Storyboard>
+                     </BeginStoryboard>
+                  </EventTrigger>
+               </Button.Triggers>
+            </Button>
+         </Grid>
+      </StackPanel>
+   </Border>
 </UserControl>

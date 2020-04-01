@@ -6,37 +6,37 @@ using CritCompendiumInfrastructure;
 
 namespace CritCompendium.Views
 {
-    /// <summary>
-    /// Interaction logic for ConditionsView.xaml
-    /// </summary>
-    public partial class ConditionsView : UserControl
-	{
-		private readonly ConditionsViewModel _viewModel = DependencyResolver.Resolve<ConditionsViewModel>();
+   /// <summary>
+   /// Interaction logic for ConditionsView.xaml
+   /// </summary>
+   public partial class ConditionsView : UserControl
+   {
+      private readonly ConditionsViewModel _viewModel = DependencyResolver.Resolve<ConditionsViewModel>();
 
-		public ConditionsView()
-        {
-			InitializeComponent();
+      public ConditionsView()
+      {
+         InitializeComponent();
 
-            _viewModel.Search();
+         _viewModel.Search();
 
-            DataContext = _viewModel;
+         DataContext = _viewModel;
 
-            _viewModel.PropertyChanged += ViewModel_PropertyChanged;
-        }
+         _viewModel.PropertyChanged += ViewModel_PropertyChanged;
+      }
 
-        private void ViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
-            if (e.PropertyName == nameof(ConditionsViewModel.SelectedCondition))
+      private void ViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+      {
+         if (e.PropertyName == nameof(ConditionsViewModel.SelectedCondition))
+         {
+            ConditionListItemViewModel selected = _viewModel.Conditions.FirstOrDefault(x => x.IsSelected);
+            if (selected != null)
             {
-                ConditionListItemViewModel selected = _viewModel.Conditions.FirstOrDefault(x => x.IsSelected);
-                if (selected != null)
-                {
-                    if (_tree.ItemContainerGenerator.ContainerFromItem(selected) is TreeViewItem item)
-                    {
-                        item.BringIntoView();
-                    }
-                }
+               if (_tree.ItemContainerGenerator.ContainerFromItem(selected) is TreeViewItem item)
+               {
+                  item.BringIntoView();
+               }
             }
-        }
-    }
+         }
+      }
+   }
 }

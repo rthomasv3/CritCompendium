@@ -9,14 +9,14 @@ namespace CritCompendiumInfrastructure.Persistence
    /// </summary>
    public sealed class LanguageRecord
    {
-		/// <summary>
-		/// Gets or sets id.
-		/// </summary>
-		public Guid Id { get; set; }
+      /// <summary>
+      /// Gets or sets id.
+      /// </summary>
+      public Guid Id { get; set; }
 
-		/// <summary>
-		/// Gets or sets language name
-		/// </summary>
-		public string Name { get; set; }
-	}
+      /// <summary>
+      /// Gets or sets language name
+      /// </summary>
+      public string Name { get; set; }
+   }
 }

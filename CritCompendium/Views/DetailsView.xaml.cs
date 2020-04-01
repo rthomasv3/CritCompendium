@@ -2,24 +2,24 @@
 
 namespace CritCompendium.Views
 {
-	/// <summary>
-	/// Interaction logic for DetailsView.xaml
-	/// </summary>
-	public partial class DetailsView : UserControl
-	{
-		public DetailsView(object detailsViewModel)
-        {
-            InitializeComponent();
+   /// <summary>
+   /// Interaction logic for DetailsView.xaml
+   /// </summary>
+   public partial class DetailsView : UserControl
+   {
+      public DetailsView(object detailsViewModel)
+      {
+         InitializeComponent();
 
-            DataContext = this;
+         DataContext = this;
 
-			DetailsViewModel = detailsViewModel;
-		}
+         DetailsViewModel = detailsViewModel;
+      }
 
-		public object DetailsViewModel
-		{
-			get;
-			set;
-		}
-	}
+      public object DetailsViewModel
+      {
+         get;
+         set;
+      }
+   }
 }

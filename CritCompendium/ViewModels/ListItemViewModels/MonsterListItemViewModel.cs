@@ -5,113 +5,113 @@ using CritCompendiumInfrastructure.Services;
 
 namespace CritCompendium.ViewModels.ListItemViewModels
 {
-	public sealed class MonsterListItemViewModel : NotifyPropertyChanged
-	{
-		#region Fields
+   public sealed class MonsterListItemViewModel : NotifyPropertyChanged
+   {
+      #region Fields
 
-		private MonsterModel _monsterModel;
-		private StringService _stringService;
-		private string _details;
-		private bool _isSelected = false;
+      private MonsterModel _monsterModel;
+      private StringService _stringService;
+      private string _details;
+      private bool _isSelected = false;
 
-		#endregion
+      #endregion
 
-		#region Constructors
+      #region Constructors
 
-		/// <summary>
-		/// Creates an instance of <see cref="MonsterListItemViewModel"/>
-		/// </summary>
-		public MonsterListItemViewModel(MonsterModel monsterModel, StringService stringService)
-		{
-			_monsterModel = monsterModel;
-			_stringService = stringService;
+      /// <summary>
+      /// Creates an instance of <see cref="MonsterListItemViewModel"/>
+      /// </summary>
+      public MonsterListItemViewModel(MonsterModel monsterModel, StringService stringService)
+      {
+         _monsterModel = monsterModel;
+         _stringService = stringService;
 
-			Initialize();
-		}
+         Initialize();
+      }
 
-		#endregion
+      #endregion
 
-		#region Properties
+      #region Properties
 
-		/// <summary>
-		/// Monster model
-		/// </summary>
-		public MonsterModel MonsterModel
-		{
-			get { return _monsterModel; }
-		}
+      /// <summary>
+      /// Monster model
+      /// </summary>
+      public MonsterModel MonsterModel
+      {
+         get { return _monsterModel; }
+      }
 
-		/// <summary>
-		/// Monster name
-		/// </summary>
-		public string Name
-		{
-			get { return _monsterModel.Name; }
-		}
+      /// <summary>
+      /// Monster name
+      /// </summary>
+      public string Name
+      {
+         get { return _monsterModel.Name; }
+      }
 
-		/// <summary>
-		/// Monster details
-		/// </summary>
-		public string Details
-		{
-			get { return _details; }
-		}
+      /// <summary>
+      /// Monster details
+      /// </summary>
+      public string Details
+      {
+         get { return _details; }
+      }
 
-		/// <summary>
-		/// True if selected
-		/// </summary>
-		public bool IsSelected
-		{
-			get { return _isSelected; }
-			set { Set(ref _isSelected, value); }
-		}
+      /// <summary>
+      /// True if selected
+      /// </summary>
+      public bool IsSelected
+      {
+         get { return _isSelected; }
+         set { Set(ref _isSelected, value); }
+      }
 
-		#endregion
+      #endregion
 
-		#region Public Methods
+      #region Public Methods
 
-		/// <summary>
-		/// Updates the model
-		/// </summary>
-		public void UpdateModel(MonsterModel monsterModel)
-		{
-			_monsterModel = monsterModel;
+      /// <summary>
+      /// Updates the model
+      /// </summary>
+      public void UpdateModel(MonsterModel monsterModel)
+      {
+         _monsterModel = monsterModel;
 
-			Initialize();
+         Initialize();
 
-			OnPropertyChanged("");
-		}
+         OnPropertyChanged("");
+      }
 
-		#endregion
+      #endregion
 
-		#region Non-Public Methods
+      #region Non-Public Methods
 
-		private void Initialize()
-		{
-			if (_monsterModel.Size != CreatureSize.None && !String.IsNullOrWhiteSpace(_monsterModel.Type) && !String.IsNullOrWhiteSpace(_monsterModel.Alignment))
-			{
-				string sizeString = _stringService.GetString(_monsterModel.Size);
-				_details = _stringService.CapitalizeWords(sizeString + " " + _monsterModel.Type + ", " + _monsterModel.Alignment);
-			}
-			else if (_monsterModel.Size != CreatureSize.None && !String.IsNullOrWhiteSpace(_monsterModel.Type))
-			{
-				string sizeString = _stringService.GetString(_monsterModel.Size);
-				_details = _stringService.CapitalizeWords(sizeString + " " + _monsterModel.Type);
-			}
-			else if (_monsterModel.Size != CreatureSize.None)
-			{
-				_details = _stringService.GetString(_monsterModel.Size);
-			}
-			else if (!String.IsNullOrWhiteSpace(_monsterModel.Type))
-			{
-				_details = _monsterModel.Type;
-			}
-			else
-			{
-				_details = "Unknown";
-			}
-		}
+      private void Initialize()
+      {
+         if (_monsterModel.Size != CreatureSize.None && !String.IsNullOrWhiteSpace(_monsterModel.Type) && !String.IsNullOrWhiteSpace(_monsterModel.Alignment))
+         {
+            string sizeString = _stringService.GetString(_monsterModel.Size);
+            _details = _stringService.CapitalizeWords(sizeString + " " + _monsterModel.Type + ", " + _monsterModel.Alignment);
+         }
+         else if (_monsterModel.Size != CreatureSize.None && !String.IsNullOrWhiteSpace(_monsterModel.Type))
+         {
+            string sizeString = _stringService.GetString(_monsterModel.Size);
+            _details = _stringService.CapitalizeWords(sizeString + " " + _monsterModel.Type);
+         }
+         else if (_monsterModel.Size != CreatureSize.None)
+         {
+            _details = _stringService.GetString(_monsterModel.Size);
+         }
+         else if (!String.IsNullOrWhiteSpace(_monsterModel.Type))
+         {
+            _details = _monsterModel.Type;
+         }
+         else
+         {
+            _details = "Unknown";
+         }
+      }
 
-		#endregion
-	}
+      #endregion
+   }
 }

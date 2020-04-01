@@ -4,26 +4,26 @@ using CritCompendiumInfrastructure;
 
 namespace CritCompendium.Views.SearchViews
 {
-    /// <summary>
-    /// Interaction logic for MonsterSelectionView.xaml
-    /// </summary>
-    public partial class MonsterSearchView : UserControl
-    {
-        MonsterSearchViewModel _viewModel = DependencyResolver.Resolve<MonsterSearchViewModel>();
+   /// <summary>
+   /// Interaction logic for MonsterSelectionView.xaml
+   /// </summary>
+   public partial class MonsterSearchView : UserControl
+   {
+      MonsterSearchViewModel _viewModel = DependencyResolver.Resolve<MonsterSearchViewModel>();
 
-        public MonsterSearchView()
-        {
-            DataContext = _viewModel;
+      public MonsterSearchView()
+      {
+         DataContext = _viewModel;
 
-            InitializeComponent();
-        }
+         InitializeComponent();
+      }
 
-        /// <summary>
-        /// Gets view model
-        /// </summary>
-        public MonsterSearchViewModel ViewModel
-        {
-            get { return _viewModel; }
-        }
-    }
+      /// <summary>
+      /// Gets view model
+      /// </summary>
+      public MonsterSearchViewModel ViewModel
+      {
+         get { return _viewModel; }
+      }
+   }
 }

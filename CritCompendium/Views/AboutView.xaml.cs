@@ -3,27 +3,27 @@ using CritCompendium.ViewModels;
 
 namespace CritCompendium.Views
 {
-    /// <summary>
-    /// Interaction logic for AboutView.xaml
-    /// </summary>
-    public partial class AboutView : UserControl
-    {
-        /// <summary>
-        /// Creates an instance of <see cref="AboutView"/>
-        /// </summary>
-        public AboutView(AboutViewModel viewModel)
-        {
-            InitializeComponent();
+   /// <summary>
+   /// Interaction logic for AboutView.xaml
+   /// </summary>
+   public partial class AboutView : UserControl
+   {
+      /// <summary>
+      /// Creates an instance of <see cref="AboutView"/>
+      /// </summary>
+      public AboutView(AboutViewModel viewModel)
+      {
+         InitializeComponent();
 
-            DataContext = viewModel;
-        }
+         DataContext = viewModel;
+      }
 
-        /// <summary>
-        /// Gets view model
-        /// </summary>
-        public AboutViewModel ViewModel
-        {
-            get { return DataContext as AboutViewModel; }
-        }
-    }
+      /// <summary>
+      /// Gets view model
+      /// </summary>
+      public AboutViewModel ViewModel
+      {
+         get { return DataContext as AboutViewModel; }
+      }
+   }
 }

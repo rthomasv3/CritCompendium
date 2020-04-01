@@ -6,24 +6,24 @@
              d:DesignHeight="720"
              d:DesignWidth="1280"
              mc:Ignorable="d">
-    <UserControl.Resources>
-        <Style x:Key="_blockBorderStyle" TargetType="Border">
-            <Setter Property="Height" Value="275" />
-            <Setter Property="Width" Value="475" />
-            <Setter Property="Margin" Value="0,0,25,25" />
-            <Setter Property="Padding" Value="15" />
-            <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="BorderBrush" Value="{DynamicResource _contentBorderBrush}" />
-        </Style>
-    </UserControl.Resources>
+   <UserControl.Resources>
+      <Style x:Key="_blockBorderStyle" TargetType="Border">
+         <Setter Property="Height" Value="275" />
+         <Setter Property="Width" Value="475" />
+         <Setter Property="Margin" Value="0,0,25,25" />
+         <Setter Property="Padding" Value="15" />
+         <Setter Property="BorderThickness" Value="1" />
+         <Setter Property="BorderBrush" Value="{DynamicResource _contentBorderBrush}" />
+      </Style>
+   </UserControl.Resources>
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+   <Grid>
+      <Grid.RowDefinitions>
+         <RowDefinition Height="Auto" />
+         <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0"
+      <TextBlock Grid.Row="0"
                    Margin="5,6,0,15"
                    FontSize="20"
                    FontWeight="DemiBold"
@@ -31,305 +31,305 @@
                    Text="Rules Reference"
                    TextTrimming="CharacterEllipsis" />
 
-        <ScrollViewer x:Name="_parentScroll"
+      <ScrollViewer x:Name="_parentScroll"
                       Grid.Row="1"
                       VerticalScrollBarVisibility="Visible">
-            <WrapPanel>
-                <Border Style="{DynamicResource _blockBorderStyle}">
-                    <ScrollViewer PreviewMouseWheel="Child_PreviewMouseWheel" VerticalScrollBarVisibility="Auto">
-                        <StackPanel>
-                            <TextBlock FontSize="14"
+         <WrapPanel>
+            <Border Style="{DynamicResource _blockBorderStyle}">
+               <ScrollViewer PreviewMouseWheel="Child_PreviewMouseWheel" VerticalScrollBarVisibility="Auto">
+                  <StackPanel>
+                     <TextBlock FontSize="14"
                                        FontWeight="DemiBold"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="On Your Turn" />
 
-                            <TextBlock Margin="0,10,0,0"
+                     <TextBlock Margin="0,10,0,0"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="On your turn, you can move a distance up to your speed and take one action. You decide whether to move first or take your action first. Your speed - sometimes called your walking speed - is noted on your character sheet."
                                        TextWrapping="Wrap" />
 
-                            <TextBlock Margin="0,10,0,0"
+                     <TextBlock Margin="0,10,0,0"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="The most common actions you can take are described in the Actions in Combat section. Many class features and other abilities provide additional options for your action."
                                        TextWrapping="Wrap" />
 
-                            <TextBlock Margin="0,10,0,0"
+                     <TextBlock Margin="0,10,0,0"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="The Movement and Position section gives the rules for your move."
                                        TextWrapping="Wrap" />
 
-                            <TextBlock Margin="0,10,0,0"
+                     <TextBlock Margin="0,10,0,0"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="You can forgo moving, taking an action, or doing anything at all on your turn. If you can't decide what to do on your turn, consider taking the Dodge or Ready action, as described in Actions in Combat."
                                        TextWrapping="Wrap" />
-                        </StackPanel>
-                    </ScrollViewer>
-                </Border>
+                  </StackPanel>
+               </ScrollViewer>
+            </Border>
 
-                <Border Style="{DynamicResource _blockBorderStyle}">
-                    <ScrollViewer PreviewMouseWheel="Child_PreviewMouseWheel" VerticalScrollBarVisibility="Auto">
-                        <StackPanel>
-                            <TextBlock FontSize="14"
+            <Border Style="{DynamicResource _blockBorderStyle}">
+               <ScrollViewer PreviewMouseWheel="Child_PreviewMouseWheel" VerticalScrollBarVisibility="Auto">
+                  <StackPanel>
+                     <TextBlock FontSize="14"
                                        FontWeight="DemiBold"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="Actions In Combat" />
 
-                            <TextBlock Margin="0,15,0,0"
+                     <TextBlock Margin="0,15,0,0"
                                        FontWeight="Bold"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="Attack"
                                        TextWrapping="Wrap" />
 
-                            <TextBlock Margin="0,5,0,0"
+                     <TextBlock Margin="0,5,0,0"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="The most common action to take in combat is the Attack action, whether you are swinging a sword, firing an arrow from a bow, or brawling with your fists. With this action, you make one melee or ranged attack. See the Making an Attack section for the rules that govern attacks. Certain features, such as the Extra Attack feature of the fighter, allow you to make more than one attack with this action."
                                        TextWrapping="Wrap" />
 
-                            <TextBlock Margin="0,15,0,0"
+                     <TextBlock Margin="0,15,0,0"
                                        FontWeight="Bold"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="Cast A Spell"
                                        TextWrapping="Wrap" />
 
-                            <TextBlock Margin="0,5,0,0"
+                     <TextBlock Margin="0,5,0,0"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="Spellcasters such as wizards and clerics, as well as many monsters, have access to spells and can use them to great effect in combat. Each spell has a casting time, which specifies whether the caster must use an action, a reaction, minutes, or even hours to cast the spell. Casting a spell is, therefore, not necessarily an action. Most spells do have a casting time of 1 action, so a spellcaster often uses his or her action in combat to cast such a spell. "
                                        TextWrapping="Wrap" />
 
-                            <TextBlock Margin="0,15,0,0"
+                     <TextBlock Margin="0,15,0,0"
                                        FontWeight="Bold"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="Dash"
                                        TextWrapping="Wrap" />
 
-                            <TextBlock Margin="0,5,0,0"
+                     <TextBlock Margin="0,5,0,0"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="When you take the Dash action, you gain extra movement for the current turn. The increase equals your speed, after applying any modifiers. With a speed of 30 feet, for example, you can move up to 60 feet on your turn if you dash. Any increase or decrease to your speed changes this additional movement by the same amount. If your speed of 30 feet is reduced to 15 feet, for instance, you can move up to 30 feet this turn if you dash. "
                                        TextWrapping="Wrap" />
 
-                            <TextBlock Margin="0,15,0,0"
+                     <TextBlock Margin="0,15,0,0"
                                        FontWeight="Bold"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="Disengage"
                                        TextWrapping="Wrap" />
 
-                            <TextBlock Margin="0,5,0,0"
+                     <TextBlock Margin="0,5,0,0"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="If you take the Disengage action, your movement doesn't provoke opportunity attacks for the rest of the turn. "
                                        TextWrapping="Wrap" />
 
-                            <TextBlock Margin="0,15,0,0"
+                     <TextBlock Margin="0,15,0,0"
                                        FontWeight="Bold"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="Dodge"
                                        TextWrapping="Wrap" />
 
-                            <TextBlock Margin="0,5,0,0"
+                     <TextBlock Margin="0,5,0,0"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="When you take the Dodge action, you focus entirely on avoiding attacks. Until the start of your next turn, any attack roll made against you has disadvantage if you can see the attacker, and you make Dexterity saving throws with advantage. You lose this benefit if you are incapacitated (as explained in appendix A) or if your speed drops to 0. "
                                        TextWrapping="Wrap" />
 
-                            <TextBlock Margin="0,15,0,0"
+                     <TextBlock Margin="0,15,0,0"
                                        FontWeight="Bold"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="Help"
                                        TextWrapping="Wrap" />
 
-                            <TextBlock Margin="0,5,0,0"
+                     <TextBlock Margin="0,5,0,0"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="You can lend your aid to another creature in the completion of a task. When you take the Help action, the creature you aid gains advantage on the next ability check it makes to perform the task you are helping with, provided that it makes the check before the start of your next turn. Alternatively, you can aid a friendly creature in attacking a creature within 5 feet of you. You feint, distract the target, or in some other way team up to make your ally's attack more effective. If your ally attacks the target before your next turn, the first attack roll is made with advantage. "
                                        TextWrapping="Wrap" />
 
-                            <TextBlock Margin="0,15,0,0"
+                     <TextBlock Margin="0,15,0,0"
                                        FontWeight="Bold"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="Hide"
                                        TextWrapping="Wrap" />
 
-                            <TextBlock Margin="0,5,0,0"
+                     <TextBlock Margin="0,5,0,0"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="When you take the Hide action, you make a Dexterity (Stealth) check in an attempt to hide, following the rules for hiding. If you succeed, you gain certain benefits, as described in the 'Unseen Attackers and Targets' section."
                                        TextWrapping="Wrap" />
 
-                            <TextBlock Margin="0,15,0,0"
+                     <TextBlock Margin="0,15,0,0"
                                        FontWeight="Bold"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="Ready"
                                        TextWrapping="Wrap" />
 
-                            <TextBlock Margin="0,5,0,0"
+                     <TextBlock Margin="0,5,0,0"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="Sometimes you want to get the jump on a foe or wait for a particular circumstance before you act. To do so, you can take the Ready action on your turn, which lets you act using your reaction before the start of your next turn. First, you decide what perceivable circumstance will trigger your reaction. Then, you choose the action you will take in response to that trigger, or you choose to move up to your speed in response to it. Examples include 'If the cultist steps on the trapdoor, I'll pull the lever that opens it,' and 'If the goblin steps next to me, I move away.' When the trigger occurs, you can either take your reaction right after the trigger finishes or ignore the trigger. Remember that you can take only one reaction per round. When you ready a spell, you cast it as normal but hold its energy, which you release with your reaction when the trigger occurs. To be readied, a spell must have a casting time of 1 action, and holding onto the spell's magic requires concentration. If your concentration is broken, the spell dissipates without taking effect. For example, if you are concentrating on the web spell and ready magic missile, your web spell ends, and if you take damage before you release magic missile with your reaction, your concentration might be broken. "
                                        TextWrapping="Wrap" />
 
-                            <TextBlock Margin="0,15,0,0"
+                     <TextBlock Margin="0,15,0,0"
                                        FontWeight="Bold"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="Search"
                                        TextWrapping="Wrap" />
 
-                            <TextBlock Margin="0,5,0,0"
+                     <TextBlock Margin="0,5,0,0"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="When you take the Search action, you devote your attention to finding something. Depending on the nature of your search, the GM might have you make a Wisdom (Perception) check or an Intelligence (Investigation) check. "
                                        TextWrapping="Wrap" />
 
-                            <TextBlock Margin="0,15,0,0"
+                     <TextBlock Margin="0,15,0,0"
                                        FontWeight="Bold"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="Use An Object"
                                        TextWrapping="Wrap" />
 
-                            <TextBlock Margin="0,5,0,0"
+                     <TextBlock Margin="0,5,0,0"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="You normally interact with an object while doing something else, such as when you draw a sword as part of an attack. When an object requires your action for its use, you take the Use an Object action. This action is also useful when you want to interact with more than one object on your turn. "
                                        TextWrapping="Wrap" />
-                        </StackPanel>
-                    </ScrollViewer>
-                </Border>
+                  </StackPanel>
+               </ScrollViewer>
+            </Border>
 
-                <Border Style="{DynamicResource _blockBorderStyle}">
-                    <ScrollViewer PreviewMouseWheel="Child_PreviewMouseWheel" VerticalScrollBarVisibility="Auto">
-                        <StackPanel>
-                            <TextBlock FontSize="14"
+            <Border Style="{DynamicResource _blockBorderStyle}">
+               <ScrollViewer PreviewMouseWheel="Child_PreviewMouseWheel" VerticalScrollBarVisibility="Auto">
+                  <StackPanel>
+                     <TextBlock FontSize="14"
                                        FontWeight="DemiBold"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="Movement" />
 
-                            <TextBlock Margin="0,15,0,0"
+                     <TextBlock Margin="0,15,0,0"
                                        FontWeight="Bold"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="Climbing, Swimming, and Crawling"
                                        TextWrapping="Wrap" />
 
-                            <TextBlock Margin="0,5,0,0"
+                     <TextBlock Margin="0,5,0,0"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="While climbing or swimming, each foot of movement costs 1 extra foot (2 extra feet in difficult terrain), unless a creature has a climbing or swimming speed. At the GM's option, climbing a slippery vertical surface or one with few handholds requires a successful Strength (Athletics) check. Similarly, gaining any distance in rough water might require a successful Strength (Athletics) check."
                                        TextWrapping="Wrap" />
 
-                            <TextBlock Margin="0,15,0,0"
+                     <TextBlock Margin="0,15,0,0"
                                        FontWeight="Bold"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="Long Jump"
                                        TextWrapping="Wrap" />
 
-                            <TextBlock Margin="0,5,0,0"
+                     <TextBlock Margin="0,5,0,0"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="When you make a long jump, you cover a number of feet up to your Strength score if you move at least 10 feet on foot immediately before the jump. When you make a standing long jump, you can leap only half that distance. Either way, each foot you clear on the jump costs a foot of movement. This rule assumes that the height of your jump doesn't matter, such as a jump across a stream or chasm. At your GM's option, you must succeed on a DC 10 Strength (Athletics) check to clear a low obstacle (no taller than a quarter of the jump's distance), such as a hedge or low wall. Otherwise, you hit it. When you land in difficult terrain, you must succeed on a DC 10 Dexterity (Acrobatics) check to land on your feet. Otherwise, you land prone. "
                                        TextWrapping="Wrap" />
 
-                            <TextBlock Margin="0,15,0,0"
+                     <TextBlock Margin="0,15,0,0"
                                        FontWeight="Bold"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="High Jump"
                                        TextWrapping="Wrap" />
 
-                            <TextBlock Margin="0,5,0,0"
+                     <TextBlock Margin="0,5,0,0"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="When you make a high jump, you leap into the air a number of feet equal to 3 + your Strength modifier if you move at least 10 feet on foot immediately before the jump. When you make a standing high jump, you can jump only half that distance. Either way, each foot you clear on the jump costs a foot of movement. In some circumstances, your GM might allow you to make a Strength (Athletics) check to jump higher than you normally can. You can extend your arms half your height above yourself during the jump. Thus, you can reach above you a distance equal to the height of the jump plus 1 1/2 times your height."
                                        TextWrapping="Wrap" />
-                        </StackPanel>
-                    </ScrollViewer>
-                </Border>
+                  </StackPanel>
+               </ScrollViewer>
+            </Border>
 
-                <Border Style="{DynamicResource _blockBorderStyle}">
-                    <ScrollViewer InputScope=""
+            <Border Style="{DynamicResource _blockBorderStyle}">
+               <ScrollViewer InputScope=""
                                   PreviewMouseWheel="Child_PreviewMouseWheel"
                                   VerticalScrollBarVisibility="Auto">
-                        <StackPanel>
-                            <TextBlock FontSize="14"
+                  <StackPanel>
+                     <TextBlock FontSize="14"
                                        FontWeight="DemiBold"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="Suffocating" />
 
-                            <TextBlock Margin="0,5,0,0"
+                     <TextBlock Margin="0,5,0,0"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="A creature can hold its breath for a number of minutes equal to 1 + its Constitution modifier (minimum of 30 seconds). When a creature runs out of breath or is choking, it can survive for a number of rounds equal to its Constitution modifier (minimum of 1 round). At the start of its next turn, it drops to 0 hit points and is dying, and it can't regain hit points or be stabilized until it can breathe again. For example, a creature with a Constitution of 14 can hold its breath for 3 minutes. If it starts suffocating, it has 2 rounds to reach air before it drops to 0 hit points."
                                        TextWrapping="Wrap" />
-                        </StackPanel>
-                    </ScrollViewer>
-                </Border>
+                  </StackPanel>
+               </ScrollViewer>
+            </Border>
 
-                <Border Style="{DynamicResource _blockBorderStyle}">
-                    <ScrollViewer PreviewMouseWheel="Child_PreviewMouseWheel" VerticalScrollBarVisibility="Auto">
-                        <StackPanel>
-                            <TextBlock FontSize="14"
+            <Border Style="{DynamicResource _blockBorderStyle}">
+               <ScrollViewer PreviewMouseWheel="Child_PreviewMouseWheel" VerticalScrollBarVisibility="Auto">
+                  <StackPanel>
+                     <TextBlock FontSize="14"
                                        FontWeight="DemiBold"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="Concentration" />
 
-                            <TextBlock Margin="0,5,0,0"
+                     <TextBlock Margin="0,5,0,0"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="If a spell must be maintained with concentration, that fact appears in its Duration entry, and the spell specifies how long you can concentrate on it. You can end concentration at any time (no action required). Normal activity, such as moving and attacking, doesn't interfere with concentration. The following factors can break concentration:"
                                        TextWrapping="Wrap" />
 
-                            <DockPanel>
-                                <TextBlock Margin="0,10,5,0"
+                     <DockPanel>
+                        <TextBlock Margin="0,10,5,0"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="•"
                                            TextWrapping="Wrap" />
-                                <TextBlock Margin="0,10,0,0"
+                        <TextBlock Margin="0,10,0,0"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="You lose concentration on a spell if you cast another spell that requires concentration. You can't concentrate on two spells at once."
                                            TextWrapping="Wrap" />
-                            </DockPanel>
+                     </DockPanel>
 
-                            <DockPanel>
-                                <TextBlock Margin="0,10,5,0"
+                     <DockPanel>
+                        <TextBlock Margin="0,10,5,0"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="•"
                                            TextWrapping="Wrap" />
-                                <TextBlock Margin="0,10,0,0"
+                        <TextBlock Margin="0,10,0,0"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Whenever you take damage while you are concentrating on a spell, you must make a Constitution saving throw to maintain your concentration. The DC equals 10 or half the damage you take, whichever number is higher. If you take damage from multiple sources, such as an arrow and a dragon's breath, you make a separate saving throw for each source of damage. "
                                            TextWrapping="Wrap" />
-                            </DockPanel>
+                     </DockPanel>
 
-                            <DockPanel>
-                                <TextBlock Margin="0,10,5,0"
+                     <DockPanel>
+                        <TextBlock Margin="0,10,5,0"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="•"
                                            TextWrapping="Wrap" />
-                                <TextBlock Margin="0,10,0,0"
+                        <TextBlock Margin="0,10,0,0"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="You lose concentration on a spell if you are incapacitated or if you die. The GM might also decide that certain environmental phenomena, such as a wave crashing over you while you're on a storm-tossed ship, require you to succeed on a DC 10 Constitution saving throw to maintain concentration on a spell."
                                            TextWrapping="Wrap" />
-                            </DockPanel>
-                        </StackPanel>
-                    </ScrollViewer>
-                </Border>
+                     </DockPanel>
+                  </StackPanel>
+               </ScrollViewer>
+            </Border>
 
-                <Border Style="{DynamicResource _blockBorderStyle}">
-                    <ScrollViewer PreviewMouseWheel="Child_PreviewMouseWheel" VerticalScrollBarVisibility="Auto">
-                        <StackPanel>
-                            <TextBlock FontSize="14"
+            <Border Style="{DynamicResource _blockBorderStyle}">
+               <ScrollViewer PreviewMouseWheel="Child_PreviewMouseWheel" VerticalScrollBarVisibility="Auto">
+                  <StackPanel>
+                     <TextBlock FontSize="14"
                                        FontWeight="DemiBold"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="Setting A DC" />
 
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
+                     <Grid>
+                        <Grid.ColumnDefinitions>
+                           <ColumnDefinition Width="*" />
+                           <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
 
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
+                        <Grid.RowDefinitions>
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
 
-                                <TextBlock Grid.Row="0"
+                        <TextBlock Grid.Row="0"
                                            Grid.Column="0"
                                            Margin="0,10,0,2"
                                            Padding="5,0,0,0"
                                            FontSize="10"
                                            Foreground="{DynamicResource _secondaryTextBrush}"
                                            Text="Difficulty" />
-                                <TextBlock Grid.Row="0"
+                        <TextBlock Grid.Row="0"
                                            Grid.Column="1"
                                            Margin="0,10,0,2"
                                            Padding="0,0,15,0"
@@ -337,14 +337,14 @@
                                            Foreground="{DynamicResource _secondaryTextBrush}"
                                            Text="DC" />
 
-                                <TextBlock Grid.Row="1"
+                        <TextBlock Grid.Row="1"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Very Easy"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="1"
+                        <TextBlock Grid.Row="1"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -352,7 +352,7 @@
                                            Text="5"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="2"
+                        <TextBlock Grid.Row="2"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
@@ -360,7 +360,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Easy"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="2"
+                        <TextBlock Grid.Row="2"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -369,14 +369,14 @@
                                            Text="10"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="3"
+                        <TextBlock Grid.Row="3"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Medium"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="3"
+                        <TextBlock Grid.Row="3"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -384,7 +384,7 @@
                                            Text="15"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="4"
+                        <TextBlock Grid.Row="4"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
@@ -392,7 +392,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Hard"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="4"
+                        <TextBlock Grid.Row="4"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -401,14 +401,14 @@
                                            Text="20"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="5"
+                        <TextBlock Grid.Row="5"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Very Hard"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="5"
+                        <TextBlock Grid.Row="5"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -416,7 +416,7 @@
                                            Text="25"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="6"
+                        <TextBlock Grid.Row="6"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
@@ -424,7 +424,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Nearly Impossible"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="6"
+                        <TextBlock Grid.Row="6"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -432,42 +432,42 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="30"
                                            TextWrapping="Wrap" />
-                            </Grid>
-                        </StackPanel>
-                    </ScrollViewer>
-                </Border>
+                     </Grid>
+                  </StackPanel>
+               </ScrollViewer>
+            </Border>
 
-                <Border Style="{DynamicResource _blockBorderStyle}">
-                    <ScrollViewer PreviewMouseWheel="Child_PreviewMouseWheel" VerticalScrollBarVisibility="Auto">
-                        <StackPanel>
-                            <TextBlock FontSize="14"
+            <Border Style="{DynamicResource _blockBorderStyle}">
+               <ScrollViewer PreviewMouseWheel="Child_PreviewMouseWheel" VerticalScrollBarVisibility="Auto">
+                  <StackPanel>
+                     <TextBlock FontSize="14"
                                        FontWeight="DemiBold"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="Tracking DCs" />
 
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
+                     <Grid>
+                        <Grid.ColumnDefinitions>
+                           <ColumnDefinition Width="*" />
+                           <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
 
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
+                        <Grid.RowDefinitions>
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
 
-                                <TextBlock Grid.Row="0"
+                        <TextBlock Grid.Row="0"
                                            Grid.Column="0"
                                            Margin="0,10,0,2"
                                            Padding="5,0,0,0"
                                            FontSize="10"
                                            Foreground="{DynamicResource _secondaryTextBrush}"
                                            Text="Ground Surface" />
-                                <TextBlock Grid.Row="0"
+                        <TextBlock Grid.Row="0"
                                            Grid.Column="1"
                                            Margin="0,10,0,2"
                                            Padding="0,0,15,0"
@@ -475,14 +475,14 @@
                                            Foreground="{DynamicResource _secondaryTextBrush}"
                                            Text="DC" />
 
-                                <TextBlock Grid.Row="1"
+                        <TextBlock Grid.Row="1"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Soft surface such as snow"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="1"
+                        <TextBlock Grid.Row="1"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -490,7 +490,7 @@
                                            Text="10"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="2"
+                        <TextBlock Grid.Row="2"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
@@ -498,7 +498,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Dirt or grass"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="2"
+                        <TextBlock Grid.Row="2"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -507,14 +507,14 @@
                                            Text="15"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="3"
+                        <TextBlock Grid.Row="3"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Bare stone"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="3"
+                        <TextBlock Grid.Row="3"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -522,7 +522,7 @@
                                            Text="20"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="4"
+                        <TextBlock Grid.Row="4"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
@@ -530,7 +530,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Each day since the creatre passed"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="4"
+                        <TextBlock Grid.Row="4"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -539,69 +539,69 @@
                                            Text="+5"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="5"
+                        <TextBlock Grid.Row="5"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Creature left a trail such as blood"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="5"
+                        <TextBlock Grid.Row="5"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="-5"
                                            TextWrapping="Wrap" />
-                            </Grid>
-                        </StackPanel>
-                    </ScrollViewer>
-                </Border>
+                     </Grid>
+                  </StackPanel>
+               </ScrollViewer>
+            </Border>
 
-                <Border Style="{DynamicResource _blockBorderStyle}">
-                    <ScrollViewer PreviewMouseWheel="Child_PreviewMouseWheel" VerticalScrollBarVisibility="Auto">
-                        <StackPanel>
-                            <TextBlock FontSize="14"
+            <Border Style="{DynamicResource _blockBorderStyle}">
+               <ScrollViewer PreviewMouseWheel="Child_PreviewMouseWheel" VerticalScrollBarVisibility="Auto">
+                  <StackPanel>
+                     <TextBlock FontSize="14"
                                        FontWeight="DemiBold"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="Skills And Associated Abilities" />
 
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
+                     <Grid>
+                        <Grid.ColumnDefinitions>
+                           <ColumnDefinition Width="*" />
+                           <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
 
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
+                        <Grid.RowDefinitions>
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
 
-                                <TextBlock Grid.Row="0"
+                        <TextBlock Grid.Row="0"
                                            Grid.Column="0"
                                            Margin="0,10,0,2"
                                            Padding="5,0,0,0"
                                            FontSize="10"
                                            Foreground="{DynamicResource _secondaryTextBrush}"
                                            Text="Skill" />
-                                <TextBlock Grid.Row="0"
+                        <TextBlock Grid.Row="0"
                                            Grid.Column="1"
                                            Margin="0,10,0,2"
                                            Padding="0,0,15,0"
@@ -609,14 +609,14 @@
                                            Foreground="{DynamicResource _secondaryTextBrush}"
                                            Text="Ability" />
 
-                                <TextBlock Grid.Row="1"
+                        <TextBlock Grid.Row="1"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Acrobatics"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="1"
+                        <TextBlock Grid.Row="1"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -624,7 +624,7 @@
                                            Text="Dexterity"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="2"
+                        <TextBlock Grid.Row="2"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
@@ -632,7 +632,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Animal Handling"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="2"
+                        <TextBlock Grid.Row="2"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -641,14 +641,14 @@
                                            Text="Wisdom"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="3"
+                        <TextBlock Grid.Row="3"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Arcana"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="3"
+                        <TextBlock Grid.Row="3"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -656,7 +656,7 @@
                                            Text="Intelligence"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="4"
+                        <TextBlock Grid.Row="4"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
@@ -664,7 +664,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Athletics"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="4"
+                        <TextBlock Grid.Row="4"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -673,14 +673,14 @@
                                            Text="Strength"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="5"
+                        <TextBlock Grid.Row="5"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Deception"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="5"
+                        <TextBlock Grid.Row="5"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -688,7 +688,7 @@
                                            Text="Charisma"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="6"
+                        <TextBlock Grid.Row="6"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
@@ -696,7 +696,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="History"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="6"
+                        <TextBlock Grid.Row="6"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -705,14 +705,14 @@
                                            Text="Intelligence"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="7"
+                        <TextBlock Grid.Row="7"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Insight"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="7"
+                        <TextBlock Grid.Row="7"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -720,7 +720,7 @@
                                            Text="Wisdom"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="8"
+                        <TextBlock Grid.Row="8"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
@@ -728,7 +728,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Intimidation"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="8"
+                        <TextBlock Grid.Row="8"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -737,14 +737,14 @@
                                            Text="Charisma"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="9"
+                        <TextBlock Grid.Row="9"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Investigation"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="9"
+                        <TextBlock Grid.Row="9"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -752,7 +752,7 @@
                                            Text="Intelligence"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="10"
+                        <TextBlock Grid.Row="10"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
@@ -760,7 +760,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Medicine"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="10"
+                        <TextBlock Grid.Row="10"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -769,14 +769,14 @@
                                            Text="Wisdom"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="11"
+                        <TextBlock Grid.Row="11"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Nature"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="11"
+                        <TextBlock Grid.Row="11"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -784,7 +784,7 @@
                                            Text="Intelligence"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="12"
+                        <TextBlock Grid.Row="12"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
@@ -792,7 +792,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Perception"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="12"
+                        <TextBlock Grid.Row="12"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -801,14 +801,14 @@
                                            Text="Wisdom"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="13"
+                        <TextBlock Grid.Row="13"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Performance"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="13"
+                        <TextBlock Grid.Row="13"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -816,7 +816,7 @@
                                            Text="Charisma"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="14"
+                        <TextBlock Grid.Row="14"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
@@ -824,7 +824,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Persuasion"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="14"
+                        <TextBlock Grid.Row="14"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -833,14 +833,14 @@
                                            Text="Charisma"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="15"
+                        <TextBlock Grid.Row="15"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Religion"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="15"
+                        <TextBlock Grid.Row="15"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -848,7 +848,7 @@
                                            Text="Intelligence"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="16"
+                        <TextBlock Grid.Row="16"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
@@ -856,7 +856,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Sleight of Hand"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="16"
+                        <TextBlock Grid.Row="16"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -865,14 +865,14 @@
                                            Text="Dexterity"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="17"
+                        <TextBlock Grid.Row="17"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Stealth"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="17"
+                        <TextBlock Grid.Row="17"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -880,7 +880,7 @@
                                            Text="Dexterity"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="18"
+                        <TextBlock Grid.Row="18"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
@@ -888,7 +888,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Survival"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="18"
+                        <TextBlock Grid.Row="18"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -896,64 +896,64 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Wisdom"
                                            TextWrapping="Wrap" />
-                            </Grid>
-                        </StackPanel>
-                    </ScrollViewer>
-                </Border>
+                     </Grid>
+                  </StackPanel>
+               </ScrollViewer>
+            </Border>
 
-                <Border Style="{DynamicResource _blockBorderStyle}">
-                    <ScrollViewer PreviewMouseWheel="Child_PreviewMouseWheel" VerticalScrollBarVisibility="Auto">
-                        <StackPanel>
-                            <TextBlock FontSize="14"
+            <Border Style="{DynamicResource _blockBorderStyle}">
+               <ScrollViewer PreviewMouseWheel="Child_PreviewMouseWheel" VerticalScrollBarVisibility="Auto">
+                  <StackPanel>
+                     <TextBlock FontSize="14"
                                        FontWeight="DemiBold"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="Travel Pace" />
 
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="60" />
-                                    <ColumnDefinition Width="88" />
-                                    <ColumnDefinition Width="80" />
-                                    <ColumnDefinition Width="80" />
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
+                     <Grid>
+                        <Grid.ColumnDefinitions>
+                           <ColumnDefinition Width="60" />
+                           <ColumnDefinition Width="88" />
+                           <ColumnDefinition Width="80" />
+                           <ColumnDefinition Width="80" />
+                           <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
 
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
+                        <Grid.RowDefinitions>
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
 
-                                <TextBlock Grid.Row="0"
+                        <TextBlock Grid.Row="0"
                                            Grid.Column="0"
                                            Margin="0,10,0,2"
                                            Padding="5,0,0,0"
                                            FontSize="10"
                                            Foreground="{DynamicResource _secondaryTextBrush}"
                                            Text="Pace" />
-                                <TextBlock Grid.Row="0"
+                        <TextBlock Grid.Row="0"
                                            Grid.Column="1"
                                            Margin="0,10,0,2"
                                            Padding="0,0,5,0"
                                            FontSize="10"
                                            Foreground="{DynamicResource _secondaryTextBrush}"
                                            Text="Distance/Minute" />
-                                <TextBlock Grid.Row="0"
+                        <TextBlock Grid.Row="0"
                                            Grid.Column="2"
                                            Margin="0,10,0,2"
                                            Padding="0,0,5,0"
                                            FontSize="10"
                                            Foreground="{DynamicResource _secondaryTextBrush}"
                                            Text="Distance/Hour" />
-                                <TextBlock Grid.Row="0"
+                        <TextBlock Grid.Row="0"
                                            Grid.Column="3"
                                            Margin="0,10,0,2"
                                            Padding="0,0,5,0"
                                            FontSize="10"
                                            Foreground="{DynamicResource _secondaryTextBrush}"
                                            Text="Distance/Day" />
-                                <TextBlock Grid.Row="0"
+                        <TextBlock Grid.Row="0"
                                            Grid.Column="4"
                                            Margin="0,10,0,2"
                                            Padding="0,0,5,0"
@@ -961,35 +961,35 @@
                                            Foreground="{DynamicResource _secondaryTextBrush}"
                                            Text="Effect" />
 
-                                <TextBlock Grid.Row="1"
+                        <TextBlock Grid.Row="1"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Fast"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="1"
+                        <TextBlock Grid.Row="1"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,5,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="400 Feet"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="1"
+                        <TextBlock Grid.Row="1"
                                            Grid.Column="2"
                                            Margin="0,5,0,0"
                                            Padding="0,2,5,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="4 Miles"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="1"
+                        <TextBlock Grid.Row="1"
                                            Grid.Column="3"
                                            Margin="0,5,0,0"
                                            Padding="0,2,5,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="30 Miles"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="1"
+                        <TextBlock Grid.Row="1"
                                            Grid.Column="4"
                                            Margin="0,5,0,0"
                                            Padding="0,2,5,2"
@@ -997,7 +997,7 @@
                                            Text="-5 penalty to passive Wisdom (perception) scores"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="2"
+                        <TextBlock Grid.Row="2"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
@@ -1005,7 +1005,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Normal"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="2"
+                        <TextBlock Grid.Row="2"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,5,2"
@@ -1013,7 +1013,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="300 Feet"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="2"
+                        <TextBlock Grid.Row="2"
                                            Grid.Column="2"
                                            Margin="0,5,0,0"
                                            Padding="0,2,5,2"
@@ -1021,7 +1021,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="3 Miles"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="2"
+                        <TextBlock Grid.Row="2"
                                            Grid.Column="3"
                                            Margin="0,5,0,0"
                                            Padding="0,2,5,2"
@@ -1029,7 +1029,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="24 Miles"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="2"
+                        <TextBlock Grid.Row="2"
                                            Grid.Column="4"
                                            Margin="0,5,0,0"
                                            Padding="0,2,5,2"
@@ -1038,80 +1038,80 @@
                                            Text="-"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="3"
+                        <TextBlock Grid.Row="3"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Slow"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="3"
+                        <TextBlock Grid.Row="3"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,5,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="200 Feet"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="3"
+                        <TextBlock Grid.Row="3"
                                            Grid.Column="2"
                                            Margin="0,5,0,0"
                                            Padding="0,2,5,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="2 Miles"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="3"
+                        <TextBlock Grid.Row="3"
                                            Grid.Column="3"
                                            Margin="0,5,0,0"
                                            Padding="0,2,5,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="18 Miles"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="3"
+                        <TextBlock Grid.Row="3"
                                            Grid.Column="4"
                                            Margin="0,5,0,0"
                                            Padding="0,2,5,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Able to use stealth"
                                            TextWrapping="Wrap" />
-                            </Grid>
-                        </StackPanel>
-                    </ScrollViewer>
-                </Border>
+                     </Grid>
+                  </StackPanel>
+               </ScrollViewer>
+            </Border>
 
-                <Border Style="{DynamicResource _blockBorderStyle}">
-                    <ScrollViewer PreviewMouseWheel="Child_PreviewMouseWheel" VerticalScrollBarVisibility="Auto">
-                        <StackPanel>
-                            <TextBlock FontSize="14"
+            <Border Style="{DynamicResource _blockBorderStyle}">
+               <ScrollViewer PreviewMouseWheel="Child_PreviewMouseWheel" VerticalScrollBarVisibility="Auto">
+                  <StackPanel>
+                     <TextBlock FontSize="14"
                                        FontWeight="DemiBold"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="Cover" />
 
-                            <TextBlock Margin="0,10,0,0"
+                     <TextBlock Margin="0,10,0,0"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="Walls, trees, creatures, and other obstacles can provide cover during combat, making a target more difficult to harm. A target can benefit from cover only when an attack or other effect originates on the opposite side of the cover."
                                        TextWrapping="Wrap" />
 
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="100" />
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
+                     <Grid>
+                        <Grid.ColumnDefinitions>
+                           <ColumnDefinition Width="100" />
+                           <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
 
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
+                        <Grid.RowDefinitions>
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
 
-                                <TextBlock Grid.Row="0"
+                        <TextBlock Grid.Row="0"
                                            Grid.Column="0"
                                            Margin="0,10,0,2"
                                            Padding="5,0,0,0"
                                            FontSize="10"
                                            Foreground="{DynamicResource _secondaryTextBrush}"
                                            Text="Cover" />
-                                <TextBlock Grid.Row="0"
+                        <TextBlock Grid.Row="0"
                                            Grid.Column="1"
                                            Margin="0,10,0,2"
                                            Padding="0,0,15,0"
@@ -1119,14 +1119,14 @@
                                            Foreground="{DynamicResource _secondaryTextBrush}"
                                            Text="Effect" />
 
-                                <TextBlock Grid.Row="1"
+                        <TextBlock Grid.Row="1"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Half"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="1"
+                        <TextBlock Grid.Row="1"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -1134,7 +1134,7 @@
                                            Text="+2 bonus to AC and Dexterity saving throws"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="2"
+                        <TextBlock Grid.Row="2"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
@@ -1142,7 +1142,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Three-quarters"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="2"
+                        <TextBlock Grid.Row="2"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -1151,75 +1151,75 @@
                                            Text="+5 bonus to AC and Dexterity saving throws"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="3"
+                        <TextBlock Grid.Row="3"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Total"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="3"
+                        <TextBlock Grid.Row="3"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Can't be targeted directly by an attack or a spell"
                                            TextWrapping="Wrap" />
-                            </Grid>
-                        </StackPanel>
-                    </ScrollViewer>
-                </Border>
+                     </Grid>
+                  </StackPanel>
+               </ScrollViewer>
+            </Border>
 
-                <Border Style="{DynamicResource _blockBorderStyle}">
-                    <ScrollViewer PreviewMouseWheel="Child_PreviewMouseWheel" VerticalScrollBarVisibility="Auto">
-                        <StackPanel>
-                            <TextBlock FontSize="14"
+            <Border Style="{DynamicResource _blockBorderStyle}">
+               <ScrollViewer PreviewMouseWheel="Child_PreviewMouseWheel" VerticalScrollBarVisibility="Auto">
+                  <StackPanel>
+                     <TextBlock FontSize="14"
                                        FontWeight="DemiBold"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="Food, Drink, And Lodging" />
 
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
+                     <Grid>
+                        <Grid.ColumnDefinitions>
+                           <ColumnDefinition Width="*" />
+                           <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
 
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
+                        <Grid.RowDefinitions>
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
 
-                                <TextBlock Grid.Row="0"
+                        <TextBlock Grid.Row="0"
                                            Grid.Column="0"
                                            Margin="0,10,0,2"
                                            Padding="5,0,0,0"
                                            FontSize="10"
                                            Foreground="{DynamicResource _secondaryTextBrush}"
                                            Text="Item" />
-                                <TextBlock Grid.Row="0"
+                        <TextBlock Grid.Row="0"
                                            Grid.Column="1"
                                            Margin="0,10,0,2"
                                            Padding="0,0,15,0"
@@ -1227,14 +1227,14 @@
                                            Foreground="{DynamicResource _secondaryTextBrush}"
                                            Text="Cost" />
 
-                                <TextBlock Grid.Row="1"
+                        <TextBlock Grid.Row="1"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Ale"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="1"
+                        <TextBlock Grid.Row="1"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -1242,7 +1242,7 @@
                                            Text=""
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="2"
+                        <TextBlock Grid.Row="2"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="20,2,0,2"
@@ -1250,7 +1250,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Gallon"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="2"
+                        <TextBlock Grid.Row="2"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -1259,14 +1259,14 @@
                                            Text="2 sp"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="3"
+                        <TextBlock Grid.Row="3"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="20,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Mug"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="3"
+                        <TextBlock Grid.Row="3"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -1274,7 +1274,7 @@
                                            Text="4 cp"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="4"
+                        <TextBlock Grid.Row="4"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
@@ -1282,7 +1282,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Banquet (per person)"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="4"
+                        <TextBlock Grid.Row="4"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -1291,14 +1291,14 @@
                                            Text="10 gp"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="5"
+                        <TextBlock Grid.Row="5"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Bread, loaf"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="5"
+                        <TextBlock Grid.Row="5"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -1306,7 +1306,7 @@
                                            Text="2 cp"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="6"
+                        <TextBlock Grid.Row="6"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
@@ -1314,7 +1314,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Cheese, hunk"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="6"
+                        <TextBlock Grid.Row="6"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -1323,14 +1323,14 @@
                                            Text="1 sp"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="7"
+                        <TextBlock Grid.Row="7"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Inn Stay (per day)"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="7"
+                        <TextBlock Grid.Row="7"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -1338,7 +1338,7 @@
                                            Text=""
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="8"
+                        <TextBlock Grid.Row="8"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="20,2,0,2"
@@ -1346,7 +1346,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Squalid"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="8"
+                        <TextBlock Grid.Row="8"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -1355,14 +1355,14 @@
                                            Text="7 cp"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="9"
+                        <TextBlock Grid.Row="9"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="20,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Poor"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="9"
+                        <TextBlock Grid.Row="9"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -1370,7 +1370,7 @@
                                            Text="1 sp"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="10"
+                        <TextBlock Grid.Row="10"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="20,2,0,2"
@@ -1378,7 +1378,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Modest"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="10"
+                        <TextBlock Grid.Row="10"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -1387,14 +1387,14 @@
                                            Text="5 sp"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="11"
+                        <TextBlock Grid.Row="11"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="20,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Comfortable"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="11"
+                        <TextBlock Grid.Row="11"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -1402,7 +1402,7 @@
                                            Text="8 sp"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="12"
+                        <TextBlock Grid.Row="12"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="20,2,0,2"
@@ -1410,7 +1410,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Wealthy"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="12"
+                        <TextBlock Grid.Row="12"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -1419,14 +1419,14 @@
                                            Text="2 gp"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="13"
+                        <TextBlock Grid.Row="13"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="20,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Aristocratic"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="13"
+                        <TextBlock Grid.Row="13"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -1434,7 +1434,7 @@
                                            Text="4 gp"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="14"
+                        <TextBlock Grid.Row="14"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
@@ -1442,7 +1442,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Meals (per day)"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="14"
+                        <TextBlock Grid.Row="14"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -1451,14 +1451,14 @@
                                            Text=""
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="15"
+                        <TextBlock Grid.Row="15"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="20,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Squalid"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="15"
+                        <TextBlock Grid.Row="15"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -1466,7 +1466,7 @@
                                            Text="3 cp"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="16"
+                        <TextBlock Grid.Row="16"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="20,2,0,2"
@@ -1474,7 +1474,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Poor"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="16"
+                        <TextBlock Grid.Row="16"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -1483,14 +1483,14 @@
                                            Text="6 cp"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="17"
+                        <TextBlock Grid.Row="17"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="20,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Modest"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="17"
+                        <TextBlock Grid.Row="17"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -1498,7 +1498,7 @@
                                            Text="3 sp"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="18"
+                        <TextBlock Grid.Row="18"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="20,2,0,2"
@@ -1506,7 +1506,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Comfortable"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="18"
+                        <TextBlock Grid.Row="18"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -1515,14 +1515,14 @@
                                            Text="5 sp"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="19"
+                        <TextBlock Grid.Row="19"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="20,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Wealthy"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="19"
+                        <TextBlock Grid.Row="19"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -1530,7 +1530,7 @@
                                            Text="8 sp"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="20"
+                        <TextBlock Grid.Row="20"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="20,2,0,2"
@@ -1538,7 +1538,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Aristocratic"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="20"
+                        <TextBlock Grid.Row="20"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -1547,14 +1547,14 @@
                                            Text="2 gp"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="21"
+                        <TextBlock Grid.Row="21"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Meat, chunk"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="21"
+                        <TextBlock Grid.Row="21"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -1562,7 +1562,7 @@
                                            Text="3 sp"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="22"
+                        <TextBlock Grid.Row="22"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
@@ -1570,7 +1570,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Wine"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="22"
+                        <TextBlock Grid.Row="22"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -1579,14 +1579,14 @@
                                            Text=""
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="23"
+                        <TextBlock Grid.Row="23"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="20,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Common (pitcher)"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="23"
+                        <TextBlock Grid.Row="23"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -1594,7 +1594,7 @@
                                            Text="2 sp"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="24"
+                        <TextBlock Grid.Row="24"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="20,2,0,2"
@@ -1602,7 +1602,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Fine (bottle)"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="24"
+                        <TextBlock Grid.Row="24"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,15,2"
@@ -1610,59 +1610,59 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="10 gp"
                                            TextWrapping="Wrap" />
-                            </Grid>
-                        </StackPanel>
-                    </ScrollViewer>
-                </Border>
+                     </Grid>
+                  </StackPanel>
+               </ScrollViewer>
+            </Border>
 
-                <Border Style="{DynamicResource _blockBorderStyle}">
-                    <ScrollViewer PreviewMouseWheel="Child_PreviewMouseWheel" VerticalScrollBarVisibility="Auto">
-                        <StackPanel>
-                            <TextBlock FontSize="14"
+            <Border Style="{DynamicResource _blockBorderStyle}">
+               <ScrollViewer PreviewMouseWheel="Child_PreviewMouseWheel" VerticalScrollBarVisibility="Auto">
+                  <StackPanel>
+                     <TextBlock FontSize="14"
                                        FontWeight="DemiBold"
                                        Foreground="{DynamicResource _primaryTextBrush}"
                                        Text="Light" />
 
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="3*" />
-                                    <ColumnDefinition Width="2*" />
-                                    <ColumnDefinition Width="2*" />
-                                    <ColumnDefinition Width="2*" />
-                                </Grid.ColumnDefinitions>
+                     <Grid>
+                        <Grid.ColumnDefinitions>
+                           <ColumnDefinition Width="3*" />
+                           <ColumnDefinition Width="2*" />
+                           <ColumnDefinition Width="2*" />
+                           <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
 
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
+                        <Grid.RowDefinitions>
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                           <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
 
-                                <TextBlock Grid.Row="0"
+                        <TextBlock Grid.Row="0"
                                            Grid.Column="0"
                                            Margin="0,10,0,2"
                                            Padding="5,0,0,0"
                                            FontSize="10"
                                            Foreground="{DynamicResource _secondaryTextBrush}"
                                            Text="Source" />
-                                <TextBlock Grid.Row="0"
+                        <TextBlock Grid.Row="0"
                                            Grid.Column="1"
                                            Margin="0,10,0,2"
                                            Padding="0,0,5,0"
                                            FontSize="10"
                                            Foreground="{DynamicResource _secondaryTextBrush}"
                                            Text="Bright Light" />
-                                <TextBlock Grid.Row="0"
+                        <TextBlock Grid.Row="0"
                                            Grid.Column="2"
                                            Margin="0,10,0,2"
                                            Padding="0,0,5,0"
                                            FontSize="10"
                                            Foreground="{DynamicResource _secondaryTextBrush}"
                                            Text="Dim Light" />
-                                <TextBlock Grid.Row="0"
+                        <TextBlock Grid.Row="0"
                                            Grid.Column="3"
                                            Margin="0,10,0,2"
                                            Padding="0,0,5,0"
@@ -1670,28 +1670,28 @@
                                            Foreground="{DynamicResource _secondaryTextBrush}"
                                            Text="Duration" />
 
-                                <TextBlock Grid.Row="1"
+                        <TextBlock Grid.Row="1"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Candle"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="1"
+                        <TextBlock Grid.Row="1"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,5,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="5 Feet"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="1"
+                        <TextBlock Grid.Row="1"
                                            Grid.Column="2"
                                            Margin="0,5,0,0"
                                            Padding="0,2,5,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="+5 Feet"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="1"
+                        <TextBlock Grid.Row="1"
                                            Grid.Column="3"
                                            Margin="0,5,0,0"
                                            Padding="0,2,5,2"
@@ -1699,7 +1699,7 @@
                                            Text="1 Hour"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="2"
+                        <TextBlock Grid.Row="2"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
@@ -1707,7 +1707,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Lamp"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="2"
+                        <TextBlock Grid.Row="2"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,5,2"
@@ -1715,7 +1715,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="15 Feet"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="2"
+                        <TextBlock Grid.Row="2"
                                            Grid.Column="2"
                                            Margin="0,5,0,0"
                                            Padding="0,2,5,2"
@@ -1723,7 +1723,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="+30 Feet"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="2"
+                        <TextBlock Grid.Row="2"
                                            Grid.Column="3"
                                            Margin="0,5,0,0"
                                            Padding="0,2,5,2"
@@ -1732,28 +1732,28 @@
                                            Text="6 Hours"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="3"
+                        <TextBlock Grid.Row="3"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Lantern, bullseye"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="3"
+                        <TextBlock Grid.Row="3"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,5,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="60 Foot Cone"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="3"
+                        <TextBlock Grid.Row="3"
                                            Grid.Column="2"
                                            Margin="0,5,0,0"
                                            Padding="0,2,5,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="+60 Feet"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="3"
+                        <TextBlock Grid.Row="3"
                                            Grid.Column="3"
                                            Margin="0,5,0,0"
                                            Padding="0,2,5,2"
@@ -1761,7 +1761,7 @@
                                            Text="6 Hours"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="4"
+                        <TextBlock Grid.Row="4"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
@@ -1769,7 +1769,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Lantern, hooded"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="4"
+                        <TextBlock Grid.Row="4"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,5,2"
@@ -1777,7 +1777,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="30 Feet"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="4"
+                        <TextBlock Grid.Row="4"
                                            Grid.Column="2"
                                            Margin="0,5,0,0"
                                            Padding="0,2,5,2"
@@ -1785,7 +1785,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="+30 Feet"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="4"
+                        <TextBlock Grid.Row="4"
                                            Grid.Column="3"
                                            Margin="0,5,0,0"
                                            Padding="0,2,5,2"
@@ -1794,28 +1794,28 @@
                                            Text="6 Hours"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="5"
+                        <TextBlock Grid.Row="5"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="20,2,0,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Lowered Hood"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="5"
+                        <TextBlock Grid.Row="5"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,5,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="-"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="5"
+                        <TextBlock Grid.Row="5"
                                            Grid.Column="2"
                                            Margin="0,5,0,0"
                                            Padding="0,2,5,2"
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="+5 Feet"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="5"
+                        <TextBlock Grid.Row="5"
                                            Grid.Column="3"
                                            Margin="0,5,0,0"
                                            Padding="0,2,5,2"
@@ -1823,7 +1823,7 @@
                                            Text="-"
                                            TextWrapping="Wrap" />
 
-                                <TextBlock Grid.Row="6"
+                        <TextBlock Grid.Row="6"
                                            Grid.Column="0"
                                            Margin="0,5,0,0"
                                            Padding="5,2,0,2"
@@ -1831,7 +1831,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="Torch"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="6"
+                        <TextBlock Grid.Row="6"
                                            Grid.Column="1"
                                            Margin="0,5,0,0"
                                            Padding="0,2,5,2"
@@ -1839,7 +1839,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="20 Feet"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="6"
+                        <TextBlock Grid.Row="6"
                                            Grid.Column="2"
                                            Margin="0,5,0,0"
                                            Padding="0,2,5,2"
@@ -1847,7 +1847,7 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="+20 Feet"
                                            TextWrapping="Wrap" />
-                                <TextBlock Grid.Row="6"
+                        <TextBlock Grid.Row="6"
                                            Grid.Column="3"
                                            Margin="0,5,0,0"
                                            Padding="0,2,5,2"
@@ -1855,11 +1855,11 @@
                                            Foreground="{DynamicResource _primaryTextBrush}"
                                            Text="1 Hour"
                                            TextWrapping="Wrap" />
-                            </Grid>
-                        </StackPanel>
-                    </ScrollViewer>
-                </Border>
-            </WrapPanel>
-        </ScrollViewer>
-    </Grid>
+                     </Grid>
+                  </StackPanel>
+               </ScrollViewer>
+            </Border>
+         </WrapPanel>
+      </ScrollViewer>
+   </Grid>
 </UserControl>

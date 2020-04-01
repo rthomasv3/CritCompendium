@@ -1,8 +1,8 @@
 ﻿namespace CritCompendiumInfrastructure.Enums
 {
-    public enum CharacterSortOption
-    {
-        Name_Ascending,
-        Name_Descending
-    }
+   public enum CharacterSortOption
+   {
+      Name_Ascending,
+      Name_Descending
+   }
 }

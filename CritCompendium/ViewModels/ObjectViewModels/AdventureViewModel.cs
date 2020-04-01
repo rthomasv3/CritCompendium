@@ -7,56 +7,56 @@ using CritCompendiumInfrastructure.Models;
 
 namespace CritCompendium.ViewModels.ObjectViewModels
 {
-    public sealed class AdventureViewModel : NotifyPropertyChanged
-    {
-        #region Fields
+   public sealed class AdventureViewModel : NotifyPropertyChanged
+   {
+      #region Fields
 
-        private readonly AdventureModel _adventureModel;
+      private readonly AdventureModel _adventureModel;
 
-        #endregion
+      #endregion
 
-        #region Constructor
+      #region Constructor
 
-        /// <summary>
-        /// Creates a new instance of <see cref="AdventureViewModel"/>
-        /// </summary>
-        public AdventureViewModel(AdventureModel adventureModel)
-        {
-            _adventureModel = adventureModel;
-        }
+      /// <summary>
+      /// Creates a new instance of <see cref="AdventureViewModel"/>
+      /// </summary>
+      public AdventureViewModel(AdventureModel adventureModel)
+      {
+         _adventureModel = adventureModel;
+      }
 
-        #endregion
+      #endregion
 
-        #region Properties
+      #region Properties
 
-        /// <summary>
-        /// Gets adventure model
-        /// </summary>
-        public AdventureModel AdventureModel
-        {
-            get { return _adventureModel; }
-        }
+      /// <summary>
+      /// Gets adventure model
+      /// </summary>
+      public AdventureModel AdventureModel
+      {
+         get { return _adventureModel; }
+      }
 
-        /// <summary>
-        /// Gets name
-        /// </summary>
-        public string Name
-        {
-            get { return _adventureModel.Name; }
-        }
+      /// <summary>
+      /// Gets name
+      /// </summary>
+      public string Name
+      {
+         get { return _adventureModel.Name; }
+      }
 
-        #endregion
+      #endregion
 
-        #region Public Methods
-
-
-
-        #endregion
-
-        #region Private Methods
+      #region Public Methods
 
 
 
-        #endregion
-    }
+      #endregion
+
+      #region Private Methods
+
+
+
+      #endregion
+   }
 }

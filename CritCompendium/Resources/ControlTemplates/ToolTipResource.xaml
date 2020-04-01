@@ -1,8 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Style x:Key="{x:Type ToolTip}" TargetType="ToolTip">
-        <Setter Property="Background" Value="{DynamicResource _secondaryBackgroundBrush}" />
-        <Setter Property="Foreground" Value="{DynamicResource _primaryTextBrush}" />
-        <Setter Property="Opacity" Value="0.9" />
-        <Setter Property="BorderBrush" Value="{DynamicResource _contentHoverBorderBrush}" />
-    </Style>
+   <Style x:Key="{x:Type ToolTip}" TargetType="ToolTip">
+      <Setter Property="Background" Value="{DynamicResource _secondaryBackgroundBrush}" />
+      <Setter Property="Foreground" Value="{DynamicResource _primaryTextBrush}" />
+      <Setter Property="Opacity" Value="0.9" />
+      <Setter Property="BorderBrush" Value="{DynamicResource _contentHoverBorderBrush}" />
+   </Style>
 </ResourceDictionary>
