@@ -50,7 +50,7 @@
    <BitmapImage x:Key="_d8Image" UriSource="/CritCompendium;component/Resources/Images/d8_64.png" />
    <BitmapImage x:Key="_d6Image" UriSource="/CritCompendium;component/Resources/Images/d6_64.png" />
    <BitmapImage x:Key="_d4Image" UriSource="/CritCompendium;component/Resources/Images/d4_64.png" />
-   <BitmapImage x:Key="_titleImage" UriSource="/CritCompendium;component/Resources/Images/critical_compendium_title_512.png" />
+   <BitmapImage x:Key="_titleImage" UriSource="/CritCompendium;component/Resources/Images/crit_compendium_title_512.png" />
    <BitmapImage x:Key="_settingsImage" UriSource="/CritCompendium;component/Resources/Images/settings_32.png" />
 
    <!--  Input  -->

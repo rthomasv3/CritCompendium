@@ -996,5 +996,11 @@
       <Name>CritCompendiumInfrastructure</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\crit_compendium_title_512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\LightTheme\crit_compendium_title_512.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

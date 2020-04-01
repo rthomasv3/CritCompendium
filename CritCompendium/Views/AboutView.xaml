@@ -23,7 +23,7 @@
             <Image Grid.Row="0"
                    Grid.Column="1"
                    Width="256"
-                   Height="26"
+                   Height="39"
                    Margin="15,5,0,0"
                    Source="{DynamicResource _titleImage}" />
          </Grid>

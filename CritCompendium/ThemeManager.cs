@@ -57,8 +57,8 @@ namespace CritCompendium
          if (themeBytes == null)
          {
             _selectedFont = "Segoe UI";
-            _selectedAccentColor = AccentColor.Red;
-            _selectedTheme = Theme.Parchment;
+            _selectedAccentColor = AccentColor.Blue;
+            _selectedTheme = Theme.Dark;
          }
          else
          {
