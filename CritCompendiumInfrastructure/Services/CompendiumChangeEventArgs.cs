@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CriticalCompendiumInfrastructure.Services
+namespace CritCompendiumInfrastructure.Services
 {
     public class CompendiumChangeEventArgs : EventArgs 
     {

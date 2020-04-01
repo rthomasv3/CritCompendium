@@ -1,6 +1,6 @@
-﻿using CriticalCompendiumInfrastructure.Services;
+﻿using CritCompendiumInfrastructure.Services;
 
-namespace CriticalCompendiumInfrastructure.Models
+namespace CritCompendiumInfrastructure.Models
 {
     public sealed class EncounterCharacterModel : EncounterCreatureModel
     {

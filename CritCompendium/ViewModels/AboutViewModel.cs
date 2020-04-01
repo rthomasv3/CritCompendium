@@ -91,7 +91,7 @@ namespace CritCompendium.ViewModels
 
         private void ViewSRDLicense()
         {
-            using (Stream stream = GetType().Assembly.GetManifestResourceStream("CriticalCompendium.Resources.Licenses.v5.1_SRD.txt"))
+            using (Stream stream = GetType().Assembly.GetManifestResourceStream("CritCompendium.Resources.Licenses.v5.1_SRD.txt"))
             {
                 using (StreamReader sr = new StreamReader(stream))
                 {
@@ -103,7 +103,7 @@ namespace CritCompendium.ViewModels
 
         private void ViewDocXLicense()
         {
-            using (Stream stream = GetType().Assembly.GetManifestResourceStream("CriticalCompendium.Resources.Licenses.docx.txt"))
+            using (Stream stream = GetType().Assembly.GetManifestResourceStream("CritCompendium.Resources.Licenses.docx.txt"))
             {
                 using (StreamReader sr = new StreamReader(stream))
                 {
@@ -115,7 +115,7 @@ namespace CritCompendium.ViewModels
 
         private void ViewFacepunchLicense()
         {
-            using (Stream stream = GetType().Assembly.GetManifestResourceStream("CriticalCompendium.Resources.Licenses.facepunch.steamworks.txt"))
+            using (Stream stream = GetType().Assembly.GetManifestResourceStream("CritCompendium.Resources.Licenses.facepunch.steamworks.txt"))
             {
                 using (StreamReader sr = new StreamReader(stream))
                 {
@@ -127,7 +127,7 @@ namespace CritCompendium.ViewModels
 
         private void ViewSpireLicense()
         {
-            using (Stream stream = GetType().Assembly.GetManifestResourceStream("CriticalCompendium.Resources.Licenses.freespire.pdf.txt"))
+            using (Stream stream = GetType().Assembly.GetManifestResourceStream("CritCompendium.Resources.Licenses.freespire.pdf.txt"))
             {
                 using (StreamReader sr = new StreamReader(stream))
                 {

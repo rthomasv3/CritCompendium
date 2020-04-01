@@ -1,4 +1,4 @@
-﻿using CriticalCompendiumInfrastructure.Models;
+﻿using CritCompendiumInfrastructure.Models;
 using System;
 
 namespace CritCompendium.ViewModels.ObjectViewModels

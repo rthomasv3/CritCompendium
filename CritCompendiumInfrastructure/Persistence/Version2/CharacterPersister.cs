@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using CriticalCompendiumInfrastructure.Enums;
-using CriticalCompendiumInfrastructure.Models;
+using CritCompendiumInfrastructure.Enums;
+using CritCompendiumInfrastructure.Models;
 
-namespace CriticalCompendiumInfrastructure.Persistence.Version2
+namespace CritCompendiumInfrastructure.Persistence.Version2
 {
     public sealed class CharacterPersister : ICharacterPersister
     {

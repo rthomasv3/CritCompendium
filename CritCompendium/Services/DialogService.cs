@@ -7,8 +7,8 @@ using CritCompendium.ViewModels.DialogViewModels;
 using CritCompendium.ViewModels.ObjectViewModels;
 using CritCompendium.Views;
 using CritCompendium.Views.SearchViews;
-using CriticalCompendiumInfrastructure;
-using CriticalCompendiumInfrastructure.Models;
+using CritCompendiumInfrastructure;
+using CritCompendiumInfrastructure.Models;
 
 namespace CritCompendium.Services
 {
@@ -903,7 +903,7 @@ namespace CritCompendium.Services
 
             AboutView aboutView = DependencyResolver.Resolve<AboutView>();
 
-            modalDialog.WindowTitle = "About Critical Compendium";
+            modalDialog.WindowTitle = "About Crit Compendium";
             modalDialog.Body = aboutView;
 
             ShowDialog(modalDialog);

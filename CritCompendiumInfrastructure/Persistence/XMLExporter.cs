@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Xml.Linq;
-using CriticalCompendiumInfrastructure.Models;
+using CritCompendiumInfrastructure.Models;
 
-namespace CriticalCompendiumInfrastructure.Persistence
+namespace CritCompendiumInfrastructure.Persistence
 {
     public sealed class XMLExporter
     {

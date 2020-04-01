@@ -1,10 +1,10 @@
-﻿using CriticalCompendiumInfrastructure.Services;
+﻿using CritCompendiumInfrastructure.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace CriticalCompendiumInfrastructure
+namespace CritCompendiumInfrastructure
 {
 	public static class DependencyResolver
 	{

@@ -4,8 +4,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
 using CritCompendium.ViewModels.ObjectViewModels;
-using CriticalCompendiumInfrastructure.Models;
-using CriticalCompendiumInfrastructure.Services;
+using CritCompendiumInfrastructure.Models;
+using CritCompendiumInfrastructure.Services;
 
 namespace CritCompendium.ViewModels.DialogViewModels
 {

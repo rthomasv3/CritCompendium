@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CritCompendiumInfrastructure", "CritCompendiumInfrastructure\CritCompendiumInfrastructure.csproj", "{27A794D4-C1BF-4AEF-831E-461B2BF30C4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CritCompendium", "CriticalCompendium\CritCompendium.csproj", "{CCBC795F-4959-47E9-AD92-FF6C0703734A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CritCompendium", "CritCompendium\CritCompendium.csproj", "{CCBC795F-4959-47E9-AD92-FF6C0703734A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
-using CriticalCompendiumInfrastructure;
-using CriticalCompendiumInfrastructure.Models;
-using CriticalCompendiumInfrastructure.Services;
+using CritCompendiumInfrastructure;
+using CritCompendiumInfrastructure.Models;
+using CritCompendiumInfrastructure.Services;
 using CritCompendium.Services;
 
 namespace CritCompendium.ViewModels.ObjectViewModels
@@ -101,7 +101,7 @@ namespace CritCompendium.ViewModels.ObjectViewModels
 				_properties = "None";
 			}
 
-			if (_itemModel.Rarity != CriticalCompendiumInfrastructure.Enums.Rarity.None)
+			if (_itemModel.Rarity != CritCompendiumInfrastructure.Enums.Rarity.None)
 			{
 				_rarity = _stringService.GetString(_itemModel.Rarity);
 			}

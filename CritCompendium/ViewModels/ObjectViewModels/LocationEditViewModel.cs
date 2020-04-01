@@ -5,9 +5,9 @@ using System.IO;
 using System.Linq;
 using System.Windows.Input;
 using CritCompendium.Services;
-using CriticalCompendiumInfrastructure;
-using CriticalCompendiumInfrastructure.Enums;
-using CriticalCompendiumInfrastructure.Models;
+using CritCompendiumInfrastructure;
+using CritCompendiumInfrastructure.Enums;
+using CritCompendiumInfrastructure.Models;
 using Microsoft.Win32;
 
 namespace CritCompendium.ViewModels.ObjectViewModels

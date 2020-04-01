@@ -1,4 +1,4 @@
-﻿namespace CriticalCompendiumInfrastructure.Models
+﻿namespace CritCompendiumInfrastructure.Models
 {
     public sealed class RandomTableRowModel
     {

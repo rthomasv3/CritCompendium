@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using CriticalCompendiumInfrastructure.Enums;
-using CriticalCompendiumInfrastructure.Models;
+using CritCompendiumInfrastructure.Enums;
+using CritCompendiumInfrastructure.Models;
 
-namespace CriticalCompendiumInfrastructure.Services
+namespace CritCompendiumInfrastructure.Services
 {
     public sealed class StatService
 	{

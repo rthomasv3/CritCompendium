@@ -1,6 +1,0 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Color x:Key="_accentColor">#6d2020</Color>
-    <Color x:Key="_accentColorHover">#571a1a</Color>
-    <SolidColorBrush x:Key="_accentBrush" Color="{DynamicResource _accentColor}" />
-    <SolidColorBrush x:Key="_accentHoverBrush" Color="{DynamicResource _accentColorHover}" />
-</ResourceDictionary>

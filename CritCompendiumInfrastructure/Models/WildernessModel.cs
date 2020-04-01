@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CriticalCompendiumInfrastructure.Models
+namespace CritCompendiumInfrastructure.Models
 {
     public sealed class WildernessModel : LocationModel
     {

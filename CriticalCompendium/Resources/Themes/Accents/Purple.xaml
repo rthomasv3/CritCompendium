@@ -1,6 +1,0 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Color x:Key="_accentColor">#4b3758</Color>
-    <Color x:Key="_accentColorHover">#42314e</Color>
-    <SolidColorBrush x:Key="_accentBrush" Color="{DynamicResource _accentColor}" />
-    <SolidColorBrush x:Key="_accentHoverBrush" Color="{DynamicResource _accentColorHover}" />
-</ResourceDictionary>

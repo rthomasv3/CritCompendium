@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using CriticalCompendiumInfrastructure;
-using CriticalCompendiumInfrastructure.Enums;
-using CriticalCompendiumInfrastructure.Models;
-using CriticalCompendiumInfrastructure.Services;
+using CritCompendiumInfrastructure;
+using CritCompendiumInfrastructure.Enums;
+using CritCompendiumInfrastructure.Models;
+using CritCompendiumInfrastructure.Services;
 
 namespace CritCompendium.ViewModels.ObjectViewModels
 {

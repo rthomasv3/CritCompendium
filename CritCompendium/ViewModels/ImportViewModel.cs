@@ -7,9 +7,9 @@ using System.Text;
 using System.Windows.Input;
 using CritCompendium.Services;
 using CritCompendium.ViewModels.ObjectViewModels;
-using CriticalCompendiumInfrastructure.Models;
-using CriticalCompendiumInfrastructure.Persistence;
-using CriticalCompendiumInfrastructure.Services;
+using CritCompendiumInfrastructure.Models;
+using CritCompendiumInfrastructure.Persistence;
+using CritCompendiumInfrastructure.Services;
 using Microsoft.Win32;
 
 namespace CritCompendium.ViewModels

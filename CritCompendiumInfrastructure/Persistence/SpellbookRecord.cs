@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using CriticalCompendiumInfrastructure.Enums;
+using CritCompendiumInfrastructure.Enums;
 
-namespace CriticalCompendiumInfrastructure.Persistence
+namespace CritCompendiumInfrastructure.Persistence
 {
    /// <summary>
    /// Class used to store spellbook information.

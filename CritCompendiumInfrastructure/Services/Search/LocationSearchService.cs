@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using CriticalCompendiumInfrastructure.Enums;
-using CriticalCompendiumInfrastructure.Models;
-using CriticalCompendiumInfrastructure.Services.Search.Input;
+using CritCompendiumInfrastructure.Enums;
+using CritCompendiumInfrastructure.Models;
+using CritCompendiumInfrastructure.Services.Search.Input;
 
-namespace CriticalCompendiumInfrastructure.Services.Search
+namespace CritCompendiumInfrastructure.Services.Search
 {
     public sealed class LocationSearchService
     {

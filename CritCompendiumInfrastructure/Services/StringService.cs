@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
-using CriticalCompendiumInfrastructure.Models;
-using CriticalCompendiumInfrastructure.Enums;
+using CritCompendiumInfrastructure.Models;
+using CritCompendiumInfrastructure.Enums;
 
-namespace CriticalCompendiumInfrastructure.Services
+namespace CritCompendiumInfrastructure.Services
 {
 	public sealed class StringService
 	{

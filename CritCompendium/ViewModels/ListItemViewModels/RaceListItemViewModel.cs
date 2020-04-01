@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using CriticalCompendiumInfrastructure.Enums;
-using CriticalCompendiumInfrastructure.Models;
-using CriticalCompendiumInfrastructure.Services;
+using CritCompendiumInfrastructure.Enums;
+using CritCompendiumInfrastructure.Models;
+using CritCompendiumInfrastructure.Services;
 
 namespace CritCompendium.ViewModels.ListItemViewModels
 {

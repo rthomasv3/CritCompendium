@@ -1,7 +1,7 @@
 ﻿using System;
-using CriticalCompendiumInfrastructure.Enums;
+using CritCompendiumInfrastructure.Enums;
 
-namespace CriticalCompendiumInfrastructure.Services.Search.Input
+namespace CritCompendiumInfrastructure.Services.Search.Input
 {
     public sealed class EncounterSearchInput
     {

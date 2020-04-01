@@ -4,11 +4,11 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Xml;
-using CriticalCompendiumInfrastructure.Enums;
-using CriticalCompendiumInfrastructure.Models;
-using CriticalCompendiumInfrastructure.Services;
+using CritCompendiumInfrastructure.Enums;
+using CritCompendiumInfrastructure.Models;
+using CritCompendiumInfrastructure.Services;
 
-namespace CriticalCompendiumInfrastructure.Persistence
+namespace CritCompendiumInfrastructure.Persistence
 {
 	public class XMLImporter
 	{
@@ -54,7 +54,7 @@ namespace CriticalCompendiumInfrastructure.Persistence
 		{
             string xml = String.Empty;
 
-            using (Stream stream = GetType().Assembly.GetManifestResourceStream("CriticalCompendiumInfrastructure.Resources." + resource))
+            using (Stream stream = GetType().Assembly.GetManifestResourceStream("CritCompendiumInfrastructure.Resources." + resource))
             {
                 using (StreamReader sr = new StreamReader(stream))
                 {

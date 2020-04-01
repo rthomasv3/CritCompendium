@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using CritCompendium.ViewModels.ObjectViewModels;
-using CriticalCompendiumInfrastructure.Models;
-using CriticalCompendiumInfrastructure.Services;
+using CritCompendiumInfrastructure.Models;
+using CritCompendiumInfrastructure.Services;
 using Spire.Pdf;
 using Spire.Pdf.Actions;
 using Spire.Pdf.Fields;
 using Spire.Pdf.Graphics;
 using Spire.Pdf.Widget;
-using Xceed.Document.NET;
 using Xceed.Words.NET;
 
 namespace CritCompendium.Services
@@ -76,7 +75,7 @@ namespace CritCompendium.Services
         /// </summary>
         public void CreateCharacterPDF(string fileLocation, CharacterModel character)
         {
-            using (Stream stream = GetType().Assembly.GetManifestResourceStream("CriticalCompendium.Resources.Documents.CC_Character_Sheet_5e.pdf"))
+            using (Stream stream = GetType().Assembly.GetManifestResourceStream("CritCompendium.Resources.Documents.CC_Character_Sheet_5e.pdf"))
             {
                 BuildCharacterMaps(character);
 
@@ -155,10 +154,10 @@ namespace CritCompendium.Services
                     }
                 }
 
-                pdf.DocumentInformation.Author = "Critical Compendium";
+                pdf.DocumentInformation.Author = "Crit Compendium";
                 pdf.DocumentInformation.CreationDate = DateTime.Now;
-                pdf.DocumentInformation.Creator = "Critical Compendium";
-                pdf.DocumentInformation.Title = "Critical Compendium - Character Sheet";
+                pdf.DocumentInformation.Creator = "Crit Compendium";
+                pdf.DocumentInformation.Title = "Crit Compendium - Character Sheet";
                 pdf.DocumentInformation.Producer = String.Empty;
 
                 pdf.SaveToFile(fileLocation);
@@ -191,9 +190,9 @@ namespace CritCompendium.Services
                 ac.Append(item.AC, _normalFormat);
             }
 
-            if (item.Type == CriticalCompendiumInfrastructure.Enums.ItemType.Heavy_Armor ||
-                item.Type == CriticalCompendiumInfrastructure.Enums.ItemType.Light_Armor ||
-                item.Type == CriticalCompendiumInfrastructure.Enums.ItemType.Medium_Armor)
+            if (item.Type == CritCompendiumInfrastructure.Enums.ItemType.Heavy_Armor ||
+                item.Type == CritCompendiumInfrastructure.Enums.ItemType.Light_Armor ||
+                item.Type == CritCompendiumInfrastructure.Enums.ItemType.Medium_Armor)
             {
                 Paragraph stealth = doc.InsertParagraph("Stealth Disadvantage: ", false, _labelFormat);
                 stealth.Append(item.StealthDisadvantage ? "Yes" : "No", _normalFormat);
@@ -538,11 +537,11 @@ namespace CritCompendium.Services
 
             Image checkboxImage;
             Image checkboxCheckedImage;
-            using (Stream imageStream = System.Windows.Application.GetResourceStream(new Uri("pack://application:,,,/CriticalCompendium;component/Resources/Images/checkbox.jpg")).Stream)
+            using (Stream imageStream = System.Windows.Application.GetResourceStream(new Uri("pack://application:,,,/CritCompendium;component/Resources/Images/checkbox.jpg")).Stream)
             {
                 checkboxImage = doc.AddImage(imageStream);
             }
-            using (Stream imageStream = System.Windows.Application.GetResourceStream(new Uri("pack://application:,,,/CriticalCompendium;component/Resources/Images/checkbox_checked.jpg")).Stream)
+            using (Stream imageStream = System.Windows.Application.GetResourceStream(new Uri("pack://application:,,,/CritCompendium;component/Resources/Images/checkbox_checked.jpg")).Stream)
             {
                 checkboxCheckedImage = doc.AddImage(imageStream);
             }

@@ -1,8 +1,8 @@
-﻿using CriticalCompendiumInfrastructure.Enums;
+﻿using CritCompendiumInfrastructure.Enums;
 using System;
 using System.Collections.Generic;
 
-namespace CriticalCompendiumInfrastructure.Models
+namespace CritCompendiumInfrastructure.Models
 {
     public sealed class EncounterModel
     {

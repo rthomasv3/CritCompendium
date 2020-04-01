@@ -7,114 +7,114 @@
              Width="490"
              Height="Auto"
              mc:Ignorable="d">
-    <Border Padding="10">
-        <StackPanel>
-            <TextBlock Margin="0,5,0,0"
-                       FontSize="13"
-                       FontWeight="Bold"
-                       Foreground="{DynamicResource _primaryTextBrush}"
-                       Text="Enojoying Critical Compendium?"
-                       TextWrapping="Wrap" />
+   <Border Padding="10">
+      <StackPanel>
+         <TextBlock Margin="0,5,0,0"
+                    FontSize="13"
+                    FontWeight="Bold"
+                    Foreground="{DynamicResource _primaryTextBrush}"
+                    Text="Enojoying Crit Compendium?"
+                    TextWrapping="Wrap" />
 
-            <TextBlock Margin="0,10,0,0"
-                       Foreground="{DynamicResource _primaryTextBrush}"
-                       Text="Your ideas are what make Critical Compendium possible! The goal of the Patreon is to give adventurers an opportunity to voice their wish list of tabletop tools. Together we can make Critical Compendium better and create new free tools for the community."
-                       TextWrapping="Wrap" />
+         <TextBlock Margin="0,10,0,0"
+                    Foreground="{DynamicResource _primaryTextBrush}"
+                    Text="Your ideas are what make Crit Compendium possible! The goal of the Patreon is to give adventurers an opportunity to voice their wish list of tabletop tools. Together we can make Critical Compendium better and create new free tools for the community."
+                    TextWrapping="Wrap" />
 
-            <DockPanel Margin="0,20,0,0" HorizontalAlignment="Center">
-                <Image Width="75"
-                       Height="31"
-                       Margin="0,0,0,0"
-                       Source="/CritCompendium;component/Resources/Images/patreon_white.png" />
+         <DockPanel Margin="0,20,0,0" HorizontalAlignment="Center">
+            <Image Width="75"
+                   Height="31"
+                   Margin="0,0,0,0"
+                   Source="/CritCompendium;component/Resources/Images/patreon_white.png" />
 
-                <TextBox VerticalAlignment="Center"
-                         Style="{DynamicResource _readOnlyTextboxStyle}"
-                         FontSize="11"
-                         FontWeight="Medium"
-                         Text="Whimsy &amp; Wizardry"
-                         TextWrapping="Wrap" />
-            </DockPanel>
+            <TextBox VerticalAlignment="Center"
+                     FontSize="11"
+                     FontWeight="Medium"
+                     Style="{DynamicResource _readOnlyTextboxStyle}"
+                     Text="Whimsy &amp; Wizardry"
+                     TextWrapping="Wrap" />
+         </DockPanel>
 
-            <TextBlock Margin="0,20,0,0"
+         <TextBlock Margin="0,20,0,0"
+                    HorizontalAlignment="Center"
+                    FontWeight="Bold"
+                    Foreground="{DynamicResource _primaryTextBrush}"
+                    Text="Special Thanks To:"
+                    TextWrapping="Wrap" />
+
+         <Grid Margin="0,15,0,0">
+            <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="*" />
+               <ColumnDefinition Width="*" />
+               <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+               <RowDefinition Height="25" />
+               <RowDefinition Height="25" />
+               <RowDefinition Height="25" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Column="0"
                        HorizontalAlignment="Center"
-                       FontWeight="Bold"
                        Foreground="{DynamicResource _primaryTextBrush}"
-                       Text="Special Thanks To:"
+                       Text="KC" />
+
+            <TextBlock Grid.Row="0"
+                       Grid.Column="1"
+                       HorizontalAlignment="Center"
+                       Foreground="{DynamicResource _primaryTextBrush}"
+                       Text="Zac"
                        TextWrapping="Wrap" />
 
-            <Grid Margin="0,15,0,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0"
+                       Grid.Column="2"
+                       HorizontalAlignment="Center"
+                       Foreground="{DynamicResource _primaryTextBrush}"
+                       Text="Josh"
+                       TextWrapping="Wrap" />
 
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="25" />
-                    <RowDefinition Height="25" />
-                    <RowDefinition Height="25" />
-                </Grid.RowDefinitions>
+            <TextBlock Grid.Row="1"
+                       Grid.Column="0"
+                       HorizontalAlignment="Center"
+                       Foreground="{DynamicResource _primaryTextBrush}"
+                       Text="Wags" />
 
-                <TextBlock Grid.Column="0"
-                           HorizontalAlignment="Center"
-                           Foreground="{DynamicResource _primaryTextBrush}"
-                           Text="KC" />
+            <TextBlock Grid.Row="1"
+                       Grid.Column="1"
+                       HorizontalAlignment="Center"
+                       Foreground="{DynamicResource _primaryTextBrush}"
+                       Text="Brian"
+                       TextWrapping="Wrap" />
 
-                <TextBlock Grid.Row="0"
-                           Grid.Column="1"
-                           HorizontalAlignment="Center"
-                           Foreground="{DynamicResource _primaryTextBrush}"
-                           Text="Zac"
-                           TextWrapping="Wrap" />
+            <TextBlock Grid.Row="1"
+                       Grid.Column="2"
+                       HorizontalAlignment="Center"
+                       Foreground="{DynamicResource _primaryTextBrush}"
+                       Text="Matt"
+                       TextWrapping="Wrap" />
 
-                <TextBlock Grid.Row="0"
-                           Grid.Column="2"
-                           HorizontalAlignment="Center"
-                           Foreground="{DynamicResource _primaryTextBrush}"
-                           Text="Josh"
-                           TextWrapping="Wrap" />
+            <TextBlock Grid.Row="2"
+                       Grid.Column="0"
+                       HorizontalAlignment="Center"
+                       Foreground="{DynamicResource _primaryTextBrush}"
+                       Text="Chris"
+                       TextWrapping="Wrap" />
 
-                <TextBlock Grid.Row="1"
-                           Grid.Column="0"
-                           HorizontalAlignment="Center"
-                           Foreground="{DynamicResource _primaryTextBrush}"
-                           Text="Wags" />
+            <TextBlock Grid.Row="2"
+                       Grid.Column="1"
+                       HorizontalAlignment="Center"
+                       Foreground="{DynamicResource _primaryTextBrush}"
+                       Text="Phil"
+                       TextWrapping="Wrap" />
 
-                <TextBlock Grid.Row="1"
-                           Grid.Column="1"
-                           HorizontalAlignment="Center"
-                           Foreground="{DynamicResource _primaryTextBrush}"
-                           Text="Brian"
-                           TextWrapping="Wrap" />
-
-                <TextBlock Grid.Row="1"
-                           Grid.Column="2"
-                           HorizontalAlignment="Center"
-                           Foreground="{DynamicResource _primaryTextBrush}"
-                           Text="Matt"
-                           TextWrapping="Wrap" />
-
-                <TextBlock Grid.Row="2"
-                           Grid.Column="0"
-                           HorizontalAlignment="Center"
-                           Foreground="{DynamicResource _primaryTextBrush}"
-                           Text="Chris"
-                           TextWrapping="Wrap" />
-
-                <TextBlock Grid.Row="2"
-                           Grid.Column="1"
-                           HorizontalAlignment="Center"
-                           Foreground="{DynamicResource _primaryTextBrush}"
-                           Text="Phil"
-                           TextWrapping="Wrap" />
-
-                <TextBlock Grid.Row="2"
-                           Grid.Column="2"
-                           HorizontalAlignment="Center"
-                           Foreground="{DynamicResource _primaryTextBrush}"
-                           Text="Kenny Pillars"
-                           TextWrapping="Wrap" />
-            </Grid>
-        </StackPanel>
-    </Border>
+            <TextBlock Grid.Row="2"
+                       Grid.Column="2"
+                       HorizontalAlignment="Center"
+                       Foreground="{DynamicResource _primaryTextBrush}"
+                       Text="Kenny Pillars"
+                       TextWrapping="Wrap" />
+         </Grid>
+      </StackPanel>
+   </Border>
 </UserControl>

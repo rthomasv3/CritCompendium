@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using CriticalCompendiumInfrastructure.Enums;
+using CritCompendiumInfrastructure.Enums;
 
-namespace CriticalCompendiumInfrastructure.Models
+namespace CritCompendiumInfrastructure.Models
 {
 	public sealed class TraitModel
 	{

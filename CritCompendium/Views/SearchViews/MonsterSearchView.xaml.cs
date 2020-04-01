@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 using CritCompendium.ViewModels.SearchViewModels;
-using CriticalCompendiumInfrastructure;
+using CritCompendiumInfrastructure;
 
 namespace CritCompendium.Views.SearchViews
 {

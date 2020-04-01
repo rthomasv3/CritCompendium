@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Input;
-using CriticalCompendiumInfrastructure.Models;
+using CritCompendiumInfrastructure.Models;
 using Microsoft.Win32;
 
 namespace CritCompendium.ViewModels.ObjectViewModels

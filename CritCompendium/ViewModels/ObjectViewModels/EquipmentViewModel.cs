@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using CritCompendium.Services;
 using CritCompendium.ViewModels.DialogViewModels;
-using CriticalCompendiumInfrastructure;
-using CriticalCompendiumInfrastructure.Models;
-using CriticalCompendiumInfrastructure.Services;
+using CritCompendiumInfrastructure;
+using CritCompendiumInfrastructure.Models;
+using CritCompendiumInfrastructure.Services;
 
 namespace CritCompendium.ViewModels.ObjectViewModels
 {

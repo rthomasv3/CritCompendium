@@ -1,8 +1,8 @@
-﻿using CriticalCompendiumInfrastructure.Services;
+﻿using CritCompendiumInfrastructure.Services;
 using System;
 using System.Collections.Generic;
 
-namespace CriticalCompendiumInfrastructure.Models
+namespace CritCompendiumInfrastructure.Models
 {
     public class EncounterCreatureModel
     {

@@ -1,7 +1,7 @@
 ﻿using System;
-using CriticalCompendiumInfrastructure;
-using CriticalCompendiumInfrastructure.Enums;
-using CriticalCompendiumInfrastructure.Services;
+using CritCompendiumInfrastructure;
+using CritCompendiumInfrastructure.Enums;
+using CritCompendiumInfrastructure.Services;
 
 namespace CritCompendium.ViewModels.ObjectViewModels
 {

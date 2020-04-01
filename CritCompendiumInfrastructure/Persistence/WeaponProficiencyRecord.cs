@@ -1,4 +1,4 @@
-﻿namespace CriticalCompendiumInfrastructure.Persistence
+﻿namespace CritCompendiumInfrastructure.Persistence
 {
    /// <summary>
    /// Class used to store weapon proficiency information.

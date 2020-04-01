@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CriticalCompendiumInfrastructure.Persistence
+namespace CritCompendiumInfrastructure.Persistence
 {
    /// <summary>
    /// Class used to store equipment information.

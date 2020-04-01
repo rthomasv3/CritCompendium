@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using CriticalCompendiumInfrastructure.Enums;
-using CriticalCompendiumInfrastructure.Models;
+using CritCompendiumInfrastructure.Enums;
+using CritCompendiumInfrastructure.Models;
 
-namespace CriticalCompendiumInfrastructure.Services.Search.Input
+namespace CritCompendiumInfrastructure.Services.Search.Input
 {
 	public sealed class RaceSearchInput
 	{

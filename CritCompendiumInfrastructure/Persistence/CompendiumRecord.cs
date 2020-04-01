@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CriticalCompendiumInfrastructure.Persistence
+namespace CritCompendiumInfrastructure.Persistence
 {
    /// <summary>
    /// Class used to save a compendium information.

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Windows.Input;
 using CritCompendium.Services;
 using CritCompendium.ViewModels.ObjectViewModels;
-using CriticalCompendiumInfrastructure;
-using CriticalCompendiumInfrastructure.Models;
-using CriticalCompendiumInfrastructure.Services;
+using CritCompendiumInfrastructure;
+using CritCompendiumInfrastructure.Models;
+using CritCompendiumInfrastructure.Services;
 
 namespace CritCompendium.ViewModels.DialogViewModels
 {

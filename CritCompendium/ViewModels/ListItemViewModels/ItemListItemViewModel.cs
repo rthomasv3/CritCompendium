@@ -1,5 +1,5 @@
-﻿using CriticalCompendiumInfrastructure.Models;
-using CriticalCompendiumInfrastructure.Services;
+﻿using CritCompendiumInfrastructure.Models;
+using CritCompendiumInfrastructure.Services;
 
 namespace CritCompendium.ViewModels.ListItemViewModels
 {

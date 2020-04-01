@@ -1,5 +1,5 @@
-﻿using CriticalCompendiumInfrastructure.Enums;
-using CriticalCompendiumInfrastructure.Models;
+﻿using CritCompendiumInfrastructure.Enums;
+using CritCompendiumInfrastructure.Models;
 using System;
 
 namespace CritCompendium.ViewModels.ObjectViewModels

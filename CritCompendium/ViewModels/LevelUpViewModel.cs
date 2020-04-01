@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using CritCompendium.ViewModels.ObjectViewModels;
-using CriticalCompendiumInfrastructure;
-using CriticalCompendiumInfrastructure.Models;
-using CriticalCompendiumInfrastructure.Services;
+using CritCompendiumInfrastructure;
+using CritCompendiumInfrastructure.Models;
+using CritCompendiumInfrastructure.Services;
 
 namespace CritCompendium.ViewModels
 {

@@ -1,5 +1,5 @@
 ﻿using System.Windows.Controls;
-using CriticalCompendiumInfrastructure;
+using CritCompendiumInfrastructure;
 using CritCompendium.ViewModels;
 using CritCompendium.ViewModels.ListItemViewModels;
 using System.Linq;

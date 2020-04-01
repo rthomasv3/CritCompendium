@@ -3,10 +3,10 @@ using System.Windows;
 using System.Windows.Threading;
 using CritCompendium.Services;
 using CritCompendium.ViewModels;
-using CriticalCompendiumInfrastructure;
-using CriticalCompendiumInfrastructure.Persistence;
-using CriticalCompendiumInfrastructure.Services;
-using CriticalCompendiumInfrastructure.Services.Search.Input;
+using CritCompendiumInfrastructure;
+using CritCompendiumInfrastructure.Persistence;
+using CritCompendiumInfrastructure.Services;
+using CritCompendiumInfrastructure.Services.Search.Input;
 
 namespace CritCompendium
 {
@@ -19,46 +19,17 @@ namespace CritCompendium
 
       private void Application_Startup(object sender, StartupEventArgs e)
       {
-         bool shutdown = false;
+         SetupDependencies();
 
-         //try
-         //{
-         //    Steamworks.SteamClient.Init(1087080);
+         StartupUri = new Uri("/CritCompendium;component/Views/MainWindow.xaml", UriKind.Relative);
 
-         //    if (!Steamworks.SteamClient.IsValid)
-         //    {
-         //        shutdown = true;
-         //    }
-         //}
-         //catch (Exception)
-         //{
-         //    shutdown = true;
-         //}
-
-         if (shutdown)
-         {
-            _dialogService.ShowConfirmationDialog("Steam Error", "Unable to initialize Steam Client. Please make sure you're logged in to Steam before launching the application.", "OK", null, null);
-            Application.Current.Shutdown();
-         }
-         else
-         {
-            SetupDependencies();
-
-            StartupUri = new Uri("/CritCompendium;component/Views/MainWindow.xaml", UriKind.Relative);
-
-            DispatcherUnhandledException += App_DispatcherUnhandledException;
-            SessionEnding += App_SessionEnding;
-            Exit += App_Exit;
-         }
+         DispatcherUnhandledException += App_DispatcherUnhandledException;
+         SessionEnding += App_SessionEnding;
+         Exit += App_Exit;
       }
 
       private void App_DispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
       {
-         if (Steamworks.SteamClient.IsValid)
-         {
-            Steamworks.SteamClient.Shutdown();
-         }
-
          _dialogService.ShowConfirmationDialog("Unhandled Exception", e.Exception.Message + "\n\n" + e.Exception.StackTrace, "OK", null, null);
       }
 
@@ -77,11 +48,6 @@ namespace CritCompendium
          {
             dataManager.SaveLaunchData();
          }
-
-         if (Steamworks.SteamClient.IsValid)
-         {
-            Steamworks.SteamClient.Shutdown();
-         }
       }
 
       private void App_Exit(object sender, ExitEventArgs e)
@@ -98,11 +64,6 @@ namespace CritCompendium
          if (dataManager != null)
          {
             dataManager.SaveLaunchData();
-         }
-
-         if (Steamworks.SteamClient.IsValid)
-         {
-            Steamworks.SteamClient.Shutdown();
          }
       }
 

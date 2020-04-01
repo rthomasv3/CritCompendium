@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
-using CriticalCompendiumInfrastructure.Enums;
-using CriticalCompendiumInfrastructure.Models;
-using CriticalCompendiumInfrastructure.Persistence;
-using CriticalCompendiumInfrastructure.Services;
-using CriticalCompendiumInfrastructure.Services.Search;
-using CriticalCompendiumInfrastructure.Services.Search.Input;
+using CritCompendiumInfrastructure.Enums;
+using CritCompendiumInfrastructure.Models;
+using CritCompendiumInfrastructure.Persistence;
+using CritCompendiumInfrastructure.Services;
+using CritCompendiumInfrastructure.Services.Search;
+using CritCompendiumInfrastructure.Services.Search.Input;
 using CritCompendium.Services;
 using CritCompendium.ViewModels.ListItemViewModels;
 using CritCompendium.ViewModels.ObjectViewModels;
-using CriticalCompendiumInfrastructure;
+using CritCompendiumInfrastructure;
 
 namespace CritCompendium.ViewModels
 {

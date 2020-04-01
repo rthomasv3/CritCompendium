@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using CriticalCompendiumInfrastructure.Models;
+using CritCompendiumInfrastructure.Models;
 
-namespace CriticalCompendiumInfrastructure.Persistence
+namespace CritCompendiumInfrastructure.Persistence
 {
     public interface ICharacterPersister
     {

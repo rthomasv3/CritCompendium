@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using CriticalCompendiumInfrastructure.Enums;
+using CritCompendiumInfrastructure.Enums;
 
-namespace CriticalCompendiumInfrastructure.Services.Search.Input
+namespace CritCompendiumInfrastructure.Services.Search.Input
 {
     public sealed class TableSearchInput
     {

@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CriticalCompendiumInfrastructure.Models;
+using CritCompendiumInfrastructure.Models;
 
 namespace CritCompendium.ViewModels.ObjectViewModels
 {
@@ -87,7 +87,7 @@ namespace CritCompendium.ViewModels.ObjectViewModels
         /// </summary>
         public bool LocationTypeIsDungeon
         {
-            get { return _locationModel.LocationType == CriticalCompendiumInfrastructure.Enums.LocationType.Dungeon; }
+            get { return _locationModel.LocationType == CritCompendiumInfrastructure.Enums.LocationType.Dungeon; }
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace CritCompendium.ViewModels.ObjectViewModels
         /// </summary>
         public bool LocationTypeIsSettlement
         {
-            get { return _locationModel.LocationType == CriticalCompendiumInfrastructure.Enums.LocationType.Settlement; }
+            get { return _locationModel.LocationType == CritCompendiumInfrastructure.Enums.LocationType.Settlement; }
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace CritCompendium.ViewModels.ObjectViewModels
         /// </summary>
         public bool LocationTypeIsWilderness
         {
-            get { return _locationModel.LocationType == CriticalCompendiumInfrastructure.Enums.LocationType.Wilderness; }
+            get { return _locationModel.LocationType == CritCompendiumInfrastructure.Enums.LocationType.Wilderness; }
         }
 
         /// <summary>

@@ -4,7 +4,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using CritCompendium.ViewModels;
 using CritCompendium.ViewModels.ListItemViewModels;
-using CriticalCompendiumInfrastructure;
+using CritCompendiumInfrastructure;
 
 namespace CritCompendium.Views
 {

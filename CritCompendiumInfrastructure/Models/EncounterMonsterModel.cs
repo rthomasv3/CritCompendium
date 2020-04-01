@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using CriticalCompendiumInfrastructure.Services;
+using CritCompendiumInfrastructure.Services;
 
-namespace CriticalCompendiumInfrastructure.Models
+namespace CritCompendiumInfrastructure.Models
 {
     public sealed class EncounterMonsterModel : EncounterCreatureModel
     {

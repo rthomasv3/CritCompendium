@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Input;
 using CritCompendium.Services;
-using CriticalCompendiumInfrastructure;
-using CriticalCompendiumInfrastructure.Models;
+using CritCompendiumInfrastructure;
+using CritCompendiumInfrastructure.Models;
 
 namespace CritCompendium.ViewModels.ObjectViewModels
 {

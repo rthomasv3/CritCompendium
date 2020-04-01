@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using CritCompendium.ViewModels;
 using CritCompendium.ViewModels.ListItemViewModels;
-using CriticalCompendiumInfrastructure;
+using CritCompendiumInfrastructure;
 
 namespace CritCompendium.Views
 {

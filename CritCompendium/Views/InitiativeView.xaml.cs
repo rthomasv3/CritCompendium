@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 using CritCompendium.ViewModels.DialogViewModels;
-using CriticalCompendiumInfrastructure;
+using CritCompendiumInfrastructure;
 
 namespace CritCompendium.Views
 {

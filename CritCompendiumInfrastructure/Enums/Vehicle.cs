@@ -1,4 +1,4 @@
-﻿namespace CriticalCompendiumInfrastructure.Enums
+﻿namespace CritCompendiumInfrastructure.Enums
 {
 	public enum Vehicle
 	{

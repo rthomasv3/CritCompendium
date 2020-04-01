@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using CriticalCompendiumInfrastructure.Enums;
+using CritCompendiumInfrastructure.Enums;
 
-namespace CriticalCompendiumInfrastructure.Models
+namespace CritCompendiumInfrastructure.Models
 {
     public sealed class SpellbookModel
     {

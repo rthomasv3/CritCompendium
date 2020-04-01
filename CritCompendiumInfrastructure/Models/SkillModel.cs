@@ -1,7 +1,7 @@
-﻿using CriticalCompendiumInfrastructure.Enums;
-using CriticalCompendiumInfrastructure.Services;
+﻿using CritCompendiumInfrastructure.Enums;
+using CritCompendiumInfrastructure.Services;
 
-namespace CriticalCompendiumInfrastructure.Models
+namespace CritCompendiumInfrastructure.Models
 {
     public sealed class SkillModel
     {
