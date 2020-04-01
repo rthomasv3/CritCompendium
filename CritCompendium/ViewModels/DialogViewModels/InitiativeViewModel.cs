@@ -5,7 +5,7 @@ using System.Linq;
 using System.Windows.Input;
 using CritCompendium.ViewModels.ObjectViewModels;
 using CritCompendiumInfrastructure.Models;
-using CritCompendiumInfrastructure.Services;
+using CritCompendiumInfrastructure.Business;
 
 namespace CritCompendium.ViewModels.DialogViewModels
 {

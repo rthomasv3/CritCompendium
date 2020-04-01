@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using System.IO;
 using System.Windows.Input;
-using CritCompendium.Services;
+using CritCompendium.Business;
 
 namespace CritCompendium.ViewModels
 {

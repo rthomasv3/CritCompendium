@@ -4,7 +4,7 @@ using System.Linq;
 using CritCompendiumInfrastructure;
 using CritCompendiumInfrastructure.Enums;
 using CritCompendiumInfrastructure.Models;
-using CritCompendiumInfrastructure.Services;
+using CritCompendiumInfrastructure.Business;
 
 namespace CritCompendium.ViewModels.ObjectViewModels
 {

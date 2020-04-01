@@ -2,8 +2,8 @@
 using System.ComponentModel;
 using System.Threading;
 using System.Windows.Input;
-using CritCompendium.Services;
-using CritCompendiumInfrastructure.Services;
+using CritCompendium.Business;
+using CritCompendiumInfrastructure.Business;
 
 namespace CritCompendium.ViewModels.DialogViewModels
 {

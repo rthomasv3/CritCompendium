@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Threading;
 using System.Windows.Input;
-using CritCompendiumInfrastructure.Services;
+using CritCompendiumInfrastructure.Business;
 
 namespace CritCompendium.ViewModels.DialogViewModels
 {

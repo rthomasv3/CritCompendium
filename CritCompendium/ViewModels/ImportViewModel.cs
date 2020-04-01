@@ -5,11 +5,11 @@ using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Windows.Input;
-using CritCompendium.Services;
+using CritCompendium.Business;
 using CritCompendium.ViewModels.ObjectViewModels;
 using CritCompendiumInfrastructure.Models;
 using CritCompendiumInfrastructure.Persistence;
-using CritCompendiumInfrastructure.Services;
+using CritCompendiumInfrastructure.Business;
 using Microsoft.Win32;
 
 namespace CritCompendium.ViewModels

@@ -2,7 +2,7 @@
 using System.IO;
 using System.Windows;
 using System.Windows.Media;
-using CritCompendiumInfrastructure.Persistence;
+using CritCompendiumInfrastructure.Business;
 
 namespace CritCompendium
 {

@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using CritCompendiumInfrastructure;
 using CritCompendiumInfrastructure.Models;
-using CritCompendiumInfrastructure.Services;
+using CritCompendiumInfrastructure.Business;
 
 namespace CritCompendium.ViewModels.ObjectViewModels
 {

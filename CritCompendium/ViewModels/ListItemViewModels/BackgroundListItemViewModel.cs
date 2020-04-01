@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using CritCompendiumInfrastructure.Models;
-using CritCompendiumInfrastructure.Services;
+using CritCompendiumInfrastructure.Business;
 
 namespace CritCompendium.ViewModels.ListItemViewModels
 {

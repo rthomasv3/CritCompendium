@@ -4,14 +4,14 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Windows.Input;
-using CritCompendium.Services;
+using CritCompendium.Business;
 using CritCompendium.ViewModels.ListItemViewModels;
 using CritCompendium.ViewModels.ObjectViewModels;
 using CritCompendiumInfrastructure.Models;
 using CritCompendiumInfrastructure.Persistence;
-using CritCompendiumInfrastructure.Services;
-using CritCompendiumInfrastructure.Services.Search;
-using CritCompendiumInfrastructure.Services.Search.Input;
+using CritCompendiumInfrastructure.Business;
+using CritCompendiumInfrastructure.Business.Search;
+using CritCompendiumInfrastructure.Business.Search.Input;
 
 namespace CritCompendium.ViewModels
 {

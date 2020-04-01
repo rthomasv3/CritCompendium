@@ -1,4 +1,4 @@
-﻿using CritCompendiumInfrastructure.Services;
+﻿using CritCompendiumInfrastructure.Business;
 using System;
 using System.Collections.Generic;
 

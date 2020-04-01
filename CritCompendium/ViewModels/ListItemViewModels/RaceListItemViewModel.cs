@@ -3,7 +3,7 @@ using System.Linq;
 using System.Text;
 using CritCompendiumInfrastructure.Enums;
 using CritCompendiumInfrastructure.Models;
-using CritCompendiumInfrastructure.Services;
+using CritCompendiumInfrastructure.Business;
 
 namespace CritCompendium.ViewModels.ListItemViewModels
 {

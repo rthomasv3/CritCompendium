@@ -1,5 +1,5 @@
 ﻿using CritCompendiumInfrastructure.Enums;
-using CritCompendiumInfrastructure.Services;
+using CritCompendiumInfrastructure.Business;
 
 namespace CritCompendiumInfrastructure.Models
 {

@@ -6,7 +6,7 @@ using System.Text;
 using System.Xml;
 using CritCompendiumInfrastructure.Enums;
 using CritCompendiumInfrastructure.Models;
-using CritCompendiumInfrastructure.Services;
+using CritCompendiumInfrastructure.Business;
 
 namespace CritCompendiumInfrastructure.Persistence
 {

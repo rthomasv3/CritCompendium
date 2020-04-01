@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Shapes;
-using CritCompendium.Services;
+using CritCompendium.Business;
 using CritCompendium.ViewModels;
 using CritCompendiumInfrastructure;
 

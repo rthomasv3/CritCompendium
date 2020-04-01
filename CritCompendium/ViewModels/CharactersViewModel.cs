@@ -5,14 +5,14 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Windows.Input;
-using CritCompendium.Services;
+using CritCompendium.Business;
 using CritCompendium.ViewModels.ListItemViewModels;
 using CritCompendium.ViewModels.ObjectViewModels;
 using CritCompendiumInfrastructure.Models;
 using CritCompendiumInfrastructure.Persistence;
-using CritCompendiumInfrastructure.Services;
-using CritCompendiumInfrastructure.Services.Search;
-using CritCompendiumInfrastructure.Services.Search.Input;
+using CritCompendiumInfrastructure.Business;
+using CritCompendiumInfrastructure.Business.Search;
+using CritCompendiumInfrastructure.Business.Search.Input;
 
 namespace CritCompendium.ViewModels
 {
@@ -770,7 +770,6 @@ namespace CritCompendium.ViewModels
 
          if (saveFileDialog.ShowDialog() == true)
          {
-
             try
             {
                Mouse.OverrideCursor = Cursors.Wait;
@@ -793,7 +792,7 @@ namespace CritCompendium.ViewModels
 
                Mouse.OverrideCursor = null;
             }
-            catch (Exception)
+            catch (Exception e)
             {
                Mouse.OverrideCursor = null;
 

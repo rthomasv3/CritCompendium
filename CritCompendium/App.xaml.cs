@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Threading;
-using CritCompendium.Services;
+using CritCompendium.Business;
 using CritCompendium.ViewModels;
 using CritCompendiumInfrastructure;
 using CritCompendiumInfrastructure.Persistence;
-using CritCompendiumInfrastructure.Services;
-using CritCompendiumInfrastructure.Services.Search.Input;
+using CritCompendiumInfrastructure.Business;
+using CritCompendiumInfrastructure.Business.Search.Input;
 
 namespace CritCompendium
 {

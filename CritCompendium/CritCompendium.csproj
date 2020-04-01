@@ -121,8 +121,8 @@
       <DependentUpon>ProficiencyControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="RelayCommand.cs" />
-    <Compile Include="Services\DialogService.cs" />
-    <Compile Include="Services\DocumentService.cs" />
+    <Compile Include="Business\DialogService.cs" />
+    <Compile Include="Business\DocumentService.cs" />
     <Compile Include="Theme.cs" />
     <Compile Include="ThemeManager.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />

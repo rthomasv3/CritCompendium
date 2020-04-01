@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using CritCompendiumInfrastructure;
+using CritCompendiumInfrastructure.Business;
 using CritCompendiumInfrastructure.Models;
 using CritCompendiumInfrastructure.Persistence;
 using Version1 = CritCompendiumInfrastructure.Persistence.Version1;

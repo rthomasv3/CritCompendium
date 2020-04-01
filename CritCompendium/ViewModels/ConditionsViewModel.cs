@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using CritCompendiumInfrastructure.Models;
 using CritCompendiumInfrastructure.Persistence;
-using CritCompendiumInfrastructure.Services;
-using CritCompendiumInfrastructure.Services.Search;
-using CritCompendiumInfrastructure.Services.Search.Input;
-using CritCompendium.Services;
+using CritCompendiumInfrastructure.Business;
+using CritCompendiumInfrastructure.Business.Search;
+using CritCompendiumInfrastructure.Business.Search.Input;
+using CritCompendium.Business;
 using CritCompendium.ViewModels.ListItemViewModels;
 using CritCompendium.ViewModels.ObjectViewModels;
 

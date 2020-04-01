@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Input;
-using CritCompendium.Services;
+using CritCompendium.Business;
 using CritCompendiumInfrastructure;
 using CritCompendiumInfrastructure.Models;
 

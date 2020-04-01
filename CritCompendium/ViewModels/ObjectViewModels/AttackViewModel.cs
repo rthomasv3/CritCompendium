@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using CritCompendium.Services;
+using CritCompendium.Business;
 using CritCompendiumInfrastructure;
 using CritCompendiumInfrastructure.Enums;
 using CritCompendiumInfrastructure.Models;
-using CritCompendiumInfrastructure.Services;
+using CritCompendiumInfrastructure.Business;
 
 namespace CritCompendium.ViewModels.ObjectViewModels
 {

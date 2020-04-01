@@ -6,7 +6,7 @@ using System.Windows;
 using System.Windows.Input;
 using CritCompendiumInfrastructure;
 using CritCompendiumInfrastructure.Models;
-using CritCompendiumInfrastructure.Services;
+using CritCompendiumInfrastructure.Business;
 
 namespace CritCompendium.ViewModels.ObjectViewModels
 {

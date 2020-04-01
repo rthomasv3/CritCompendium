@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Windows.Input;
-using CritCompendium.Services;
+using CritCompendium.Business;
 using CritCompendiumInfrastructure;
 using CritCompendiumInfrastructure.Enums;
 using CritCompendiumInfrastructure.Models;
