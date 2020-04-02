@@ -16,6 +16,7 @@ continue as an open source project.
 - [x] Character export overhaul.
 - [x] Theme support.
 - [x] Encounter difficulty estimate improvements.
+- [x] Add condition management to encounter creatures.
 - [x] Random encounter generator.
 - [x] New dialog for add/subtract.
 - [x] Performance improvements.
