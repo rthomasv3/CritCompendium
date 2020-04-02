@@ -519,7 +519,7 @@ namespace CritCompendium.ViewModels
                         if (Guid.TryParse(parts[0], out Guid id))
                         {
                            LanguageModel languageModel = new LanguageModel();
-                           languageModel.ID = id;
+                           languageModel.Id = id;
                            languageModel.Name = parts[1].Trim();
                            _languages.Add(languageModel);
                         }
@@ -640,7 +640,7 @@ namespace CritCompendium.ViewModels
                }
                else
                {
-                  characterModel.ID = existing.ID;
+                  characterModel.Id = existing.Id;
                   _compendium.UpdateCharacter(characterModel);
                }
             }
@@ -673,7 +673,7 @@ namespace CritCompendium.ViewModels
                }
                else
                {
-                  encounterModel.ID = existing.ID;
+                  encounterModel.Id = existing.Id;
                   _compendium.UpdateEncounter(encounterModel);
                }
             }
@@ -704,7 +704,7 @@ namespace CritCompendium.ViewModels
                }
                else
                {
-                  backgroundModel.ID = existing.ID;
+                  backgroundModel.Id = existing.Id;
                   _compendium.UpdateBackground(backgroundModel);
                }
             }
@@ -735,7 +735,7 @@ namespace CritCompendium.ViewModels
                }
                else
                {
-                  classModel.ID = existing.ID;
+                  classModel.Id = existing.Id;
                   _compendium.UpdateClass(classModel);
                }
             }
@@ -766,7 +766,7 @@ namespace CritCompendium.ViewModels
                }
                else
                {
-                  conditionModel.ID = existing.ID;
+                  conditionModel.Id = existing.Id;
                   _compendium.UpdateCondition(conditionModel);
                }
             }
@@ -797,7 +797,7 @@ namespace CritCompendium.ViewModels
                }
                else
                {
-                  featModel.ID = existing.ID;
+                  featModel.Id = existing.Id;
                   _compendium.UpdateFeat(featModel);
                }
             }
@@ -828,7 +828,7 @@ namespace CritCompendium.ViewModels
                }
                else
                {
-                  itemModel.ID = existing.ID;
+                  itemModel.Id = existing.Id;
                   _compendium.UpdateItem(itemModel);
                }
             }
@@ -870,7 +870,7 @@ namespace CritCompendium.ViewModels
                }
                else
                {
-                  monsterModel.ID = existing.ID;
+                  monsterModel.Id = existing.Id;
                   _compendium.UpdateMonster(monsterModel);
                }
             }
@@ -901,7 +901,7 @@ namespace CritCompendium.ViewModels
                }
                else
                {
-                  raceModel.ID = existing.ID;
+                  raceModel.Id = existing.Id;
                   _compendium.UpdateRace(raceModel);
                }
             }
@@ -932,7 +932,7 @@ namespace CritCompendium.ViewModels
                }
                else
                {
-                  spellModel.ID = existing.ID;
+                  spellModel.Id = existing.Id;
                   _compendium.UpdateSpell(spellModel);
                }
             }

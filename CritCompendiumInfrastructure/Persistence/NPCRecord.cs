@@ -7,7 +7,7 @@ namespace CritCompendiumInfrastructure.Persistence
    /// <summary>
    /// Class used to store information.
    /// </summary>
-   public sealed class NPCRecord
+   public sealed class NPCRecord : CompendiumEntryRecord
    {
    }
 }

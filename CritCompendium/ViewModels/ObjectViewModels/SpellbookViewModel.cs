@@ -649,7 +649,7 @@ namespace CritCompendium.ViewModels.ObjectViewModels
 
          if (_spellbookModel.Class != null)
          {
-            _selectedClassOption = _classOptions.FirstOrDefault(x => x.Key != null && x.Key.ID == _spellbookModel.Class.ID);
+            _selectedClassOption = _classOptions.FirstOrDefault(x => x.Key != null && x.Key.Id == _spellbookModel.Class.Id);
          }
 
          if (_selectedClassOption.Equals(default(KeyValuePair<ClassModel, string>)) && _classOptions.Any())
@@ -674,7 +674,7 @@ namespace CritCompendium.ViewModels.ObjectViewModels
 
          if (_spellbookModel.Race != null)
          {
-            _selectedRaceOption = _raceOptions.FirstOrDefault(x => x.Key != null && x.Key.ID == _spellbookModel.Race.ID);
+            _selectedRaceOption = _raceOptions.FirstOrDefault(x => x.Key != null && x.Key.Id == _spellbookModel.Race.Id);
          }
 
          if (_selectedRaceOption.Equals(default(KeyValuePair<RaceModel, string>)) && _raceOptions.Any())
@@ -907,7 +907,7 @@ namespace CritCompendium.ViewModels.ObjectViewModels
 
       private void AddSpell(SpellModel spellModel)
       {
-         if (!_spells.Any(x => x.Spell.ID == spellModel.ID))
+         if (!_spells.Any(x => x.Spell.Id == spellModel.Id))
          {
             SpellbookEntryModel spellbookEntryModel = new SpellbookEntryModel();
             spellbookEntryModel.Spell = spellModel;
@@ -967,7 +967,7 @@ namespace CritCompendium.ViewModels.ObjectViewModels
                }
             }
 
-            SpellbookEntryViewModel spell = _spells.FirstOrDefault(x => x.Spell.ID == spellbookEntryViewModel.Spell.ID);
+            SpellbookEntryViewModel spell = _spells.FirstOrDefault(x => x.Spell.Id == spellbookEntryViewModel.Spell.Id);
             if (spell != null)
             {
                _spells.Remove(spell);

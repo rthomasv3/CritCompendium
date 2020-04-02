@@ -305,7 +305,7 @@ namespace CritCompendium.ViewModels.SearchViewModels
 
          foreach (MonsterModel monsterModel in _selectedMonsters)
          {
-            MonsterListItemViewModel monster = _monsters.FirstOrDefault(x => x.MonsterModel.ID == monsterModel.ID);
+            MonsterListItemViewModel monster = _monsters.FirstOrDefault(x => x.MonsterModel.Id == monsterModel.Id);
             if (monster != null)
             {
                monster.IsSelected = true;
@@ -327,14 +327,14 @@ namespace CritCompendium.ViewModels.SearchViewModels
             MonsterListItemViewModel monsterListItemViewModel = sender as MonsterListItemViewModel;
             if (monsterListItemViewModel.IsSelected)
             {
-               if (!_selectedMonsters.Any(x => x.ID == monsterListItemViewModel.MonsterModel.ID))
+               if (!_selectedMonsters.Any(x => x.Id == monsterListItemViewModel.MonsterModel.Id))
                {
                   _selectedMonsters.Add(monsterListItemViewModel.MonsterModel);
                }
             }
             else
             {
-               _selectedMonsters.RemoveAll(x => x.ID == monsterListItemViewModel.MonsterModel.ID);
+               _selectedMonsters.RemoveAll(x => x.Id == monsterListItemViewModel.MonsterModel.Id);
             }
          }
       }

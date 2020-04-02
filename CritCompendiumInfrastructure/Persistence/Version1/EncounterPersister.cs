@@ -28,7 +28,7 @@ namespace CritCompendiumInfrastructure.Persistence.Version1
 
          foreach (EncounterModel encounter in encounters)
          {
-            encounterBytes.AddRange(encounter.ID.ToByteArray());
+            encounterBytes.AddRange(encounter.Id.ToByteArray());
             encounterBytes.AddRange(StringBytes(encounter.Name));
 
             encounterBytes.AddRange(BitConverter.GetBytes(encounter.Creatures.Count()));
@@ -61,7 +61,7 @@ namespace CritCompendiumInfrastructure.Persistence.Version1
                   encounterBytes.AddRange(condition.ID.ToByteArray());
                   if (condition.ConditionModel != null)
                   {
-                     encounterBytes.AddRange(condition.ConditionModel.ID.ToByteArray());
+                     encounterBytes.AddRange(condition.ConditionModel.Id.ToByteArray());
                      encounterBytes.AddRange(StringBytes(condition.ConditionModel.Name));
                   }
                   else
@@ -79,7 +79,7 @@ namespace CritCompendiumInfrastructure.Persistence.Version1
                {
                   if (encounterCharacter.CharacterModel != null)
                   {
-                     encounterBytes.AddRange(encounterCharacter.CharacterModel.ID.ToByteArray());
+                     encounterBytes.AddRange(encounterCharacter.CharacterModel.Id.ToByteArray());
                      encounterBytes.AddRange(StringBytes(encounterCharacter.CharacterModel.Name));
                   }
                   else
@@ -95,7 +95,7 @@ namespace CritCompendiumInfrastructure.Persistence.Version1
                {
                   if (encounterMonster.MonsterModel != null)
                   {
-                     encounterBytes.AddRange(encounterMonster.MonsterModel.ID.ToByteArray());
+                     encounterBytes.AddRange(encounterMonster.MonsterModel.Id.ToByteArray());
                      encounterBytes.AddRange(StringBytes(encounterMonster.MonsterModel.Name));
                   }
                   else
@@ -144,7 +144,7 @@ namespace CritCompendiumInfrastructure.Persistence.Version1
                   {
                      EncounterModel encounter = new EncounterModel();
 
-                     encounter.ID = new Guid(reader.ReadBytes(16));
+                     encounter.Id = new Guid(reader.ReadBytes(16));
                      encounter.Name = ReadNextString(reader);
 
                      encounter.Creatures = new List<EncounterCreatureModel>();
@@ -176,7 +176,7 @@ namespace CritCompendiumInfrastructure.Persistence.Version1
 
                            Guid conditionID = new Guid(reader.ReadBytes(16));
                            string conditionName = ReadNextString(reader);
-                           ConditionModel conditionModel = conditions.FirstOrDefault(x => x.ID == conditionID);
+                           ConditionModel conditionModel = conditions.FirstOrDefault(x => x.Id == conditionID);
                            if (conditionModel == null)
                            {
                               conditionModel = conditions.FirstOrDefault(x => x.Name.Equals(conditionName, StringComparison.CurrentCultureIgnoreCase));
@@ -196,7 +196,7 @@ namespace CritCompendiumInfrastructure.Persistence.Version1
                         {
                            Guid characterID = new Guid(reader.ReadBytes(16));
                            string characterName = ReadNextString(reader);
-                           CharacterModel character = characters.FirstOrDefault(x => x.ID == characterID);
+                           CharacterModel character = characters.FirstOrDefault(x => x.Id == characterID);
                            if (character == null)
                            {
                               character = characters.FirstOrDefault(x => x.Name.Equals(characterName, StringComparison.CurrentCultureIgnoreCase));
@@ -209,7 +209,7 @@ namespace CritCompendiumInfrastructure.Persistence.Version1
                         {
                            Guid monsterID = new Guid(reader.ReadBytes(16));
                            string monsterName = ReadNextString(reader);
-                           MonsterModel monster = monsters.FirstOrDefault(x => x.ID == monsterID);
+                           MonsterModel monster = monsters.FirstOrDefault(x => x.Id == monsterID);
                            if (monster == null)
                            {
                               monster = monsters.FirstOrDefault(x => x.Name.Equals(monsterName, StringComparison.CurrentCultureIgnoreCase));

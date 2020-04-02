@@ -251,7 +251,7 @@ namespace CritCompendium.ViewModels
 
          if (_selectedLocation != null)
          {
-            ListItemViewModel<LocationModel> location = _locations.FirstOrDefault(x => x.Model.ID == _selectedLocation.LocationModel.ID);
+            ListItemViewModel<LocationModel> location = _locations.FirstOrDefault(x => x.Model.Id == _selectedLocation.LocationModel.Id);
             if (location != null)
             {
                location.IsSelected = true;
@@ -350,12 +350,12 @@ namespace CritCompendium.ViewModels
 
          if (_locationEditViewModel.LocationModel != null)
          {
-            _locationEditViewModel.LocationModel.ID = _selectedLocation.LocationModel.ID;
+            _locationEditViewModel.LocationModel.Id = _selectedLocation.LocationModel.Id;
             _compendium.UpdateLocation(_locationEditViewModel.LocationModel);
 
             _selectedLocation = new LocationViewModel(_locationEditViewModel.LocationModel);
 
-            ListItemViewModel<LocationModel> oldListItem = _locations.FirstOrDefault(x => x.Model.ID == _locationEditViewModel.LocationModel.ID);
+            ListItemViewModel<LocationModel> oldListItem = _locations.FirstOrDefault(x => x.Model.Id == _locationEditViewModel.LocationModel.Id);
             if (oldListItem != null)
             {
                if (_locationSearchService.SearchInputApplies(_locationSearchInput, _locationEditViewModel.LocationModel))
@@ -499,7 +499,7 @@ namespace CritCompendium.ViewModels
             {
                LocationModel locationModel = new LocationModel(_selectedLocation.LocationModel);
                locationModel.Name += " (copy)";
-               locationModel.ID = Guid.NewGuid();
+               locationModel.Id = Guid.NewGuid();
 
                _compendium.AddLocation(locationModel);
 
@@ -536,9 +536,9 @@ namespace CritCompendium.ViewModels
 
             if (result == true)
             {
-               _compendium.DeleteLocation(_selectedLocation.LocationModel.ID);
+               _compendium.DeleteLocation(_selectedLocation.LocationModel.Id);
 
-               ListItemViewModel<LocationModel> listItem = _locations.FirstOrDefault(x => x.Model.ID == _selectedLocation.LocationModel.ID);
+               ListItemViewModel<LocationModel> listItem = _locations.FirstOrDefault(x => x.Model.Id == _selectedLocation.LocationModel.Id);
                if (listItem != null)
                {
                   _locations.Remove(listItem);
@@ -565,9 +565,9 @@ namespace CritCompendium.ViewModels
             List<LocationModel> locations = _locationSearchService.Sort(_locations.Select(x => x.Model), _locationSearchInput.SortOption.Key);
             for (int i = 0; i < locations.Count; ++i)
             {
-               if (locations[i].ID != _locations[i].Model.ID)
+               if (locations[i].Id != _locations[i].Model.Id)
                {
-                  ListItemViewModel<LocationModel> location = _locations.FirstOrDefault(x => x.Model.ID == locations[i].ID);
+                  ListItemViewModel<LocationModel> location = _locations.FirstOrDefault(x => x.Model.Id == locations[i].Id);
                   if (location != null)
                   {
                      _locations.Move(_locations.IndexOf(location), i);

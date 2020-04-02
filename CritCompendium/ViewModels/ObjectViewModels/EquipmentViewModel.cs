@@ -220,7 +220,7 @@ namespace CritCompendium.ViewModels.ObjectViewModels
 
          if (_equipmentModel.Item != null)
          {
-            _selectedItemOption = _itemOptions.FirstOrDefault(x => x.Key != null && x.Key.ID == _equipmentModel.Item.ID);
+            _selectedItemOption = _itemOptions.FirstOrDefault(x => x.Key != null && x.Key.Id == _equipmentModel.Item.Id);
          }
 
          if (_selectedItemOption.Equals(default(KeyValuePair<ItemModel, string>)))
@@ -254,7 +254,7 @@ namespace CritCompendium.ViewModels.ObjectViewModels
          {
             _equipmentModel.Item = items.First();
 
-            KeyValuePair<ItemModel, string> itemPair = _itemOptions.FirstOrDefault(x => x.Key != null && x.Key.ID == _equipmentModel.Item.ID);
+            KeyValuePair<ItemModel, string> itemPair = _itemOptions.FirstOrDefault(x => x.Key != null && x.Key.Id == _equipmentModel.Item.Id);
             if (!itemPair.Equals(default(KeyValuePair<ItemModel, string>)))
             {
                _selectedItemOption = itemPair;

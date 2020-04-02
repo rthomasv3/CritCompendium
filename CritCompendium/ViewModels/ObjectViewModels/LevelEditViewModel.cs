@@ -65,10 +65,10 @@ namespace CritCompendium.ViewModels.ObjectViewModels
 
          foreach (ClassModel classModel in _compendium.Classes)
          {
-            _classes.Add(new Tuple<Guid, string>(classModel.ID, classModel.Name));
+            _classes.Add(new Tuple<Guid, string>(classModel.Id, classModel.Name));
          }
 
-         _class = _levelModel.Class.ID;
+         _class = _levelModel.Class.Id;
 
          foreach (FeatModel featModel in _levelModel.Feats)
          {
@@ -102,7 +102,7 @@ namespace CritCompendium.ViewModels.ObjectViewModels
 
          foreach (FeatModel featModel in _compendium.Feats)
          {
-            _availableFeats.Add(new Tuple<Guid, string>(featModel.ID, featModel.Name));
+            _availableFeats.Add(new Tuple<Guid, string>(featModel.Id, featModel.Name));
          }
 
          UpdateFeatures();
@@ -161,7 +161,7 @@ namespace CritCompendium.ViewModels.ObjectViewModels
          {
             if (Set(ref _class, value.Item1))
             {
-               _levelModel.Class = _compendium.Classes.FirstOrDefault(x => x.ID == _class);
+               _levelModel.Class = _compendium.Classes.FirstOrDefault(x => x.Id == _class);
                if (_levelModel.Class != null)
                {
                   _levelModel.Features.Clear();
@@ -366,7 +366,7 @@ namespace CritCompendium.ViewModels.ObjectViewModels
 
       private void ViewFeat(FeatEditViewModel featEditView)
       {
-         _dialogService.ShowDetailsDialog(new FeatViewModel(_compendium.Feats.First(x => x.ID == featEditView.SelectedFeat.Item1)));
+         _dialogService.ShowDetailsDialog(new FeatViewModel(_compendium.Feats.First(x => x.Id == featEditView.SelectedFeat.Item1)));
       }
 
       private void UpdateFeatures()
@@ -462,7 +462,7 @@ namespace CritCompendium.ViewModels.ObjectViewModels
          _levelModel.Feats.Clear();
          foreach (FeatEditViewModel feat in _feats)
          {
-            FeatModel model = _compendium.Feats.FirstOrDefault(x => x.ID == feat.SelectedFeat.Item1);
+            FeatModel model = _compendium.Feats.FirstOrDefault(x => x.Id == feat.SelectedFeat.Item1);
             if (model != null)
             {
                _levelModel.Feats.Add(model);

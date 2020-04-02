@@ -382,7 +382,7 @@ namespace CritCompendium.ViewModels
 
          if (_selectedItem != null)
          {
-            ItemListItemViewModel item = _items.FirstOrDefault(x => x.ItemModel.ID == _selectedItem.ItemModel.ID);
+            ItemListItemViewModel item = _items.FirstOrDefault(x => x.ItemModel.Id == _selectedItem.ItemModel.Id);
             if (item != null)
             {
                item.IsSelected = true;
@@ -488,11 +488,11 @@ namespace CritCompendium.ViewModels
 
             if (model != null)
             {
-               model.ID = _selectedItem.ItemModel.ID;
+               model.Id = _selectedItem.ItemModel.Id;
                _compendium.UpdateItem(model);
                _selectedItem = new ItemViewModel(model);
 
-               ItemListItemViewModel oldListItem = _items.FirstOrDefault(x => x.ItemModel.ID == model.ID);
+               ItemListItemViewModel oldListItem = _items.FirstOrDefault(x => x.ItemModel.Id == model.Id);
                if (oldListItem != null)
                {
                   if (_itemSearchService.SearchInputApplies(_itemSearchInput, model))
@@ -670,7 +670,7 @@ namespace CritCompendium.ViewModels
             {
                ItemModel newItem = new ItemModel(_selectedItem.ItemModel);
                newItem.Name += " (copy)";
-               newItem.ID = Guid.NewGuid();
+               newItem.Id = Guid.NewGuid();
                newItem.XML = newItem.XML.Replace("<name>" + _selectedItem.ItemModel.Name + "</name>",
                                                  "<name>" + newItem.Name + "</name>");
 
@@ -710,7 +710,7 @@ namespace CritCompendium.ViewModels
                {
                   foreach (EquipmentModel equipment in bag.Equipment)
                   {
-                     if (equipment.Item != null && equipment.Item.ID == _selectedItem.ItemModel.ID)
+                     if (equipment.Item != null && equipment.Item.Id == _selectedItem.ItemModel.Id)
                      {
                         canDelete = false;
                         break;
@@ -738,9 +738,9 @@ namespace CritCompendium.ViewModels
 
                if (result == true)
                {
-                  _compendium.DeleteItem(_selectedItem.ItemModel.ID);
+                  _compendium.DeleteItem(_selectedItem.ItemModel.Id);
 
-                  ItemListItemViewModel listItem = _items.FirstOrDefault(x => x.ItemModel.ID == _selectedItem.ItemModel.ID);
+                  ItemListItemViewModel listItem = _items.FirstOrDefault(x => x.ItemModel.Id == _selectedItem.ItemModel.Id);
                   if (listItem != null)
                   {
                      _items.Remove(listItem);
@@ -772,9 +772,9 @@ namespace CritCompendium.ViewModels
             List<ItemModel> items = _itemSearchService.Sort(_items.Select(x => x.ItemModel), _itemSearchInput.SortOption.Key);
             for (int i = 0; i < items.Count; ++i)
             {
-               if (items[i].ID != _items[i].ItemModel.ID)
+               if (items[i].Id != _items[i].ItemModel.Id)
                {
-                  ItemListItemViewModel item = _items.FirstOrDefault(x => x.ItemModel.ID == items[i].ID);
+                  ItemListItemViewModel item = _items.FirstOrDefault(x => x.ItemModel.Id == items[i].Id);
                   if (item != null)
                   {
                      _items.Move(_items.IndexOf(item), i);

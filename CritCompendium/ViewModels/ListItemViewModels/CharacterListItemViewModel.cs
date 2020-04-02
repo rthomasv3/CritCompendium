@@ -97,7 +97,7 @@ namespace CritCompendium.ViewModels.ListItemViewModels
             Dictionary<KeyValuePair<Guid, string>, int> _classes = new Dictionary<KeyValuePair<Guid, string>, int>();
             foreach (LevelModel level in _characterModel.Levels)
             {
-               KeyValuePair<Guid, string> pair = new KeyValuePair<Guid, string>(level.Class.ID, level.Class.Name);
+               KeyValuePair<Guid, string> pair = new KeyValuePair<Guid, string>(level.Class.Id, level.Class.Name);
 
                if (_classes.ContainsKey(pair))
                {

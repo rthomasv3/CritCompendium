@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace CritCompendiumInfrastructure.Models
 {
-   public sealed class ConditionModel
+   public sealed class ConditionModel : CompendiumEntryModel
    {
       #region Fields
 
-      private Guid _id;
-      private string _name;
       private string _description;
       private int _levels;
       private List<string> _headers = new List<string>();
@@ -25,16 +22,13 @@ namespace CritCompendiumInfrastructure.Models
       /// </summary>
       public ConditionModel()
       {
-         _id = Guid.NewGuid();
       }
 
       /// <summary>
       /// Creates a copy of <see cref="ConditionModel"/>
       /// </summary>
-      public ConditionModel(ConditionModel conditionModel)
+      public ConditionModel(ConditionModel conditionModel) : base(conditionModel)
       {
-         _id = conditionModel.ID;
-         _name = conditionModel.Name;
          _description = conditionModel.Description;
          _levels = conditionModel.Levels;
          _headers = new List<string>(conditionModel.Headers);
@@ -47,24 +41,6 @@ namespace CritCompendiumInfrastructure.Models
       #endregion
 
       #region Properties
-
-      /// <summary>
-      /// Gets or sets id
-      /// </summary>
-      public Guid ID
-      {
-         get { return _id; }
-         set { _id = value; }
-      }
-
-      /// <summary>
-      /// Gets or sets name
-      /// </summary>
-      public string Name
-      {
-         get { return _name; }
-         set { _name = value; }
-      }
 
       /// <summary>
       /// Gets or sets description

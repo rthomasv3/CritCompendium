@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using CritCompendiumInfrastructure.Enums;
 
 namespace CritCompendiumInfrastructure.Models
 {
-   public class LocationModel
+   public class LocationModel : CompendiumEntryModel
    {
       #region Fields
 
-      private Guid _id;
-      private string _name;
-      private List<string> _tags = new List<string>();
       private string _description;
       private string _location;
       private string _map;
@@ -41,17 +37,13 @@ namespace CritCompendiumInfrastructure.Models
       /// </summary>
       public LocationModel()
       {
-         _id = Guid.NewGuid();
       }
 
       /// <summary>
       /// Creates a copy of <see cref="LocationModel"/>
       /// </summary>
-      public LocationModel(LocationModel locationModel)
+      public LocationModel(LocationModel locationModel) : base(locationModel)
       {
-         _id = locationModel.ID;
-         _name = locationModel.Name;
-         _tags = new List<string>(locationModel.Tags);
          _description = locationModel.Description;
          _location = locationModel.Location;
          _map = locationModel.Map;
@@ -87,33 +79,6 @@ namespace CritCompendiumInfrastructure.Models
       #endregion
 
       #region Properties
-
-      /// <summary>
-      /// Gets or sets id
-      /// </summary>
-      public Guid ID
-      {
-         get { return _id; }
-         set { _id = value; }
-      }
-
-      /// <summary>
-      /// Gets or sets name
-      /// </summary>
-      public string Name
-      {
-         get { return _name; }
-         set { _name = value; }
-      }
-
-      /// <summary>
-      /// Gets or sets tags
-      /// </summary>
-      public List<string> Tags
-      {
-         get { return _tags; }
-         set { _tags = value; }
-      }
 
       /// <summary>
       /// Gets or sets description

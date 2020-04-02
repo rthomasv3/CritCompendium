@@ -252,7 +252,7 @@ namespace CritCompendium.ViewModels
 
          if (_selectedEncounter != null)
          {
-            EncounterListItemViewModel encounter = _encounters.FirstOrDefault(x => x.EncounterModel.ID == _selectedEncounter.EncounterModel.ID);
+            EncounterListItemViewModel encounter = _encounters.FirstOrDefault(x => x.EncounterModel.Id == _selectedEncounter.EncounterModel.Id);
             if (encounter != null)
             {
                encounter.IsSelected = true;
@@ -351,12 +351,12 @@ namespace CritCompendium.ViewModels
 
          if (_encounterEditViewModel.EncounterModel != null)
          {
-            _encounterEditViewModel.EncounterModel.ID = _selectedEncounter.EncounterModel.ID;
+            _encounterEditViewModel.EncounterModel.Id = _selectedEncounter.EncounterModel.Id;
             _compendium.UpdateEncounter(_encounterEditViewModel.EncounterModel);
 
             _selectedEncounter = new EncounterViewModel(_encounterEditViewModel.EncounterModel);
 
-            EncounterListItemViewModel oldListItem = _encounters.FirstOrDefault(x => x.EncounterModel.ID == _encounterEditViewModel.EncounterModel.ID);
+            EncounterListItemViewModel oldListItem = _encounters.FirstOrDefault(x => x.EncounterModel.Id == _encounterEditViewModel.EncounterModel.Id);
             if (oldListItem != null)
             {
                if (_encounterSearchService.SearchInputApplies(_encounterSearchInput, _encounterEditViewModel.EncounterModel))
@@ -500,7 +500,7 @@ namespace CritCompendium.ViewModels
             {
                EncounterModel encounterModel = new EncounterModel(_selectedEncounter.EncounterModel);
                encounterModel.Name += " (copy)";
-               encounterModel.ID = Guid.NewGuid();
+               encounterModel.Id = Guid.NewGuid();
 
                _compendium.AddEncounter(encounterModel);
 
@@ -537,9 +537,9 @@ namespace CritCompendium.ViewModels
 
             if (result == true)
             {
-               _compendium.DeleteEncounter(_selectedEncounter.EncounterModel.ID);
+               _compendium.DeleteEncounter(_selectedEncounter.EncounterModel.Id);
 
-               EncounterListItemViewModel listItem = _encounters.FirstOrDefault(x => x.EncounterModel.ID == _selectedEncounter.EncounterModel.ID);
+               EncounterListItemViewModel listItem = _encounters.FirstOrDefault(x => x.EncounterModel.Id == _selectedEncounter.EncounterModel.Id);
                if (listItem != null)
                {
                   _encounters.Remove(listItem);
@@ -566,9 +566,9 @@ namespace CritCompendium.ViewModels
             List<EncounterModel> encounters = _encounterSearchService.Sort(_encounters.Select(x => x.EncounterModel), _encounterSearchInput.SortOption);
             for (int i = 0; i < encounters.Count; ++i)
             {
-               if (encounters[i].ID != _encounters[i].EncounterModel.ID)
+               if (encounters[i].Id != _encounters[i].EncounterModel.Id)
                {
-                  EncounterListItemViewModel encounter = _encounters.FirstOrDefault(x => x.EncounterModel.ID == encounters[i].ID);
+                  EncounterListItemViewModel encounter = _encounters.FirstOrDefault(x => x.EncounterModel.Id == encounters[i].Id);
                   if (encounter != null)
                   {
                      _encounters.Move(_encounters.IndexOf(encounter), i);
@@ -632,7 +632,7 @@ namespace CritCompendium.ViewModels
          {
             foreach (EncounterCharacterViewModel encounterCharacter in _selectedEncounter.Characters)
             {
-               if (encounterCharacter.EncounterCharacterModel.CharacterModel != null && e.IDs.Contains(encounterCharacter.EncounterCharacterModel.CharacterModel.ID))
+               if (encounterCharacter.EncounterCharacterModel.CharacterModel != null && e.IDs.Contains(encounterCharacter.EncounterCharacterModel.CharacterModel.Id))
                {
                   _selectedEncounter = new EncounterViewModel(_selectedEncounter.EncounterModel);
                   break;
@@ -643,7 +643,7 @@ namespace CritCompendium.ViewModels
 
       private void _compendium_EncounterChanged(object sender, CompendiumChangeEventArgs e)
       {
-         if (_selectedEncounter != null && e.IDs.Contains(_selectedEncounter.EncounterModel.ID))
+         if (_selectedEncounter != null && e.IDs.Contains(_selectedEncounter.EncounterModel.Id))
          {
             _selectedEncounter = new EncounterViewModel(_selectedEncounter.EncounterModel);
          }

@@ -6,7 +6,10 @@ using CritCompendiumInfrastructure.Persistence;
 
 namespace CritCompendiumInfrastructure.Business
 {
-   public class Compendium
+   /// <summary>
+   /// Class used to manage compendium entry models.
+   /// </summary>
+   public sealed class Compendium
    {
       #region Events
 
@@ -22,19 +25,19 @@ namespace CritCompendiumInfrastructure.Business
       private readonly IDataManager _dataManager;
 
       private readonly List<string> _simpleWeapons = new List<string> { "Club", "Dagger", "Greatclub", "Handaxe", "Javelin", "Light hammer", "Mace", "Quarterstaff",
-                                                                          "Sickle", "Spear", "Crossbow, light", "Dart", "Shortbow", "Sling" };
+                                                                        "Sickle", "Spear", "Crossbow, light", "Dart", "Shortbow", "Sling" };
       private readonly List<string> _martialWeapons = new List<string> { "Battleaxe", "Flail", "Glaive", "Greataxe", "Greatsword", "Halberd", "Lance", "Longsword",
-                                                                           "Maul", "Morningstar", "Pike", "Rapier", "Scimitar", "Shortsword", "Trident", "War pick",
-                                                                           "Warhammer", "Whip", "Blowgun", "Crossbow, hand", "Crossbow, heavy", "Longsword", "Net" };
+                                                                         "Maul", "Morningstar", "Pike", "Rapier", "Scimitar", "Shortsword", "Trident", "War pick",
+                                                                         "Warhammer", "Whip", "Blowgun", "Crossbow, hand", "Crossbow, heavy", "Longsword", "Net" };
       private readonly List<string> _lightArmor = new List<string> { "Padded", "Leather", "Studded leather" };
       private readonly List<string> _mediumArmor = new List<string> { "Hide", "Chain shirt", "Scale mail", "Breastplate", "Half plate" };
       private readonly List<string> _heavyArmor = new List<string> { "Ring mail", "Chain mail", "Splint", "Plate" };
       private readonly List<string> _shields = new List<string> { "Shield" };
       private readonly List<string> _artisansTools = new List<string> { "Alchemist's supplies", "Brewer's supplies", "Calligrapher's supplies", "Carpenter's tools",
-                                                                          "Cartographer's tools",  "Cobbler's tools", "Cook's utensils", "Glassblower's tools",
-                                                                          "Jewelers's tools", "Leatherworker's tools", "Mason's tools", "Painter's supplies",
-                                                                          "Potter's tools", "Smith's tools", "Tinker's tools", "Weaver's tools",
-                                                                          "Woodcarver's tools" };
+                                                                        "Cartographer's tools",  "Cobbler's tools", "Cook's utensils", "Glassblower's tools",
+                                                                        "Jewelers's tools", "Leatherworker's tools", "Mason's tools", "Painter's supplies",
+                                                                        "Potter's tools", "Smith's tools", "Tinker's tools", "Weaver's tools",
+                                                                        "Woodcarver's tools" };
       private readonly List<string> _gamaingSets = new List<string> { "Dice set", "Playing card set" };
       private readonly List<string> _kits = new List<string> { "Disguise kit", "Forgery kit", "Herbalism kit", "Poisoner's kit " };
       private readonly List<string> _instruments = new List<string> { "Bagpipes", "Drum", "Dulcimer", "Flute", "Lute", "Lyre", "Horn", "Pan flute", "Shawm", "Viol" };
@@ -396,7 +399,7 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void AddCharacter(CharacterModel characterModel)
       {
-         if (!_characters.Any(x => x.ID == characterModel.ID))
+         if (!_characters.Any(x => x.Id == characterModel.Id))
          {
             _characters.Add(characterModel);
          }
@@ -407,9 +410,9 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void DeleteCharacter(Guid id)
       {
-         if (_characters.Any(x => x.ID == id))
+         if (_characters.Any(x => x.Id == id))
          {
-            _characters.RemoveAll(x => x.ID == id);
+            _characters.RemoveAll(x => x.Id == id);
          }
       }
 
@@ -418,7 +421,7 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void UpdateCharacter(CharacterModel model)
       {
-         CharacterModel currentModel = _characters.FirstOrDefault(x => x.ID == model.ID);
+         CharacterModel currentModel = _characters.FirstOrDefault(x => x.Id == model.Id);
          if (currentModel != null)
          {
             string oldName = currentModel.Name;
@@ -430,14 +433,14 @@ namespace CritCompendiumInfrastructure.Business
             {
                foreach (EncounterCharacterModel encounterCharacter in encounter.Creatures.Where(x => x is EncounterCharacterModel))
                {
-                  if (encounterCharacter.CharacterModel != null && encounterCharacter.CharacterModel.ID == model.ID)
+                  if (encounterCharacter.CharacterModel != null && encounterCharacter.CharacterModel.Id == model.Id)
                   {
                      encounterCharacter.CharacterModel = model;
                      if (encounterCharacter.Name.Equals(oldName, StringComparison.CurrentCultureIgnoreCase))
                      {
                         encounterCharacter.Name = model.Name;
                      }
-                     encounterIDs.Add(encounter.ID);
+                     encounterIDs.Add(encounter.Id);
                   }
                }
             }
@@ -454,7 +457,7 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void AddAdventure(AdventureModel adventureModel)
       {
-         if (!_adventures.Any(x => x.ID == adventureModel.ID))
+         if (!_adventures.Any(x => x.Id == adventureModel.Id))
          {
             _adventures.Add(adventureModel);
 
@@ -467,9 +470,9 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void DeleteAdventure(Guid id)
       {
-         if (_adventures.Any(x => x.ID == id))
+         if (_adventures.Any(x => x.Id == id))
          {
-            _adventures.RemoveAll(x => x.ID == id);
+            _adventures.RemoveAll(x => x.Id == id);
 
             UpdateTags();
          }
@@ -480,7 +483,7 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void UpdateAdventure(AdventureModel model)
       {
-         AdventureModel currentModel = _adventures.FirstOrDefault(x => x.ID == model.ID);
+         AdventureModel currentModel = _adventures.FirstOrDefault(x => x.Id == model.Id);
          if (currentModel != null)
          {
             _adventures[_adventures.IndexOf(currentModel)] = model;
@@ -494,7 +497,7 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void AddEncounter(EncounterModel encounterModel)
       {
-         if (!_encounters.Any(x => x.ID == encounterModel.ID))
+         if (!_encounters.Any(x => x.Id == encounterModel.Id))
          {
             _encounters.Add(encounterModel);
          }
@@ -505,9 +508,9 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void DeleteEncounter(Guid id)
       {
-         if (_encounters.Any(x => x.ID == id))
+         if (_encounters.Any(x => x.Id == id))
          {
-            _encounters.RemoveAll(x => x.ID == id);
+            _encounters.RemoveAll(x => x.Id == id);
          }
       }
 
@@ -516,7 +519,7 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void UpdateEncounter(EncounterModel model)
       {
-         EncounterModel currentModel = _encounters.FirstOrDefault(x => x.ID == model.ID);
+         EncounterModel currentModel = _encounters.FirstOrDefault(x => x.Id == model.Id);
          if (currentModel != null)
          {
             _encounters[_encounters.IndexOf(currentModel)] = model;
@@ -528,7 +531,7 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void AddLocation(LocationModel locationModel)
       {
-         if (!_locations.Any(x => x.ID == locationModel.ID))
+         if (!_locations.Any(x => x.Id == locationModel.Id))
          {
             _locations.Add(locationModel);
 
@@ -541,9 +544,9 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void DeleteLocation(Guid id)
       {
-         if (_locations.Any(x => x.ID == id))
+         if (_locations.Any(x => x.Id == id))
          {
-            _locations.RemoveAll(x => x.ID == id);
+            _locations.RemoveAll(x => x.Id == id);
 
             UpdateTags();
          }
@@ -554,7 +557,7 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void UpdateLocation(LocationModel model)
       {
-         LocationModel currentModel = _locations.FirstOrDefault(x => x.ID == model.ID);
+         LocationModel currentModel = _locations.FirstOrDefault(x => x.Id == model.Id);
          if (currentModel != null)
          {
             _locations[_locations.IndexOf(currentModel)] = model;
@@ -568,7 +571,7 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void AddNPC(NPCModel npcModel)
       {
-         if (!_npcs.Any(x => x.ID == npcModel.ID))
+         if (!_npcs.Any(x => x.Id == npcModel.Id))
          {
             _npcs.Add(npcModel);
 
@@ -581,9 +584,9 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void DeleteNPC(Guid id)
       {
-         if (_npcs.Any(x => x.ID == id))
+         if (_npcs.Any(x => x.Id == id))
          {
-            _npcs.RemoveAll(x => x.ID == id);
+            _npcs.RemoveAll(x => x.Id == id);
 
             UpdateTags();
          }
@@ -594,7 +597,7 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void UpdateNPC(NPCModel model)
       {
-         NPCModel currentModel = _npcs.FirstOrDefault(x => x.ID == model.ID);
+         NPCModel currentModel = _npcs.FirstOrDefault(x => x.Id == model.Id);
          if (currentModel != null)
          {
             _npcs[_npcs.IndexOf(currentModel)] = model;
@@ -608,7 +611,7 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void AddTable(RandomTableModel randomTableModel)
       {
-         if (!_tables.Any(x => x.ID == randomTableModel.ID))
+         if (!_tables.Any(x => x.Id == randomTableModel.Id))
          {
             _tables.Add(randomTableModel);
 
@@ -621,9 +624,9 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void DeleteTable(Guid id)
       {
-         if (_tables.Any(x => x.ID == id))
+         if (_tables.Any(x => x.Id == id))
          {
-            _tables.RemoveAll(x => x.ID == id);
+            _tables.RemoveAll(x => x.Id == id);
 
             UpdateTags();
          }
@@ -634,7 +637,7 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void UpdateTable(RandomTableModel model)
       {
-         RandomTableModel currentModel = _tables.FirstOrDefault(x => x.ID == model.ID);
+         RandomTableModel currentModel = _tables.FirstOrDefault(x => x.Id == model.Id);
          if (currentModel != null)
          {
             _tables[_tables.IndexOf(currentModel)] = model;
@@ -649,7 +652,7 @@ namespace CritCompendiumInfrastructure.Business
       public void AddBackground(BackgroundModel backgroundModel)
       {
          if (backgroundModel != null &&
-             !_backgrounds.Any(x => x.ID == backgroundModel.ID))
+             !_backgrounds.Any(x => x.Id == backgroundModel.Id))
          {
             _backgrounds.Add(backgroundModel);
          }
@@ -660,9 +663,9 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void DeleteBackground(Guid id)
       {
-         if (_backgrounds.Any(x => x.ID == id))
+         if (_backgrounds.Any(x => x.Id == id))
          {
-            _backgrounds.RemoveAll(x => x.ID == id);
+            _backgrounds.RemoveAll(x => x.Id == id);
          }
       }
 
@@ -671,7 +674,7 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void UpdateBackground(BackgroundModel model)
       {
-         BackgroundModel currentModel = _backgrounds.FirstOrDefault(x => x.ID == model.ID);
+         BackgroundModel currentModel = _backgrounds.FirstOrDefault(x => x.Id == model.Id);
          if (currentModel != null)
          {
             _backgrounds[_backgrounds.IndexOf(currentModel)] = model;
@@ -679,10 +682,10 @@ namespace CritCompendiumInfrastructure.Business
             List<Guid> characterIDs = new List<Guid>();
             foreach (CharacterModel character in _characters)
             {
-               if (character.Background.ID == model.ID)
+               if (character.Background.Id == model.Id)
                {
                   character.Background = model;
-                  characterIDs.Add(character.ID);
+                  characterIDs.Add(character.Id);
                }
             }
             if (characterIDs.Any())
@@ -698,7 +701,7 @@ namespace CritCompendiumInfrastructure.Business
       public void AddClass(ClassModel classModel)
       {
          if (classModel != null &&
-             !_classes.Any(x => x.ID == classModel.ID))
+             !_classes.Any(x => x.Id == classModel.Id))
          {
             _classes.Add(classModel);
          }
@@ -709,9 +712,9 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void DeleteClass(Guid id)
       {
-         if (_classes.Any(x => x.ID == id))
+         if (_classes.Any(x => x.Id == id))
          {
-            _classes.RemoveAll(x => x.ID == id);
+            _classes.RemoveAll(x => x.Id == id);
          }
       }
 
@@ -720,7 +723,7 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void UpdateClass(ClassModel model)
       {
-         ClassModel currentModel = _classes.FirstOrDefault(x => x.ID == model.ID);
+         ClassModel currentModel = _classes.FirstOrDefault(x => x.Id == model.Id);
          if (currentModel != null)
          {
             _classes[_classes.IndexOf(currentModel)] = model;
@@ -730,7 +733,7 @@ namespace CritCompendiumInfrastructure.Business
             {
                foreach (LevelModel level in character.Levels)
                {
-                  if (level.Class.ID == model.ID)
+                  if (level.Class.Id == model.Id)
                   {
                      level.Class = model;
 
@@ -749,7 +752,7 @@ namespace CritCompendiumInfrastructure.Business
                         }
                      }
 
-                     characterIDs.Add(character.ID);
+                     characterIDs.Add(character.Id);
                   }
                }
             }
@@ -766,7 +769,7 @@ namespace CritCompendiumInfrastructure.Business
       public void AddCondition(ConditionModel conditionModel)
       {
          if (conditionModel != null &&
-             !_conditions.Any(x => x.ID == conditionModel.ID))
+             !_conditions.Any(x => x.Id == conditionModel.Id))
          {
             _conditions.Add(conditionModel);
          }
@@ -777,9 +780,9 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void DeleteCondition(Guid id)
       {
-         if (_conditions.Any(x => x.ID == id))
+         if (_conditions.Any(x => x.Id == id))
          {
-            _conditions.RemoveAll(x => x.ID == id);
+            _conditions.RemoveAll(x => x.Id == id);
          }
       }
 
@@ -788,7 +791,7 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void UpdateCondition(ConditionModel model)
       {
-         ConditionModel currentModel = _conditions.FirstOrDefault(x => x.ID == model.ID);
+         ConditionModel currentModel = _conditions.FirstOrDefault(x => x.Id == model.Id);
          if (currentModel != null)
          {
             string oldName = currentModel.Name;
@@ -800,14 +803,14 @@ namespace CritCompendiumInfrastructure.Business
             {
                foreach (AppliedConditionModel appliedCondition in character.Conditions)
                {
-                  if (appliedCondition.ConditionModel != null && appliedCondition.ConditionModel.ID == model.ID)
+                  if (appliedCondition.ConditionModel != null && appliedCondition.ConditionModel.Id == model.Id)
                   {
                      appliedCondition.ConditionModel = model;
                      if (appliedCondition.Name.Equals(oldName, StringComparison.CurrentCultureIgnoreCase))
                      {
                         appliedCondition.Name = model.Name;
                      }
-                     characterIDs.Add(character.ID);
+                     characterIDs.Add(character.Id);
                   }
                }
             }
@@ -824,7 +827,7 @@ namespace CritCompendiumInfrastructure.Business
       public void AddFeat(FeatModel featModel)
       {
          if (featModel != null &&
-             !_feats.Any(x => x.ID == featModel.ID))
+             !_feats.Any(x => x.Id == featModel.Id))
          {
             _feats.Add(featModel);
          }
@@ -835,9 +838,9 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void DeleteFeat(Guid id)
       {
-         if (_feats.Any(x => x.ID == id))
+         if (_feats.Any(x => x.Id == id))
          {
-            _feats.RemoveAll(x => x.ID == id);
+            _feats.RemoveAll(x => x.Id == id);
          }
       }
 
@@ -846,7 +849,7 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void UpdateFeat(FeatModel model)
       {
-         FeatModel currentModel = _feats.FirstOrDefault(x => x.ID == model.ID);
+         FeatModel currentModel = _feats.FirstOrDefault(x => x.Id == model.Id);
          if (currentModel != null)
          {
             _feats[_feats.IndexOf(currentModel)] = model;
@@ -859,10 +862,10 @@ namespace CritCompendiumInfrastructure.Business
                   for (int i = 0; i < level.Feats.Count; ++i)
                   {
                      FeatModel feat = level.Feats[i];
-                     if (feat.ID == model.ID)
+                     if (feat.Id == model.Id)
                      {
                         level.Feats[i] = model;
-                        characterIDs.Add(character.ID);
+                        characterIDs.Add(character.Id);
                      }
                   }
                }
@@ -880,7 +883,7 @@ namespace CritCompendiumInfrastructure.Business
       public void AddItem(ItemModel itemModel)
       {
          if (itemModel != null &&
-             !_items.Any(x => x.ID == itemModel.ID))
+             !_items.Any(x => x.Id == itemModel.Id))
          {
             _items.Add(itemModel);
          }
@@ -891,9 +894,9 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void DeleteItem(Guid id)
       {
-         if (_items.Any(x => x.ID == id))
+         if (_items.Any(x => x.Id == id))
          {
-            _items.RemoveAll(x => x.ID == id);
+            _items.RemoveAll(x => x.Id == id);
          }
       }
 
@@ -902,7 +905,7 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void UpdateItem(ItemModel model)
       {
-         ItemModel currentModel = _items.FirstOrDefault(x => x.ID == model.ID);
+         ItemModel currentModel = _items.FirstOrDefault(x => x.Id == model.Id);
          if (currentModel != null)
          {
             string oldName = currentModel.Name;
@@ -916,14 +919,14 @@ namespace CritCompendiumInfrastructure.Business
                {
                   foreach (EquipmentModel equipment in bag.Equipment)
                   {
-                     if (equipment.Item != null && equipment.Item.ID == model.ID)
+                     if (equipment.Item != null && equipment.Item.Id == model.Id)
                      {
                         equipment.Item = model;
                         if (equipment.Name.Equals(oldName, StringComparison.CurrentCultureIgnoreCase))
                         {
                            equipment.Name = model.Name;
                         }
-                        characterIDs.Add(character.ID);
+                        characterIDs.Add(character.Id);
                      }
                   }
                }
@@ -941,7 +944,7 @@ namespace CritCompendiumInfrastructure.Business
       public void AddLanguage(LanguageModel languageModel)
       {
          if (languageModel != null &&
-             !_languages.Any(x => x.ID == languageModel.ID))
+             !_languages.Any(x => x.Id == languageModel.Id))
          {
             _languages.Add(languageModel);
          }
@@ -952,9 +955,9 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void DeleteLanguage(Guid id)
       {
-         if (_languages.Any(x => x.ID == id))
+         if (_languages.Any(x => x.Id == id))
          {
-            _languages.RemoveAll(x => x.ID == id);
+            _languages.RemoveAll(x => x.Id == id);
          }
       }
 
@@ -963,7 +966,7 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void UpdateLanguage(LanguageModel model)
       {
-         LanguageModel currentModel = _languages.FirstOrDefault(x => x.ID == model.ID);
+         LanguageModel currentModel = _languages.FirstOrDefault(x => x.Id == model.Id);
          if (currentModel != null)
          {
             _languages[_languages.IndexOf(currentModel)] = model;
@@ -976,7 +979,7 @@ namespace CritCompendiumInfrastructure.Business
       public void AddMonster(MonsterModel monsterModel)
       {
          if (monsterModel != null &&
-             !_monsters.Any(x => x.ID == monsterModel.ID))
+             !_monsters.Any(x => x.Id == monsterModel.Id))
          {
             _monsters.Add(monsterModel);
          }
@@ -987,9 +990,9 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void DeleteMonster(Guid id)
       {
-         if (_monsters.Any(x => x.ID == id))
+         if (_monsters.Any(x => x.Id == id))
          {
-            _monsters.RemoveAll(x => x.ID == id);
+            _monsters.RemoveAll(x => x.Id == id);
          }
       }
 
@@ -998,7 +1001,7 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void UpdateMonster(MonsterModel model)
       {
-         MonsterModel currentModel = _monsters.FirstOrDefault(x => x.ID == model.ID);
+         MonsterModel currentModel = _monsters.FirstOrDefault(x => x.Id == model.Id);
          if (currentModel != null)
          {
             string oldName = currentModel.Name;
@@ -1010,14 +1013,14 @@ namespace CritCompendiumInfrastructure.Business
             {
                foreach (CompanionModel companion in character.Companions)
                {
-                  if (companion.MonsterModel != null && companion.MonsterModel.ID == model.ID)
+                  if (companion.MonsterModel != null && companion.MonsterModel.Id == model.Id)
                   {
                      companion.MonsterModel = model;
                      if (companion.Name.Equals(oldName, StringComparison.CurrentCultureIgnoreCase))
                      {
                         companion.Name = model.Name;
                      }
-                     characterIDs.Add(character.ID);
+                     characterIDs.Add(character.Id);
                   }
                }
             }
@@ -1031,14 +1034,14 @@ namespace CritCompendiumInfrastructure.Business
             {
                foreach (EncounterMonsterModel encounterMonster in encounter.Creatures.Where(x => x is EncounterMonsterModel))
                {
-                  if (encounterMonster.MonsterModel != null && encounterMonster.MonsterModel.ID == model.ID)
+                  if (encounterMonster.MonsterModel != null && encounterMonster.MonsterModel.Id == model.Id)
                   {
                      encounterMonster.MonsterModel = model;
                      if (encounter.Name.Equals(oldName, StringComparison.CurrentCultureIgnoreCase))
                      {
                         encounterMonster.Name = model.Name;
                      }
-                     encounterIDs.Add(encounter.ID);
+                     encounterIDs.Add(encounter.Id);
                   }
                }
             }
@@ -1055,7 +1058,7 @@ namespace CritCompendiumInfrastructure.Business
       public void AddRace(RaceModel raceModel)
       {
          if (raceModel != null &&
-             !_races.Any(x => x.ID == raceModel.ID))
+             !_races.Any(x => x.Id == raceModel.Id))
          {
             _races.Add(raceModel);
          }
@@ -1066,9 +1069,9 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void DeleteRace(Guid id)
       {
-         if (_races.Any(x => x.ID == id))
+         if (_races.Any(x => x.Id == id))
          {
-            _races.RemoveAll(x => x.ID == id);
+            _races.RemoveAll(x => x.Id == id);
          }
       }
 
@@ -1077,7 +1080,7 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void UpdateRace(RaceModel model)
       {
-         RaceModel currentModel = _races.FirstOrDefault(x => x.ID == model.ID);
+         RaceModel currentModel = _races.FirstOrDefault(x => x.Id == model.Id);
          if (currentModel != null)
          {
             _races[_races.IndexOf(currentModel)] = model;
@@ -1085,10 +1088,10 @@ namespace CritCompendiumInfrastructure.Business
             List<Guid> characterIDs = new List<Guid>();
             foreach (CharacterModel character in _characters)
             {
-               if (character.Race.ID == model.ID)
+               if (character.Race.Id == model.Id)
                {
                   character.Race = model;
-                  characterIDs.Add(character.ID);
+                  characterIDs.Add(character.Id);
                }
             }
             if (characterIDs.Any())
@@ -1104,7 +1107,7 @@ namespace CritCompendiumInfrastructure.Business
       public void AddSpell(SpellModel spellModel)
       {
          if (spellModel != null &&
-             !_spells.Any(x => x.ID == spellModel.ID))
+             !_spells.Any(x => x.Id == spellModel.Id))
          {
             _spells.Add(spellModel);
          }
@@ -1115,9 +1118,9 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void DeleteSpell(Guid id)
       {
-         if (_spells.Any(x => x.ID == id))
+         if (_spells.Any(x => x.Id == id))
          {
-            _spells.RemoveAll(x => x.ID == id);
+            _spells.RemoveAll(x => x.Id == id);
          }
       }
 
@@ -1126,7 +1129,7 @@ namespace CritCompendiumInfrastructure.Business
       /// </summary>
       public void UpdateSpell(SpellModel model)
       {
-         SpellModel currentModel = _spells.FirstOrDefault(x => x.ID == model.ID);
+         SpellModel currentModel = _spells.FirstOrDefault(x => x.Id == model.Id);
          if (currentModel != null)
          {
             _spells[_spells.IndexOf(currentModel)] = model;
@@ -1138,10 +1141,10 @@ namespace CritCompendiumInfrastructure.Business
                {
                   foreach (SpellbookEntryModel spellbookEntry in spellbook.Spells)
                   {
-                     if (spellbookEntry.Spell != null && spellbookEntry.Spell.ID == model.ID)
+                     if (spellbookEntry.Spell != null && spellbookEntry.Spell.Id == model.Id)
                      {
                         spellbookEntry.Spell = model;
-                        characterIDs.Add(character.ID);
+                        characterIDs.Add(character.Id);
                      }
                   }
                }

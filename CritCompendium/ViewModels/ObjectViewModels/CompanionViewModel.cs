@@ -245,7 +245,7 @@ namespace CritCompendium.ViewModels.ObjectViewModels
 
          if (_companionModel != null && _companionModel.MonsterModel != null)
          {
-            _selectedMonsterOption = _monsterOptions.FirstOrDefault(x => x.Key != null && x.Key.ID == _companionModel.MonsterModel.ID);
+            _selectedMonsterOption = _monsterOptions.FirstOrDefault(x => x.Key != null && x.Key.Id == _companionModel.MonsterModel.Id);
          }
 
          if (_selectedMonsterOption.Equals(default(KeyValuePair<MonsterModel, string>)))
@@ -308,7 +308,7 @@ namespace CritCompendium.ViewModels.ObjectViewModels
          {
             _companionModel.MonsterModel = monsters.First();
 
-            KeyValuePair<MonsterModel, string> monsterPair = _monsterOptions.FirstOrDefault(x => x.Key != null && x.Key.ID == _companionModel.MonsterModel.ID);
+            KeyValuePair<MonsterModel, string> monsterPair = _monsterOptions.FirstOrDefault(x => x.Key != null && x.Key.Id == _companionModel.MonsterModel.Id);
             if (!monsterPair.Equals(default(KeyValuePair<MonsterModel, string>)))
             {
                _selectedMonsterOption = monsterPair;

@@ -359,7 +359,7 @@ namespace CritCompendium.ViewModels
 
          if (_selectedRace != null)
          {
-            RaceListItemViewModel race = _races.FirstOrDefault(x => x.RaceModel.ID == _selectedRace.RaceModel.ID);
+            RaceListItemViewModel race = _races.FirstOrDefault(x => x.RaceModel.Id == _selectedRace.RaceModel.Id);
             if (race != null)
             {
                race.IsSelected = true;
@@ -464,11 +464,11 @@ namespace CritCompendium.ViewModels
 
             if (model != null)
             {
-               model.ID = _selectedRace.RaceModel.ID;
+               model.Id = _selectedRace.RaceModel.Id;
                _compendium.UpdateRace(model);
                _selectedRace = new RaceViewModel(model);
 
-               RaceListItemViewModel oldListItem = _races.FirstOrDefault(x => x.RaceModel.ID == model.ID);
+               RaceListItemViewModel oldListItem = _races.FirstOrDefault(x => x.RaceModel.Id == model.Id);
                if (oldListItem != null)
                {
                   if (_raceSearchService.SearchInputApplies(_raceSearchInput, model))
@@ -639,7 +639,7 @@ namespace CritCompendium.ViewModels
             {
                RaceModel newRace = new RaceModel(_selectedRace.RaceModel);
                newRace.Name += " (copy)";
-               newRace.ID = Guid.NewGuid();
+               newRace.Id = Guid.NewGuid();
                newRace.XML = newRace.XML.Replace("<name>" + _selectedRace.RaceModel.Name + "</name>",
                                                  "<name>" + newRace.Name + "</name>");
 
@@ -675,7 +675,7 @@ namespace CritCompendium.ViewModels
 
             foreach (CharacterModel character in _compendium.Characters)
             {
-               if (character.Race != null && character.Race.ID == _selectedRace.RaceModel.ID)
+               if (character.Race != null && character.Race.Id == _selectedRace.RaceModel.Id)
                {
                   canDelete = false;
                   break;
@@ -690,9 +690,9 @@ namespace CritCompendium.ViewModels
 
                if (result == true)
                {
-                  _compendium.DeleteRace(_selectedRace.RaceModel.ID);
+                  _compendium.DeleteRace(_selectedRace.RaceModel.Id);
 
-                  RaceListItemViewModel listItem = _races.FirstOrDefault(x => x.RaceModel.ID == _selectedRace.RaceModel.ID);
+                  RaceListItemViewModel listItem = _races.FirstOrDefault(x => x.RaceModel.Id == _selectedRace.RaceModel.Id);
                   if (listItem != null)
                   {
                      _races.Remove(listItem);
@@ -724,9 +724,9 @@ namespace CritCompendium.ViewModels
             List<RaceModel> races = _raceSearchService.Sort(_races.Select(x => x.RaceModel), _raceSearchInput.SortOption.Key);
             for (int i = 0; i < races.Count; ++i)
             {
-               if (races[i].ID != _races[i].RaceModel.ID)
+               if (races[i].Id != _races[i].RaceModel.Id)
                {
-                  RaceListItemViewModel race = _races.FirstOrDefault(x => x.RaceModel.ID == races[i].ID);
+                  RaceListItemViewModel race = _races.FirstOrDefault(x => x.RaceModel.Id == races[i].Id);
                   if (race != null)
                   {
                      _races.Move(_races.IndexOf(race), i);

@@ -317,7 +317,7 @@ namespace CritCompendium.ViewModels
 
          if (_selectedFeat != null)
          {
-            FeatListItemViewModel feat = _feats.FirstOrDefault(x => x.FeatModel.ID == _selectedFeat.FeatModel.ID);
+            FeatListItemViewModel feat = _feats.FirstOrDefault(x => x.FeatModel.Id == _selectedFeat.FeatModel.Id);
             if (feat != null)
             {
                feat.IsSelected = true;
@@ -420,11 +420,11 @@ namespace CritCompendium.ViewModels
 
             if (model != null)
             {
-               model.ID = _selectedFeat.FeatModel.ID;
+               model.Id = _selectedFeat.FeatModel.Id;
                _compendium.UpdateFeat(model);
                _selectedFeat = new FeatViewModel(model);
 
-               FeatListItemViewModel oldListItem = _feats.FirstOrDefault(x => x.FeatModel.ID == model.ID);
+               FeatListItemViewModel oldListItem = _feats.FirstOrDefault(x => x.FeatModel.Id == model.Id);
                if (oldListItem != null)
                {
                   if (_featSearchService.SearchInputApplies(_featSearchInput, model))
@@ -585,7 +585,7 @@ namespace CritCompendium.ViewModels
             {
                FeatModel newFeat = new FeatModel(_selectedFeat.FeatModel);
                newFeat.Name += " (copy)";
-               newFeat.ID = Guid.NewGuid();
+               newFeat.Id = Guid.NewGuid();
                newFeat.XML = newFeat.XML.Replace("<name>" + _selectedFeat.FeatModel.Name + "</name>",
                                                  "<name>" + newFeat.Name + "</name>");
 
@@ -625,7 +625,7 @@ namespace CritCompendium.ViewModels
                {
                   foreach (FeatModel feat in level.Feats)
                   {
-                     if (feat.ID == _selectedFeat.FeatModel.ID)
+                     if (feat.Id == _selectedFeat.FeatModel.Id)
                      {
                         canDelete = false;
                         break;
@@ -653,9 +653,9 @@ namespace CritCompendium.ViewModels
 
                if (result == true)
                {
-                  _compendium.DeleteFeat(_selectedFeat.FeatModel.ID);
+                  _compendium.DeleteFeat(_selectedFeat.FeatModel.Id);
 
-                  FeatListItemViewModel listItem = _feats.FirstOrDefault(x => x.FeatModel.ID == _selectedFeat.FeatModel.ID);
+                  FeatListItemViewModel listItem = _feats.FirstOrDefault(x => x.FeatModel.Id == _selectedFeat.FeatModel.Id);
                   if (listItem != null)
                   {
                      _feats.Remove(listItem);
@@ -687,9 +687,9 @@ namespace CritCompendium.ViewModels
             List<FeatModel> feats = _featSearchService.Sort(_feats.Select(x => x.FeatModel), _featSearchInput.SortOption.Key);
             for (int i = 0; i < feats.Count; ++i)
             {
-               if (feats[i].ID != _feats[i].FeatModel.ID)
+               if (feats[i].Id != _feats[i].FeatModel.Id)
                {
-                  FeatListItemViewModel feat = _feats.FirstOrDefault(x => x.FeatModel.ID == feats[i].ID);
+                  FeatListItemViewModel feat = _feats.FirstOrDefault(x => x.FeatModel.Id == feats[i].Id);
                   if (feat != null)
                   {
                      _feats.Move(_feats.IndexOf(feat), i);

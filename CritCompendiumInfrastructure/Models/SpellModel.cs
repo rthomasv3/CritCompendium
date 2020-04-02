@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using CritCompendiumInfrastructure.Enums;
 
 namespace CritCompendiumInfrastructure.Models
 {
-   public sealed class SpellModel
+   public sealed class SpellModel : CompendiumEntryModel
    {
       #region Fields
 
-      private Guid _id;
-      private string _name;
       private int _level;
       private SpellSchool _spellSchool;
       private bool _isRitual;
@@ -31,16 +28,13 @@ namespace CritCompendiumInfrastructure.Models
       /// </summary>
       public SpellModel()
       {
-         _id = Guid.NewGuid();
       }
 
       /// <summary>
       /// Creates a copy of <see cref="SpellModel"/>
       /// </summary>
-      public SpellModel(SpellModel spellModel)
+      public SpellModel(SpellModel spellModel) : base(spellModel)
       {
-         _id = spellModel.ID;
-         _name = spellModel.Name;
          _level = spellModel.Level;
          _spellSchool = spellModel.SpellSchool;
          _isRitual = spellModel.IsRitual;
@@ -58,24 +52,6 @@ namespace CritCompendiumInfrastructure.Models
       #endregion
 
       #region Properties
-
-      /// <summary>
-      /// Gets or sets id
-      /// </summary>
-      public Guid ID
-      {
-         get { return _id; }
-         set { _id = value; }
-      }
-
-      /// <summary>
-      /// Gets or sets name
-      /// </summary>
-      public string Name
-      {
-         get { return _name; }
-         set { _name = value; }
-      }
 
       /// <summary>
       /// Gets or sets level

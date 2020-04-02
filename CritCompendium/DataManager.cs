@@ -142,9 +142,9 @@ namespace CritCompendium
                   List<Guid> ids = new List<Guid>();
                   foreach (LevelModel levelModel in characterModel.Levels)
                   {
-                     if (levelModel.Class != null && !ids.Any(x => x == levelModel.Class.ID))
+                     if (levelModel.Class != null && !ids.Any(x => x == levelModel.Class.Id))
                      {
-                        ids.Add(levelModel.Class.ID);
+                        ids.Add(levelModel.Class.Id);
 
                         xml += _xmlExporter.GetXML(levelModel.Class);
                      }
@@ -163,9 +163,9 @@ namespace CritCompendium
                   List<Guid> ids = new List<Guid>();
                   foreach (AppliedConditionModel appliedCondition in characterModel.Conditions)
                   {
-                     if (appliedCondition.ConditionModel != null && !ids.Any(x => x == appliedCondition.ConditionModel.ID))
+                     if (appliedCondition.ConditionModel != null && !ids.Any(x => x == appliedCondition.ConditionModel.Id))
                      {
-                        ids.Add(appliedCondition.ConditionModel.ID);
+                        ids.Add(appliedCondition.ConditionModel.Id);
 
                         xml += _xmlExporter.GetXML(appliedCondition.ConditionModel);
                      }
@@ -186,9 +186,9 @@ namespace CritCompendium
                   {
                      foreach (FeatModel feat in levelModel.Feats)
                      {
-                        if (!ids.Any(x => x == feat.ID))
+                        if (!ids.Any(x => x == feat.Id))
                         {
-                           ids.Add(feat.ID);
+                           ids.Add(feat.Id);
 
                            xml += _xmlExporter.GetXML(feat);
                         }
@@ -210,9 +210,9 @@ namespace CritCompendium
                   {
                      foreach (EquipmentModel equipmentModel in bagModel.Equipment)
                      {
-                        if (equipmentModel.Item != null && !ids.Any(x => x == equipmentModel.Item.ID))
+                        if (equipmentModel.Item != null && !ids.Any(x => x == equipmentModel.Item.Id))
                         {
-                           ids.Add(equipmentModel.Item.ID);
+                           ids.Add(equipmentModel.Item.Id);
 
                            xml += _xmlExporter.GetXML(equipmentModel.Item);
                         }
@@ -229,7 +229,7 @@ namespace CritCompendium
                {
                   foreach (LanguageModel language in characterModel.Languages)
                   {
-                     writer.WriteLine($"{language.ID},{language.Name}");
+                     writer.WriteLine($"{language.Id},{language.Name}");
                   }
                }
 
@@ -241,9 +241,9 @@ namespace CritCompendium
                   List<Guid> ids = new List<Guid>();
                   foreach (CompanionModel companionModel in characterModel.Companions)
                   {
-                     if (companionModel.MonsterModel != null && !ids.Any(x => x == companionModel.MonsterModel.ID))
+                     if (companionModel.MonsterModel != null && !ids.Any(x => x == companionModel.MonsterModel.Id))
                      {
-                        ids.Add(companionModel.MonsterModel.ID);
+                        ids.Add(companionModel.MonsterModel.Id);
 
                         xml += _xmlExporter.GetXML(companionModel.MonsterModel);
                      }
@@ -272,9 +272,9 @@ namespace CritCompendium
                   {
                      foreach (SpellbookEntryModel spellbookEntryModel in spellbookModel.Spells)
                      {
-                        if (spellbookEntryModel.Spell != null && !ids.Any(x => x == spellbookEntryModel.Spell.ID))
+                        if (spellbookEntryModel.Spell != null && !ids.Any(x => x == spellbookEntryModel.Spell.Id))
                         {
-                           ids.Add(spellbookEntryModel.Spell.ID);
+                           ids.Add(spellbookEntryModel.Spell.Id);
 
                            xml += _xmlExporter.GetXML(spellbookEntryModel.Spell);
                         }
@@ -463,9 +463,9 @@ namespace CritCompendium
                      {
                         if (appliedConditionModel.ConditionModel != null)
                         {
-                           if (!ids.Any(x => x == appliedConditionModel.ConditionModel.ID))
+                           if (!ids.Any(x => x == appliedConditionModel.ConditionModel.Id))
                            {
-                              ids.Add(appliedConditionModel.ConditionModel.ID);
+                              ids.Add(appliedConditionModel.ConditionModel.Id);
                               xml += _xmlExporter.GetXML(appliedConditionModel.ConditionModel);
                            }
                         }
@@ -487,9 +487,9 @@ namespace CritCompendium
                      if (encounterMonster.MonsterModel != null)
                      {
                         List<Guid> ids = new List<Guid>();
-                        if (!ids.Any(x => x == encounterMonster.MonsterModel.ID))
+                        if (!ids.Any(x => x == encounterMonster.MonsterModel.Id))
                         {
-                           ids.Add(encounterMonster.MonsterModel.ID);
+                           ids.Add(encounterMonster.MonsterModel.Id);
                            xml += _xmlExporter.GetXML(encounterMonster.MonsterModel);
                         }
                      }
@@ -831,7 +831,7 @@ namespace CritCompendium
       /// </summary>
       public void SaveLanguages(IEnumerable<LanguageModel> languages)
       {
-         string languagesString = String.Join(Environment.NewLine, languages.Select(x => $"{x.ID},{x.Name}"));
+         string languagesString = String.Join(Environment.NewLine, languages.Select(x => $"{x.Id},{x.Name}"));
          File.WriteAllText(Path.Combine(_saveDataFolder, _languagesSaveFileName), languagesString, Encoding.UTF8);
       }
 
@@ -850,7 +850,7 @@ namespace CritCompendium
                LanguageModel languageModel = new LanguageModel();
                if (Guid.TryParse(parts[0], out Guid id))
                {
-                  languageModel.ID = id;
+                  languageModel.Id = id;
                }
                languageModel.Name = parts[1].Trim();
 

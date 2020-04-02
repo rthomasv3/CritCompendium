@@ -323,7 +323,7 @@ namespace CritCompendium.ViewModels.SearchViewModels
 
          foreach (SpellModel spellModel in _selectedSpells)
          {
-            SpellListItemViewModel spell = _spells.FirstOrDefault(x => x.SpellModel.ID == spellModel.ID);
+            SpellListItemViewModel spell = _spells.FirstOrDefault(x => x.SpellModel.Id == spellModel.Id);
             if (spell != null)
             {
                spell.IsSelected = true;
@@ -351,14 +351,14 @@ namespace CritCompendium.ViewModels.SearchViewModels
                   _selectedSpells.Clear();
                }
 
-               if (!_selectedSpells.Any(x => x.ID == spellListSpellViewModel.SpellModel.ID))
+               if (!_selectedSpells.Any(x => x.Id == spellListSpellViewModel.SpellModel.Id))
                {
                   _selectedSpells.Add(spellListSpellViewModel.SpellModel);
                }
             }
             else
             {
-               _selectedSpells.RemoveAll(x => x.ID == spellListSpellViewModel.SpellModel.ID);
+               _selectedSpells.RemoveAll(x => x.Id == spellListSpellViewModel.SpellModel.Id);
             }
          }
       }

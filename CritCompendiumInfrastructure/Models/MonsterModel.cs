@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using CritCompendiumInfrastructure.Enums;
 
 namespace CritCompendiumInfrastructure.Models
 {
-   public class MonsterModel
+   public class MonsterModel : CompendiumEntryModel
    {
       #region Fields
 
-      private Guid _id;
-      private string _name;
       private CreatureSize _size;
       private string _type;
       private string _alignment;
@@ -51,16 +48,13 @@ namespace CritCompendiumInfrastructure.Models
       /// </summary>
       public MonsterModel()
       {
-         _id = Guid.NewGuid();
       }
 
       /// <summary>
       /// Creates a copy of <see cref="MonsterModel"/>
       /// </summary>
-      public MonsterModel(MonsterModel monsterModel)
+      public MonsterModel(MonsterModel monsterModel) : base(monsterModel)
       {
-         _id = monsterModel.ID;
-         _name = monsterModel.Name;
          _size = monsterModel.Size;
          _type = monsterModel.Type;
          _alignment = monsterModel.Alignment;
@@ -119,24 +113,6 @@ namespace CritCompendiumInfrastructure.Models
       #endregion
 
       #region Properties
-
-      /// <summary>
-      /// Gets or sets id
-      /// </summary>
-      public Guid ID
-      {
-         get { return _id; }
-         set { _id = value; }
-      }
-
-      /// <summary>
-      /// Gets or sets name
-      /// </summary>
-      public string Name
-      {
-         get { return _name; }
-         set { _name = value; }
-      }
 
       /// <summary>
       /// Gets or sets size

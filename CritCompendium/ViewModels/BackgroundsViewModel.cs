@@ -360,7 +360,7 @@ namespace CritCompendium.ViewModels
 
          if (_selectedBackground != null)
          {
-            BackgroundListItemViewModel background = _backgrounds.FirstOrDefault(x => x.BackgroundModel.ID == _selectedBackground.BackgroundModel.ID);
+            BackgroundListItemViewModel background = _backgrounds.FirstOrDefault(x => x.BackgroundModel.Id == _selectedBackground.BackgroundModel.Id);
             if (background != null)
             {
                background.IsSelected = true;
@@ -465,11 +465,11 @@ namespace CritCompendium.ViewModels
 
             if (model != null)
             {
-               model.ID = _selectedBackground.BackgroundModel.ID;
+               model.Id = _selectedBackground.BackgroundModel.Id;
                _compendium.UpdateBackground(model);
                _selectedBackground = new BackgroundViewModel(model);
 
-               BackgroundListItemViewModel oldListItem = _backgrounds.FirstOrDefault(x => x.BackgroundModel.ID == model.ID);
+               BackgroundListItemViewModel oldListItem = _backgrounds.FirstOrDefault(x => x.BackgroundModel.Id == model.Id);
                if (oldListItem != null)
                {
                   if (_backgroundSearchService.SearchInputApplies(_backgroundSearchInput, model))
@@ -630,7 +630,7 @@ namespace CritCompendium.ViewModels
             {
                BackgroundModel newBackground = new BackgroundModel(_selectedBackground.BackgroundModel);
                newBackground.Name += " (copy)";
-               newBackground.ID = Guid.NewGuid();
+               newBackground.Id = Guid.NewGuid();
                newBackground.XML = newBackground.XML.Replace("<name>" + _selectedBackground.BackgroundModel.Name + "</name>",
                                                              "<name>" + newBackground.Name + "</name>");
 
@@ -666,7 +666,7 @@ namespace CritCompendium.ViewModels
 
             foreach (CharacterModel character in _compendium.Characters)
             {
-               if (character.Background != null && character.Background.ID == _selectedBackground.BackgroundModel.ID)
+               if (character.Background != null && character.Background.Id == _selectedBackground.BackgroundModel.Id)
                {
                   canDelete = false;
                   break;
@@ -682,9 +682,9 @@ namespace CritCompendium.ViewModels
 
                if (result == true)
                {
-                  _compendium.DeleteBackground(_selectedBackground.BackgroundModel.ID);
+                  _compendium.DeleteBackground(_selectedBackground.BackgroundModel.Id);
 
-                  BackgroundListItemViewModel listItem = _backgrounds.FirstOrDefault(x => x.BackgroundModel.ID == _selectedBackground.BackgroundModel.ID);
+                  BackgroundListItemViewModel listItem = _backgrounds.FirstOrDefault(x => x.BackgroundModel.Id == _selectedBackground.BackgroundModel.Id);
                   if (listItem != null)
                   {
                      _backgrounds.Remove(listItem);
@@ -716,9 +716,9 @@ namespace CritCompendium.ViewModels
             List<BackgroundModel> backgrounds = _backgroundSearchService.Sort(_backgrounds.Select(x => x.BackgroundModel), _backgroundSearchInput.SortOption.Key);
             for (int i = 0; i < backgrounds.Count; ++i)
             {
-               if (backgrounds[i].ID != _backgrounds[i].BackgroundModel.ID)
+               if (backgrounds[i].Id != _backgrounds[i].BackgroundModel.Id)
                {
-                  BackgroundListItemViewModel background = _backgrounds.FirstOrDefault(x => x.BackgroundModel.ID == backgrounds[i].ID);
+                  BackgroundListItemViewModel background = _backgrounds.FirstOrDefault(x => x.BackgroundModel.Id == backgrounds[i].Id);
                   if (background != null)
                   {
                      _backgrounds.Move(_backgrounds.IndexOf(background), i);

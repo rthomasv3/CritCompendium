@@ -253,7 +253,7 @@ namespace CritCompendium.ViewModels
 
          if (_selectedCondition != null)
          {
-            ConditionListItemViewModel condition = _conditions.FirstOrDefault(x => x.ConditionModel.ID == _selectedCondition.ConditionModel.ID);
+            ConditionListItemViewModel condition = _conditions.FirstOrDefault(x => x.ConditionModel.Id == _selectedCondition.ConditionModel.Id);
             if (condition != null)
             {
                condition.IsSelected = true;
@@ -352,11 +352,11 @@ namespace CritCompendium.ViewModels
 
             if (model != null)
             {
-               model.ID = _selectedCondition.ConditionModel.ID;
+               model.Id = _selectedCondition.ConditionModel.Id;
                _compendium.UpdateCondition(model);
                _selectedCondition = new ConditionViewModel(model);
 
-               ConditionListItemViewModel oldListItem = _conditions.FirstOrDefault(x => x.ConditionModel.ID == model.ID);
+               ConditionListItemViewModel oldListItem = _conditions.FirstOrDefault(x => x.ConditionModel.Id == model.Id);
                if (oldListItem != null)
                {
                   if (_conditionSearchService.SearchInputApplies(_conditionSearchInput, model))
@@ -517,7 +517,7 @@ namespace CritCompendium.ViewModels
             {
                ConditionModel newCondition = new ConditionModel(_selectedCondition.ConditionModel);
                newCondition.Name += " (copy)";
-               newCondition.ID = Guid.NewGuid();
+               newCondition.Id = Guid.NewGuid();
                newCondition.XML = newCondition.XML.Replace("<name>" + _selectedCondition.ConditionModel.Name + "</name>",
                                                                          "<name>" + newCondition.Name + "</name>");
 
@@ -555,7 +555,7 @@ namespace CritCompendium.ViewModels
             {
                foreach (AppliedConditionModel condition in character.Conditions)
                {
-                  if (condition.ConditionModel != null && condition.ConditionModel.ID == _selectedCondition.ConditionModel.ID)
+                  if (condition.ConditionModel != null && condition.ConditionModel.Id == _selectedCondition.ConditionModel.Id)
                   {
                      canDelete = false;
                      break;
@@ -577,9 +577,9 @@ namespace CritCompendium.ViewModels
 
                if (result == true)
                {
-                  _compendium.DeleteCondition(_selectedCondition.ConditionModel.ID);
+                  _compendium.DeleteCondition(_selectedCondition.ConditionModel.Id);
 
-                  ConditionListItemViewModel listItem = _conditions.FirstOrDefault(x => x.ConditionModel.ID == _selectedCondition.ConditionModel.ID);
+                  ConditionListItemViewModel listItem = _conditions.FirstOrDefault(x => x.ConditionModel.Id == _selectedCondition.ConditionModel.Id);
                   if (listItem != null)
                   {
                      _conditions.Remove(listItem);
@@ -611,9 +611,9 @@ namespace CritCompendium.ViewModels
             List<ConditionModel> conditions = _conditionSearchService.Sort(_conditions.Select(x => x.ConditionModel), _conditionSearchInput.SortOption);
             for (int i = 0; i < conditions.Count; ++i)
             {
-               if (conditions[i].ID != _conditions[i].ConditionModel.ID)
+               if (conditions[i].Id != _conditions[i].ConditionModel.Id)
                {
-                  ConditionListItemViewModel conditionListItem = _conditions.FirstOrDefault(x => x.ConditionModel.ID == conditions[i].ID);
+                  ConditionListItemViewModel conditionListItem = _conditions.FirstOrDefault(x => x.ConditionModel.Id == conditions[i].Id);
                   if (conditionListItem != null)
                   {
                      _conditions.Move(_conditions.IndexOf(conditionListItem), i);

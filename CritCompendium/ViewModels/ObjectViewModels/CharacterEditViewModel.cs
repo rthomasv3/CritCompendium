@@ -104,22 +104,22 @@ namespace CritCompendium.ViewModels.ObjectViewModels
 
          foreach (RaceModel race in _compendium.Races)
          {
-            _races.Add(new Tuple<Guid, string>(race.ID, race.Name));
+            _races.Add(new Tuple<Guid, string>(race.Id, race.Name));
          }
 
          if (_characterModel.Race != null)
          {
-            _race = _characterModel.Race.ID;
+            _race = _characterModel.Race.Id;
          }
 
          foreach (BackgroundModel background in _compendium.Backgrounds)
          {
-            _backgrounds.Add(new Tuple<Guid, string>(background.ID, background.Name));
+            _backgrounds.Add(new Tuple<Guid, string>(background.Id, background.Name));
          }
 
          if (_characterModel.Background != null)
          {
-            _background = _characterModel.Background.ID;
+            _background = _characterModel.Background.Id;
          }
 
          foreach (Alignment alignment in Enum.GetValues(typeof(Alignment)))
@@ -298,7 +298,7 @@ namespace CritCompendium.ViewModels.ObjectViewModels
          {
             if (Set(ref _race, value.Item1))
             {
-               _characterModel.Race = _compendium.Races.FirstOrDefault(x => x.ID == _race);
+               _characterModel.Race = _compendium.Races.FirstOrDefault(x => x.Id == _race);
 
                _characterModel.MovementModel.WalkSpeed = _characterModel.Race != null ? _characterModel.Race.WalkSpeed : 0;
                int halfWalk = Math.Max(_characterModel.MovementModel.WalkSpeed / 2, 0);
@@ -358,7 +358,7 @@ namespace CritCompendium.ViewModels.ObjectViewModels
          {
             if (Set(ref _background, value.Item1))
             {
-               _characterModel.Background = _compendium.Backgrounds.FirstOrDefault(x => x.ID == _background);
+               _characterModel.Background = _compendium.Backgrounds.FirstOrDefault(x => x.Id == _background);
 
                if (_isNew)
                {
@@ -2252,7 +2252,7 @@ namespace CritCompendium.ViewModels.ObjectViewModels
             else
             {
                _languageProficiencies.RemoveAll(x => x.ID == languageView.ID);
-               _characterModel.Languages.RemoveAll(x => x.ID == languageView.ID);
+               _characterModel.Languages.RemoveAll(x => x.Id == languageView.ID);
             }
 
             OnPropertyChanged(String.Empty);

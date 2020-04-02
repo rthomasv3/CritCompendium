@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using CritCompendiumInfrastructure.Enums;
 
 namespace CritCompendiumInfrastructure.Models
 {
-   public sealed class RaceModel
+   public sealed class RaceModel : CompendiumEntryModel
    {
       #region Fields
 
-      private Guid _id;
-      private string _name;
       private CreatureSize _size;
       private int _walkSpeed;
       private int _flySpeed;
@@ -32,16 +29,13 @@ namespace CritCompendiumInfrastructure.Models
       /// </summary>
       public RaceModel()
       {
-         _id = Guid.NewGuid();
       }
 
       /// <summary>
       /// Creates a copy of <see cref="RaceModel"/>
       /// </summary>
-      public RaceModel(RaceModel raceModel)
+      public RaceModel(RaceModel raceModel) : base(raceModel)
       {
-         _id = raceModel.ID;
-         _name = raceModel.Name;
          _size = raceModel.Size;
          _walkSpeed = raceModel.WalkSpeed;
          _flySpeed = raceModel.FlySpeed;
@@ -65,24 +59,6 @@ namespace CritCompendiumInfrastructure.Models
       #endregion
 
       #region Properties
-
-      /// <summary>
-      /// Gets or sets id
-      /// </summary>
-      public Guid ID
-      {
-         get { return _id; }
-         set { _id = value; }
-      }
-
-      /// <summary>
-      /// Gets or sets name
-      /// </summary>
-      public string Name
-      {
-         get { return _name; }
-         set { _name = value; }
-      }
 
       /// <summary>
       /// Gets or sets size

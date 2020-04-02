@@ -1,13 +1,10 @@
-﻿using System;
-
-namespace CritCompendiumInfrastructure.Models
+﻿namespace CritCompendiumInfrastructure.Models
 {
-   public sealed class LanguageModel
+   public sealed class LanguageModel : CompendiumEntryModel
    {
       #region Fields
 
-      private Guid _id;
-      private string _name;
+      private string _description;
 
       #endregion
 
@@ -18,16 +15,14 @@ namespace CritCompendiumInfrastructure.Models
       /// </summary>
       public LanguageModel()
       {
-         _id = Guid.NewGuid();
       }
 
       /// <summary>
       /// Creates a copy of <see cref="LanguageModel"/>
       /// </summary>
-      public LanguageModel(LanguageModel languageModel)
+      public LanguageModel(LanguageModel languageModel) : base(languageModel)
       {
-         _id = languageModel.ID;
-         _name = languageModel.Name;
+         _description = languageModel.Description;
       }
 
       #endregion
@@ -35,21 +30,12 @@ namespace CritCompendiumInfrastructure.Models
       #region Properties
 
       /// <summary>
-      /// Gets or sets id
+      /// Gets or sets language description.
       /// </summary>
-      public Guid ID
+      public string Description
       {
-         get { return _id; }
-         set { _id = value; }
-      }
-
-      /// <summary>
-      /// Gets or sets language name
-      /// </summary>
-      public string Name
-      {
-         get { return _name; }
-         set { _name = value; }
+         get { return _description; }
+         set { _description = value; }
       }
 
       #endregion

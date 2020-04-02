@@ -1,23 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace CritCompendiumInfrastructure.Persistence
 {
    /// <summary>
    /// Class used to store condition information.
    /// </summary>
-   public sealed class ConditionRecord
+   public sealed class ConditionRecord : CompendiumEntryRecord
    {
-      /// <summary>
-      /// Gets or sets id.
-      /// </summary>
-      public Guid Id { get; set; }
-
-      /// <summary>
-      /// Gets or sets name.
-      /// </summary>
-      public string Name { get; set; }
-
       /// <summary>
       /// Gets or sets description.
       /// </summary>

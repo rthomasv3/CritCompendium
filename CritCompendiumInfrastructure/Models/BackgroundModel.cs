@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using CritCompendiumInfrastructure.Enums;
 
 namespace CritCompendiumInfrastructure.Models
 {
-   public sealed class BackgroundModel
+   public sealed class BackgroundModel : CompendiumEntryModel
    {
       #region Fields
 
-      private Guid _id;
-      private string _name;
       private int _languagesIndex;
       private int _toolsIndex;
       private int _skillsIndex;
@@ -28,16 +24,13 @@ namespace CritCompendiumInfrastructure.Models
       /// </summary>
       public BackgroundModel()
       {
-         _id = Guid.NewGuid();
       }
 
       /// <summary>
       /// Creates a copy of <see cref="BackgroundModel"/>
       /// </summary>
-      public BackgroundModel(BackgroundModel backgroundModel)
+      public BackgroundModel(BackgroundModel backgroundModel) : base(backgroundModel)
       {
-         _id = backgroundModel.ID;
-         _name = backgroundModel.Name;
          _skills = new List<Skill>(backgroundModel.Skills);
 
          _traits = new List<TraitModel>();
@@ -57,24 +50,6 @@ namespace CritCompendiumInfrastructure.Models
       #endregion
 
       #region Properties
-
-      /// <summary>
-      /// Gets or sets the id
-      /// </summary>
-      public Guid ID
-      {
-         get { return _id; }
-         set { _id = value; }
-      }
-
-      /// <summary>
-      /// Gets or sets the name
-      /// </summary>
-      public string Name
-      {
-         get { return _name; }
-         set { _name = value; }
-      }
 
       /// <summary>
       /// Gets or sets the skills

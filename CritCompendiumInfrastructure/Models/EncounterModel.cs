@@ -1,15 +1,12 @@
-﻿using CritCompendiumInfrastructure.Enums;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using CritCompendiumInfrastructure.Enums;
 
 namespace CritCompendiumInfrastructure.Models
 {
-   public sealed class EncounterModel
+   public sealed class EncounterModel : CompendiumEntryModel
    {
       #region Fields
 
-      private Guid _id;
-      private string _name;
       private List<EncounterCreatureModel> _encounterCreatures = new List<EncounterCreatureModel>();
       private int _round;
       private EncounterChallenge _encounterChallenge;
@@ -29,16 +26,13 @@ namespace CritCompendiumInfrastructure.Models
       /// </summary>
       public EncounterModel()
       {
-         _id = Guid.NewGuid();
       }
 
       /// <summary>
       /// Creates an instance of <see cref="EncounterModel"/>
       /// </summary>
-      public EncounterModel(EncounterModel encounterModel)
+      public EncounterModel(EncounterModel encounterModel) : base(encounterModel)
       {
-         _id = encounterModel.ID;
-         _name = encounterModel.Name;
          _encounterCreatures = new List<EncounterCreatureModel>();
          foreach (EncounterCreatureModel encounterCreature in encounterModel.Creatures)
          {
@@ -64,24 +58,6 @@ namespace CritCompendiumInfrastructure.Models
       #endregion
 
       #region Properties
-
-      /// <summary>
-      /// Gets or sets id
-      /// </summary>
-      public Guid ID
-      {
-         get { return _id; }
-         set { _id = value; }
-      }
-
-      /// <summary>
-      /// Gets or sets name
-      /// </summary>
-      public string Name
-      {
-         get { return _name; }
-         set { _name = value; }
-      }
 
       /// <summary>
       /// Gets or sets creatures

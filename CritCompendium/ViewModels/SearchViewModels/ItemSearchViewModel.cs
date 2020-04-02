@@ -283,7 +283,7 @@ namespace CritCompendium.ViewModels.SearchViewModels
 
          foreach (ItemModel itemModel in _selectedItems)
          {
-            ItemListItemViewModel item = _items.FirstOrDefault(x => x.ItemModel.ID == itemModel.ID);
+            ItemListItemViewModel item = _items.FirstOrDefault(x => x.ItemModel.Id == itemModel.Id);
             if (item != null)
             {
                item.IsSelected = true;
@@ -305,14 +305,14 @@ namespace CritCompendium.ViewModels.SearchViewModels
             ItemListItemViewModel itemListItemViewModel = sender as ItemListItemViewModel;
             if (itemListItemViewModel.IsSelected)
             {
-               if (!_selectedItems.Any(x => x.ID == itemListItemViewModel.ItemModel.ID))
+               if (!_selectedItems.Any(x => x.Id == itemListItemViewModel.ItemModel.Id))
                {
                   _selectedItems.Add(itemListItemViewModel.ItemModel);
                }
             }
             else
             {
-               _selectedItems.RemoveAll(x => x.ID == itemListItemViewModel.ItemModel.ID);
+               _selectedItems.RemoveAll(x => x.Id == itemListItemViewModel.ItemModel.Id);
             }
          }
       }

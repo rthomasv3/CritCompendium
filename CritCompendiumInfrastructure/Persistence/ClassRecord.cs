@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using CritCompendiumInfrastructure.Enums;
 
 namespace CritCompendiumInfrastructure.Persistence
@@ -7,18 +6,8 @@ namespace CritCompendiumInfrastructure.Persistence
    /// <summary>
    /// Class used to store character class information.
    /// </summary>
-   public sealed class ClassRecord
+   public sealed class ClassRecord : CompendiumEntryRecord
    {
-      /// <summary>
-      /// Gets or sets id.
-      /// </summary>
-      public Guid Id { get; set; }
-
-      /// <summary>
-      /// Gets or sets name.
-      /// </summary>
-      public string Name { get; set; }
-
       /// <summary>
       /// Gets or sets hit die.
       /// </summary>

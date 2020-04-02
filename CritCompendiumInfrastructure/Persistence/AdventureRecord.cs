@@ -5,9 +5,9 @@ using System.Text;
 namespace CritCompendiumInfrastructure.Persistence
 {
    /// <summary>
-   /// Class used to store information.
+   /// Class used to store adventure information.
    /// </summary>
-   public sealed class AdventureRecord
+   public sealed class AdventureRecord : CompendiumEntryRecord
    {
    }
 }

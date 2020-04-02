@@ -403,7 +403,7 @@ namespace CritCompendium.ViewModels
 
          if (_selectedSpell != null)
          {
-            SpellListItemViewModel spell = _spells.FirstOrDefault(x => x.SpellModel.ID == _selectedSpell.SpellModel.ID);
+            SpellListItemViewModel spell = _spells.FirstOrDefault(x => x.SpellModel.Id == _selectedSpell.SpellModel.Id);
             if (spell != null)
             {
                spell.IsSelected = true;
@@ -510,11 +510,11 @@ namespace CritCompendium.ViewModels
 
             if (model != null)
             {
-               model.ID = _selectedSpell.SpellModel.ID;
+               model.Id = _selectedSpell.SpellModel.Id;
                _compendium.UpdateSpell(model);
                _selectedSpell = new SpellViewModel(model);
 
-               SpellListItemViewModel oldListItem = _spells.FirstOrDefault(x => x.SpellModel.ID == model.ID);
+               SpellListItemViewModel oldListItem = _spells.FirstOrDefault(x => x.SpellModel.Id == model.Id);
                if (oldListItem != null)
                {
                   if (_spellSearchService.SearchInputApplies(_spellSearchInput, model))
@@ -685,7 +685,7 @@ namespace CritCompendium.ViewModels
             {
                SpellModel newSpell = new SpellModel(_selectedSpell.SpellModel);
                newSpell.Name += " (copy)";
-               newSpell.ID = Guid.NewGuid();
+               newSpell.Id = Guid.NewGuid();
                newSpell.XML = newSpell.XML.Replace("<name>" + _selectedSpell.SpellModel.Name + "</name>",
                                                    "<name>" + newSpell.Name + "</name>");
 
@@ -725,7 +725,7 @@ namespace CritCompendium.ViewModels
                {
                   foreach (SpellbookEntryModel spellbookEntry in spellbook.Spells)
                   {
-                     if (spellbookEntry.Spell != null && spellbookEntry.Spell.ID == _selectedSpell.SpellModel.ID)
+                     if (spellbookEntry.Spell != null && spellbookEntry.Spell.Id == _selectedSpell.SpellModel.Id)
                      {
                         canDelete = false;
                         break;
@@ -753,9 +753,9 @@ namespace CritCompendium.ViewModels
 
                if (result == true)
                {
-                  _compendium.DeleteSpell(_selectedSpell.SpellModel.ID);
+                  _compendium.DeleteSpell(_selectedSpell.SpellModel.Id);
 
-                  SpellListItemViewModel listItem = _spells.FirstOrDefault(x => x.SpellModel.ID == _selectedSpell.SpellModel.ID);
+                  SpellListItemViewModel listItem = _spells.FirstOrDefault(x => x.SpellModel.Id == _selectedSpell.SpellModel.Id);
                   if (listItem != null)
                   {
                      _spells.Remove(listItem);
@@ -787,9 +787,9 @@ namespace CritCompendium.ViewModels
             List<SpellModel> spells = _spellSearchService.Sort(_spells.Select(x => x.SpellModel), _spellSearchInput.SortOption.Key);
             for (int i = 0; i < spells.Count; ++i)
             {
-               if (spells[i].ID != _spells[i].SpellModel.ID)
+               if (spells[i].Id != _spells[i].SpellModel.Id)
                {
-                  SpellListItemViewModel spell = _spells.FirstOrDefault(x => x.SpellModel.ID == spells[i].ID);
+                  SpellListItemViewModel spell = _spells.FirstOrDefault(x => x.SpellModel.Id == spells[i].Id);
                   if (spell != null)
                   {
                      _spells.Move(_spells.IndexOf(spell), i);

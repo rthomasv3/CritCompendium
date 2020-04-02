@@ -7,18 +7,8 @@ namespace CritCompendiumInfrastructure.Persistence
    /// <summary>
    /// Class used to save a character information.
    /// </summary>
-   public sealed class CharacterRecord
+   public sealed class CharacterRecord : CompendiumEntryRecord
    {
-      /// <summary>
-      /// Gets or sets the character id.
-      /// </summary>
-      public Guid Id { get; set; }
-
-      /// <summary>
-      /// Gets or sets name.
-      /// </summary>
-      public string Name { get; set; }
-
       /// <summary>
       /// Gets or sets current hp.
       /// </summary>

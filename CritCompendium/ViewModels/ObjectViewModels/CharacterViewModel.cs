@@ -171,7 +171,7 @@ namespace CritCompendium.ViewModels.ObjectViewModels
             {
                _levels.Add(new LevelViewModel(level));
 
-               KeyValuePair<Guid, string> pair = new KeyValuePair<Guid, string>(level.Class.ID, level.Class.Name);
+               KeyValuePair<Guid, string> pair = new KeyValuePair<Guid, string>(level.Class.Id, level.Class.Name);
 
                if (_classesMap.ContainsKey(pair))
                {
@@ -182,7 +182,7 @@ namespace CritCompendium.ViewModels.ObjectViewModels
                   _classesMap[pair] = 1;
                }
 
-               if (!classes.Any(x => x.ClassModel.ID == level.Class.ID))
+               if (!classes.Any(x => x.ClassModel.Id == level.Class.Id))
                {
                   classes.Add(new ClassViewModel(level.Class));
                }
@@ -190,7 +190,7 @@ namespace CritCompendium.ViewModels.ObjectViewModels
 
             foreach (ClassViewModel classView in classes)
             {
-               KeyValuePair<KeyValuePair<Guid, string>, int> pair = _classesMap.FirstOrDefault(x => x.Key.Key == classView.ClassModel.ID);
+               KeyValuePair<KeyValuePair<Guid, string>, int> pair = _classesMap.FirstOrDefault(x => x.Key.Key == classView.ClassModel.Id);
                if (!pair.Equals(default(KeyValuePair<KeyValuePair<Guid, string>, int>)))
                {
                   _classes.Add(new KeyValuePair<ClassViewModel, int>(classView, pair.Value));
@@ -1786,10 +1786,10 @@ namespace CritCompendium.ViewModels.ObjectViewModels
          {
             List<int> spellSlots = new List<int>();
 
-            ClassModel classModel = _compendium.Classes.FirstOrDefault(x => x.ID == spellbookViewModel.Class.ID);
+            ClassModel classModel = _compendium.Classes.FirstOrDefault(x => x.Id == spellbookViewModel.Class.Id);
             if (classModel != null)
             {
-               KeyValuePair<KeyValuePair<Guid, string>, int> classPair = _classesMap.FirstOrDefault(x => x.Key.Key == spellbookViewModel.Class.ID);
+               KeyValuePair<KeyValuePair<Guid, string>, int> classPair = _classesMap.FirstOrDefault(x => x.Key.Key == spellbookViewModel.Class.Id);
                if (!classPair.Equals(default(KeyValuePair<KeyValuePair<Guid, string>, int>)))
                {
                   int slotIndex = classPair.Value - 1;
@@ -1833,10 +1833,10 @@ namespace CritCompendium.ViewModels.ObjectViewModels
          {
             List<int> spellSlots = new List<int>();
 
-            ClassModel classModel = _compendium.Classes.FirstOrDefault(x => x.ID == spellbookViewModel.Class.ID);
+            ClassModel classModel = _compendium.Classes.FirstOrDefault(x => x.Id == spellbookViewModel.Class.Id);
             if (classModel != null)
             {
-               KeyValuePair<KeyValuePair<Guid, string>, int> classPair = _classesMap.FirstOrDefault(x => x.Key.Key == spellbookViewModel.Class.ID);
+               KeyValuePair<KeyValuePair<Guid, string>, int> classPair = _classesMap.FirstOrDefault(x => x.Key.Key == spellbookViewModel.Class.Id);
                if (!classPair.Equals(default(KeyValuePair<KeyValuePair<Guid, string>, int>)))
                {
                   int slotIndex = classPair.Value - 1;
@@ -3352,7 +3352,7 @@ namespace CritCompendium.ViewModels.ObjectViewModels
             _characterModel.Levels.Add(levelModel);
             _levels.Add(new LevelViewModel(levelModel));
 
-            KeyValuePair<Guid, string> pair = new KeyValuePair<Guid, string>(levelModel.Class.ID, levelModel.Class.Name);
+            KeyValuePair<Guid, string> pair = new KeyValuePair<Guid, string>(levelModel.Class.Id, levelModel.Class.Name);
 
             if (_classesMap.ContainsKey(pair))
             {
@@ -3368,7 +3368,7 @@ namespace CritCompendium.ViewModels.ObjectViewModels
             _classes.Clear();
             foreach (KeyValuePair<KeyValuePair<Guid, string>, int> mapPair in _classesMap)
             {
-               ClassModel classModel = _compendium.Classes.FirstOrDefault(x => x.ID == mapPair.Key.Key);
+               ClassModel classModel = _compendium.Classes.FirstOrDefault(x => x.Id == mapPair.Key.Key);
                if (classModel != null)
                {
                   _classes.Add(new KeyValuePair<ClassViewModel, int>(new ClassViewModel(classModel), mapPair.Value));

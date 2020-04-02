@@ -406,7 +406,7 @@ namespace CritCompendium.ViewModels
 
          if (_selectedClass != null)
          {
-            ClassListItemViewModel classItem = _classes.FirstOrDefault(x => x.ClassModel.ID == _selectedClass.ClassModel.ID);
+            ClassListItemViewModel classItem = _classes.FirstOrDefault(x => x.ClassModel.Id == _selectedClass.ClassModel.Id);
             if (classItem != null)
             {
                classItem.IsSelected = true;
@@ -513,11 +513,11 @@ namespace CritCompendium.ViewModels
 
             if (model != null)
             {
-               model.ID = _selectedClass.ClassModel.ID;
+               model.Id = _selectedClass.ClassModel.Id;
                _compendium.UpdateClass(model);
                _selectedClass = new ClassViewModel(model);
 
-               ClassListItemViewModel oldListItem = _classes.FirstOrDefault(x => x.ClassModel.ID == model.ID);
+               ClassListItemViewModel oldListItem = _classes.FirstOrDefault(x => x.ClassModel.Id == model.Id);
                if (oldListItem != null)
                {
                   if (_classSearchService.SearchInputApplies(_classSearchInput, model))
@@ -678,7 +678,7 @@ namespace CritCompendium.ViewModels
             {
                ClassModel newClass = new ClassModel(_selectedClass.ClassModel);
                newClass.Name += " (copy)";
-               newClass.ID = Guid.NewGuid();
+               newClass.Id = Guid.NewGuid();
                newClass.XML = newClass.XML.Replace("<name>" + _selectedClass.ClassModel.Name + "</name>",
                                                    "<name>" + newClass.Name + "</name>");
 
@@ -716,7 +716,7 @@ namespace CritCompendium.ViewModels
             {
                foreach (LevelModel level in character.Levels)
                {
-                  if (level.Class != null && level.Class.ID == _selectedClass.ClassModel.ID)
+                  if (level.Class != null && level.Class.Id == _selectedClass.ClassModel.Id)
                   {
                      canDelete = false;
                      break;
@@ -738,9 +738,9 @@ namespace CritCompendium.ViewModels
 
                if (result == true)
                {
-                  _compendium.DeleteClass(_selectedClass.ClassModel.ID);
+                  _compendium.DeleteClass(_selectedClass.ClassModel.Id);
 
-                  ClassListItemViewModel listItem = _classes.FirstOrDefault(x => x.ClassModel.ID == _selectedClass.ClassModel.ID);
+                  ClassListItemViewModel listItem = _classes.FirstOrDefault(x => x.ClassModel.Id == _selectedClass.ClassModel.Id);
                   if (listItem != null)
                   {
                      _classes.Remove(listItem);
@@ -772,9 +772,9 @@ namespace CritCompendium.ViewModels
             List<ClassModel> classes = _classSearchService.Sort(_classes.Select(x => x.ClassModel), _classSearchInput.SortOption.Key);
             for (int i = 0; i < classes.Count; ++i)
             {
-               if (classes[i].ID != _classes[i].ClassModel.ID)
+               if (classes[i].Id != _classes[i].ClassModel.Id)
                {
-                  ClassListItemViewModel classListItem = _classes.FirstOrDefault(x => x.ClassModel.ID == classes[i].ID);
+                  ClassListItemViewModel classListItem = _classes.FirstOrDefault(x => x.ClassModel.Id == classes[i].Id);
                   if (classListItem != null)
                   {
                      _classes.Move(_classes.IndexOf(classListItem), i);

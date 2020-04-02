@@ -54,7 +54,7 @@ namespace CritCompendiumInfrastructure.Persistence
 
          if (model != null)
          {
-            xml = $"<background><id>{model.ID}</id>{model.XML}</background>";
+            xml = $"<background><id>{model.Id}</id>{model.XML}</background>";
          }
 
          return xml;
@@ -69,7 +69,7 @@ namespace CritCompendiumInfrastructure.Persistence
 
          if (model != null)
          {
-            xml = $"<class><id>{model.ID}</id>{model.XML}</class>";
+            xml = $"<class><id>{model.Id}</id>{model.XML}</class>";
          }
 
          return xml;
@@ -84,7 +84,7 @@ namespace CritCompendiumInfrastructure.Persistence
 
          if (model != null)
          {
-            xml = $"<condition><id>{model.ID}</id>{model.XML}</condition>";
+            xml = $"<condition><id>{model.Id}</id>{model.XML}</condition>";
          }
 
          return xml;
@@ -99,7 +99,7 @@ namespace CritCompendiumInfrastructure.Persistence
 
          if (model != null)
          {
-            xml = $"<feat><id>{model.ID}</id>{model.XML}</feat>";
+            xml = $"<feat><id>{model.Id}</id>{model.XML}</feat>";
          }
 
          return xml;
@@ -114,7 +114,7 @@ namespace CritCompendiumInfrastructure.Persistence
 
          if (model != null)
          {
-            xml = $"<item><id>{model.ID}</id>{model.XML}</item>";
+            xml = $"<item><id>{model.Id}</id>{model.XML}</item>";
          }
 
          return xml;
@@ -129,7 +129,7 @@ namespace CritCompendiumInfrastructure.Persistence
 
          if (model != null)
          {
-            xml = $"<monster><id>{model.ID}</id>{model.XML}</monster>";
+            xml = $"<monster><id>{model.Id}</id>{model.XML}</monster>";
          }
 
          return xml;
@@ -144,7 +144,7 @@ namespace CritCompendiumInfrastructure.Persistence
 
          if (model != null)
          {
-            xml = $"<race><id>{model.ID}</id>{model.XML}</race>";
+            xml = $"<race><id>{model.Id}</id>{model.XML}</race>";
          }
 
          return xml;
@@ -159,7 +159,7 @@ namespace CritCompendiumInfrastructure.Persistence
 
          if (model != null)
          {
-            xml = $"<spell><id>{model.ID}</id>{model.XML}</spell>";
+            xml = $"<spell><id>{model.Id}</id>{model.XML}</spell>";
          }
 
          return xml;

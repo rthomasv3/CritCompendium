@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using CritCompendiumInfrastructure.Enums;
 
 namespace CritCompendiumInfrastructure.Models
 {
-   public sealed class ClassModel
+   public sealed class ClassModel : CompendiumEntryModel
    {
       #region Fields
 
-      private Guid _id;
-      private string _name;
       private int _hitDie;
       private List<Ability> _abilityProficiencies = new List<Ability>();
       private Ability _spellAbility;
@@ -32,16 +29,13 @@ namespace CritCompendiumInfrastructure.Models
       /// </summary>
       public ClassModel()
       {
-         _id = Guid.NewGuid();
       }
 
       /// <summary>
       /// Creates a copy of <see cref="ClassModel"/>
       /// </summary>
-      public ClassModel(ClassModel classModel)
+      public ClassModel(ClassModel classModel) : base(classModel)
       {
-         _id = classModel.ID;
-         _name = classModel.Name;
          _hitDie = classModel.HitDie;
          _abilityProficiencies = new List<Ability>(classModel.AbilityProficiencies);
          _spellAbility = classModel.SpellAbility;
@@ -70,24 +64,6 @@ namespace CritCompendiumInfrastructure.Models
       #endregion
 
       #region Properties
-
-      /// <summary>
-      /// Gets or sets id
-      /// </summary>
-      public Guid ID
-      {
-         get { return _id; }
-         set { _id = value; }
-      }
-
-      /// <summary>
-      /// Gets or sets name
-      /// </summary>
-      public string Name
-      {
-         get { return _name; }
-         set { _name = value; }
-      }
 
       /// <summary>
       /// Gets or sets hit die

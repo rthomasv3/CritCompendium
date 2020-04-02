@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using CritCompendiumInfrastructure.Enums;
 
 namespace CritCompendiumInfrastructure.Models
 {
-   public sealed class CharacterModel
+   public sealed class CharacterModel : CompendiumEntryModel
    {
       #region Fields
 
-      private Guid _id;
-      private string _name;
       private int _currentHP;
       private int _tempHP;
       private int _deathSaveSuccesses;
@@ -74,16 +71,14 @@ namespace CritCompendiumInfrastructure.Models
       /// </summary>
       public CharacterModel()
       {
-         _id = Guid.NewGuid();
+
       }
 
       /// <summary>
       /// Creates a copy of <see cref="CharacterModel"/>
       /// </summary>
-      public CharacterModel(CharacterModel characterModel)
+      public CharacterModel(CharacterModel characterModel) : base(characterModel)
       {
-         _id = characterModel.ID;
-         _name = characterModel.Name;
          _currentHP = characterModel.CurrentHP;
          _tempHP = characterModel.TempHP;
          _deathSaveSuccesses = characterModel.DeathSaveSuccesses;
@@ -204,24 +199,6 @@ namespace CritCompendiumInfrastructure.Models
       #endregion
 
       #region Properties
-
-      /// <summary>
-      /// Gets or sets id
-      /// </summary>
-      public Guid ID
-      {
-         get { return _id; }
-         set { _id = value; }
-      }
-
-      /// <summary>
-      /// Gets or sets name
-      /// </summary>
-      public string Name
-      {
-         get { return _name; }
-         set { _name = value; }
-      }
 
       /// <summary>
       /// Gets or sets current hp

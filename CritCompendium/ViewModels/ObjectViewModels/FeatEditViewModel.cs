@@ -24,7 +24,7 @@ namespace CritCompendium.ViewModels.ObjectViewModels
       /// </summary>
       public FeatEditViewModel(FeatModel feat)
       {
-         _selectedFeat = new Tuple<Guid, string>(feat.ID, feat.Name);
+         _selectedFeat = new Tuple<Guid, string>(feat.Id, feat.Name);
       }
 
       #endregion

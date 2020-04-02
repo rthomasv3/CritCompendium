@@ -28,7 +28,7 @@ namespace CritCompendium.ViewModels
          levelModel.Level = level;
          if (_classesMap.Any())
          {
-            levelModel.Class = _compendium.Classes.FirstOrDefault(x => _classesMap.Keys.Any(y => y.Key == x.ID));
+            levelModel.Class = _compendium.Classes.FirstOrDefault(x => _classesMap.Keys.Any(y => y.Key == x.Id));
          }
          if (levelModel.Class == null)
          {

@@ -220,7 +220,7 @@ namespace CritCompendiumInfrastructure.Persistence
             {
                if (Guid.TryParse(idNode.InnerText, out Guid id))
                {
-                  backgroundModel.ID = id;
+                  backgroundModel.Id = id;
                }
                backgroundNode.RemoveChild(idNode);
             }
@@ -340,7 +340,7 @@ namespace CritCompendiumInfrastructure.Persistence
             {
                if (Guid.TryParse(idNode.InnerText, out Guid id))
                {
-                  classModel.ID = id;
+                  classModel.Id = id;
                }
                classNode.RemoveChild(idNode);
             }
@@ -580,7 +580,7 @@ namespace CritCompendiumInfrastructure.Persistence
             {
                if (Guid.TryParse(idNode.InnerText, out Guid id))
                {
-                  conditionModel.ID = id;
+                  conditionModel.Id = id;
                }
                conditionNode.RemoveChild(idNode);
             }
@@ -723,7 +723,7 @@ namespace CritCompendiumInfrastructure.Persistence
             {
                if (Guid.TryParse(idNode.InnerText, out Guid id))
                {
-                  featModel.ID = id;
+                  featModel.Id = id;
                }
                featNode.RemoveChild(idNode);
             }
@@ -846,7 +846,7 @@ namespace CritCompendiumInfrastructure.Persistence
             {
                if (Guid.TryParse(idNode.InnerText, out Guid id))
                {
-                  itemModel.ID = id;
+                  itemModel.Id = id;
                }
                itemNode.RemoveChild(idNode);
             }
@@ -1105,7 +1105,7 @@ namespace CritCompendiumInfrastructure.Persistence
             {
                if (Guid.TryParse(idNode.InnerText, out Guid id))
                {
-                  monsterModel.ID = id;
+                  monsterModel.Id = id;
                }
                monsterNode.RemoveChild(idNode);
             }
@@ -1503,7 +1503,7 @@ namespace CritCompendiumInfrastructure.Persistence
             {
                if (Guid.TryParse(idNode.InnerText, out Guid id))
                {
-                  raceModel.ID = id;
+                  raceModel.Id = id;
                }
                raceNode.RemoveChild(idNode);
             }
@@ -1684,7 +1684,7 @@ namespace CritCompendiumInfrastructure.Persistence
             {
                if (Guid.TryParse(idNode.InnerText, out Guid id))
                {
-                  spellModel.ID = id;
+                  spellModel.Id = id;
                }
                spellNode.RemoveChild(idNode);
             }

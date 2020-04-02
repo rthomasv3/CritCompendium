@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace CritCompendiumInfrastructure.Models
 {
-   public sealed class FeatModel
+   public sealed class FeatModel : CompendiumEntryModel
    {
       #region Fields
 
-      private Guid _id;
-      private string _name;
       private string _prerequisite;
       private List<string> _textCollection = new List<string>();
       private List<ModifierModel> _modifiers = new List<ModifierModel>();
@@ -23,16 +20,13 @@ namespace CritCompendiumInfrastructure.Models
       /// </summary>
       public FeatModel()
       {
-         _id = Guid.NewGuid();
       }
 
       /// <summary>
       /// Creates a copy of <see cref="FeatModel"/>
       /// </summary>
-      public FeatModel(FeatModel featModel)
+      public FeatModel(FeatModel featModel) : base(featModel)
       {
-         _id = featModel.ID;
-         _name = featModel.Name;
          _prerequisite = featModel.Prerequisite;
          _textCollection = new List<string>(featModel.TextCollection);
 
@@ -48,24 +42,6 @@ namespace CritCompendiumInfrastructure.Models
       #endregion
 
       #region Properties
-
-      /// <summary>
-      /// Gets or sets id
-      /// </summary>
-      public Guid ID
-      {
-         get { return _id; }
-         set { _id = value; }
-      }
-
-      /// <summary>
-      /// Gets or sets name
-      /// </summary>
-      public string Name
-      {
-         get { return _name; }
-         set { _name = value; }
-      }
 
       /// <summary>
       /// Gets or sets prerequisite

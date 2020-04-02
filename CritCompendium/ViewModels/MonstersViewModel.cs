@@ -403,7 +403,7 @@ namespace CritCompendium.ViewModels
 
          if (_selectedMonster != null)
          {
-            MonsterListItemViewModel monster = _monsters.FirstOrDefault(x => x.MonsterModel.ID == _selectedMonster.MonsterModel.ID);
+            MonsterListItemViewModel monster = _monsters.FirstOrDefault(x => x.MonsterModel.Id == _selectedMonster.MonsterModel.Id);
             if (monster != null)
             {
                monster.IsSelected = true;
@@ -510,11 +510,11 @@ namespace CritCompendium.ViewModels
 
             if (model != null)
             {
-               model.ID = _selectedMonster.MonsterModel.ID;
+               model.Id = _selectedMonster.MonsterModel.Id;
                _compendium.UpdateMonster(model);
                _selectedMonster = new MonsterViewModel(model);
 
-               MonsterListItemViewModel oldListItem = _monsters.FirstOrDefault(x => x.MonsterModel.ID == model.ID);
+               MonsterListItemViewModel oldListItem = _monsters.FirstOrDefault(x => x.MonsterModel.Id == model.Id);
                if (oldListItem != null)
                {
                   if (_monsterSearchService.SearchInputApplies(_monsterSearchInput, model))
@@ -713,7 +713,7 @@ namespace CritCompendium.ViewModels
             {
                MonsterModel newMonster = new MonsterModel(_selectedMonster.MonsterModel);
                newMonster.Name += " (copy)";
-               newMonster.ID = Guid.NewGuid();
+               newMonster.Id = Guid.NewGuid();
                newMonster.XML = newMonster.XML.Replace("<name>" + _selectedMonster.MonsterModel.Name + "</name>",
                                                                     "<name>" + newMonster.Name + "</name>");
 
@@ -751,7 +751,7 @@ namespace CritCompendium.ViewModels
             {
                foreach (CompanionModel companion in character.Companions)
                {
-                  if (companion.MonsterModel != null && companion.MonsterModel.ID == _selectedMonster.MonsterModel.ID)
+                  if (companion.MonsterModel != null && companion.MonsterModel.Id == _selectedMonster.MonsterModel.Id)
                   {
                      canDelete = false;
                      break;
@@ -770,7 +770,7 @@ namespace CritCompendium.ViewModels
                {
                   foreach (EncounterMonsterModel encounterMonster in encounter.Creatures.Where(x => x is EncounterMonsterModel))
                   {
-                     if (encounterMonster.MonsterModel != null && encounterMonster.MonsterModel.ID == _selectedMonster.MonsterModel.ID)
+                     if (encounterMonster.MonsterModel != null && encounterMonster.MonsterModel.Id == _selectedMonster.MonsterModel.Id)
                      {
                         canDelete = false;
                         break;
@@ -793,9 +793,9 @@ namespace CritCompendium.ViewModels
 
                if (result == true)
                {
-                  _compendium.DeleteMonster(_selectedMonster.MonsterModel.ID);
+                  _compendium.DeleteMonster(_selectedMonster.MonsterModel.Id);
 
-                  MonsterListItemViewModel listItem = _monsters.FirstOrDefault(x => x.MonsterModel.ID == _selectedMonster.MonsterModel.ID);
+                  MonsterListItemViewModel listItem = _monsters.FirstOrDefault(x => x.MonsterModel.Id == _selectedMonster.MonsterModel.Id);
                   if (listItem != null)
                   {
                      _monsters.Remove(listItem);
@@ -827,9 +827,9 @@ namespace CritCompendium.ViewModels
             List<MonsterModel> monsters = _monsterSearchService.Sort(_monsters.Select(x => x.MonsterModel), _monsterSearchInput.SortOption.Key);
             for (int i = 0; i < monsters.Count; ++i)
             {
-               if (monsters[i].ID != _monsters[i].MonsterModel.ID)
+               if (monsters[i].Id != _monsters[i].MonsterModel.Id)
                {
-                  MonsterListItemViewModel monster = _monsters.FirstOrDefault(x => x.MonsterModel.ID == monsters[i].ID);
+                  MonsterListItemViewModel monster = _monsters.FirstOrDefault(x => x.MonsterModel.Id == monsters[i].Id);
                   if (monster != null)
                   {
                      _monsters.Move(_monsters.IndexOf(monster), i);

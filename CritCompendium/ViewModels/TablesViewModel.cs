@@ -314,7 +314,7 @@ namespace CritCompendium.ViewModels
 
          if (_selectedTable != null)
          {
-            ListItemViewModel<RandomTableModel> table = _tables.FirstOrDefault(x => x.Model.ID == _selectedTable.RandomTableModel.ID);
+            ListItemViewModel<RandomTableModel> table = _tables.FirstOrDefault(x => x.Model.Id == _selectedTable.RandomTableModel.Id);
             if (table != null)
             {
                table.IsSelected = true;
@@ -413,12 +413,12 @@ namespace CritCompendium.ViewModels
 
          if (_tableEditViewModel.RandomTableModel != null)
          {
-            _tableEditViewModel.RandomTableModel.ID = _selectedTable.RandomTableModel.ID;
+            _tableEditViewModel.RandomTableModel.Id = _selectedTable.RandomTableModel.Id;
             _compendium.UpdateTable(_tableEditViewModel.RandomTableModel);
 
             _selectedTable = new RandomTableViewModel(_tableEditViewModel.RandomTableModel);
 
-            ListItemViewModel<RandomTableModel> oldListItem = _tables.FirstOrDefault(x => x.Model.ID == _tableEditViewModel.RandomTableModel.ID);
+            ListItemViewModel<RandomTableModel> oldListItem = _tables.FirstOrDefault(x => x.Model.Id == _tableEditViewModel.RandomTableModel.Id);
             if (oldListItem != null)
             {
                if (_tableSearchService.SearchInputApplies(_tableSearchInput, _tableEditViewModel.RandomTableModel))
@@ -564,7 +564,7 @@ namespace CritCompendium.ViewModels
             {
                RandomTableModel tableModel = new RandomTableModel(_selectedTable.RandomTableModel);
                tableModel.Name += " (copy)";
-               tableModel.ID = Guid.NewGuid();
+               tableModel.Id = Guid.NewGuid();
 
                _compendium.AddTable(tableModel);
 
@@ -602,9 +602,9 @@ namespace CritCompendium.ViewModels
 
             if (result == true)
             {
-               _compendium.DeleteTable(_selectedTable.RandomTableModel.ID);
+               _compendium.DeleteTable(_selectedTable.RandomTableModel.Id);
 
-               ListItemViewModel<RandomTableModel> listItem = _tables.FirstOrDefault(x => x.Model.ID == _selectedTable.RandomTableModel.ID);
+               ListItemViewModel<RandomTableModel> listItem = _tables.FirstOrDefault(x => x.Model.Id == _selectedTable.RandomTableModel.Id);
                if (listItem != null)
                {
                   _tables.Remove(listItem);
@@ -632,9 +632,9 @@ namespace CritCompendium.ViewModels
             List<RandomTableModel> tables = _tableSearchService.Sort(_tables.Select(x => x.Model), _tableSearchInput.SortOption.Key);
             for (int i = 0; i < tables.Count; ++i)
             {
-               if (tables[i].ID != _tables[i].Model.ID)
+               if (tables[i].Id != _tables[i].Model.Id)
                {
-                  ListItemViewModel<RandomTableModel> table = _tables.FirstOrDefault(x => x.Model.ID == tables[i].ID);
+                  ListItemViewModel<RandomTableModel> table = _tables.FirstOrDefault(x => x.Model.Id == tables[i].Id);
                   if (table != null)
                   {
                      _tables.Move(_tables.IndexOf(table), i);

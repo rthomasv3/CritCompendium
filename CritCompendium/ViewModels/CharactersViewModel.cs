@@ -335,7 +335,7 @@ namespace CritCompendium.ViewModels
 
          if (_selectedCharacter != null)
          {
-            CharacterListItemViewModel character = _characters.FirstOrDefault(x => x.CharacterModel.ID == _selectedCharacter.CharacterModel.ID);
+            CharacterListItemViewModel character = _characters.FirstOrDefault(x => x.CharacterModel.Id == _selectedCharacter.CharacterModel.Id);
             if (character != null)
             {
                character.IsSelected = true;
@@ -441,7 +441,7 @@ namespace CritCompendium.ViewModels
             }
             else
             {
-               _characterEditViewModel.CharacterModel.ID = _selectedCharacter.CharacterModel.ID;
+               _characterEditViewModel.CharacterModel.Id = _selectedCharacter.CharacterModel.Id;
                _compendium.UpdateCharacter(_characterEditViewModel.CharacterModel);
 
                _selectedCharacter = new CharacterViewModel(_characterEditViewModel.CharacterModel);
@@ -451,7 +451,7 @@ namespace CritCompendium.ViewModels
                   _selectedCharacter.SetupNewlyCreatedCharacter();
                }
 
-               CharacterListItemViewModel oldListItem = _characters.FirstOrDefault(x => x.CharacterModel.ID == _characterEditViewModel.CharacterModel.ID);
+               CharacterListItemViewModel oldListItem = _characters.FirstOrDefault(x => x.CharacterModel.Id == _characterEditViewModel.CharacterModel.Id);
                if (oldListItem != null)
                {
                   if (_characterSearchService.SearchInputApplies(_characterSearchInput, _selectedCharacter.CharacterModel))
@@ -597,7 +597,7 @@ namespace CritCompendium.ViewModels
             {
                CharacterModel characterModel = new CharacterModel(_selectedCharacter.CharacterModel);
                characterModel.Name += " (copy)";
-               characterModel.ID = Guid.NewGuid();
+               characterModel.Id = Guid.NewGuid();
 
                _compendium.AddCharacter(characterModel);
 
@@ -633,7 +633,7 @@ namespace CritCompendium.ViewModels
             {
                foreach (EncounterCharacterModel encounterCharacter in encounter.Creatures.Where(x => x is EncounterCharacterModel))
                {
-                  if (encounterCharacter.CharacterModel != null && encounterCharacter.CharacterModel.ID == _selectedCharacter.CharacterModel.ID)
+                  if (encounterCharacter.CharacterModel != null && encounterCharacter.CharacterModel.Id == _selectedCharacter.CharacterModel.Id)
                   {
                      canDelete = false;
                      break;
@@ -655,9 +655,9 @@ namespace CritCompendium.ViewModels
 
                if (result == true)
                {
-                  _compendium.DeleteCharacter(_selectedCharacter.CharacterModel.ID);
+                  _compendium.DeleteCharacter(_selectedCharacter.CharacterModel.Id);
 
-                  CharacterListItemViewModel listItem = _characters.FirstOrDefault(x => x.CharacterModel.ID == _selectedCharacter.CharacterModel.ID);
+                  CharacterListItemViewModel listItem = _characters.FirstOrDefault(x => x.CharacterModel.Id == _selectedCharacter.CharacterModel.Id);
                   if (listItem != null)
                   {
                      _characters.Remove(listItem);
@@ -689,9 +689,9 @@ namespace CritCompendium.ViewModels
             List<CharacterModel> characters = _characterSearchService.Sort(_characters.Select(x => x.CharacterModel), _characterSearchInput.SortOption.Key);
             for (int i = 0; i < characters.Count; ++i)
             {
-               if (characters[i].ID != _characters[i].CharacterModel.ID)
+               if (characters[i].Id != _characters[i].CharacterModel.Id)
                {
-                  CharacterListItemViewModel character = _characters.FirstOrDefault(x => x.CharacterModel.ID == characters[i].ID);
+                  CharacterListItemViewModel character = _characters.FirstOrDefault(x => x.CharacterModel.Id == characters[i].Id);
                   if (character != null)
                   {
                      _characters.Move(_characters.IndexOf(character), i);
@@ -792,7 +792,7 @@ namespace CritCompendium.ViewModels
 
                Mouse.OverrideCursor = null;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                Mouse.OverrideCursor = null;
 
@@ -803,13 +803,13 @@ namespace CritCompendium.ViewModels
 
       private void _compendium_CharacterChanged(object sender, CompendiumChangeEventArgs e)
       {
-         if (_selectedCharacter != null && e.IDs.Contains(_selectedCharacter.CharacterModel.ID))
+         if (_selectedCharacter != null && e.IDs.Contains(_selectedCharacter.CharacterModel.Id))
          {
             _selectedCharacter = new CharacterViewModel(_selectedCharacter.CharacterModel);
          }
          foreach (CharacterListItemViewModel listItem in _characters)
          {
-            if (e.IDs.Contains(listItem.CharacterModel.ID))
+            if (e.IDs.Contains(listItem.CharacterModel.Id))
             {
                listItem.UpdateModel(listItem.CharacterModel);
             }
@@ -820,7 +820,7 @@ namespace CritCompendium.ViewModels
       {
          foreach (CharacterListItemViewModel listItem in _characters)
          {
-            if (listItem.CharacterModel.ID == _selectedCharacter.CharacterModel.ID)
+            if (listItem.CharacterModel.Id == _selectedCharacter.CharacterModel.Id)
             {
                listItem.UpdateModel(_selectedCharacter.CharacterModel);
                break;

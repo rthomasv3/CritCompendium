@@ -249,7 +249,7 @@ namespace CritCompendium.ViewModels
 
          if (_selectedAdventure != null)
          {
-            ListItemViewModel<AdventureModel> adventure = _adventures.FirstOrDefault(x => x.Model.ID == _selectedAdventure.AdventureModel.ID);
+            ListItemViewModel<AdventureModel> adventure = _adventures.FirstOrDefault(x => x.Model.Id == _selectedAdventure.AdventureModel.Id);
             if (adventure != null)
             {
                adventure.IsSelected = true;
@@ -348,12 +348,12 @@ namespace CritCompendium.ViewModels
 
          if (_adventureEditViewModel.AdventureModel != null)
          {
-            _adventureEditViewModel.AdventureModel.ID = _selectedAdventure.AdventureModel.ID;
+            _adventureEditViewModel.AdventureModel.Id = _selectedAdventure.AdventureModel.Id;
             _compendium.UpdateAdventure(_adventureEditViewModel.AdventureModel);
 
             _selectedAdventure = new AdventureViewModel(_adventureEditViewModel.AdventureModel);
 
-            ListItemViewModel<AdventureModel> oldListItem = _adventures.FirstOrDefault(x => x.Model.ID == _adventureEditViewModel.AdventureModel.ID);
+            ListItemViewModel<AdventureModel> oldListItem = _adventures.FirstOrDefault(x => x.Model.Id == _adventureEditViewModel.AdventureModel.Id);
             if (oldListItem != null)
             {
                if (_adventureSearchService.SearchInputApplies(_adventureSearchInput, _adventureEditViewModel.AdventureModel))
@@ -498,7 +498,7 @@ namespace CritCompendium.ViewModels
             {
                AdventureModel adventureModel = new AdventureModel(_selectedAdventure.AdventureModel);
                adventureModel.Name += " (copy)";
-               adventureModel.ID = Guid.NewGuid();
+               adventureModel.Id = Guid.NewGuid();
 
                _compendium.AddAdventure(adventureModel);
 
@@ -536,9 +536,9 @@ namespace CritCompendium.ViewModels
 
             if (result == true)
             {
-               _compendium.DeleteAdventure(_selectedAdventure.AdventureModel.ID);
+               _compendium.DeleteAdventure(_selectedAdventure.AdventureModel.Id);
 
-               ListItemViewModel<AdventureModel> listItem = _adventures.FirstOrDefault(x => x.Model.ID == _selectedAdventure.AdventureModel.ID);
+               ListItemViewModel<AdventureModel> listItem = _adventures.FirstOrDefault(x => x.Model.Id == _selectedAdventure.AdventureModel.Id);
                if (listItem != null)
                {
                   _adventures.Remove(listItem);
@@ -565,9 +565,9 @@ namespace CritCompendium.ViewModels
             List<AdventureModel> adventures = _adventureSearchService.Sort(_adventures.Select(x => x.Model), _adventureSearchInput.SortOption.Key);
             for (int i = 0; i < adventures.Count; ++i)
             {
-               if (adventures[i].ID != _adventures[i].Model.ID)
+               if (adventures[i].Id != _adventures[i].Model.Id)
                {
-                  ListItemViewModel<AdventureModel> adventure = _adventures.FirstOrDefault(x => x.Model.ID == adventures[i].ID);
+                  ListItemViewModel<AdventureModel> adventure = _adventures.FirstOrDefault(x => x.Model.Id == adventures[i].Id);
                   if (adventure != null)
                   {
                      _adventures.Move(_adventures.IndexOf(adventure), i);

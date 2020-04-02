@@ -28,7 +28,7 @@ namespace CritCompendiumInfrastructure.Persistence.Version2
          characterBytes.AddRange(BitConverter.GetBytes(characters.Count()));
          foreach (CharacterModel character in characters)
          {
-            characterBytes.AddRange(character.ID.ToByteArray());
+            characterBytes.AddRange(character.Id.ToByteArray());
 
             characterBytes.AddRange(StringBytes(character.Name));
 
@@ -39,7 +39,7 @@ namespace CritCompendiumInfrastructure.Persistence.Version2
 
             if (character.Race != null)
             {
-               characterBytes.AddRange(character.Race.ID.ToByteArray());
+               characterBytes.AddRange(character.Race.Id.ToByteArray());
                characterBytes.AddRange(StringBytes(character.Race.Name));
             }
             else
@@ -50,7 +50,7 @@ namespace CritCompendiumInfrastructure.Persistence.Version2
 
             if (character.Background != null)
             {
-               characterBytes.AddRange(character.Background.ID.ToByteArray());
+               characterBytes.AddRange(character.Background.Id.ToByteArray());
                characterBytes.AddRange(StringBytes(character.Background.Name));
             }
             else
@@ -110,7 +110,7 @@ namespace CritCompendiumInfrastructure.Persistence.Version2
 
                if (level.Class != null)
                {
-                  characterBytes.AddRange(level.Class.ID.ToByteArray());
+                  characterBytes.AddRange(level.Class.Id.ToByteArray());
                   characterBytes.AddRange(StringBytes(level.Class.Name));
                }
                else
@@ -129,7 +129,7 @@ namespace CritCompendiumInfrastructure.Persistence.Version2
                characterBytes.AddRange(BitConverter.GetBytes(level.Feats.Count));
                foreach (FeatModel feat in level.Feats)
                {
-                  characterBytes.AddRange(feat.ID.ToByteArray());
+                  characterBytes.AddRange(feat.Id.ToByteArray());
                   characterBytes.AddRange(StringBytes(feat.Name));
                }
 
@@ -170,7 +170,7 @@ namespace CritCompendiumInfrastructure.Persistence.Version2
             characterBytes.AddRange(BitConverter.GetBytes(character.Languages.Count));
             foreach (LanguageModel language in character.Languages)
             {
-               characterBytes.AddRange(language.ID.ToByteArray());
+               characterBytes.AddRange(language.Id.ToByteArray());
                characterBytes.AddRange(StringBytes(language.Name));
             }
 
@@ -276,7 +276,7 @@ namespace CritCompendiumInfrastructure.Persistence.Version2
                characterBytes.AddRange(condition.ID.ToByteArray());
                if (condition.ConditionModel != null)
                {
-                  characterBytes.AddRange(condition.ConditionModel.ID.ToByteArray());
+                  characterBytes.AddRange(condition.ConditionModel.Id.ToByteArray());
                   characterBytes.AddRange(StringBytes(condition.ConditionModel.Name));
                }
                else
@@ -330,7 +330,7 @@ namespace CritCompendiumInfrastructure.Persistence.Version2
                characterBytes.AddRange(companion.ID.ToByteArray());
                if (companion.MonsterModel != null)
                {
-                  characterBytes.AddRange(companion.MonsterModel.ID.ToByteArray());
+                  characterBytes.AddRange(companion.MonsterModel.Id.ToByteArray());
                   characterBytes.AddRange(StringBytes(companion.MonsterModel.Name));
                }
                else
@@ -363,7 +363,7 @@ namespace CritCompendiumInfrastructure.Persistence.Version2
                   characterBytes.AddRange(equipment.ID.ToByteArray());
                   if (equipment.Item != null)
                   {
-                     characterBytes.AddRange(equipment.Item.ID.ToByteArray());
+                     characterBytes.AddRange(equipment.Item.Id.ToByteArray());
                      characterBytes.AddRange(StringBytes(equipment.Item.Name));
                   }
                   else
@@ -387,7 +387,7 @@ namespace CritCompendiumInfrastructure.Persistence.Version2
                characterBytes.AddRange(BitConverter.GetBytes(spellbook.BasedOnClass));
                if (spellbook.Class != null)
                {
-                  characterBytes.AddRange(spellbook.Class.ID.ToByteArray());
+                  characterBytes.AddRange(spellbook.Class.Id.ToByteArray());
                   characterBytes.AddRange(StringBytes(spellbook.Class.Name));
                }
                else
@@ -399,7 +399,7 @@ namespace CritCompendiumInfrastructure.Persistence.Version2
                characterBytes.AddRange(BitConverter.GetBytes(spellbook.BasedOnRace));
                if (spellbook.Race != null)
                {
-                  characterBytes.AddRange(spellbook.Race.ID.ToByteArray());
+                  characterBytes.AddRange(spellbook.Race.Id.ToByteArray());
                   characterBytes.AddRange(StringBytes(spellbook.Race.Name));
                }
                else
@@ -422,7 +422,7 @@ namespace CritCompendiumInfrastructure.Persistence.Version2
                   characterBytes.AddRange(BitConverter.GetBytes(spellbookEntry.Used));
                   if (spellbookEntry.Spell != null)
                   {
-                     characterBytes.AddRange(spellbookEntry.Spell.ID.ToByteArray());
+                     characterBytes.AddRange(spellbookEntry.Spell.Id.ToByteArray());
                      characterBytes.AddRange(StringBytes(spellbookEntry.Spell.Name));
                   }
                   else
@@ -484,7 +484,7 @@ namespace CritCompendiumInfrastructure.Persistence.Version2
                   {
                      CharacterModel character = new CharacterModel();
 
-                     character.ID = new Guid(reader.ReadBytes(16));
+                     character.Id = new Guid(reader.ReadBytes(16));
                      character.Name = ReadNextString(reader);
 
                      character.CurrentHP = BitConverter.ToInt32(reader.ReadBytes(4), 0);
@@ -494,7 +494,7 @@ namespace CritCompendiumInfrastructure.Persistence.Version2
 
                      Guid raceID = new Guid(reader.ReadBytes(16));
                      string raceName = ReadNextString(reader);
-                     RaceModel race = races.FirstOrDefault(x => x.ID == raceID);
+                     RaceModel race = races.FirstOrDefault(x => x.Id == raceID);
                      if (race == null)
                      {
                         race = races.FirstOrDefault(x => x.Name.Equals(raceName, StringComparison.CurrentCultureIgnoreCase));
@@ -503,7 +503,7 @@ namespace CritCompendiumInfrastructure.Persistence.Version2
 
                      Guid backgroundID = new Guid(reader.ReadBytes(16));
                      string backgroundName = ReadNextString(reader);
-                     BackgroundModel background = backgrounds.FirstOrDefault(x => x.ID == backgroundID);
+                     BackgroundModel background = backgrounds.FirstOrDefault(x => x.Id == backgroundID);
                      if (background == null)
                      {
                         background = backgrounds.FirstOrDefault(x => x.Name.Equals(backgroundName, StringComparison.CurrentCultureIgnoreCase));
@@ -566,7 +566,7 @@ namespace CritCompendiumInfrastructure.Persistence.Version2
 
                         Guid classID = new Guid(reader.ReadBytes(16));
                         string className = ReadNextString(reader);
-                        ClassModel classModel = classes.FirstOrDefault(x => x.ID == classID);
+                        ClassModel classModel = classes.FirstOrDefault(x => x.Id == classID);
                         if (classModel == null)
                         {
                            classModel = classes.FirstOrDefault(x => x.Name.Equals(className, StringComparison.CurrentCultureIgnoreCase));
@@ -613,7 +613,7 @@ namespace CritCompendiumInfrastructure.Persistence.Version2
                         {
                            Guid featID = new Guid(reader.ReadBytes(16));
                            string featName = ReadNextString(reader);
-                           FeatModel feat = feats.FirstOrDefault(x => x.ID == featID);
+                           FeatModel feat = feats.FirstOrDefault(x => x.Id == featID);
                            if (feat == null)
                            {
                               feat = feats.FirstOrDefault(x => x.Name.Equals(featName, StringComparison.CurrentCultureIgnoreCase));
@@ -672,14 +672,14 @@ namespace CritCompendiumInfrastructure.Persistence.Version2
                         Guid languageID = new Guid(reader.ReadBytes(16));
                         string languageName = ReadNextString(reader);
 
-                        LanguageModel language = languages.FirstOrDefault(x => x.ID == languageID);
+                        LanguageModel language = languages.FirstOrDefault(x => x.Id == languageID);
                         if (language == null)
                         {
                            language = languages.FirstOrDefault(x => x.Name.Equals(languageName, StringComparison.CurrentCultureIgnoreCase));
                            if (language == null)
                            {
                               language = new LanguageModel();
-                              language.ID = languageID;
+                              language.Id = languageID;
                               language.Name = languageName;
                            }
                         }
@@ -791,7 +791,7 @@ namespace CritCompendiumInfrastructure.Persistence.Version2
 
                         Guid conditionID = new Guid(reader.ReadBytes(16));
                         string conditionName = ReadNextString(reader);
-                        ConditionModel conditionModel = conditions.FirstOrDefault(x => x.ID == conditionID);
+                        ConditionModel conditionModel = conditions.FirstOrDefault(x => x.Id == conditionID);
                         if (conditionModel == null)
                         {
                            conditionModel = conditions.FirstOrDefault(x => x.Name.Equals(conditionName, StringComparison.CurrentCultureIgnoreCase));
@@ -861,7 +861,7 @@ namespace CritCompendiumInfrastructure.Persistence.Version2
 
                         Guid monsterID = new Guid(reader.ReadBytes(16));
                         string monsterName = ReadNextString(reader);
-                        MonsterModel monster = monsters.FirstOrDefault(x => x.ID == monsterID);
+                        MonsterModel monster = monsters.FirstOrDefault(x => x.Id == monsterID);
                         if (monster == null)
                         {
                            monster = monsters.FirstOrDefault(x => x.Name.Equals(monsterName, StringComparison.CurrentCultureIgnoreCase));
@@ -902,7 +902,7 @@ namespace CritCompendiumInfrastructure.Persistence.Version2
 
                            Guid itemID = new Guid(reader.ReadBytes(16));
                            string itemName = ReadNextString(reader);
-                           ItemModel item = items.FirstOrDefault(x => x.ID == itemID);
+                           ItemModel item = items.FirstOrDefault(x => x.Id == itemID);
                            if (item == null)
                            {
                               item = items.FirstOrDefault(x => x.Name.Equals(itemName, StringComparison.CurrentCultureIgnoreCase));
@@ -934,7 +934,7 @@ namespace CritCompendiumInfrastructure.Persistence.Version2
                         string className = ReadNextString(reader);
                         if (classID != Guid.Empty)
                         {
-                           ClassModel classModel = classes.FirstOrDefault(x => x.ID == classID);
+                           ClassModel classModel = classes.FirstOrDefault(x => x.Id == classID);
                            if (classModel == null)
                            {
                               classModel = classes.FirstOrDefault(x => x.Name.Equals(className, StringComparison.CurrentCultureIgnoreCase));
@@ -947,7 +947,7 @@ namespace CritCompendiumInfrastructure.Persistence.Version2
                         raceName = ReadNextString(reader);
                         if (raceID != Guid.Empty)
                         {
-                           RaceModel raceModel = races.FirstOrDefault(x => x.ID == raceID);
+                           RaceModel raceModel = races.FirstOrDefault(x => x.Id == raceID);
                            if (raceModel == null)
                            {
                               race = races.FirstOrDefault(x => x.Name.Equals(raceName, StringComparison.CurrentCultureIgnoreCase));
@@ -973,7 +973,7 @@ namespace CritCompendiumInfrastructure.Persistence.Version2
 
                            Guid spellID = new Guid(reader.ReadBytes(16));
                            string spellName = ReadNextString(reader);
-                           SpellModel spellModel = spells.FirstOrDefault(x => x.ID == spellID);
+                           SpellModel spellModel = spells.FirstOrDefault(x => x.Id == spellID);
                            if (spellModel == null)
                            {
                               spellModel = spells.FirstOrDefault(x => x.Name.Equals(spellName, StringComparison.CurrentCultureIgnoreCase));

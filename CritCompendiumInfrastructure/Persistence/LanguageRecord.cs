@@ -1,22 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CritCompendiumInfrastructure.Persistence
+﻿namespace CritCompendiumInfrastructure.Persistence
 {
    /// <summary>
    /// Class used to save language information.
    /// </summary>
-   public sealed class LanguageRecord
+   public sealed class LanguageRecord : CompendiumEntryRecord
    {
       /// <summary>
-      /// Gets or sets id.
+      /// Gets or sets language description.
       /// </summary>
-      public Guid Id { get; set; }
-
-      /// <summary>
-      /// Gets or sets language name
-      /// </summary>
-      public string Name { get; set; }
+      public string Description { get; set; }
    }
 }

@@ -47,7 +47,7 @@ namespace CritCompendium.ViewModels.ObjectViewModels
       /// </summary>
       public Guid ID
       {
-         get { return _languageModel.ID; }
+         get { return _languageModel.Id; }
       }
 
       /// <summary>

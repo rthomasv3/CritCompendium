@@ -3,12 +3,10 @@ using System.Collections.Generic;
 
 namespace CritCompendiumInfrastructure.Models
 {
-   public sealed class AdventureModel
+   public sealed class AdventureModel : CompendiumEntryModel
    {
       #region Fields
 
-      private Guid _id;
-      private string _name;
       private List<string> _tags = new List<string>();
       private string _introduction;
       private List<string> _goals = new List<string>();
@@ -25,16 +23,13 @@ namespace CritCompendiumInfrastructure.Models
       /// </summary>
       public AdventureModel()
       {
-         _id = Guid.NewGuid();
       }
 
       /// <summary>
       /// Creates a copy of <see cref="AdventureModel"/>
       /// </summary>
-      public AdventureModel(AdventureModel adventureModel)
+      public AdventureModel(AdventureModel adventureModel) : base(adventureModel)
       {
-         _id = adventureModel.ID;
-         _name = adventureModel.Name;
          _tags = new List<string>(adventureModel.Tags);
          _introduction = adventureModel.Introduction;
          _goals = new List<string>(adventureModel.Goals);
@@ -57,33 +52,6 @@ namespace CritCompendiumInfrastructure.Models
       #endregion
 
       #region Properties
-
-      /// <summary>
-      /// Gets or sets id
-      /// </summary>
-      public Guid ID
-      {
-         get { return _id; }
-         set { _id = value; }
-      }
-
-      /// <summary>
-      /// Gets or sets name
-      /// </summary>
-      public string Name
-      {
-         get { return _name; }
-         set { _name = value; }
-      }
-
-      /// <summary>
-      /// Gets or sets tags
-      /// </summary>
-      public List<string> Tags
-      {
-         get { return _tags; }
-         set { _tags = value; }
-      }
 
       /// <summary>
       /// Gets or sets introduction

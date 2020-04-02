@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using CritCompendiumInfrastructure.Enums;
 
 namespace CritCompendiumInfrastructure.Models
 {
-   public sealed class ItemModel
+   public sealed class ItemModel : CompendiumEntryModel
    {
       #region Fields
 
-      private Guid _id;
-      private string _name;
       private ItemType _type;
       private bool _magic;
       private bool _requiresAttunement;
@@ -38,16 +35,13 @@ namespace CritCompendiumInfrastructure.Models
       /// </summary>
       public ItemModel()
       {
-         _id = Guid.NewGuid();
       }
 
       /// <summary>
       /// Creates a copy of <see cref="ItemModel"/>
       /// </summary>
-      public ItemModel(ItemModel itemModel)
+      public ItemModel(ItemModel itemModel) : base(itemModel)
       {
-         _id = itemModel.ID;
-         _name = itemModel.Name;
          _type = itemModel.Type;
          _magic = itemModel.Magic;
          _requiresAttunement = itemModel.RequiresAttunement;
@@ -77,24 +71,6 @@ namespace CritCompendiumInfrastructure.Models
       #endregion
 
       #region Properties
-
-      /// <summary>
-      /// Gets or sets id
-      /// </summary>
-      public Guid ID
-      {
-         get { return _id; }
-         set { _id = value; }
-      }
-
-      /// <summary>
-      /// Gets or sets name
-      /// </summary>
-      public string Name
-      {
-         get { return _name; }
-         set { _name = value; }
-      }
 
       /// <summary>
       /// Gets or sets type

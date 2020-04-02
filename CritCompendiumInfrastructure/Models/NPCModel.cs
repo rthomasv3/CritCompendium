@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace CritCompendiumInfrastructure.Models
+﻿namespace CritCompendiumInfrastructure.Models
 {
-   public sealed class NPCModel
+   public sealed class NPCModel : CompendiumEntryModel
    {
       #region Fields
 
-      private Guid _id;
-      private string _name;
-      private List<string> _tags = new List<string>();
       private string _occupation;
       private string _backstory;
       private string _ideal;
@@ -30,17 +24,13 @@ namespace CritCompendiumInfrastructure.Models
       /// </summary>
       public NPCModel()
       {
-         _id = Guid.NewGuid();
       }
 
       /// <summary>
       /// Creates a copy of <see cref="NPCModel"/>
       /// </summary>
-      public NPCModel(NPCModel npcModel)
+      public NPCModel(NPCModel npcModel) : base(npcModel)
       {
-         _id = npcModel.ID;
-         _name = npcModel.Name;
-         _tags = new List<string>(npcModel.Tags);
          _occupation = npcModel.Occupation;
          _backstory = npcModel.Backstory;
          _ideal = npcModel.Ideal;
@@ -56,33 +46,6 @@ namespace CritCompendiumInfrastructure.Models
       #endregion
 
       #region Properties
-
-      /// <summary>
-      /// Gets or sets id
-      /// </summary>
-      public Guid ID
-      {
-         get { return _id; }
-         set { _id = value; }
-      }
-
-      /// <summary>
-      /// Gets or sets name
-      /// </summary>
-      public string Name
-      {
-         get { return _name; }
-         set { _name = value; }
-      }
-
-      /// <summary>
-      /// Gets or sets tags
-      /// </summary>
-      public List<string> Tags
-      {
-         get { return _tags; }
-         set { _tags = value; }
-      }
 
       /// <summary>
       /// Gets or sets occupation

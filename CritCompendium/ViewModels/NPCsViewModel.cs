@@ -251,7 +251,7 @@ namespace CritCompendium.ViewModels
 
          if (_selectedNPC != null)
          {
-            ListItemViewModel<NPCModel> npc = _npcs.FirstOrDefault(x => x.Model.ID == _selectedNPC.NPCModel.ID);
+            ListItemViewModel<NPCModel> npc = _npcs.FirstOrDefault(x => x.Model.Id == _selectedNPC.NPCModel.Id);
             if (npc != null)
             {
                npc.IsSelected = true;
@@ -350,12 +350,12 @@ namespace CritCompendium.ViewModels
 
          if (_npcEditViewModel.NPCModel != null)
          {
-            _npcEditViewModel.NPCModel.ID = _selectedNPC.NPCModel.ID;
+            _npcEditViewModel.NPCModel.Id = _selectedNPC.NPCModel.Id;
             _compendium.UpdateNPC(_npcEditViewModel.NPCModel);
 
             _selectedNPC = new NPCViewModel(_npcEditViewModel.NPCModel);
 
-            ListItemViewModel<NPCModel> oldListItem = _npcs.FirstOrDefault(x => x.Model.ID == _npcEditViewModel.NPCModel.ID);
+            ListItemViewModel<NPCModel> oldListItem = _npcs.FirstOrDefault(x => x.Model.Id == _npcEditViewModel.NPCModel.Id);
             if (oldListItem != null)
             {
                if (_npcSearchService.SearchInputApplies(_npcSearchInput, _npcEditViewModel.NPCModel))
@@ -499,7 +499,7 @@ namespace CritCompendium.ViewModels
             {
                NPCModel npcModel = new NPCModel(_selectedNPC.NPCModel);
                npcModel.Name += " (copy)";
-               npcModel.ID = Guid.NewGuid();
+               npcModel.Id = Guid.NewGuid();
 
                _compendium.AddNPC(npcModel);
 
@@ -537,9 +537,9 @@ namespace CritCompendium.ViewModels
 
             if (result == true)
             {
-               _compendium.DeleteNPC(_selectedNPC.NPCModel.ID);
+               _compendium.DeleteNPC(_selectedNPC.NPCModel.Id);
 
-               ListItemViewModel<NPCModel> listItem = _npcs.FirstOrDefault(x => x.Model.ID == _selectedNPC.NPCModel.ID);
+               ListItemViewModel<NPCModel> listItem = _npcs.FirstOrDefault(x => x.Model.Id == _selectedNPC.NPCModel.Id);
                if (listItem != null)
                {
                   _npcs.Remove(listItem);
@@ -566,9 +566,9 @@ namespace CritCompendium.ViewModels
             List<NPCModel> npcs = _npcSearchService.Sort(_npcs.Select(x => x.Model), _npcSearchInput.SortOption.Key);
             for (int i = 0; i < npcs.Count; ++i)
             {
-               if (npcs[i].ID != _npcs[i].Model.ID)
+               if (npcs[i].Id != _npcs[i].Model.Id)
                {
-                  ListItemViewModel<NPCModel> npc = _npcs.FirstOrDefault(x => x.Model.ID == npcs[i].ID);
+                  ListItemViewModel<NPCModel> npc = _npcs.FirstOrDefault(x => x.Model.Id == npcs[i].Id);
                   if (npc != null)
                   {
                      _npcs.Move(_npcs.IndexOf(npc), i);

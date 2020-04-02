@@ -59,7 +59,7 @@ namespace CritCompendium.ViewModels.ObjectViewModels
             }
             else
             {
-               _selectedCondition = _conditions.FirstOrDefault(x => x.Key.ID == appliedConditionModel.ConditionModel.ID);
+               _selectedCondition = _conditions.FirstOrDefault(x => x.Key.Id == appliedConditionModel.ConditionModel.Id);
             }
          }
 
